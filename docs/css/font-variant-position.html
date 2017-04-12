@@ -1,0 +1,65 @@
+<h1>font-variant-position</h1>  <p>The <strong><code>font-variant-position</code></strong> CSS property controls the usage of alternate glyphs of smaller size positioned as superscript or subscript regarding the baseline of the font, which is set unchanged. These glyphs are likely to be used in <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub" title="The HTML Subscript Element (&lt;sub&gt;) defines a span of text that should be displayed, for typographic reasons, lower, and often smaller, than the main span of text."><code>&lt;sub&gt;</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup" title="The HTML Superscript Element (&lt;sup&gt;) defines a span of text that should be displayed, for typographic reasons, higher, and often smaller, than the main span of text."><code>&lt;sup&gt;</code></a> elements.</p> <p>When the usage of these alternate glyphs is activated, if one character in the run doesn't have such typographically enhanced glyph, the whole set of characters of the run is rendered using a fallback method, synthesizing these glyphs.</p> <p>These alternate glyphs share the same em-box and the same baseline as the rest of the font. They are merely graphically enhanced but have no effect on the line-height and other box characteristics.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>normal</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>all elements. It also applies to <a href="::first-letter" title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code>::first-letter</code></a> and <a href="::first-line" title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the element, width of the document, and the font size of the text. As all pseudo-elements, ::first-line does not match any real HTML element."><code>::first-line</code></a>.</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>yes</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Animatable</th>
+<td>no</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">font-variant-position: normal;
+font-variant-position: sub;
+font-variant-position: super;
+
+/* Global values */
+font-variant-position: inherit;
+font-variant-position: initial;
+font-variant-position: unset;
+</pre> <h3 id="Values">Values</h3> <dl> <dt><code>normal</code></dt> <dd>This keyword leads to the deactivation of the use of such alternate glyphs.</dd> <dt><code>sub</code></dt> <dd>This keyword forces the use of subscript alternate glyphs. If, in a given run, one such glyph is not available for a character, the whole characters in the run is rendered using synthesized appropriate glyphs.</dd> <dt><code>super</code></dt> <dd>This keyword forces the use of superscript alternate glyphs. If, in a given run, one such glyph is not available for a character, the whole characters in the run is rendered using synthesized appropriate glyphs.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox">normal | sub | super</pre> <h2 id="Examples">Examples</h2> <pre data-language="html">&lt;p class="normal inline" &gt;Normal!&lt;/p&gt;
+&lt;p class="super inline" &gt;Super!&lt;/p&gt;
+&lt;p class="sub inline" &gt;Sub!&lt;/p&gt;
+ </pre> <pre data-language="css"> p{
+       display: inline;
+       
+}
+.normal {
+  font-variant-position: normal;
+}
+.super {
+  font-variant-position: super;
+}
+.sub {
+  font-variant-position: sub;
+}
+</pre> <h3 id="Results">Results</h3> <p><iframe frameborder="0" id="frame_Examples" class="live-sample-frame sample-code-frame" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/font-variant-position%24samples/Examples?revision=1083008"></iframe></p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-position" class="external" lang="en" hreflang="en">CSS Fonts Module Level 3<br><small lang="en-US">The definition of 'font-variant-position' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 name="Browser_Compatibility" id="Browser_Compatibility">Browser Compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/34" title="Released on 2014-12-01.">34</a> (34) [1]</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>34.0 (34)[1]</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <p>[1] Experimental implementation was available since Gecko 24. It was governed by the preference <code>layout.css.font-features.enabled</code> defaulting to <code>true</code> on Nightly and Aurora only.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position</a>
+  </p>
+</div>

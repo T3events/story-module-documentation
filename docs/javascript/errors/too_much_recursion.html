@@ -1,0 +1,26 @@
+<h1>Errors: Too much recursion</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">InternalError: too much recursion
+</pre> <h2 id="Error_type">Error type</h2> <p><a title='The InternalError object indicates an error that occurred internally in the JavaScript engine. For example: "InternalError: too much recursion".' href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError"><code>InternalError</code></a>.</p> <h2 id="What_went_wrong">What went wrong?</h2> <p>A function that calls itself is called a <em>recursive function</em>. In some ways, recursion is analogous to a loop. Both execute the same code multiple times, and both require a condition (to avoid an infinite loop, or rather, infinite recursion in this case). When there is too much or infinite recursion, JavaScript will throw this error.</p> <h2 id="Examples">Examples</h2> <p>This recursive function runs 10 times, as per the exit condition.</p> <pre data-language="js">function loop(x) {
+  if (x &gt;= 10) // "x &gt;= 10" is the exit condition
+    return;
+  // do stuff
+  loop(x + 1); // the recursive call
+}
+loop(0);</pre> <p>Setting this condition to an extremely high value, won't work:</p> <pre data-language="js">function loop(x) {
+  if (x &gt;= 1000000000000)
+    return;
+  // do stuff
+  loop(x + 1);
+}
+loop(0);
+
+// InternalError: too much recursion</pre> <h2 id="See_also">See also</h2> <ul> <li><a title="Recursion: An act of a function calling itself. Recursion is used to solve problems that contain smaller sub-problems. A recursive function can receive two inputs: a base case (ends recursion) or a recursive case (continues recursion)." href="https://developer.mozilla.org/en-US/docs/Glossary/Recursion" class="glossaryLink">Recursion</a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Recursion">Recursive functions</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Too_much_recursion$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Too_much_recursion" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Too_much_recursion</a>
+  </p>
+</div>

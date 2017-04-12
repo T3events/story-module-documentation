@@ -1,0 +1,24 @@
+<h1>AudioNode.context</h1> <div> <p>The read-only <code>context</code> property of the <a href="../audionode" title="The AudioNode interface is a generic interface for representing an audio processing module like an audio source (e.g. an HTML &lt;audio&gt; or &lt;video&gt; element, an OscillatorNode, etc.), the audio destination, intermediate processing module (e.g. a filter like BiquadFilterNode or ConvolverNode), or volume control (like GainNode)."><code>AudioNode</code></a> interface returns the associated <a href="../audiocontext" title="An AudioContext can be a target of events, therefore it implements the EventTarget interface."><code>AudioContext</code></a>, that is the object representing the processing graph the node is participating in.</p> </div> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">var <em>aContext</em> = <em>anAudioNode</em>.context;</pre> <h3 id="Value">Value</h3> <p>An <a href="../audiocontext" title="An AudioContext can be a target of events, therefore it implements the EventTarget interface."><code>AudioContext</code></a> object.</p> <h2 id="Example">Example</h2> <pre data-language="js">var AudioContext = window.AudioContext || window.webkitAudioContext;
+
+var audioCtx = new AudioContext();
+
+var oscillator = audioCtx.createOscillator();
+var gainNode = audioCtx.createGain();
+
+oscillator.connect(gainNode);
+gainNode.connect(audioCtx.destination);
+
+oscillator.context;
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://webaudio.github.io/web-audio-api/#widl-AudioNode-context" class="external" lang="en" hreflang="en">Web Audio API<br><small lang="en-US">The definition of 'context' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>10.0<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental">webkit</a></span>
+</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/25" title="Released on 2013-10-29.">25.0</a> (25.0)</td> <td><span style="color: #f00;">No support</span></td> <td>15.0<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental">webkit</a></span><br> 22 (unprefixed)</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>26.0</td> <td>1.2</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="../web_audio_api/using_web_audio_api">Using the Web Audio API</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/context$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/context" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/AudioNode/context</a>
+  </p>
+</div>

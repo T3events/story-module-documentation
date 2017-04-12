@@ -1,0 +1,25 @@
+<h1>StyleSheetList</h1> <p>The <code>StyleSheetList</code> interface represents a list of <a title="An object implementing the StyleSheet interface represents a single style sheet. CSS style sheets will further implement the more specialized CSSStyleSheet interface." href="stylesheet"><code>StyleSheet</code></a>.</p> <p>It is an array-like object but can't be iterated over using <a title="The JavaScript Array object is a global object that is used in the construction of arrays; which are high-level, list-like objects." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a> methods. However It can be iterated over in a standard <a title="The for statement creates a loop that consists of three optional expressions, enclosed in parentheses and separated by semicolons, followed by a statement (usually a block statement) to be executed in the loop." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for"><code>for</code></a> loop over its indices, or converted to an <a title="The JavaScript Array object is a global object that is used in the construction of arrays; which are high-level, list-like objects." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a>.</p> <h2 name="Example" id="Example">Examples</h2> <h3 id="Get_document_styleSheet_objects_with_for_loop">Get document <a href="cssstylesheet">styleSheet</a> objects with for loop</h3> <pre data-language="js">for (var i=0; i &lt; document.styleSheets.length; i++){
+  var styleSheet = document.styleSheets[i];
+}</pre> <h3 id="Get_all_CSS_rules_for_the_document_using_Array_methods">Get all CSS rules for the document using Array methods</h3> <pre data-language="js">var allCSS = 
+    [].slice.call(document.styleSheets)
+        .reduce(function (prev, styleSheet) {
+            if (styleSheet.cssRules) {
+                return prev +
+                    [].slice.call(styleSheet.cssRules)
+                        .reduce(function (prev, cssRule) {
+                            return prev + cssRule.cssText;
+                        }, '');
+            } else {
+                return prev;
+            }
+        }, '');</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th>Specification</th> <th>Status</th> <th>Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://drafts.csswg.org/cssom/#the-stylesheetlist-interface">CSS Object Model (CSSOM)<br><small lang="en-US">The definition of 'CSSStyleSheetList' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td> </td> </tr> </tbody> </table><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/StyleSheetList$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/StyleSheetList" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/StyleSheetList</a>
+  </p>
+</div>

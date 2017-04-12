@@ -1,0 +1,14 @@
+<h1>PresentationConnectionClosedEvent</h1><p>A <code>PresentationConnectionClosedEvent</code> is fired when a <a href="https://www.w3.org/TR/presentation-api/#dfn-presentation-connection" class="internalDFN">presentation connection</a> enters a <a href="https://www.w3.org/TR/presentation-api/#dom-presentationconnectionstate-closed" class="internalDFN"><code>closed</code></a> state. The <code>reason</code> attribute provides the reason why the connection was closed.</p> <h2 id="Properties">Properties</h2> <dl> <dt>PresentationConnectionClosedEvent.<dfn><code>error</code></dfn>
+</dt> <dd>means that the mechanism for connecting or communicating with a presentation entered an unrecoverable error.</dd> <dt>PresentationConnectionClosedEvent.<dfn><code>closed</code></dfn>
+</dt> <dd>means that either the <a href="https://www.w3.org/TR/presentation-api/#dfn-controlling-browsing-context" class="internalDFN">controlling browsing context</a> or the <a href="https://www.w3.org/TR/presentation-api/#dfn-receiving-browsing-context" class="internalDFN">receiving browsing context</a> that were connected by the <code>PresentationConnection</code> called <code>close()</code>.</dd> <dt>PresentationConnectionClosedEvent.<dfn><code>wentaway</code></dfn>
+</dt> <dd>means that the browser closed the connection, for example, because the browsing context that owned the connection navigated or was discarded.</dd> </dl> <p>When the <code>reason</code> attribute is <a href="https://www.w3.org/TR/presentation-api/#dom-presentationconnectionclosedreason-error" class="internalDFN"><code>error</code></a>, the user agent <em>SHOULD</em> set the error message to a human readable description of how the communication channel encountered an error.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionClosedEvent$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionClosedEvent" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/PresentationConnectionClosedEvent</a>
+  </p>
+</div>

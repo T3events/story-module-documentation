@@ -1,0 +1,35 @@
+<h1>WebGLQuery</h1><div> <div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div>
+</div> <p>The <strong><code>WebGLQuery</code></strong> interface is part of the <a href="webgl_api">WebGL 2</a> API and provides ways to asynchronously query for information. By default, occlusion queries and primitive queries are available.</p> <p>Another kind of queries are disjoint timer queries, which allow you to measure performance and profiling of your GPU. Disjoint timer queries are available with the <a title="The EXT_disjoint_timer_query extension is part of the WebGL API and provides a way to measure the duration of a set of GL commands, without stalling the rendering pipeline." href="ext_disjoint_timer_query"><code>EXT_disjoint_timer_query</code></a> extension only.</p> <p>When working with <code>WebGLQuery</code> objects, the following methods of the <a title="The WebGL2RenderingContext interface provides the OpenGL ES 3.0 rendering context for the drawing surface of an HTML &lt;canvas&gt; element." href="webgl2renderingcontext"><code>WebGL2RenderingContext</code></a> are useful:</p> <ul> <li><a title="The WebGL2RenderingContext.createQuery() method of the WebGL 2 API creates and initializes WebGLQuery objects, which provide ways to asynchronously query for information." href="webgl2renderingcontext/createquery"><code>WebGL2RenderingContext.createQuery()</code></a></li> <li><a title="The WebGL2RenderingContext.deleteQuery() method of the WebGL 2 API deletes a given WebGLQuery object." href="webgl2renderingcontext/deletequery"><code>WebGL2RenderingContext.deleteQuery()</code></a></li> <li><a title="The WebGL2RenderingContext.isQuery() method of the WebGL 2 API returns true if the passed object is a valid WebGLQuery object." href="webgl2renderingcontext/isquery"><code>WebGL2RenderingContext.isQuery()</code></a></li> <li><a title="The WebGL2RenderingContext.beginQuery() method of the WebGL 2 API starts an asynchronous query. The target parameter indicates which kind of query to begin." href="webgl2renderingcontext/beginquery"><code>WebGL2RenderingContext.beginQuery()</code></a></li> <li><a title="The WebGL2RenderingContext.endQuery() method of the WebGL 2 API marks the end of a given query target." href="webgl2renderingcontext/endquery"><code>WebGL2RenderingContext.endQuery()</code></a></li> <li><a title="The WebGL2RenderingContext.getQuery() method of the WebGL 2 API returns the currently active WebGLQuery for the target, or null." href="webgl2renderingcontext/getquery"><code>WebGL2RenderingContext.getQuery()</code></a></li> <li><a title="The WebGL2RenderingContext.getQueryParameter() method of the WebGL 2 API returns parameter information of a WebGLQuery object." href="webgl2renderingcontext/getqueryparameter"><code>WebGL2RenderingContext.getQueryParameter()</code></a></li> </ul> <h2 id="Examples">Examples</h2> <h3 id="Creating_a_WebGLQuery_object">Creating a <code>WebGLQuery</code> object</h3> <p>in this example, <code>gl</code> must be a <a title="The WebGL2RenderingContext interface provides the OpenGL ES 3.0 rendering context for the drawing surface of an HTML &lt;canvas&gt; element." href="webgl2renderingcontext"><code>WebGL2RenderingContext</code></a>. <code>WebGLQuery</code> objects are not available in WebGL 1.</p> <pre data-language="js">var query = gl.createQuery();
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.2">WebGL 2.0<br><small lang="en-US">The definition of 'WebGLQuery' in that specification.</small></a></td> <td><span class="spec-ED">Editor's Draft</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td>56</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>51.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>43</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The EXT_disjoint_timer_query extension is part of the WebGL API and provides a way to measure the duration of a set of GL commands, without stalling the rendering pipeline." href="ext_disjoint_timer_query"><code>EXT_disjoint_timer_query</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLQuery$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLQuery" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/WebGLQuery</a>
+  </p>
+</div>

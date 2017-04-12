@@ -1,0 +1,25 @@
+<h1>:empty</h1>  <p>The <code>:empty</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/pseudo-classes" title="The documentation about this has not yet been written; please consider contributing!"><code>pseudo-class</code></a> represents any element that has no children at all. Only element nodes and text (including whitespace) are considered. Comments or processing instructions do not affect whether an element is considered empty or not.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox">:empty <a href="value_definition_syntax#Curly_braces_(.7B_.7D)" title="Curly braces">{</a> <var>style properties</var> <a href="value_definition_syntax#Curly_braces_(.7B_.7D)" title="Curly braces">}</a>
+</pre> <h2 name="Examples" id="Examples">Examples</h2> <pre data-language="css">.box {
+  background: red;
+  height: 200px;
+  width: 200px;
+}
+
+.box:empty {
+  background: lime;
+}
+</pre> <pre data-language="html">&lt;div class="box"&gt;&lt;!-- I will be lime --&gt;&lt;/div&gt;
+&lt;div class="box"&gt;I will be red&lt;/div&gt;
+&lt;div class="box"&gt;
+    &lt;!-- I will be red because of the whitespace around this comment --&gt;
+&lt;/div&gt;</pre> <h2 name="Specifications" id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://drafts.csswg.org/selectors-4/#empty-pseudo" class="external" lang="en" hreflang="en">Selectors Level 4<br><small lang="en-US">The definition of ':empty' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>No change</td> </tr> <tr> <td><a href="https://drafts.csswg.org/selectors-3/#empty-pseudo" class="external" lang="en" hreflang="en">Selectors Level 3<br><small lang="en-US">The definition of ':empty' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>1.0</td> <td>1.0 (1.7 or earlier)</td> <td>9.0</td> <td>9.5</td> <td>3.1</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>2.1</td> <td>1.0 (1)</td> <td>9.5</td> <td>10.0</td> <td>3.1</td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:empty$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:empty" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/:empty</a>
+  </p>
+</div>

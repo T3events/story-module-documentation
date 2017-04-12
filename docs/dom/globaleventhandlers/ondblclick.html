@@ -1,0 +1,49 @@
+<h1>GlobalEventHandlers.ondblclick</h1> <p>The <strong>ondblclick</strong> property returns the onDblClick event handler code on the current element.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">element.ondblclick = function;
+</pre> <ul> <li>
+<code>function</code> is the name of a user-defined function, without the () suffix or any parameters, or an anonymous function declaration, such as</li> </ul> <pre data-language="js">element.ondblclick = function() { console.log("ondblclick event detected!"); };
+</pre> <h2 id="Example">Example</h2> <pre data-language="html">&lt;html&gt;
+
+&lt;head&gt;
+&lt;title&gt;ondblclick event example&lt;/title&gt;
+
+&lt;script type="text/javascript"&gt;
+
+function initElement()
+{
+  var p = document.getElementById("foo");
+  // NOTE: log(); or log(param); will NOT work here.
+  // Must be a reference to a function name, not a function call.
+  p.ondblclick = log;
+};
+
+function log()
+{
+  console.log("ondblclick Event detected!")
+}
+&lt;/script&gt;
+
+&lt;style type="text/css"&gt;
+&lt;!--
+#foo {
+  border: solid blue 2px;
+}
+--&gt;
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body onload="initElement()"&gt;
+&lt;span id="foo"&gt;My Event Element&lt;/span&gt;
+&lt;p&gt;double-click on the above element.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <h2 id="Notes">Notes</h2> <p>The dblclick event is raised when the user double clicks an element.</p> <h2 id="Specifications">Specifications</h2> <table class="spectable standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondblclick">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'ondblclick' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_Compatibility">Browser Compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick</a>
+  </p>
+</div>

@@ -1,0 +1,41 @@
+<h1>WebAssembly.compile</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div> <p>The <strong><code>compile()</code></strong> method of the <a title="The WebAssembly JavaScript object represents the WebAssembly environment in JavaScript, and acts as the namespace for all WebAssembly-related functionality." href="../webassembly"><code>WebAssembly</code></a> object compiles a .wasm file loaded into the JavaScript context as a typed array (e.g. using <a title="The fetch() method of the GlobalFetch interface starts the process of fetching a resource. This returns a promise that resolves to the Response object representing the response to your request." href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch"><code>Fetch</code></a>/<a title="The arrayBuffer() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with an ArrayBuffer." href="https://developer.mozilla.org/en-US/docs/Web/API/Body/arrayBuffer"><code>arrayBuffer</code></a> into a <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/API/Module">Module</a> object instance.</p> <h2 id="Syntax">Syntax</h2> <pre data-language="js">WebAssembly.compile(bufferSource).then(function(module) {
+  // do something with compiled module
+});</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><em>bufferSource</em></dt> <dd>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">typed array</a> containing the byte code of the .wasm module you want to compile.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>A promise that resolves to a <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/API/Module">Module</a> instance representing the compiled module.</p> <h3 id="Exceptions">Exceptions</h3> <ul> <li>If bufferSource is not a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">typed array</a>, a <a title="The TypeError object represents an error when a value is not of the expected type." href="../typeerror"><code>TypeError</code></a> is thrown.</li> <li>If compilation fails, the promise rejects with a <a title="The CompileError() constructor of the WebAssembly global object creates a new WebAssembly CompileError instance, which indicates an error during WebAssembly decoding or validation." href="compileerror"><code>WebAssembly.CompileError</code></a>.</li> </ul> <h2 id="Examples">Examples</h2> <p>The following example (see our <a href="https://github.com/mdn/webassembly-examples/blob/master/js-api-examples/index-compile.html">index-compile.html</a> test file on GitHub, and <a href="https://mdn.github.io/webassembly-examples/js-api-examples/index-compile.html">view it live also</a>) compiles the loaded simple.wasm byte code using the <code>compile()</code> method, and then creates an instance using the <a title="The Instance() constructor of the WebAssembly global object instantiates a Module instance to create a new Instance object instance." href="instance"><code>WebAssembly.Instance()</code></a> constructor.</p> <p>It then imports a JavaScript function into the WebAssembly Module in the process, and then exports a function from the module via Instance.exports.</p> <pre data-language="js">var importObject = {
+  imports: {
+    imported_func: function(arg) {
+      console.log(arg);
+    }
+  }
+};
+
+fetch('simple.wasm').then(function(response) {
+  response.arrayBuffer().then(function(bytes) {
+    WebAssembly.compile(bytes).then(function(mod) {
+      var instance = new WebAssembly.Instance(mod, importObject);
+      instance.exports.exported_func();
+    })
+  })
+});</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" class="external">Unknown<br><small lang="en-US">The definition of 'compile()' in that specification.</small></a></td> <td><span class="spec-">Unknown</span></td> <td>Initial draft definition.</td> </tr> </tbody> </table> <h2 name="Browser_compatibility" id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[2]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[2]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> </tr> </tbody> </table> </div> <p>[1] Experimental support can be enabled in Chrome 51+ and Opera 38+ by going to <code>chrome://flags</code> and enabling the <em>Experimental WebAssembly</em> flag.</p> <p>[2] Experimental support can be enabled in Firefox 47+ by enabling the <em>javascript.options.wasm</em> flag in <code>about:config</code>.</p> <h2 id="See_also">See also</h2> <ul> <li>
+<a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly</a> landing page.</li> <li>WebAssembly concepts</li> <li>Using the WebAssembly JavaScript API</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/compile$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/compile" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/compile</a>
+  </p>
+</div>

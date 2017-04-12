@@ -1,0 +1,25 @@
+<h1>CanvasCaptureMediaStream.requestFrame</h1><div><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> </div></div> <p>The <strong><code>CanvasCaptureMediaStream.requestFrame()</code></strong> method forces a frame to be captured and sent to the stream. This allows to capture partially rendered frames.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>stream</var>.requestFrame();
+</pre> <h2 id="Example">Example</h2> <pre data-language="js">// Find the canvas element to capture
+var canvasElt = document.getElementsByTagName("canvas")[0];
+
+// Get the stream
+var stream = canvasElt.captureStream(25); // 25 FPS
+
+// Send the current state of the canvas as a frame to the stream
+stream.requestFrame();
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://w3c.github.io/mediacapture-fromelement/#widl-CanvasCaptureMediaStream-requestFrame-void" class="external">Media Capture from DOM Elements<br><small lang="en-US">The definition of 'CanvasCaptureMediaStream.requestFrame()' in that specification.</small></a></td> <td><span class="spec-ED">Editor's Draft</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>
+<a title="Released on 2015-09-22." href="https://developer.mozilla.org/en-US/Firefox/Releases/41">41</a> (41)<sup>[1]</sup>
+</td> <td><span style="color: #f00;">Not supported</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>
+<span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span><sup>[1]</sup>
+</td> <td>34.0 (34)</td> <td><span style="color: #f00;">Not supported</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <p>[1] Disabled by default; set the preference <code>canvas.capturestream.enabled</code> to <code>true</code> to activate.</p> <h2 id="See_also">See also</h2> <ul> <li>
+<a title="The CanvasCaptureMediaStream interface represents a MediaStream capturing in real-time the surface of an HTMLCanvasElement." href="../canvascapturemediastream"><code>CanvasCaptureMediaStream</code></a>, the interface it belongs to.</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasCaptureMediaStream/requestFrame$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasCaptureMediaStream/requestFrame" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/CanvasCaptureMediaStream/requestFrame</a>
+  </p>
+</div>

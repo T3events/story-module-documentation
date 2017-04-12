@@ -1,0 +1,37 @@
+<h1>element.releasePointerCapture</h1> <p>Releases (stops) <em>pointer capture</em> that was previously set for a specific (<a title="The PointerEvent interface represents the state of a DOM event produced by a pointer such as the geometry of the contact point, the device type that generated the event, the amount of pressure that was applied on the contact surface, etc." href="../pointerevent"><code>PointerEvent</code></a>) <em>pointer</em>.</p> <p>See the <strong><a title="Pointer capture allows events for a particular pointer event (PointerEvent) to be re-targeted to a particular element instead of the normal target (or hit test) at a pointer's location. This can be used to ensure that an element continues to receive pointer events even if the pointer device's contact moves off the element (for example by scrolling)." href="setpointercapture"><code>Element.setPointerCapture()</code></a></strong> method for a description of <em>pointer capture</em> and how to set it for a particular element.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">targetElement.<em>releasePointerCapture</em>(pointerId);
+</pre> <h3 id="Arguments">Arguments</h3> <dl> <dt><em>pointerId</em></dt> <dd>The <a title="An identifier assigned to a pointer event that is unique from the identifiers of all active pointer events at the time. Authors cannot assume values convey any particular meaning other than an identifier for the pointer that is unique from all other active pointers." href="../pointerevent/pointerid"><code>identifier</code></a> for a <a title="The PointerEvent interface represents the state of a DOM event produced by a pointer such as the geometry of the contact point, the device type that generated the event, the amount of pressure that was applied on the contact surface, etc." href="../pointerevent"><code>pointer event</code></a>.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>If <code>pointerId</code> does not match any the active pointers, this method returns <code>void</code> and throws a <a title="The DOMException interface represents an abnormal event (called an exception) which occurs as a result of calling a method or accessing a property of a web API. This is basically how error conditions are described in web APIs." href="../domexception"><code>DOMException</code></a> with the name <code>InvalidPointerId</code>.</p> <h2 id="Example">Example</h2> <pre data-language="js">&lt;html&gt;
+&lt;script&gt;
+function downHandler(ev) {
+ var el=document.getElementById("target");
+ // Element "target" will receive/capture further events
+ el.setPointerCapture(ev.pointerId);
+}
+function cancelHandler(ev) {
+ var el=document.getElementById("target");
+ // Release the pointer capture
+ el.releasePointerCapture(ev.pointerId);
+}
+function init() {
+ var el=document.getElementById("target");
+ // Register pointerdown and pointercancel handlers
+ el.onpointerdown = downHandler;
+ el.onpointercancel = cancelHandler;
+}
+&lt;/script&gt;
+&lt;body onload="init();"&gt;
+&lt;div id="target"&gt; Touch me ... &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://w3c.github.io/pointerevents/#widl-Element-releasePointerCapture-void-long-pointerId" class="external">Pointer Events – Level 2<br><small lang="en-US">The definition of 'releasePointerCapture' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Non-stable version.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.w3.org/TR/pointerevents/#widl-Element-releasePointerCapture-void-long-pointerId" class="external">Pointer Events<br><small lang="en-US">The definition of 'releasePointerCapture' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span> <sup>[1]</sup>
+</td> <td>10</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Chrome for Android</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>10</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <p>[1] Implementation withdrawn. See <a title="Enabling pointer events in Nightly builds" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1166347">bug 1166347</a>.</p> <h2 id="See_also">See also</h2> <ul> <li><a title="Pointer capture allows events for a particular pointer event (PointerEvent) to be re-targeted to a particular element instead of the normal target (or hit test) at a pointer's location. This can be used to ensure that an element continues to receive pointer events even if the pointer device's contact moves off the element (for example by scrolling)." href="setpointercapture"><code>Element.setPointerCapture()</code></a></li> <li><a title="Most of today's web content assumes the user's pointing device will be a mouse. However, since many devices support other types of pointing input devices, such as pen/stylus and touch surfaces, extensions to the existing pointing device event models are needed and pointer events address that need." href="../pointer_events"><code>Pointer Events</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/element/releasePointerCapture$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/element/releasePointerCapture" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/element/releasePointerCapture</a>
+  </p>
+</div>

@@ -1,0 +1,36 @@
+<h1>Math.clz32</h1> <p>The <strong><code>Math.clz32()</code></strong> function returns the number of leading zero bits in the 32-bit binary representation of a number.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Math.clz32(<var>x</var>)</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><code>x</code></dt> <dd>A number.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>The number of leading zero bits in the 32-bit binary representation of the given number.</p> <h2 id="Description">Description</h2> <p>"<code>clz32</code>" is short for <code>CountLeadingZeroes32</code>.</p> <p>If <code>x</code> is not a number, then it will be converted to a number first, then converted to a 32-bit unsigned integer.</p> <p>If the converted 32-bit unsigned integer is <code>0</code>, then return <code>32</code>, because all bits are <code>0</code>.</p> <p>This function is particularly useful for systems that compile to JS, like <a href="https://developer.mozilla.org/en-US/docs/Emscripten">Emscripten</a>.</p> <h2 id="Examples">Examples</h2> <h3 id="Using_Math.clz32()">Using <code>Math.clz32()</code>
+</h3> <pre data-language="js">Math.clz32(1);                // 31
+Math.clz32(1000);             // 22
+Math.clz32();                 // 32
+
+[NaN, Infinity, -Infinity, 0, -0, null, undefined, 'foo', {}, []].filter(
+function(n) {
+  return Math.clz32(n) !== 32
+});                           // []
+
+Math.clz32(true);             // 31
+Math.clz32(3.5);              // 30
+</pre> <h2 id="Polyfill">Polyfill</h2> <p>The following polyfill is the most efficient.</p> <pre data-language="js">if (!Math.clz32) {
+  Math.clz32 = function(x) {
+    // Let n be ToUint32(x).
+    // Let p be the number of leading zero bits in 
+    // the 32-bit binary representation of n.
+    // Return p.    
+    if (x == null || x === 0) {
+      return 32;
+    }
+    return 31 - Math.floor(Math.log(x &gt;&gt;&gt; 0) * Math.LOG2E);
+  };
+}
+</pre>  <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-math.clz32" class="external" lang="en" hreflang="en">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Math.clz32' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a href="https://tc39.github.io/ecma262/#sec-math.clz32" class="external" lang="en" hreflang="en">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Math.clz32' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>38</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/31" title="Released on 2014-07-22.">31</a> (31)</td> <td><span style="color: #f00;">No support</span></td> <td>25</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>31.0 (31)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="../math" title="Math is a built-in object that has properties and methods for mathematical constants and functions. Not a function object."><code>Math</code></a></li> <li><a href="imul" title="The Math.imul() function returns the result of the C-like 32-bit multiplication of the two parameters."><code>Math.imul</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/clz32$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/clz32" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/clz32</a>
+  </p>
+</div>

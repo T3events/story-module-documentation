@@ -1,0 +1,64 @@
+<h1>GlobalEventHandlers.ondrag</h1> <p>A <a title="The GlobalEventHandlers mixin describes the event handlers common to several interfaces like HTMLElement, Document, or Window. Each of these interfaces can, of course, add more event handlers in addition to the ones listed below." href="../globaleventhandlers"><code>global event handler</code></a> for the <code><a title="/en-US/docs/Web/Events/drag" href="https://developer.mozilla.org/en-US/docs/Web/Events/drag">drag</a></code> event.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">var <var>dragHandler</var> = <var>targetElement</var>.ondrag;
+</pre> <h3 id="Return_value">Return value</h3> <dl> <dt><code>dragHandler</code></dt> <dd>The <em>drag</em> event handler for element <code>targetElement</code>.</dd> </dl> <h2 id="Example">Example</h2> <p>This example includes the use of the <em>ondrag</em> attribute handler to set an element's <em>drag</em> event handler.</p> <pre data-language="js">&lt;!DOCTYPE html&gt;
+&lt;html lang=en&gt;
+&lt;title&gt;Examples of using the ondrag Global Event Attribute&lt;/title&gt;
+&lt;meta content="width=device-width"&gt;
+&lt;style&gt;
+  div {
+    margin: 0em;
+    padding: 2em;
+  }
+  #source {
+    color: blue;
+    border: 1px solid black;
+  }
+  #target {
+    border: 1px solid black;
+  }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;script&gt;
+function drag_handler(ev) {
+ console.log("Drag");
+}
+
+function dragstart_handler(ev) {
+ console.log("dragStart");
+ ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop_handler(ev) {
+ console.log("Drop");
+ ev.currentTarget.style.background = "lightyellow";
+
+ ev.preventDefault();
+ var data = ev.dataTransfer.getData("text");
+ ev.target.appendChild(document.getElementById(data));
+}
+
+function dragover_handler(ev) {
+ console.log("dragOver");
+ ev.preventDefault();
+}
+&lt;/script&gt;
+&lt;body&gt;
+&lt;h1&gt;Examples of &lt;code&gt;ondrag&lt;/code&gt;, &lt;code&gt;ondrop&lt;/code&gt;, &lt;code&gt;ondragstart&lt;/code&gt;, &lt;code&gt;ondragover&lt;/code&gt;&lt;/h1&gt;
+ &lt;div&gt; &lt;!-- &lt;div class="source"&gt; --&gt;
+   &lt;p id="source" ondrag="drag_handler(event);" ondragstart="dragstart_handler(event);" draggable="true"&gt;
+     Select this element, drag it to the Drop Zone and then release the selection to move the element.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;div id="target" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"&gt;Drop Zone&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://html.spec.whatwg.org/multipage/indices.html#ix-handler-ondrag">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'ondrag' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td> </td> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="http://www.w3.org/html/wg/drafts/html/master/index.html#ix-handler-ondrag">HTML5.1<br><small lang="en-US">The definition of 'ondrag' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>4</td> <td>
+<a title="Released on 2009-06-30." href="https://developer.mozilla.org/en-US/Firefox/Releases/3.5">3.5</a> (1.9.1)</td> <td>10</td> <td>12</td> <td>3.1</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>10</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><code><a title="/en-US/docs/Web/Events/drag" href="https://developer.mozilla.org/en-US/docs/Web/Events/drag">drag</a></code></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondrag$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondrag" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondrag</a>
+  </p>
+</div>

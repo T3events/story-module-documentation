@@ -1,0 +1,35 @@
+<h1>Pragma</h1> <p>The <code><strong>Pragma</strong></code> HTTP/1.0 general header is an implementation-specific header that may have various effects along the request-response chain. It is used for backwards compatibility with HTTP/1.0 caches where the <code>Cache-Control</code> HTTP/1.1 header is not yet present.</p> <div class="note"> <p><strong>Note</strong>: <code>Pragma</code> is not specified for HTTP responses and is therefore not a reliable replacement for the general HTTP/1.1 <code>Cache-Control</code> header, although it does behave the same as <code>Cache-Control: no-cache</code>, if the <code>Cache-Control</code> header field is omitted in a request. Use <code>Pragma</code> only for backwards compatibility with HTTP/1.0 clients.</p> </div> <table class="properties"> <tbody> <tr> <th scope="row">Header type</th> <td>
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/General_header" class="glossaryLink" title="General header: A general header is an HTTP header that can be used for both, request and response messages, but don't apply to the content itself. Depending on the context they are used in, general headers are either response or request headers. However, they are not entity headers.">General header</a>, but response behavior is not specified and thus implementation-specific.</td> </tr> <tr> <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name" class="glossaryLink" title="Forbidden header name: A forbidden header name is an HTTP header name that cannot be modified programmatically.">Forbidden header name</a></th> <td>no</td> </tr> <tr> <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Glossary/Simple_response_header" class="glossaryLink" title="CORS-safelisted response-header: A simple response header (or a CORS-safelisted response header) is an HTTP header that is one of the following:">CORS-safelisted response-header</a></th> <td>yes</td> </tr> </tbody> </table> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Pragma: no-cache
+</pre> <h2 id="Directives">Directives</h2> <dl> <dt>no-cache</dt> <dd> <p>Same as <code>Cache-Control: no-cache</code>. Forces caches to submit the request to the origin server for validation before releasing a cached copy.</p> </dd> </dl> <h2 id="Examples">Examples</h2> <pre>Pragma: no-cache</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Title</th> </tr> <tr> <td><a href="http://tools.ietf.org/html/7234#section-5.4">RFC 7234, section 5.4: Pragma</a></td> <td>Hypertext Transfer Protocol (HTTP/1.1): Caching</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Pragma</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Pragma</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a href="cache-control" title="The Cache-Control general-header field is used to specify directives for caching mechanisms in both, requests and responses. Caching directives are unidirectional, meaning that a given directive in a request is not implying that the same directive is to be given in the response."><code>Cache-Control</code></a></li> <li><a href="expires" title="The Expires header contains the date/time after which the response is considered stale."><code>Expires</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Pragma$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Pragma" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Pragma</a>
+  </p>
+</div>

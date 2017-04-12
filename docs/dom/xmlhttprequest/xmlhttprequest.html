@@ -1,0 +1,16 @@
+<h1>XMLHttpRequest</h1><div class="overheadIndicator draft"> <p><strong>Draft</strong><br> This page is not complete.</p> </div> <h2 id="SyntaxEdit">Syntax</h2> <pre class="syntaxbox">var <var>myRequest</var> = new XMLHttpRequest();
+</pre> <p>For details about how to use <code>XMLHttpRequest</code>, see <a href="using_xmlhttprequest" class="internal">Using XMLHttpRequest</a>.</p> <p>The <code><strong>XMLHttpRequest()</strong></code> constructor initiates an XMLHttpRequest. It must be called before any other method calls.</p> <p>Gecko/Firefox 16 adds a non-standard parameter to the constructor that can enable anonymous mode (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=692677" title="FIXED: Relax same-origin XHR restrictions for privileged applications">bug 692677</a>). Setting the <code>mozAnon</code> flag to <code>true</code> effectively resembles the <a href="http://www.w3.org/TR/2012/WD-XMLHttpRequest-20120117/#dom-anonxmlhttprequest" title="see AnonXMLHttpRequest in the XMLHttpRequest specification"><code>AnonXMLHttpRequest()</code></a> constructor described in the XMLHttpRequest specification which has not been implemented in any browser yet (as of September 2012).</p> <pre class="syntaxbox">XMLHttpRequest (
+  JSObject objParameters
+);</pre> <h5 id="Parameters_(non-standard)">Parameters (non-standard)</h5> <dl> <dt>
+<code>objParameters</code> </dt> <dd>There are two flags you can set: <dl> <dt><code>mozAnon</code></dt> <dd>Boolean: Setting this flag to <code>true</code> will cause the browser not to expose the origin and <a href="http://www.w3.org/TR/2012/WD-XMLHttpRequest-20120117/#user-credentials" title="Defintion of “User credentials” in the XMLHttpRequest specification.">user credentials</a> when fetching resources. Most important, this means that cookies will not be sent unless explicitly added using setRequestHeader.</dd> <dt><code>mozSystem</code></dt> <dd>Boolean: Setting this flag to <code>true</code> allows making cross-site connections without requiring the server to opt-in using CORS. <em>Requires setting </em><code>mozAnon: true</code><em>, i.e. this can't be combined with sending cookies or other user credentials. This <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=692677#c68" title="Bug 692677 comment 68">only works in privileged (reviewed) apps</a>; it does not work on arbitrary webpages loaded in Firefox.</em>
+</dd> </dl> </dd> </dl><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/XMLHttpRequest$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/XMLHttpRequest" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/XMLHttpRequest</a>
+  </p>
+</div>

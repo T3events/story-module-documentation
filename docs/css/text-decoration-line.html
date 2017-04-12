@@ -1,0 +1,66 @@
+<h1>text-decoration-line</h1>  <p>The <strong><code>text-decoration-line</code></strong> CSS property sets what kind of line decorations are added to an element.</p> <p>Underline decorations are positioned under the text, overline decorations are positioned above the text, and line-through decorations are positioned through the middle of the text.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>none</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>all elements. It also applies to <a title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line." href="::first-letter"><code>::first-letter</code></a> and <a title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the element, width of the document, and the font size of the text. As all pseudo-elements, ::first-line does not match any real HTML element." href="::first-line"><code>::first-line</code></a>.</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>no</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Animation type</th>
+<td>discrete</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>order of appearance in the formal grammar of the values</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">/* Keyword values */
+text-decoration-line: none;
+text-decoration-line: underline;
+text-decoration-line: overline;
+text-decoration-line: line-through;
+text-decoration-line: underline overline;                /* Two decoration lines */
+text-decoration-line: overline underline line-through;   /* Multiple decoration lines */
+
+/* Global values */
+text-decoration-line: inherit;
+text-decoration-line: initial;
+text-decoration-line: unset;
+</pre> <h3 id="Values">Values</h3> <p>Accepts <strong>none</strong>, or <strong>one or more</strong> whitespace separated values:</p> <dl> <dt><code>none</code></dt> <dd>Produces no text decoration.</dd> <dt><code>underline</code></dt> <dd>Each line of text is underlined.</dd> <dt><code>overline</code></dt> <dd>Each line of text has a line above it.</dd> <dt><code>line-through</code></dt> <dd>Each line of text has a line through the middle.</dd> <dt><code>blink </code></dt> <dd>The text blinks (alternates between visible and invisible). Conforming user agents may simply not blink the text. This value is <strong>deprecated</strong> in favor of <a href="animation">Animations</a>.</dd> <dt>
+<code>-moz-anchor-decoration </code>
+</dt> <dd>The text is decorated as an anchor; not suitable for web content.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox">none | <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">[</a> underline || overline || line-through || blink <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">]</a></pre> <h2 id="Example">Example</h2> <h3 id="HTML_content">HTML content</h3> <pre data-language="html">&lt;p&gt;Here's some text with wavy red underline!&lt;/p&gt;</pre> <h3 id="CSS_content">CSS content</h3> <pre data-language="css">p { 
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: red;
+}</pre> <p><iframe width="300" frameborder="0" class="live-sample-frame sample-code-frame" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/text-decoration-line%24samples/Example?revision=1142789" height="60" id="frame_Example"></iframe></p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/css-text-decor-3/#text-decoration-line" class="external">CSS Text Decoration Level 3<br><small lang="en-US">The definition of 'text-decoration-line' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition. The <a title="The text-decoration CSS property is used to set the text formatting to underline, overline, line-through or blink. Underline and overline decorations are positioned under the text, line-through over it." href="text-decoration"><code>text-decoration</code></a> property wasn't a shorthand before.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>
+<a title="Released on 2011-08-16." href="https://developer.mozilla.org/en-US/Firefox/Releases/6">6.0</a> (6.0) <span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-moz' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">-moz</a></span><sup>[1]</sup><br> <a title="Released on 2015-02-24." href="https://developer.mozilla.org/en-US/Firefox/Releases/36">36.0</a> (36.0)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>7.1 <span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">-webkit</a></span>
+</td> </tr> <tr> <td><code>blink</code></td> <td><span style="color: #f00;">No support</span></td> <td>
+<a title="Released on 2013-12-10." href="https://developer.mozilla.org/en-US/Firefox/Releases/26">26.0</a> (26.0)<sup>[2]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic Support</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[3]</sup>
+</td> <td>6.0 (6.0) <span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-moz' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">-moz</a></span><sup>[1]</sup><br> 36.0 (36.0)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>8 <span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">-webkit</a></span>
+</td> </tr> <tr> <td><code>blink</code></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>26.0 (26.0)<sup>[2]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <p>[1] The prefixed version was removed in Gecko 39.0 (Firefox 39.0 / Thunderbird 39.0 / SeaMonkey 2.36).</p> <p>[2] The value is considered valid, but no blinking will happen, as the spec allows user agents to ignore it.</p> <p>[3] See <a title="" href="https://bugs.webkit.org/show_bug.cgi?id=90959" rel="external" class="external">WebKit bug 90959</a>.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line</a>
+  </p>
+</div>

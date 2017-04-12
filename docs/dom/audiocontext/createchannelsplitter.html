@@ -1,0 +1,39 @@
+<h1>AudioContext.createChannelSplitter</h1> <div> <p>The <code>createChannelSplitter()</code> method of the <a title="An AudioContext can be a target of events, therefore it implements the EventTarget interface." href="../audiocontext"><code>AudioContext</code></a> Interface is used to create a <a title="" href="../channelsplitternode"><code>ChannelSplitterNode</code></a>, which is used to access the individual channels of an audio stream and process them separately.</p> </div> <h2 id="Syntax">Syntax</h2> <pre data-language="js">var audioCtx = new AudioContext();
+var splitter = audioCtx.createChannelSplitter(2);</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>numberOfOutputs</dt> <dd>The number of channels in the input audio stream that you want to output separately; the default is 6 if this parameter is not specified.</dd> </dl> <h3 id="Returns">Returns</h3> <p>A <a title="" href="../channelsplitternode"><code>ChannelSplitterNode</code></a>.</p> <h2 id="Example">Example</h2> <p>The following simple example shows how you could separate a stereo track (say, a piece of music), and process the left and right channel differently. To use them, you need to use the second and third parameters of the <a title="A reference to the destination AudioNode object. In some browsers older implementations of this interface return void." href="../audionode/connect"><code>AudioNode.connect(AudioNode)</code></a> method, which allow you to specify the index of the channel to connect from and the index of the channel to connect to.</p> <pre data-language="js">var ac = new AudioContext();
+ac.decodeAudioData(someStereoBuffer, function(data) {
+ var source = ac.createBufferSource();
+ source.buffer = data;
+ var splitter = ac.createChannelSplitter(2);
+ source.connect(splitter);
+ var merger = ac.createChannelMerger(2);
+
+ // Reduce the volume of the left channel only
+ var gainNode = ac.createGain();
+ gainNode.gain.value = 0.5;
+ splitter.connect(gainNode, 0);
+
+ // Connect the splitter back to the second input of the merger: we
+ // effectively swap the channels, here, reversing the stereo image.
+ gainNode.connect(merger, 0, 1);
+ splitter.connect(merger, 1, 0);
+
+ var dest = ac.createMediaStreamDestination();
+
+ // Because we have used a ChannelMergerNode, we now have a stereo
+ // MediaStream we can use to pipe the Web Audio graph to WebRTC,
+ // MediaRecorder, etc.
+ merger.connect(dest);
+});</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://webaudio.github.io/web-audio-api/#widl-AudioContext-createChannelSplitter-ChannelSplitterNode-unsigned-long-numberOfOutputs">Web Audio API<br><small lang="en-US">The definition of 'createChannelSplitter()' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>10.0<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">webkit</a></span>
+</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a title="Released on 2013-10-29." href="https://developer.mozilla.org/en-US/Firefox/Releases/25">25.0</a> (25.0) </td> <td><span style="color: #f00;">No support</span></td> <td>15.0<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">webkit</a></span><br> 22 (unprefixed)</td> <td>6.0<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">webkit</a></span>
+</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>26.0</td> <td>1.2</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>33.0</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="https://developer.mozilla.org/en-US/docs/Web_Audio_API/Using_Web_Audio_API">Using the Web Audio API</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createChannelSplitter$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createChannelSplitter" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createChannelSplitter</a>
+  </p>
+</div>

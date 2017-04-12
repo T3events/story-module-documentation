@@ -1,0 +1,33 @@
+<h1>CSP: report-uri</h1> <p>The HTTP <a title="The HTTP Content-Security-Policy response header allows web site administrators to control resources the user agent is allowed to load for a given page. With a few exceptions, policies mostly involve specifying server origins and script endpoints. This helps guard against cross-site scripting attacks (XSS)." href="../content-security-policy"><code>Content-Security-Policy</code></a> (CSP) <code><strong>report-uri</strong></code> directive instructs the user agent to report attempts to violate the Content Security Policy. These violation reports consist of JSON documents sent via an HTTP POST request to the specified URI.</p> <p>The directive has no effect in and of itself, but only gains meaning in combination with other directives.</p> <table class="properties"> <tbody> <tr> <th scope="row">CSP version</th> <td>1</td> </tr> <tr> <th scope="row">Directive type</th> <td><a title="Reporting directive: CSP reporting directives are used in a Content-Security-Policy header and control the reporting process of CSP violations." href="https://developer.mozilla.org/en-US/docs/Glossary/Reporting_directive" class="glossaryLink">Reporting directive</a></td> </tr> <tr> <th scope="row" colspan="2">This directive is not supported in the <a title="The HTML &lt;meta&gt; element represents any metadata information that cannot be represented by one of the other HTML meta-related elements (&lt;base&gt;, &lt;link&gt;, &lt;script&gt;, &lt;style&gt; or &lt;title&gt;)." href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta"><code>&lt;meta&gt;</code></a> element.</th> </tr> </tbody> </table> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Content-Security-Policy: report-uri &lt;uri&gt;;</pre> <dl> <dt>&lt;uri&gt;</dt> <dd>A URI where to POST the report to.</dd> </dl> <h2 id="Examples">Examples</h2> <p>See <a title="The HTTP Content-Security-Policy-Report-Only response header allows web developers to experiment with policies by monitoring (but not enforcing) their effects. These violation reports consist of JSON documents sent via an HTTP POST request to the specified URI." href="../content-security-policy-report-only"><code>Content-Security-Policy-Report-Only</code></a> for more information and examples.</p> <pre>Content-Security-Policy: default-src https:; report-uri /csp-violation-report-endpoint/</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://w3c.github.io/webappsec-csp/#directive-report-uri" class="external">Content Security Policy Level 3<br><small lang="en-US">The definition of 'report-uri' in that specification.</small></a></td> <td><span class="spec-ED">Editor's Draft</span></td> <td>No changes.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://w3c.github.io/webappsec-csp/2/#directive-report-uri" class="external">Content Security Policy Level 2<br><small lang="en-US">The definition of 'report-uri' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td>25</td>
+<td>14</td>
+<td>23.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>15</td>
+<td>7</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td>4.4</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>23.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>7.1</td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The HTTP Content-Security-Policy response header allows web site administrators to control resources the user agent is allowed to load for a given page. With a few exceptions, policies mostly involve specifying server origins and script endpoints. This helps guard against cross-site scripting attacks (XSS)." href="../content-security-policy"><code>Content-Security-Policy</code></a></li> <li><a title="The HTTP Content-Security-Policy-Report-Only response header allows web developers to experiment with policies by monitoring (but not enforcing) their effects. These violation reports consist of JSON documents sent via an HTTP POST request to the specified URI." href="../content-security-policy-report-only"><code>Content-Security-Policy-Report-Only</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri</a>
+  </p>
+</div>

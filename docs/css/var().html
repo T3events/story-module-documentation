@@ -1,0 +1,37 @@
+<h1>var()</h1><div><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div></div>  <p>The <strong><code>var()</code></strong> function can be used instead of any part of a value in any property on an element. The var() function can not be used as property names, selectors or anything else besides property values. (Doing so usually produces invalid syntax or else a value whose meaning has no connection to the variable.)</p> <h2 id="Syntax">Syntax</h2> <p>The first argument to the function is the name of the custom property to be substituted. An optional second argument to the function serves as a <strong>fallback</strong> value. If the custom property referenced by the first argument is invalid, the function uses the second value.</p> <pre class="syntaxbox">var( &lt;custom-property-name&gt; <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">[</a>, &lt;declaration-value&gt; <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">]</a><a title="Question mark: the entity is optional" href="value_definition_syntax#Question_mark_()">?</a> )
+</pre> <h3 id="Values">Values</h3> <dl> <dt>&lt;custom-property-name&gt;</dt> <dd>The production corresponds to this: It’s defined as any valid identifier that starts with two dashes. Custom properties are solely for use by authors and users; CSS will never give them a meaning beyond what is presented here.</dd> <dt>&lt;declaration-value&gt;</dt> <dd>The &lt;declaration-value&gt; production matches any sequence of one or more tokens. So, as long as the sequence does not contain &lt;bad-string-token&gt;, &lt;bad-url-token&gt;, unmatched &lt;)-token&gt;, &lt;]-token&gt;, or &lt;}-token&gt;, or top-level &lt;semicolon-token&gt; tokens or &lt;delim-token&gt; tokens with a value of "!" ,it represents the entirety of what a valid declaration can have as its value.</dd> </dl> <h2 id="Examples">Examples</h2> <pre data-language="css">:root {
+  --main-bg-color: pink;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+</pre> <pre data-language="css">/* Fallback */
+/* In the component’s style: */
+.component .header {
+  color: var(--header-color, blue);
+}
+
+.component .text {
+  color: var(--text-color, black);
+}
+
+/* In the larger application’s style: */
+.component {
+  --text-color: #080; /* header-color isn’t set, and so remains blue, the fallback value */
+}
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a hreflang="en" class="external" lang="en" href="https://drafts.csswg.org/css-variables/#using-variables">CSS Custom Properties for Cascading Variables Module Level 1<br><small lang="en-US">The definition of 'var()' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>48<sup>[2]</sup><br> 49</td> <td>
+<a title="Released on 2014-04-29." href="https://developer.mozilla.org/en-US/Firefox/Releases/29">29</a> (29)<sup>[1]</sup><br> <a title="Released on 2014-07-22." href="https://developer.mozilla.org/en-US/Firefox/Releases/31">31</a> (31)</td> <td><span style="color: #f00;">No support</span></td> <td>36</td> <td>9.3<sup>[3]</sup>
+</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>50</td> <td>
+<a title="Released on 2014-04-29." href="https://developer.mozilla.org/en-US/Firefox/Releases/29">29</a> (29)</td> <td><span style="color: #f00;">No support</span></td> <td>37</td> <td>9.3<sup>[3]</sup>
+</td> </tr> </tbody> </table> </div> <p>[1] This feature is implemented behind the preference layout.css.variables.enabled, defaulting to false and using the old var-<var>variablename</var> syntax in Gecko 29. Starting from Gecko 31 the preference is enabled by default and the new --<var>variablename</var> syntax is used.</p> <p>[2] Chrome 48 enabled through the "Experimental Web Platform features" flag in <code>chrome://flags</code>.</p> <p>[3] See <a rel="external" title="" class="external" href="https://bugs.webkit.org/show_bug.cgi?id=19660">WebKit bug 19660</a>.</p> <h2 id="See_also">See also</h2> <ul> <li><a href="using_css_variables">Using CSS variables</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var()$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var()" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/var()</a>
+  </p>
+</div>

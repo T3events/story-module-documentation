@@ -1,0 +1,61 @@
+<h1>async function</h1> <p>The <code><strong>async function</strong></code> declaration defines an <em>asynchronous function</em>, which returns an <a href="../global_objects/asyncfunction" title="The AsyncFunction constructor creates a new async function object. In JavaScript every asynchronous function is actually an AsyncFunction object."><code>AsyncFunction</code></a> object.</p> <div class="noinclude"> <p>You can also define async functions using an <a href="../operators/async_function" title="The async function keyword can be used to define async functions inside expressions."><code>async function expression</code></a>.</p> </div> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">async function <em>name</em>([<em>param</em>[, <em>param</em>[, ... <em>param</em>]]]) {
+   <em>statements</em>
+}
+</pre> <dl> <dt><code>name</code></dt> <dd>The function name.</dd> </dl> <dl> <dt><code>param</code></dt> <dd>The name of an argument to be passed to the function.</dd> </dl> <dl> <dt><code>statements</code></dt> <dd>The statements comprising the body of the function.</dd> </dl> <h2 id="Description">Description</h2> <p>When an <code>async</code> function is called, it returns a <a href="../global_objects/promise" title="The Promise object is used for asynchronous computations. A Promise represents a value which may be available now, or in the future, or never."><code>Promise</code></a>. When the <code>async</code> function returns a value, the <code>Promise</code> will be resolved with the returned value. When the <code>async</code> function throws an exception or some value, the <code>Promise</code> will be rejected with the thrown value.</p> <p>An async function can contain an <a href="../operators/await" title="The await operator is used to wait for a Promise returned by an async function."><code>await</code></a> expression, that pauses the execution of the async function and waits for the passed <code>Promise</code>'s resolution, and then resumes the <code>async</code> function's execution and returns the resolved value.</p> <div class="note"> <p>The purpose of async/await functions are to simplify the behavior of using promises synchronously and to perform some behavior on a group of <code>Promises</code>. Just like <code>Promises</code> are similar to structured callbacks, async/await is similar to combining generators and promises.</p> </div> <h2 id="Examples">Examples</h2> <h3 id="Simple_example">Simple example</h3> <pre data-language="js">function resolveAfter2Seconds(x) {
+  return new Promise(resolve =&gt; {
+    setTimeout(() =&gt; {
+      resolve(x);
+    }, 2000);
+  });
+}
+
+async function add1(x) {
+  var a = resolveAfter2Seconds(20);
+  var b = resolveAfter2Seconds(30);
+  return x + await a + await b;
+}
+
+add1(10).then(v =&gt; {
+  console.log(v);  // prints 60 after 2 seconds.
+});
+
+async function add2(x) {
+  var a = await resolveAfter2Seconds(20);
+  var b = await resolveAfter2Seconds(30);
+  return x + a + b;
+}
+
+add2(10).then(v =&gt; {
+  console.log(v);  // prints 60 after 4 seconds.
+});
+</pre> <h3 id="Rewriting_a_promise_chain_with_an_async_function">Rewriting a promise chain with an <code>async</code> function</h3> <p>An API that returns a <a href="../global_objects/promise" title="The Promise object is used for asynchronous computations. A Promise represents a value which may be available now, or in the future, or never."><code>Promise</code></a> will result in a promise chain, and it splits the function into many parts. Consider the following code:</p> <pre data-language="js">function getProcessedData(url) {
+  return downloadData(url) // returns a promise
+    .catch(e =&gt; {
+      return downloadFallbackData(url) // returns a promise
+    })
+    .then(v =&gt; {
+      return processDataInWorker(v); // returns a promise
+    });
+}
+</pre> <p>it can be rewritten with a single <code>async</code> function as follows:</p> <pre data-language="js">async function getProcessedData(url) {
+  let v;
+  try {
+    v = await downloadData(url); 
+  } catch(e) {
+    v = await downloadFallbackData(url);
+  }
+  return processDataInWorker(v);
+}
+</pre> <p>Note that in the above example, there is no <code>await</code> statement on the <code>return</code> statement, because the return value of an <code>async function</code> is implicitly wrapped in <a href="../global_objects/promise/resolve" title='The Promise.resolve(value) method returns a Promise object that is resolved with the given value. If the value is a thenable (i.e. has a "then" method), the returned promise will "follow" that thenable, adopting its eventual state; otherwise the returned promise will be fulfilled with the value.'><code>Promise.resolve</code></a>.</p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://tc39.github.io/ecma262/#sec-async-function-definitions" class="external" lang="en" hreflang="en">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'async function' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td>Initial definition in ES2017.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th> Edge</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>55</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/52" title="Released on 2017-03-07.">52.0</a> (52.0)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>42</td> <td>10.1</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>52.0 (52.0)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>42</td> <td>10.1</td> <td>55</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="../operators/async_function" title="The async function keyword can be used to define async functions inside expressions."><code>async function expression</code></a></li> <li>
+<a href="../global_objects/asyncfunction" title="The AsyncFunction constructor creates a new async function object. In JavaScript every asynchronous function is actually an AsyncFunction object."><code>AsyncFunction</code></a> object</li> <li><a href="../operators/await" title="The await operator is used to wait for a Promise returned by an async function."><code>await</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function</a>
+  </p>
+</div>

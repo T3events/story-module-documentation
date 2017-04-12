@@ -1,0 +1,25 @@
+<h1>window.onbeforeinstallprompt</h1> <p>The <code><strong>Window.onbeforeinstallprompt</strong></code> property is an event handler for processing a <code><a title="/en-US/docs/Web/Events/beforeinstallprompt" href="https://developer.mozilla.org/en-US/docs/Web/Events/beforeinstallprompt">beforeinstallprompt</a></code>, which is dispatched on mobile when a web manifest exists, but before a user is prompted to save a web site to a home screen.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">window.addEventListener("beforeinstallprompt", function(event) { ... });
+window.onbeforeinstallprompt = function(event) { ...};</pre> <h2 id="Example">Example</h2> <p>The following example uses the beforeinstallprompt function to verify that it is an appropriate time to display an installation prompt to the user. If it is not, the event is redispatched.</p> <pre data-language="js">var isTooSoon = true;
+window.addEventListener("beforeinstallprompt", function(e) { 
+  if (isTooSoon) {
+    e.preventDefault(); // Prevents prompt display 
+    // Prompt later instead: 
+    setTimeout(function() { 
+      isTooSoon = false; 
+      e.prompt(); // Shows prompt 
+    }, 10000); 
+  } 
+
+  // The event was re-dispatched in response to our request 
+  // ... 
+});</pre> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>45.0 [1]</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>45.0 [1]</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>45.0 [1]</td> </tr> </tbody> </table> </div> <p>[1] Behind the flagchrome://flags/#bypass-app-banner-engagement-checks</p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://w3c.github.io/manifest/#onbeforeinstallprompt-attribute" class="external">Web App Manifest<br><small lang="en-US">The definition of 'Window.onbeforeinstallprompt' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial specification.</td> </tr> </tbody> </table> <h2 id="See_Also">See Also</h2> <ul> <li><a title="The prompt() method of the BeforeInstallPromptEvent interface allows a developer to show the install prompt at a time of their own choosing." href="../beforeinstallpromptevent/prompt"><code>BeforeInstallPromptEvent.prompt</code></a></li> <li><a title='The BeforeInstallPromptEvent is fired at the Window.onbeforeinstallprompt handler before a user is prompted to "install" a web site to a home screen on mobile.' href="https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent"><code>BeforeInstallPromptEvent</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/onbeforeinstallprompt$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/onbeforeinstallprompt" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/window/onbeforeinstallprompt</a>
+  </p>
+</div>

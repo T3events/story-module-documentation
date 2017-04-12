@@ -1,0 +1,53 @@
+<h1>-moz-user-input</h1><div><div class="overheadIndicator nonStandard nonStandardHeader"> <p><strong> Non-standard</strong><br> This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.</p> </div></div>  <p>In Mozilla applications, <code>-moz-user-input</code> determines if an element will accept user input. A similar property <code>user-focus</code> was proposed in <a href="http://www.w3.org/TR/2000/WD-css3-userint-20000216" class="external">early drafts of a predecessor of the CSS3 UI specification</a> but was rejected by the working group.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>none</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>all elements</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>yes</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Animatable</th>
+<td>no</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <p><code>-moz-user-input</code> was one of the proposals leading to the proposed CSS 3 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-input" title="The documentation about this has not yet been written; please consider contributing!"><code>user-input</code></a> property, which has not yet reached Candidate Recommendation (call for implementations).</p> <p>For elements that normally take user input, such as a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea" title="The HTML &lt;textarea&gt; element represents a multi-line plain-text editing control."><code>&lt;textarea&gt;</code></a>, the initial value of <code>-moz-user-input</code> is <code>enabled</code>.</p> <h2 id="Syntax">Syntax</h2> <pre data-language="css">/* Keyword values */
+-moz-user-input: none;
+-moz-user-input: enabled;
+-moz-user-input: disabled;
+
+/* Global values */
+-moz-user-input: inherit;
+-moz-user-input: initial;
+-moz-user-input: unset;
+</pre> <h3 id="Values">Values</h3> <dl> <dt>none</dt> <dd>The element does not respond to user input, and it does not become <a href=":active" title="The :active CSS pseudo-class matches when an element is being activated by the user. It allows the page to give a feedback that the activation has been detected by the browser. When interacting with a mouse, this is typically the time between the user presses the mouse button and releases it. The :active pseudo-class is also typically matched when using the keyboard tab key. It is frequently used on &lt;a&gt; and &lt;button&gt; HTML elements, but may not be limited to just those."><code>:active</code></a>.</dd> <dt>enabled</dt> <dd>The element accepts user input. For textboxes, this is the default behavior.</dd> <dt>disabled</dt> <dd>The element does not accept user input. However, this is not the same as setting <code id="a-disabled"><a href="https://developer.mozilla.org/en-US/docs/XUL/Attribute/disabled">disabled</a></code> to true, in that the element is drawn normally.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox">none | enabled | disabled</pre> <h2 id="Examples">Examples</h2> <pre data-language="css">input.example {
+  /* the user will be able to select the text, but not change it. */
+  -moz-user-input: disabled;
+}
+</pre> <h2 id="See_also">See also</h2> <ul> <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-user-focus" title="The documentation about this has not yet been written; please consider contributing!"><code>-moz-user-focus</code></a></li> <li><a href="-moz-user-modify" title="The -moz-user-modify property determines whether or not the content of an element can be edited by a user. This property is related to the contentEditable attribute. A similar property 'user-focus' was proposed in early drafts of a predecessor of css3-ui but was rejected by the working group."><code>-moz-user-modify</code></a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-user-select" title="The documentation about this has not yet been written; please consider contributing!"><code>-moz-user-select</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-user-input$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-user-input" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-user-input</a>
+  </p>
+</div>

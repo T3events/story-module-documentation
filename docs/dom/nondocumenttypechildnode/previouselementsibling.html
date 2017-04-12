@@ -1,0 +1,68 @@
+<h1>NonDocumentTypeChildNode.previousElementSibling</h1> <p>The <code><strong>NonDocumentTypeChildNode.previousElementSibling</strong></code> read-only property returns the <a href="../element" title="The Element interface represents an object of a Document. This interface describes methods and properties common to all kinds of elements. Specific behaviors are described in interfaces which inherit from Element but add additional functionality."><code>Element</code></a> immediately prior to the specified one in its parent's children list, or <code>null</code> if the specified element is the first one in the list.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>prevNode</var> = elementNodeReference.previousElementSibling; 
+</pre> <h2 name="Example" id="Example">Example</h2> <pre data-language="html">&lt;div id="div-01"&gt;Here is div-01&lt;/div&gt;
+&lt;div id="div-02"&gt;Here is div-02&lt;/div&gt;
+&lt;li&gt;This is a list item&lt;/li&gt;
+&lt;li&gt;This is another list item&lt;/li&gt;
+&lt;div id="div-03"&gt;Here is div-03&lt;/div&gt;
+
+&lt;script&gt;
+  var el = document.getElementById('div-03').previousElementSibling;
+  document.write('&lt;p&gt;Siblings of div-03&lt;/p&gt;&lt;ol&gt;');
+  while (el) {
+    document.write('&lt;li&gt;' + el.nodeName + '&lt;/li&gt;');
+    el = el.previousElementSibling;
+  }
+  document.write('&lt;/ol&gt;');
+&lt;/script&gt;
+</pre> <p>This example outputs the following into the page when it loads:</p> <pre>Siblings of div-03
+
+   1. LI
+   2. LI
+   3. DIV
+   4. DIV
+</pre> <h2 id="Polyfill_for_Internet_Explorer_8">Polyfill for Internet Explorer 8</h2> <p>This property is unsupported prior to IE9, so the following snippet can be used to add support to IE8:</p> <pre data-language="js">// Source: https://github.com/Alhadis/Snippets/blob/master/js/polyfills/IE8-child-elements.js
+if(!("previousElementSibling" in document.documentElement)){
+    Object.defineProperty(Element.prototype, "previousElementSibling", {
+        get: function(){
+            var e = this.previousSibling;
+            while(e &amp;&amp; 1 !== e.nodeType)
+                e = e.previousSibling;
+            return e;
+        }
+    });
+}</pre> <h2 name="Specification" id="Specification">Polyfill for Internet Explorer 9+ and Safari</h2> <pre data-language="js">// Source: https://github.com/jserz/js_piece/blob/master/DOM/NonDocumentTypeChildNode/previousElementSibling/previousElementSibling.md
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('previousElementSibling')) {
+      return;
+    }
+    Object.defineProperty(item, 'previousElementSibling', {
+      configurable: true,
+      enumerable: true,
+      get: function () {
+        var el = this;
+        while (el = el.previousSibling) {
+          if (el.nodeType === 1) {
+            return el;
+          }
+        }
+        return null;
+      },
+      set: undefined
+    });
+  });
+})([Element.prototype, CharacterData.prototype]);</pre> <h2 name="Specification" id="Specification">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://dom.spec.whatwg.org/#dom-nondocumenttypechildnode-previouselementsibling" class="external" lang="en" hreflang="en">DOM<br><small lang="en-US">The definition of 'NonDocumentTypeChildNode.previousElementSibling' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td>Splitted the <code>ElementTraversal</code> interface in <a href="../childnode" title="The childNodes interface contains methods that are particular to Node objects that can have a parent."><code>ChildNode</code></a>, <a href="../parentnode" title="The ParentNode interface contains methods that are particular to Node objects that can have children."><code>ParentNode</code></a>, and <a href="../nondocumenttypechildnode" title="The NonDocumentTypeChildNode interface contains methods that are particular to Node objects that can have a parent, but not suitable for DocumentType."><code>NonDocumentTypeChildNode</code></a>. This method is now defined on the former.<br> The <a href="../element" title="The Element interface represents an object of a Document. This interface describes methods and properties common to all kinds of elements. Specific behaviors are described in interfaces which inherit from Element but add additional functionality."><code>Element</code></a> and <a href="../characterdata" title="The CharacterData abstract interface represents a Node object that contains characters. This is an abstract interface, meaning there aren't any object of type CharacterData: it is implemented by other interfaces, like Text, Comment, or ProcessingInstruction which aren't abstract."><code>CharacterData</code></a> interfaces implemented the new interface.</td> </tr> <tr> <td><a href="http://www.w3.org/TR/ElementTraversal/#attribute-previousElementSibling" class="external" lang="en" hreflang="en">Element Traversal Specification<br><small lang="en-US">The definition of 'ElementTraversal.previousElementSibling' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Added its initial definition to the <code>ElementTraversal</code> pure interface and use it on <a href="../element" title="The Element interface represents an object of a Document. This interface describes methods and properties common to all kinds of elements. Specific behaviors are described in interfaces which inherit from Element but add additional functionality."><code>Element</code></a>.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support (on <a href="../element" title="The Element interface represents an object of a Document. This interface describes methods and properties common to all kinds of elements. Specific behaviors are described in interfaces which inherit from Element but add additional functionality."><code>Element</code></a>)</td> <td>4</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/3.5" title="Released on 2009-06-30.">3.5</a> (1.9.1)</td> <td>9</td> <td>9.8</td> <td>4</td> </tr> <tr> <td>Support on <a href="../characterdata" title="The CharacterData abstract interface represents a Node object that contains characters. This is an abstract interface, meaning there aren't any object of type CharacterData: it is implemented by other interfaces, like Text, Comment, or ProcessingInstruction which aren't abstract."><code>CharacterData</code></a>
+</td> <td>29.0</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/25" title="Released on 2013-10-29.">25</a> (25) [1]</td> <td><span style="color: #f00;">No support</span></td> <td>16.0</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support (on <a href="../element" title="The Element interface represents an object of a Document. This interface describes methods and properties common to all kinds of elements. Specific behaviors are described in interfaces which inherit from Element but add additional functionality."><code>Element</code></a>)</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>1.0 (1.9.1)</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>9.8</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> <tr> <td>Support on <a href="../characterdata" title="The CharacterData abstract interface represents a Node object that contains characters. This is an abstract interface, meaning there aren't any object of type CharacterData: it is implemented by other interfaces, like Text, Comment, or ProcessingInstruction which aren't abstract."><code>CharacterData</code></a>
+</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>25.0 (25)</td> <td><span style="color: #f00;">No support</span></td> <td>16.0</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <p>[1] Firefox 25 also added this property to <a href="../documenttype" title="The DocumentType interface represents a Node containing a doctype."><code>DocumentType</code></a>, this was removed in Firefox 28 due to compatibility problems.</p> <h2 id="See_also">See also</h2> <ul> <li>The <a href="../nondocumenttypechildnode" title="The NonDocumentTypeChildNode interface contains methods that are particular to Node objects that can have a parent, but not suitable for DocumentType."><code>NonDocumentTypeChildNode</code></a> pure interface.</li> <li> <div class="syntaxbox">Object types implementing this pure interface: <a href="../characterdata" title="The CharacterData abstract interface represents a Node object that contains characters. This is an abstract interface, meaning there aren't any object of type CharacterData: it is implemented by other interfaces, like Text, Comment, or ProcessingInstruction which aren't abstract."><code>CharacterData</code></a>, and <a href="../element" title="The Element interface represents an object of a Document. This interface describes methods and properties common to all kinds of elements. Specific behaviors are described in interfaces which inherit from Element but add additional functionality."><code>Element</code></a>.</div> </li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling</a>
+  </p>
+</div>

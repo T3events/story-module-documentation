@@ -1,0 +1,66 @@
+<h1>column-gap</h1>  <p>The <strong><code>column-gap</code></strong> CSS property sets the size of the gap between columns for elements which are specified to be displayed as multi-column elements.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>normal</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>multicol elements</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>no</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>the absolute length or the keyword <code>normal</code>
+</td>
+</tr>
+<tr>
+<th scope="row">Animation type</th>
+<td>a <a title="Values of the &lt;length&gt; CSS data type are interpolated as real, floating-point numbers." href="length#Interpolation">length</a>
+</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">/* Keyword value */
+column-gap: normal; 
+
+/* &lt;length&gt; values */
+column-gap: 3px;
+column-gap: 2.5em;
+
+/* Global values */
+column-gap: inherit;
+column-gap: initial;
+column-gap: unset;
+</pre> <h3 id="Values">Values</h3> <dl> <dt><code>normal</code></dt> <dd>Is a keyword indicating to use the browser-defined default spacing between columns. The specification, which most modern browsers follow, recommends that this be equal to a length of <code>1em</code>.</dd> <dt><code>&lt;length&gt;</code></dt> <dd>Is a <a title="The &lt;length&gt; CSS data type denotes distance measurements. It is a &lt;number&gt; immediately followed by a length unit (px, em, pc, in, mm, …). Like for any CSS dimension, there is no space between the unit literal and the number. The length unit is optional after the &lt;number&gt; 0." href="length"><code>&lt;length&gt;</code></a> value defining the size of the gap between columns. It must not be negative, but may be equal to <code>0</code>.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox"><a title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0" href="length">&lt;length&gt;</a> | normal</pre> <h2 id="Examples">Examples</h2> <pre data-language="css">.content-box {
+  border: 10px solid #000000;
+  column-count: 3;
+  column-gap: 20px;
+}
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/css-multicol-1/#column-gap" class="external">CSS Multi-column Layout Module<br><small lang="en-US">The definition of 'column-gap' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span><span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">-webkit</a></span>
+</td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span><span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">-webkit</a></span><br> <span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span>
+</td> <td>1.5 (1.8)<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-moz' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">-moz</a></span><sup>[1]</sup>
+</td> <td>10</td> <td>11.10</td> <td>3.0 (522)<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">-webkit</a></span>
+</td> </tr> <tr> <td>Unprefixed</td> <td>50.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td> </td> <td> </td> <td> </td> <td> </td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span><span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">-webkit</a></span><br> <span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span>
+</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> <tr> <td>Unprefixed</td> <td><span style="color: #f00;">No support</span></td> <td>50.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td> </td> <td> </td> <td> </td> <td> </td> <td>50.0</td> </tr> </tbody> </table> </div> <p>[1] Before Firefox 3 (Gecko 1.9), the default value associated to the <code>normal</code> keyword was <code>0</code> and not <code>1em</code>.</p> <h2 id="See_also">See also</h2> <ul> <li><a title="CSS Reference" href="css_reference">CSS Reference</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap</a>
+  </p>
+</div>

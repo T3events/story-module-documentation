@@ -1,0 +1,25 @@
+<h1>BroadcastChannel.name</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div> <p>The read-only <code><strong>BroadcastChannel.name</strong></code> property returns a <a href="../domstring" title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String."><code>DOMString</code></a>, which uniquely identifies the given channel with its name. This name is passed to the <a href="broadcastchannel" title="The BroadcastChannel() constructor creates a new BroadcastChannel and connects it to the underlying channel."><code>BroadcastChannel()</code></a> constructor at creation time and is therefore read-only.</p> <div class="note">
+<strong>Note:</strong> This feature is available in <a href="../web_workers_api">Web Workers</a>.</div> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">var <em>str</em> = <em>channel</em>.name;
+</pre> <h2 id="Examples">Examples</h2> <pre data-language="js">// Connect to a channel
+var bc = new BroadcastChannel('test_channel');
+
+// More operations (like postMessage, …)
+
+// Log the channel name to the console
+console.log(bc.name); // "test_channel"
+
+// When done, disconnect from the channel
+bc.close();</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://html.spec.whatwg.org/multipage/comms.html#dom-broadcastchannel-name" class="external" lang="en" hreflang="en">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'BroadcastChannel.name' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>54.0</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/38" title="Released on 2015-05-19.">38</a> (38)</td> <td><span style="color: #f00;">No support</span></td> <td>41</td> <td><span style="color: #f00;">No support</span></td> </tr> <tr> <td>Available in workers</td> <td>54.0</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/38" title="Released on 2015-05-19.">38</a> (38)</td> <td><span style="color: #f00;">No support</span></td> <td>41</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>38.0 (38)</td> <td><span style="color: #f00;">No support</span></td> <td>41</td> <td><span style="color: #f00;">No support</span></td> <td>54.0</td> </tr> <tr> <td>Available in workers</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>38.0 (38)</td> <td><span style="color: #f00;">No support</span></td> <td>41</td> <td><span style="color: #f00;">No support</span></td> <td>54.0</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li>
+<a href="../broadcastchannel" title="The BroadcastChannel interface represents a named channel that any browsing context of a given origin can subscribe to. It allows communication between different documents (in different windows, tabs, frames or iframes) of the same origin. Messages are broadcasted via a message event fired at all BroadcastChannel objects listening to the channel."><code>BroadcastChannel</code></a>, the interface it belongs to.</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/name$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/name" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel/name</a>
+  </p>
+</div>

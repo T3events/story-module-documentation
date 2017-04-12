@@ -1,0 +1,58 @@
+<h1>AudioBufferSourceNode.loopEnd</h1> <div> <p>The <code>loopEnd</code> property of the <a title="The AudioBufferSourceNode interface represents an audio source consisting of in-memory audio data, stored in an AudioBuffer. It is an AudioNode that acts as an audio source." href="../audiobuffersourcenode"><code>AudioBufferSourceNode</code></a> interface is a double value indicating, in seconds, where in the <a title="Objects of these types are designed to hold small audio snippets, typically less than 45 s. For longer sounds, objects implementing the MediaElementAudioSourceNode are more suitable. The buffer contains data in the following format:  non-interleaved IEEE754 32-bit linear PCM with a nominal range between -1 and +1, that is, 32bits floating point buffer, with each samples between -1.0 and 1.0. If the AudioBuffer has multiple channels, they are stored in separate buffer." href="../audiobuffer"><code>AudioBuffer</code></a> the restart of the play must end (and then loop again.)</p> </div> <p>The <code>loopEnd</code> property's default value is <code>0</code>.</p> <h2 id="Syntax">Syntax</h2> <pre data-language="js">var source = audioCtx.createBufferSource();
+source.loopEnd = 3;
+</pre> <h3 id="Value">Value</h3> <p>A double.</p> <h2 id="Example">Example</h2> <p>In this example, the <a title="This is the preferred method of creating an audio source for Web Audio API from an audio track." href="../audiocontext/decodeaudiodata"><code>AudioContext.decodeAudioData</code></a> function is used to decode an audio track and put it into an <a title="The AudioBufferSourceNode interface represents an audio source consisting of in-memory audio data, stored in an AudioBuffer. It is an AudioNode that acts as an audio source." href="../audiobuffersourcenode"><code>AudioBufferSourceNode</code></a>. Buttons are provided to play and stop the audio playback, and slider controls are used to change the <code>playbackRate</code>, <code>loopStart</code> and <code>loopEnd</code> properties on the fly.</p> <p>When the audio is played to the end, it loops, but you can control how long the loops last by altering <code>loopStart</code> and <code>loopEnd</code>. For example, if you set their values to 20 and 25, respectively, the audio will start to loop between 20 and 25 seconds into the track.</p> <div class="note"> <p><strong>Note</strong>: For a full working example, see<a href="http://mdn.github.io/decode-audio-data/" class="external external-icon"> this code running live</a>, or <a href="https://github.com/mdn/decode-audio-data" class="external external-icon">view the source</a>.</p> </div> <pre data-language="js">function getData() {
+  source = audioCtx.createBufferSource();
+  request = new XMLHttpRequest();
+
+  request.open('GET', 'viper.ogg', true);
+
+  request.responseType = 'arraybuffer';
+
+
+  request.onload = function() {
+    var audioData = request.response;
+
+    audioCtx.decodeAudioData(audioData, function(buffer) {
+        myBuffer = buffer;
+        songLength = buffer.duration;
+        source.buffer = myBuffer;
+        source.playbackRate.value = playbackControl.value;
+        source.connect(audioCtx.destination);
+        source.loop = true;
+
+        loopstartControl.setAttribute('max', Math.floor(songLength));
+        loopendControl.setAttribute('max', Math.floor(songLength));
+      },
+
+      function(e){"Error with decoding audio data" + e.err});
+
+  }
+
+  request.send();
+}
+
+  ...
+
+loopstartControl.oninput = function() {
+  source.loopStart = loopstartControl.value;
+  loopstartValue.innerHTML = loopstartControl.value;
+}
+
+loopendControl.oninput = function() {
+  source.loopEnd = loopendControl.value;
+  loopendValue.innerHTML = loopendControl.value;
+}</pre> <h2 id="Specification">Specification</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://webaudio.github.io/web-audio-api/#widl-AudioBufferSourceNode-loopEnd" class="external">Web Audio API<br><small lang="en-US">The definition of 'loopEnd' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>14 <span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">webkit</a></span>
+</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>23</td> <td><span style="color: #f00;">No support</span></td> <td>15 <span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">webkit</a></span><br> 22 (unprefixed)</td> <td>6 <span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">webkit</a></span>
+</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>28 <span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">webkit</a></span>
+</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>25</td> <td>1.2</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>6 <span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">webkit</a></span>
+</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="../web_audio_api/using_web_audio_api">Using the Web Audio API</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopEnd$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopEnd" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopEnd</a>
+  </p>
+</div>

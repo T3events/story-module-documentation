@@ -1,0 +1,81 @@
+<h1>mask-position</h1><div><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div></div>  <p>The <strong><code>mask-position</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property sets the initial position, relative to the mask position layer defined by <a href="mask-origin" title="The mask-origin CSS property determines the origin of a mask."><code>mask-origin</code></a> for each defined mask image.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>center</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>all elements; In SVG, it applies to container elements excluding the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs" title="SVG allows graphical objects to be defined for later reuse. It is recommended that, wherever possible, referenced elements be defined inside of a &lt;defs&gt; element. Defining these elements inside of a &lt;defs&gt; element promotes understandability of the SVG content and thus promotes accessibility. Graphical elements defined in a &lt;defs&gt; element will not be directly rendered. You can use a &lt;use&gt; element to render those elements wherever you want on the viewport."><code>&lt;defs&gt;</code></a> element and all graphics elements</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>no</td>
+</tr>
+<tr>
+<th scope="row">Percentages</th>
+<td>refer to size of mask painting area minus size of mask layer image (see the text for <a href="background-position" title="The background-position CSS property sets the initial position for each defined background image, relative to the background position layer defined by background-origin."><code>background-position</code></a>)</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>Consists of two keywords representing the origin and two offsets from that origin, each given as an absolute length (if given a &lt;length&gt;), otherwise as a percentage.</td>
+</tr>
+<tr>
+<th scope="row">Animation type</th>
+<td>a repeatable list of , a simple list of , a <a href="length#Interpolation" title="Values of the &lt;length&gt; CSS data type are interpolated as real, floating-point numbers.">length</a>, <a href="percentage#Interpolation" title="Values of the &lt;percentage&gt; CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc();</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">/* Keyword values */
+mask-position: top;
+mask-position: bottom;
+mask-position: left;
+mask-position: right;
+mask-position: center;
+
+/*  values */
+mask-position: 25% 75%;
+
+/*  values */
+mask-position: 0px 0px;
+mask-position: 1cm 2cm;
+mask-position: 10ch 8em;
+
+/* Multiple values */
+mask-position: 0px 0px, center;
+
+/* Global values */
+mask-position: inherit;
+mask-position: initial;
+mask-position: unset;
+</pre> <h3 id="Values">Values</h3> <dl> <dt><code>&lt;position&gt;</code></dt> <dd>Is a <a href="position_value" title="The &lt;position&gt; CSS data type denotes a coordinate in a 2D space used to set a location relative to a box."><code>&lt;position&gt;</code></a>, that is one to four values representing a 2D position regarding the edges of the element's box. Relative or absolute offsets can be given. Note that the position can be set outside of the element's box.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox"><a href="position_value" title="">&lt;position&gt;</a><a href="value_definition_syntax#Hash_mark_()" title="Hash mark">#</a><p>where <br><span id="position">&lt;position&gt;</span> = <a href="value_definition_syntax#Brackets" title="Brackets">[</a><a href="value_definition_syntax#Brackets" title="Brackets">[</a> left | center | right | top | bottom | <a href="#length-percentage">&lt;length-percentage&gt;</a> <a href="value_definition_syntax#Brackets" title="Brackets">]</a> | <a href="value_definition_syntax#Brackets" title="Brackets">[</a> left | center | right | <a href="#length-percentage">&lt;length-percentage&gt;</a> <a href="value_definition_syntax#Brackets" title="Brackets">]</a> <a href="value_definition_syntax#Brackets" title="Brackets">[</a> top | center | bottom | <a href="#length-percentage">&lt;length-percentage&gt;</a> <a href="value_definition_syntax#Brackets" title="Brackets">]</a> | <a href="value_definition_syntax#Brackets" title="Brackets">[</a> center | <a href="value_definition_syntax#Brackets" title="Brackets">[</a> left | right <a href="value_definition_syntax#Brackets" title="Brackets">]</a> <a href="#length-percentage">&lt;length-percentage&gt;</a><a href="value_definition_syntax#Question_mark_()" title="Question mark">?</a> <a href="value_definition_syntax#Brackets" title="Brackets">]</a> <a href="value_definition_syntax#Double_ampersand" title="Double ampersand">&amp;&amp;</a> <a href="value_definition_syntax#Brackets" title="Brackets">[</a> center | <a href="value_definition_syntax#Brackets" title="Brackets">[</a> top | bottom <a href="value_definition_syntax#Brackets" title="Brackets">]</a> <a href="#length-percentage">&lt;length-percentage&gt;</a><a href="value_definition_syntax#Question_mark_()" title="Question mark">?</a> <a href="value_definition_syntax#Brackets" title="Brackets">]</a><a href="value_definition_syntax#Brackets" title="Brackets">]</a></p><p>where <br><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> | <a href="percentage" title="">&lt;percentage&gt;</a></p></pre> <h2 id="Example">Example</h2> <pre data-language="css">.exampleOne {
+  mask-image: url(mask.png);
+  mask-position: bottom right;
+}
+
+.exampleTwo {
+  mask-image: url(mask.png);
+  mask-position: 25%;
+} 
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://drafts.fxtf.org/css-masking-1/#the-mask-position" class="external" lang="en" hreflang="en">CSS Masking Level 1<br><small lang="en-US">The definition of 'mask-position' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>1.0<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental">-webkit</a></span>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[2]</sup>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>4.0<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental">-webkit</a></span>
+</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <p>[1] Gecko currently doesn't implement this feature. It is only available in Nightly and Dev Edition. See <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1251161" title="Ship CSS positioned mask support on beta &amp; release channels">bug 1251161</a>.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-position$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/mask-position" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/mask-position</a>
+  </p>
+</div>

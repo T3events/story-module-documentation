@@ -1,0 +1,24 @@
+<h1>CSS Images: Implementing image sprites in CSS</h1> <p>Image sprites are used in numerous web apps where multiple images are used. Rather than include each image as a separate image file, it is much more memory and bandwidth-friendly to send them as a single image, so the number of HTTP requests is reduced.</p> <h2 id="Implementation">Implementation</h2> <p>Suppose an image is given to every item with class <code>toolbtn</code>:</p> <pre data-language="css">.toolbtn {
+  background: url(myfile.png);
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}</pre> <p>A background position can be added either as two x, y values after the <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/CSS/url()"><code>url()</code></a> in the background, or as <a title="The background-position CSS property sets the initial position, relative to the background position layer defined by background-origin for each defined background image." href="../background-position"><code>background-position</code></a>. For example:</p> <pre data-language="css">#btn1 {
+  background-position: -20px 0px;
+}
+
+#btn2 {
+  background-position: -40px 0px;
+}</pre> <p>This would move the element with the ID 'btn1' 20 pixels to the left and the element with the ID 'btn2' 40 pixels to the left (assuming they have the class <code>toolbtn</code> assigned and are affected by the image rule above).</p> <p>Similarly, you can also make hover states with:</p> <pre data-language="css">#btn:hover {
+  background-position: <var>&lt;pixels shifted right&gt;</var>px <var>&lt;pixels shifted down&gt;</var>px;
+}</pre> <h2 id="See_also">See also</h2> <p><a href="http://css-tricks.com/snippets/css/perfect-css-sprite-sliding-doors-button/">Full working demo at CSS Tricks</a></p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS</a>
+  </p>
+</div>

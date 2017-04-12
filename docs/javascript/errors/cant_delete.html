@@ -1,0 +1,26 @@
+<h1>Errors: Cant delete</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">TypeError: property "x" is non-configurable and can't be deleted. (Firefox)
+TypeError: Cannot delete property 'x' of #&lt;Object&gt; (Chrome)
+</pre> <h2 id="Error_type">Error type</h2> <p><a href="../global_objects/typeerror" title="The TypeError object represents an error when a value is not of the expected type."><code>TypeError</code></a> in strict mode only.</p> <h2 id="What_went_wrong">What went wrong?</h2> <p>It was attempted to delete a property, but that property is <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Properties">non-configurable</a>. The <code>configurable</code> attribute controls whether the property can be deleted from the object and whether its attributes (other than <code>writable</code>) can be changed.</p> <p>This error happens only in <a href="../strict_mode">strict mode code</a>. In non-strict code, the operation returns <code>false</code>.</p> <h2 id="Examples">Examples</h2> <p>Non-configurable properties are not super common, but they can be created using <a href="../global_objects/object/defineproperty" title="The Object.defineProperty() method defines a new property directly on an object, or modifies an existing property on an object, and returns the object."><code>Object.defineProperty()</code></a> or <a href="../global_objects/object/freeze" title="The Object.freeze() method freezes an object: that is, prevents new properties from being added to it; prevents existing properties from being removed; and prevents existing properties, or their enumerability, configurability, or writability, from being changed.  The method returns the object being frozen."><code>Object.freeze()</code></a>.</p> <pre data-language="js">'use strict';
+var obj = Object.freeze({name: 'Elsa', score: 157});
+delete obj.score;  // TypeError
+
+'use strict';
+var obj = {};
+Object.defineProperty(obj, 'foo', {value: 2, configurable: false});
+delete obj.foo;  // TypeError
+
+'use strict';
+var frozenArray = Object.freeze([0, 1, 2]);
+frozenArray.pop();  // TypeError
+</pre> <p>There are also a few non-configurable properties built into JavaScript. Maybe you tried to delete a mathematical constant.</p> <pre data-language="js">'use strict';
+delete Math.PI;  // TypeError</pre> <h2 id="See_also">See also</h2> <ul> <li><a href="../operators/delete">delete operator</a></li> <li><a href="../global_objects/object/defineproperty" title="The Object.defineProperty() method defines a new property directly on an object, or modifies an existing property on an object, and returns the object."><code>Object.defineProperty()</code></a></li> <li><a href="../global_objects/object/freeze" title="The Object.freeze() method freezes an object: that is, prevents new properties from being added to it; prevents existing properties from being removed; and prevents existing properties, or their enumerability, configurability, or writability, from being changed.  The method returns the object being frozen."><code>Object.freeze()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Cant_delete$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Cant_delete" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Cant_delete</a>
+  </p>
+</div>

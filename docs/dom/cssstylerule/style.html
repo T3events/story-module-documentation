@@ -1,0 +1,16 @@
+<h1>CSSStyleRule.style</h1>  <p>The <strong><code>CSSRule.style</code></strong> property is the <a title="CSSStyleDeclaration represents a collection of CSS property-value pairs. It is used in a few APIs:" href="../cssstyledeclaration"><code>CSSStyleDeclaration</code></a> interface for the <a href="http://www.w3.org/TR/1998/REC-CSS2-19980512/syndata.html#block" class="external">declaration block</a> of the <a title="An object implementing the CSSRule DOM interface represents a single CSS at-rule. References to a CSSRule-implementing object may be obtained by looking at a CSS style sheet's cssRules list." href="../cssrule"><code>CSSRule</code></a>.</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre class="eval"><em>styleObj</em> = <em>cssRule</em>.style
+</pre> <h2 id="Example" name="Example">Example</h2> <pre data-language="js">function stilo() {
+  alert(document.styleSheets[0].cssRules[0].style.cssText);
+}
+// displays "background-color: gray;"
+</pre> <h2 id="Notes" name="Notes">Notes</h2> <p>The declaration block is that part of the style rule that appears within the braces and that actually provides the style definitions (for the selector, the part that comes before the braces).</p> <h2 id="See_also">See also</h2> <ul> <li><a title="en/DOM/CSS" href="https://developer.mozilla.org/en/CSS/CSS_Reference">DOM CSS Properties</a></li> </ul> <h2 id="Specification" name="Specification">Specification</h2> <p><a href="http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSSStyleRule-style" class="external">DOM Level 2 CSS: styleCSSR</a></p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/style$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/style" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/style</a>
+  </p>
+</div>

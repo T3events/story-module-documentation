@@ -1,0 +1,27 @@
+<h1>GlobalEventHandlers.onpointerout</h1> <p>A <a title="The GlobalEventHandlers mixin describes the event handlers common to several interfaces like HTMLElement, Document, or Window. Each of these interfaces can, of course, add more event handlers in addition to the ones listed below." href="../globaleventhandlers"><code>global event handler</code></a> for the <code><a title="/en-US/docs/Web/Events/pointerout" href="https://developer.mozilla.org/en-US/docs/Web/Events/pointerout">pointerout</a></code> event.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">var <var>outHandler</var> = <var>targetElement</var>.onpointerout;
+</pre> <h3 id="Return_value">Return value</h3> <dl> <dt><code>outHandler</code></dt> <dd>The <em>pointerout</em> event handler for element <code>targetElement</code>.</dd> </dl> <h2 id="Example">Example</h2> <p>This example shows two ways to use <em>onpointerout</em> to set an element's <em>pointerout</em> event handler.</p> <pre data-language="js">&lt;html&gt;
+&lt;script&gt;
+function outHandler(ev) {
+ // Process the pointerout event
+}
+function init() {
+ var el=document.getElementById("target1");
+ el.onpointerout = outHandler;
+}
+&lt;/script&gt;
+&lt;body onload="init();"&gt;
+&lt;div id="target1"&gt; Touch me ... &lt;/div&gt;
+&lt;div id="target2" onpointerout="outHandler(event)"&gt; Touch me ... &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://w3c.github.io/pointerevents/#widl-GlobalEventHandlers-onpointerout" class="external">Pointer Events – Level 2<br><small lang="en-US">The definition of 'onpointerout' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Non-stable version</td> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.w3.org/TR/pointerevents/#widl-GlobalEventHandlers-onpointerout" class="external">Pointer Events<br><small lang="en-US">The definition of 'onpointerout' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>55.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>10</td> <td>42</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>55.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>10</td> <td>42</td> <td><span style="color: #f00;">No support</span></td> <td>55.0</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><code><a title="/en-US/docs/Web/Events/pointerout" href="https://developer.mozilla.org/en-US/docs/Web/Events/pointerout">pointerout</a></code></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerout$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerout" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerout</a>
+  </p>
+</div>

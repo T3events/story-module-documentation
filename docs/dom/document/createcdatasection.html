@@ -1,0 +1,22 @@
+<h1>document.createCDATASection</h1> <p><code>createCDATASection()</code> creates a new CDATA section node, and returns it.</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre class="syntaxbox"><var>CDATASectionNode</var> = document.createCDATASection(data) 
+</pre> <ul> <li>
+<code>CDATASectionNode</code> is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/CDATASection">CDATA Section</a> node.</li> <li>
+<code>data</code> is a string containing the data to be added to the CDATA Section.</li> </ul> <h2 id="Example" name="Example">Example</h2> <pre data-language="js">var docu = new DOMParser().parseFromString('&lt;xml&gt;&lt;/xml&gt;',  "application/xml")
+
+var cdata = docu.createCDATASection('Some &lt;CDATA&gt; data &amp; then some');
+
+docu.getElementsByTagName('xml')[0].appendChild(cdata);
+
+alert(new XMLSerializer().serializeToString(docu));
+// Displays: &lt;xml&gt;&lt;![CDATA[Some &lt;CDATA&gt; data &amp; then some]]&gt;&lt;/xml&gt;
+</pre> <h2 id="Notes" name="Notes">Notes</h2> <ul> <li>This will only work with XML, not HTML documents (as HTML documents do not support CDATA sections); attempting it on an HTML document will throw <code>NOT_SUPPORTED_ERR</code>.</li> <li>Will throw a <code>NS_ERROR_DOM_INVALID_CHARACTER_ERR</code> exception if one tries to submit the closing CDATA sequence ("]]&gt;") as part of the data, so unescaped user-provided data cannot be safely used without with this method getting this exception (<code><a href="createtextnode">createTextNode()</a></code> can often be used in its place).</li> </ul> <h2 id="Specification" name="Specification">Specification</h2> <ul> <li><a href="http://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#method-createCDATASection">createCDATASection</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/createCDATASection$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/createCDATASection" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/document/createCDATASection</a>
+  </p>
+</div>

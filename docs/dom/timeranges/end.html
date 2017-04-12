@@ -1,0 +1,26 @@
+<h1>TimeRanges.end</h1> <p>Returns the time offset at which a specified time range ends.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>endTime</em> = TimeRanges.end(index) 
+</pre> <h3 id="Parameters">Parameters</h3> <ul> <li>
+<code>index</code> is the range number to return the ending time for.</li> </ul> <h3 id="Exceptions">Exceptions</h3> <dl> <dt>INDEX_SIZE_ERR</dt> <dd>A <code>DOMException</code> thrown if the specified index doesn't correspond to an existing range.</dd> </dl> <h2 id="Example">Example</h2> <p>Given a video element with the ID "myVideo":</p> <pre data-language="js">var v = document.GetElementById("myVideo");
+
+var buf = v.buffered;
+
+var numRanges = buf.length;
+
+if (buf.length == 1) {
+  // only one range
+  if (buf.start(0) == 0 &amp;&amp; buf.end(0) == v.duration) {
+    // The one range starts at the beginning and ends at
+    // the end of the video, so the whole thing is loaded
+  }
+}
+</pre> <p>This example looks at the time ranges and looks to see if the entire video has been loaded. Obviously you could simply observe the <code>ended</code> event on the video, but this is a good example of how <code>TimeRanges</code> works.</p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://html.spec.whatwg.org/multipage/embedded-content.html#dom-timeranges-end" class="external" lang="en" hreflang="en">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'TimeRanges.end()' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td>Initial definition</td> </tr> </tbody> </table><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/TimeRanges/end$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/TimeRanges/end" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/TimeRanges/end</a>
+  </p>
+</div>

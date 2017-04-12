@@ -1,0 +1,56 @@
+<h1>table-layout</h1>  <p>The <strong><code>table-layout</code></strong> CSS property defines the algorithm to be used to lay out table cells, rows, and columns.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>auto</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>
+<code>table</code> and <code>inline-table</code> elements</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>no</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Animation type</th>
+<td>discrete</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre data-language="css">/* Keyword values */
+table-layout: auto;
+table-layout: fixed;
+
+/* Global values */
+table-layout: inherit;
+table-layout: initial;
+table-layout: unset;
+</pre> <h3 name="Values" id="Values">Values</h3> <dl> <dt><a href="auto" title="The width CSS property specifies the width of the content area of an element. The content area is inside the padding, border, and margin of the element."><code>auto</code></a></dt> <dd>An automatic table layout algorithm is commonly used by most browsers for table layout. The width of the table and its cells depends on the content thereof.</dd> <dt><code>fixed</code></dt> <dd>Table and column widths are set by the widths of <code>table</code> and <code>col</code> elements or by the width of the first row of cells. Cells in subsequent rows do not affect column widths.<br> <br> Under the "fixed" layout method, the entire table can be rendered once the first table row has been downloaded and analyzed. This can speed up rendering time over the "automatic" layout method, but subsequent cell content may not fit in the column widths provided. Any cell that has content that overflows uses the <a href="overflow" title="The overflow property specifies whether to clip content, render scrollbars or just display content when it overflows its block level container."><code>overflow</code></a> property to determine whether to clip the overflow content, but only if the table has a known width, otherwise it won't overflow the cells.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox">auto | fixed</pre> <h2 name="Examples" id="Examples">Examples</h2> <pre data-language="css">.contentbox {
+  table-layout: fixed;
+}
+</pre> <h2 name="Specifications" id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="http://www.w3.org/TR/CSS2/tables.html#width-layout" class="external" lang="en" hreflang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'table-layout' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 name="Browser_compatibility" id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>
+<span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span> - 14.0 + </td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>1.0 (1.7 or earlier)</td> <td>5.0</td> <td>7.0</td> <td>1.0</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>
+<span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span> 1.5</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>
+<span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span> 9.8.0</td> <td>
+<span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span> 3.0</td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout</a>
+  </p>
+</div>

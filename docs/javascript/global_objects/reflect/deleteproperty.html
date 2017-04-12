@@ -1,0 +1,27 @@
+<h1>Reflect.deleteProperty</h1> <p>The static <code><strong>Reflect</strong></code><strong><code>.deleteProperty()</code></strong> method allows to delete properties. It is like the <a href="../../operators/delete"><code>delete</code> operator</a> as a function.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Reflect.deleteProperty(target, propertyKey)
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><code>target</code></dt> <dd>The target object on which to delete the property.</dd> <dt><code>propertyKey</code></dt> <dd>The name of the property to be deleted.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>A <a title="The Boolean object is an object wrapper for a boolean value." href="../boolean"><code>Boolean</code></a> indicating whether or not the property was successfully deleted.</p> <h3 id="Exceptions">Exceptions</h3> <p>A <a title="The TypeError object represents an error when a value is not of the expected type." href="../typeerror"><code>TypeError</code></a>, if <code>target</code> is not an <a title="The Object constructor creates an object wrapper." href="../object"><code>Object</code></a>.</p> <h2 id="Description">Description</h2> <p>The <code>Reflect.deleteProperty</code> method allows you to delete a property on an object. It returns a <a title="The Boolean object is an object wrapper for a boolean value." href="../boolean"><code>Boolean</code></a> indicating whether or not the property was successfully deleted. It is almost identical to the non-strict <a href="../../operators/delete"><code>delete</code> operator</a>.</p> <h2 id="Examples">Examples</h2> <h3 id="Using_Reflect.deleteProperty()">Using <code>Reflect.deleteProperty()</code>
+</h3> <pre data-language="js">var obj = { x: 1, y: 2 };
+Reflect.deleteProperty(obj, 'x'); // true
+obj; // { y: 2 }
+
+var arr = [1, 2, 3, 4, 5];
+Reflect.deleteProperty(arr, '3'); // true
+arr; // [1, 2, 3, , 5]
+
+// Returns true if no such property exists
+Reflect.deleteProperty({}, 'foo'); // true
+
+// Returns false if a property is unconfigurable
+Reflect.deleteProperty(Object.freeze({foo: 1}), 'foo'); // false
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-reflect.deleteproperty" class="external">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Reflect.deleteProperty' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://tc39.github.io/ecma262/#sec-reflect.deleteproperty" class="external">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Reflect.deleteProperty' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>49</td> <td>
+<a title="Released on 2015-11-03." href="https://developer.mozilla.org/en-US/Firefox/Releases/42">42</a> (42)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>10</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>49</td> <td>42.0 (42)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>10</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a title="Reflect is a built-in object that provides methods for interceptable JavaScript operations. The methods are the same as those of proxy handlers. Reflect is not a function object, so it's not constructible." href="../reflect"><code>Reflect</code></a></li> <li><a href="../../operators/delete"><code>delete</code> operator</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/deleteProperty$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/deleteProperty" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/deleteProperty</a>
+  </p>
+</div>

@@ -1,0 +1,70 @@
+<h1>Performance.getEntries</h1> <p>The <strong><code>getEntries()</code></strong> method returns a list of <a title="The PerformanceEntry object encapsulates a single performance metric that is part of the performance timeline. A performance entry can be directly created by making a performance mark or measure (for example by calling the mark() method) at an explicit point in an application. Performance entries are also created in indirect ways such as loading a resource (such as an image)." href="../performanceentry"><code>PerformanceEntry</code></a> objects for a given <em>filter</em>. The list's members (<em>entries</em>) can be created by making performance <em>marks</em> or <em>measures</em> (for example by calling the <a title="The mark() method creates a timestamp in the browser's performance entry buffer with the given name. The application defined timestamp can be retrieved by one of the Performance interface's getEntries*() methods (getEntries(), getEntriesByName() or getEntriesByType())." href="mark"><code>mark()</code></a> method) at explicit points in time.</p> <p class="note">This method is exposed to <a title="The window object represents a window containing a DOM document; the document property points to the DOM document loaded in that window." href="../window"><code>Window</code></a> and <a title="The Worker interface of the Web Workers API represents a background task that can be easily created and can send messages back to its creator. Creating a worker is as simple as calling the Worker() constructor and specifying a script to be run in the worker thread." href="../worker"><code>Worker</code></a> interfaces.</p> <h2 id="Syntax">Syntax</h2> <p>General syntax:</p> <pre class="syntaxbox"><em>entries</em> = window.performance.getEntries();
+<em>entries</em> = window.performance.getEntries(<em>PerformanceEntryFilterOptions</em>);
+</pre> <p>Specific usage:</p> <pre class="syntaxbox">entries = performance.getEntries({name: "entry_name", entryType: "mark"});
+</pre> <h3 id="Arguments">Arguments</h3> <dl> <dt>PerformanceEntryFilterOptions <span class="inlineIndicator optional optionalInline">Optional</span>
+</dt> </dl> <dl> <dd>
+<code>PerformanceEntryFilterOptions</code> is a dictionary with the following fields: <ul> <li>
+<code>"name"</code>, the name of a performance entry.</li> <li>
+<code>"entryType"</code>, the entry type. The valid entry types are listed in the <a title="The entryType property returns the performance entry's type. The valid entryType values are:" href="../performanceentry/entrytype"><code>PerformanceEntry.entryType</code></a> method.</li> <li>
+<code>"initiatorType"</code>, the type of the initiating resource (for example an HTML element). The values are defined by the <a title="The initiatorType property is a string that represents the type of resource that initiated the performance event. The value of this string is as follows:" href="../performanceresourcetiming/initiatortype"><code>PerformanceResourceTiming.initiatorType</code></a> interface.</li> </ul> </dd> </dl> <h3 id="Return_Value" name="Return_Value">Return value</h3> <dl> <dt>entries</dt> <dd>A list of <a title="The PerformanceEntry object encapsulates a single performance metric that is part of the performance timeline. A performance entry can be directly created by making a performance mark or measure (for example by calling the mark() method) at an explicit point in an application. Performance entries are also created in indirect ways such as loading a resource (such as an image)." href="../performanceentry"><code>PerformanceEntry</code></a> objects that meets the criteria of the filter. The items will be in chronological order based on the entries' <a title="The startTime property returns the first recorded timestamp of the performance entry." href="../performanceentry/starttime"><code>startTime</code></a>. If no objects that meet the filter are found, an empty list is returned. If no argument is given, all entries are returned.</dd> </dl> <h2 id="Example">Example</h2> <pre data-language="js">function use_PerformanceEntry_methods() {
+  log("PerformanceEntry tests ...");
+
+  if (performance.mark === undefined) {
+    log("... performance.mark Not supported");
+    return;
+  }
+
+  // Create some performance entries via the mark() method
+  performance.mark("Begin");
+  do_work(50000);
+  performance.mark("End");
+  performance.mark("Begin");
+  do_work(100000);
+  performance.mark("End");
+  do_work(200000);
+  performance.mark("End");
+
+  // Use getEntries() to iterate through the each entry
+  var p = performance.getEntries();
+  for (var i=0; i &lt; p.length; i++) {
+    log("Entry[" + i + "]");
+    check_PerformanceEntry(p[i]);
+  }
+
+  // Use getEntries(name, entryType) to get specific entries
+  p = performance.getEntries({name : "Begin", entryType: "mark"});
+  for (var i=0; i &lt; p.length; i++) {
+    log("Begin[" + i + "]");
+    check_PerformanceEntry(p[i]);
+  }
+
+  // Use getEntriesByType() to get all "mark" entries
+  p = performance.getEntriesByType("mark");
+  for (var i=0; i &lt; p.length; i++) {
+    log ("Mark only entry[" + i + "]: name = " + p[i].name + 
+         "; startTime = " + p[i].startTime + 
+         "; duration  = " + p[i].duration);
+  }
+
+  // Use getEntriesByName() to get all "mark" entries named "Begin"
+  p = performance.getEntriesByName("Begin", "mark");
+  for (var i=0; i &lt; p.length; i++) {
+    log ("Mark and Begin entry[" + i + "]: name = " + p[i].name + 
+         "; startTime = " + p[i].startTime + 
+         "; duration  = " + p[i].duration);
+  }
+}
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://w3c.github.io/performance-timeline/#dom-performance-getentries" class="external">Performance Timeline Time Level 2<br><small lang="en-US">The definition of 'getEntries()' in that specification.</small></a></td> <td><span class="spec-ED">Editor's Draft</span></td> <td>
+<code>getEntries()</code> method has an optional argument.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.w3.org/TR/performance-timeline/#dom-performance-getentries" class="external">Performance Timeline<br><small lang="en-US">The definition of 'getEntries()' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support.</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> <tr> <td>
+<code>getEntries()</code> method has an optional argument.</td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th><strong>Firefox OS</strong></th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>25.0 (25.0)</td> <td>1.2 (25.0)</td> <td>10.0</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> <tr> <td>
+<code>getEntries()</code> method has an optional argument.</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntries$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntries" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/Performance/getEntries</a>
+  </p>
+</div>

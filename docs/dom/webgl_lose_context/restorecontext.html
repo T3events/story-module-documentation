@@ -1,0 +1,43 @@
+<h1>ext.restoreContext</h1> <p>The <strong>WEBGL_lose_context.restoreContext()</strong> method is part of the <a href="../webgl_api">WebGL API</a> and allows you to simulate restoring the context of a <a title="The WebGLRenderingContext interface provides the OpenGL ES 2.0 rendering context for the drawing surface of an HTML &lt;canvas&gt; element." href="../webglrenderingcontext"><code>WebGLRenderingContext</code></a> object.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">gl.getExtension('WEBGL_lose_context').restoreContext();</pre> <h3 id="Errors_thrown">Errors thrown</h3> <ul> <li>
+<code>INVALID_OPERATION</code> if the context was not lost.</li> </ul> <h2 id="Examples">Examples</h2> <p>With this method, you can simulate the <code><a title="/en-US/docs/Web/Events/webglcontextrestored" href="https://developer.mozilla.org/en-US/docs/Web/Events/webglcontextrestored">webglcontextrestored</a></code> event:</p> <pre data-language="js">var canvas = document.getElementById('canvas');
+var gl = canvas.getContext('webgl');
+
+canvas.addEventListener('webglcontextrestored', function(e) {
+  console.log(e); 
+}, false);
+
+gl.getExtension('WEBGL_lose_context').restoreContext();
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://www.khronos.org/registry/webgl/extensions/WEBGL_lose_context/" class="external">WEBGL_lose_context<br><small lang="en-US">The definition of 'WEBGL_lose_context.loseContext' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>19.0</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The WebGLRenderingContext.isContextLost() method returns a Boolean indicating whether or not the WebGL context has been lost." href="../webglrenderingcontext/iscontextlost"><code>WebGLRenderingContext.isContextLost()</code></a></li> <li>Events: <code><a title="/en-US/docs/Web/Events/webglcontextlost" href="https://developer.mozilla.org/en-US/docs/Web/Events/webglcontextlost">webglcontextlost</a></code>, <code><a title="/en-US/docs/Web/Events/webglcontextrestored" href="https://developer.mozilla.org/en-US/docs/Web/Events/webglcontextrestored">webglcontextrestored</a></code>, <code><a title="/en-US/docs/Web/Events/webglcontextcreationerror" href="https://developer.mozilla.org/en-US/docs/Web/Events/webglcontextcreationerror">webglcontextcreationerror</a></code>
+</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_lose_context/restoreContext$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_lose_context/restoreContext" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/WEBGL_lose_context/restoreContext</a>
+  </p>
+</div>

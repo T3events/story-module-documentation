@@ -1,0 +1,35 @@
+<h1>Cookie</h1> <p>The <code>Cookie</code> HTTP request header contains stored <a href="../cookies">HTTP cookies</a> previously sent by the server with the <a title="The Set-Cookie HTTP response header is used to send cookies from the server to the user agent." href="set-cookie"><code>Set-Cookie</code></a> header.</p> <p>The <code>Cookie</code> header might be omitted entirely, if the privacy setting of the browser are set to block them, for example.</p> <table class="properties"> <tbody> <tr> <th scope="row">Header type</th> <td><a title="Request header: A request header is an HTTP header that can be used in an HTTP request, and that doesn't relate to the content of the message. Request headers, like Accept, Accept-*, or If-* allow to perform conditional requests; others like Cookie, User-Agent or Referer precise the context so that the server can tailor the answer." href="https://developer.mozilla.org/en-US/docs/Glossary/Request_header" class="glossaryLink">Request header</a></td> </tr> <tr> <th scope="row"><a title="Forbidden header name: A forbidden header name is an HTTP header name that cannot be modified programmatically." href="https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name" class="glossaryLink">Forbidden header name</a></th> <td>yes</td> </tr> </tbody> </table> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Cookie: &lt;cookie-list&gt;
+Cookie: name=value
+Cookie: name=value; name2=value2; name3=value3</pre> <dl> <dt>&lt;cookie-list&gt;</dt> <dd>A list of name-value pairs in the form of <code>&lt;cookie-name&gt;=&lt;cookie-value&gt;</code>. Pairs in the list are separated by a semi-colon and a space (<code>'; '</code>).</dd> </dl> <h2 id="Examples">Examples</h2> <pre>Cookie: PHPSESSID=298zf09hf012fh2; csrftoken=u32t4o3tb3gg43; _gat=1;</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Title</th> </tr> <tr> <td><a href="http://tools.ietf.org/html/6265#section-5.4">RFC 6265, section 5.4: Cookie</a></td> <td>HTTP State Management Mechanism</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Cookie</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Cookie</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The Set-Cookie HTTP response header is used to send cookies from the server to the user agent." href="set-cookie"><code>Set-Cookie</code></a></li> <li><a title="Get and set the cookies associated with the current document. For a general library see this simple cookie framework." href="https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie"><code>Document.cookie</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie</a>
+  </p>
+</div>

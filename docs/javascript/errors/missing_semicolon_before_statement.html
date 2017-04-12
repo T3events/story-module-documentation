@@ -1,0 +1,25 @@
+<h1>Errors: Missing semicolon before statement</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">SyntaxError: missing ; before statement
+</pre> <h2 id="Error_type">Error type</h2> <p><a title="The SyntaxError object represents an error when trying to interpret syntactically invalid code." href="../global_objects/syntaxerror"><code>SyntaxError</code></a>.</p> <h2 id="What_went_wrong">What went wrong?</h2> <p>There is a semicolon (<code>;</code>) missing somewhere. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements">JavaScript statements</a> must be terminated with semicolons. Some of them are affected by <a href="../lexical_grammar#Automatic_semicolon_insertion">automatic semicolon insertion (ASI)</a>, but in this case you need to provide a semicolon, so that JavaScript can parse the source code correctly.</p> <p>However, oftentimes, this error is only a consequence of another error, like not escaping strings properly, or using <code>var</code> wrongly. You might also have too many parenthesis somewhere. Carefully check the syntax when this error is thrown.</p> <h2 id="Examples">Examples</h2> <h3 id="Unescaped_strings">Unescaped strings</h3> <p>This error can occur easily when not escaping strings properly and the JavaScript engine is expecting the end of your string already. For example:</p> <pre data-language="js">var foo = 'Tom's bar';
+// SyntaxError: missing ; before statement</pre> <p>You can use double quotes, or escape the apostrophe:</p> <pre data-language="js">var foo = "Tom's bar";
+var foo = 'Tom\'s bar';
+</pre> <h3 id="Declaring_properties_with_var">Declaring properties with var</h3> <p>You <strong>cannot</strong> declare properties of an object or array with a <code>var</code> declaration.</p> <pre data-language="js">var obj = {};
+var obj.foo = 'hi'; // SyntaxError missing ; before statement
+
+var array = [];
+var array[0] = 'there'; // SyntaxError missing ; before statement
+</pre> <p>Instead, omit the <code>var</code> keyword:</p> <pre data-language="js">var obj = {};
+obj.foo = 'hi';
+
+var array = [];
+array[0] = 'there';
+</pre> <h2 id="See_also">See also</h2> <ul> <li><a href="../lexical_grammar#Automatic_semicolon_insertion">Automatic semicolon insertion (ASI)</a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements">JavaScript statements</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_semicolon_before_statement$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_semicolon_before_statement" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_semicolon_before_statement</a>
+  </p>
+</div>

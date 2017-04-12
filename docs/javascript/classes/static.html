@@ -1,0 +1,61 @@
+<h1>static</h1> <p>The <strong>static</strong> keyword defines a static method for a class.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">static methodName() { ... }</pre> <h2 id="Description">Description</h2> <p>Static method calls are made directly on the class and are not callable on instances of the class. Static methods are often used to create utility functions.</p> <h2 id="Calling_static_methods">Calling static methods</h2> <h3 id="From_another_static_method">From another static method</h3> <p>In order to call a static method within another static method of the same class, you can use the <code><a href="../operators/this">this</a></code> keyword.</p> <pre data-language="js">class StaticMethodCall {
+  static staticMethod() {
+    return 'Static method has been called';
+  }
+  static anotherStaticMethod() {
+    return this.staticMethod() + ' from another static method';
+  }
+}
+StaticMethodCall.staticMethod(); 
+// 'Static method has been called'
+
+StaticMethodCall.anotherStaticMethod(); 
+// 'Static method has been called from another static method'</pre> <h3 id="From_class_constructor_and_other_methods">From class constructor and other methods</h3> <p>Static methods are not directly accessible using the <code><a href="../operators/this">this</a></code> keyword from non-static methods. You need to call them using the class name: <code>CLASSNAME.STATIC_METHOD_NAME()</code> or by calling the method as a property of the <code>constructor</code>: <code>this.constructor.STATIC_METHOD_NAME()</code>.</p> <pre data-language="js">class StaticMethodCall {
+  constructor() {
+    console.log(StaticMethodCall.staticMethod()); 
+    // 'static method has been called.' 
+
+    console.log(this.constructor.staticMethod()); 
+    // 'static method has been called.' 
+  }
+
+  static staticMethod() {
+    return 'static method has been called.';
+  }
+}</pre> <h2 id="Examples">Examples</h2> <p>The following example demonstrates several things:</p> <ol> <li>How a static method is implemented on a class.</li> <li>That a class with a static member can be sub-classed.</li> <li>How a static method can and cannot be called.</li> </ol> <pre data-language="js">class Triple {
+  static triple(n) {
+    if (n === undefined) {
+      n = 1;
+    }
+    return n * 3;
+  }
+}
+
+class BiggerTriple extends Triple {
+  static triple(n) {
+    return super.triple(n) * super.triple(n);
+  }
+}
+
+console.log(Triple.triple());        // 3
+console.log(Triple.triple(6));       // 18
+
+var tp = new Triple();
+
+console.log(BiggerTriple.triple(3));
+// 81 (not affected by parent's instantiation)
+
+console.log(tp.triple());
+// 'tp.triple is not a function'.
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions" class="external">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Class definitions' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://tc39.github.io/ecma262/#sec-class-definitions" class="external">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Class definitions' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>42.0</td> <td>
+<a title="Released on 2016-03-08." href="https://developer.mozilla.org/en-US/Firefox/Releases/45">45</a> (45)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>45.0 (45)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>42.0</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="../operators/class"><code>class</code> expression</a></li> <li><a href="../statements/class"><code>class</code> declaration</a></li> <li><a href="../classes">Classes</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static</a>
+  </p>
+</div>

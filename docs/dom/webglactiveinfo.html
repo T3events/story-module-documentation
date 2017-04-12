@@ -1,0 +1,63 @@
+<h1>WebGLActiveInfo</h1> <p>The <strong>WebGLActiveInfo</strong> interface is part of the <a href="webgl_api">WebGL API</a> and represents the information returned by calling the <a title="The WebGLRenderingContext.getActiveAttrib() method of the WebGL API returns a WebGLActiveInfo object containing size, type, and name of a vertex attribute at a given position in a WebGLProgram." href="webglrenderingcontext/getactiveattrib"><code>WebGLRenderingContext.getActiveAttrib()</code></a> and <a title="The WebGLRenderingContext.getActiveUniform() method of the WebGL API returns a WebGLActiveInfo object containing size, type, and name of a uniform attribute at a given position in a WebGLProgram." href="webglrenderingcontext/getactiveuniform"><code>WebGLRenderingContext.getActiveUniform()</code></a> methods.</p> <h2 id="Properties">Properties</h2> <dl> <dt><a title="The read-only WebGLActiveInfo.name property represents the name of the requested data returned by calling the getActiveAttrib() or getActiveUniform() methods." href="webglactiveinfo/name"><code>WebGLActiveInfo.name</code></a></dt> <dd>The read-only name of the requested variable.</dd> <dt><a title="The read-only WebGLActiveInfo.size property is a Number representing the size of the requested data returned by calling the getActiveAttrib() or getActiveUniform() methods." href="webglactiveinfo/size"><code>WebGLActiveInfo.size</code></a></dt> <dd>The read-only size of the requested variable.</dd> <dt><a title="The read-only WebGLActiveInfo.type property represents the type of the requested data returned by calling the getActiveAttrib() or getActiveUniform() methods." href="webglactiveinfo/type"><code>WebGLActiveInfo.type</code></a></dt> <dd>The read-only type of the requested variable.</dd> </dl> <h2 id="Examples">Examples</h2> <p>A <code>WebGLActiveInfo</code> object is returned by:</p> <ul> <li><a title="The WebGLRenderingContext.getActiveAttrib() method of the WebGL API returns a WebGLActiveInfo object containing size, type, and name of a vertex attribute at a given position in a WebGLProgram." href="webglrenderingcontext/getactiveattrib"><code>WebGLRenderingContext.getActiveAttrib()</code></a></li> <li>
+<a title="The WebGLRenderingContext.getActiveUniform() method of the WebGL API returns a WebGLActiveInfo object containing size, type, and name of a uniform attribute at a given position in a WebGLProgram." href="webglrenderingcontext/getactiveuniform"><code>WebGLRenderingContext.getActiveUniform()</code></a> or</li> <li><a title="The WebGL2RenderingContext.getTransformFeedbackVarying() method of the WebGL 2 API returns information about varying variables from WebGLTransformFeedback buffers." href="webgl2renderingcontext/gettransformfeedbackvarying"><code>WebGL2RenderingContext.getTransformFeedbackVarying()</code></a></li> </ul> <pre data-language="js">WebGLActiveInfo? getActiveAttrib(WebGLProgram? program, GLuint index); 
+WebGLActiveInfo? getActiveUniform(WebGLProgram? program, GLuint index);
+WebGLActiveInfo? getTransformFeedbackVarying(WebGLProgram? program, GLuint index)
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.11">WebGL 1.0<br><small lang="en-US">The definition of 'WebGLActiveInfo' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody>
+<tr>
+<td>Basic Support</td>
+<td>9</td>
+<td>12</td>
+<td>4.0</td>
+<td>11</td>
+<td>12</td>
+<td>5.1</td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+<tr>
+<td>Available in workers</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td>
+<span style="color: #f00;">No support</span><a href="#note-1"><strong><sup>1</sup></strong></a>
+</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+</tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody>
+<tr>
+<td>Basic Support</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>25</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>11</td>
+<td>12</td>
+<td>8.1</td>
+</tr>
+<tr>
+<td>Available in workers</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+</tbody>
+</table></div><p id="note-1">1. This feature is experimentally implemented since Firefox 44; to activate it, in about:config, set gfx.offscreencanvas.enabled to true</p> <h2 id="See_also">See also</h2> <ul> <li><a title="The WebGLRenderingContext.getActiveAttrib() method of the WebGL API returns a WebGLActiveInfo object containing size, type, and name of a vertex attribute at a given position in a WebGLProgram." href="webglrenderingcontext/getactiveattrib"><code>WebGLRenderingContext.getActiveAttrib()</code></a></li> <li><a title="The WebGLRenderingContext.getActiveUniform() method of the WebGL API returns a WebGLActiveInfo object containing size, type, and name of a uniform attribute at a given position in a WebGLProgram." href="webglrenderingcontext/getactiveuniform"><code>WebGLRenderingContext.getActiveUniform()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo</a>
+  </p>
+</div>

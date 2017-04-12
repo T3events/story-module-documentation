@@ -1,0 +1,24 @@
+<h1>arguments.caller</h1> <p>The obsolete <strong><code>arguments.caller</code></strong> property used to provide the function that invoked the currently executing function. This property has been removed and no longer works.</p> <h2 id="Description">Description</h2> <p>This property is not available anymore, but you can still use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/caller" title="The function.caller property returns the function that invoked the specified function."><code>Function.caller</code></a>.</p> <pre data-language="js">function whoCalled() {
+   if (whoCalled.caller == null)
+      console.log('I was called from the global scope.');
+   else
+      console.log(whoCalled.caller + ' called me!');
+}</pre> <h2 id="Examples">Examples</h2> <p>The following code was used to check the value of <code>arguments.caller</code> in a function, but doesn't work anymore.</p> <pre data-language="js">function whoCalled() {
+   if (arguments.caller == null)
+      console.log('I was called from the global scope.');
+   else
+      console.log(arguments.caller + ' called me!');
+}
+</pre> <h2 id="Specifications">Specifications</h2> <p>Not part of any standard. Implemented in JavaScript 1.1 and removed in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=7224" title='FIXED: Remove support for "caller" property'>bug 7224</a> due to potentially vulnerable for security.</p> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><br> <a href="https://msdn.microsoft.com/en-US/library/gg622933(v=vs.85).aspx">removed in IE 9</a>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="../../global_objects/function" title="The Function constructor creates a new Function object. In JavaScript every function is actually a Function object."><code>Function</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments/caller$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments/caller" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments/caller</a>
+  </p>
+</div>

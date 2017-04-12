@@ -1,0 +1,36 @@
+<h1>CSP: block-all-mixed-content</h1> <p>The HTTP <a title="The HTTP Content-Security-Policy response header allows web site administrators to control resources the user agent is allowed to load for a given page. With a few exceptions, policies mostly involve specifying server origins and script endpoints. This helps guard against cross-site scripting attacks (XSS)." href="../content-security-policy"><code>Content-Security-Policy</code></a> (CSP) <code><strong>block-all-mixed-content</strong></code> directive prevents loading any assets using HTTP when the page is loaded using HTTPS.</p> <p>All <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content">mixed content</a> resource requests are blocked, including both active and passive mixed content. This also applies to <a title="The HTML Inline Frame Element (&lt;iframe&gt;) represents a nested browsing context, effectively embedding another HTML page into the current page. In HTML 4.01, a document may contain a head and a body or a head and a frameset, but not both a body and a frameset. However, an &lt;iframe&gt; can be used within a normal document body. Each browsing context has its own session history and active document. The browsing context that contains the embedded content is called the parent browsing context. The top-level browsing context (which has no parent) is typically the browser window." href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"><code>&lt;iframe&gt;</code></a> documents, ensuring the entire page is mixed content free.</p> <p>The <a title="The HTTP Content-Security-Policy (CSP) upgrade-insecure-requests directive instructs user agents to treat all of a site's insecure URLs (those served over HTTP) as though they have been replaced with secure URLs (those served over HTTPS). This directive is intended for web sites with large numbers of insecure legacy URLs that need to be rewritten." href="upgrade-insecure-requests"><code>upgrade-insecure-requests</code></a> directive is evaluated before <code>block-all-mixed-content</code> and If the former is set, the latter is effectively a no-op. It is recommended to set one directive or the other – not both.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Content-Security-Policy: block-all-mixed-content;</pre> <h2 id="Examples">Examples</h2> <pre>Content-Security-Policy: block-all-mixed-content;
+
+&lt;meta http-equiv="Content-Security-Policy" content="block-all-mixed-content"&gt;
+</pre> <p>To disallow http assets on a more granular level, you can also set individual directives to "https:". For example, to disallow insecure http images:</p> <pre>Content-Security-Policy: img-src https:</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://w3c.github.io/webappsec-mixed-content/#block-all-mixed-content" class="external">Mixed Content<br><small lang="en-US">The definition of 'block-all-mixed-content' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>48.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>48.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The HTTP Content-Security-Policy response header allows web site administrators to control resources the user agent is allowed to load for a given page. With a few exceptions, policies mostly involve specifying server origins and script endpoints. This helps guard against cross-site scripting attacks (XSS)." href="../content-security-policy"><code>Content-Security-Policy</code></a></li> <li><a title="The HTTP Content-Security-Policy (CSP) upgrade-insecure-requests directive instructs user agents to treat all of a site's insecure URLs (those served over HTTP) as though they have been replaced with secure URLs (those served over HTTPS). This directive is intended for web sites with large numbers of insecure legacy URLs that need to be rewritten." href="upgrade-insecure-requests"><code>upgrade-insecure-requests</code></a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content">Mixed content</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/block-all-mixed-content$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/block-all-mixed-content" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/block-all-mixed-content</a>
+  </p>
+</div>

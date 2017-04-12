@@ -1,0 +1,37 @@
+<h1>Descendant selectors</h1>  <p>The <strong>descendant combinator</strong> — typically represented by a single space ( ) character — combines two selectors such that elements matched by the second selector are selected if they have an ancestor element matching the first selector. Selectors that utilize a descendant combinator are called <dfn>descendant selectors</dfn>.</p> <p>The descendant combinator is technically one or more <a title="CSS: CSS (Cascading Style Sheets) is a declarative language that controls how webpages look in the browser." href="https://developer.mozilla.org/en-US/docs/Glossary/CSS" class="glossaryLink">CSS</a> white space characters — the space character and/or one of four control characters: carriage return, form feed, new line, and tab characters — between two selectors in the absence of another combinator. Additionally, the white space characters of which the combinator is comprised may contain any number of CSS comments.</p> <p>The abstract nature of this combinator makes it different from the other standardized combinators as these combinators are all represented by a distinct, finite character sequence. This inconsistency was addressed with the addition of a redundant descendant combinator represented by two greater‐than characters in sequence (<code>&gt;&gt;</code>), giving it a form that is particularly similar to the <a title="en/CSS/Child selectors" href="child_selectors">child combinator</a>, which shares a similar function.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>selector1</var> <var>selector2</var> { <var>/* property declarations */</var> }
+</pre> <pre class="syntaxbox"><var>selector1</var> &gt;&gt; <var>selector2</var> { <var>/* property declarations */</var> }
+</pre> <h2 id="Example">Example</h2> <pre data-language="css">li {
+  list-style-type: disc;
+}
+
+li li {
+  list-style-type: circle;
+}
+</pre> <pre data-language="html">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;div&gt;Item 1&lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Subitem A&lt;/li&gt;
+      &lt;li&gt;Subitem B&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;div&gt;Item 2&lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Subitem A&lt;/li&gt;
+      &lt;li&gt;Subitem B&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre> <p><iframe width="200" frameborder="0" class="live-sample-frame sample-code-frame" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/Descendant_selectors%24samples/Example?revision=1142767" height="160" id="frame_Example"></iframe></p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/selectors-4/#descendant-combinators" class="external">Selectors Level 4<br><small lang="en-US">The definition of 'descendant combinator' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Introduced <code>&gt;&gt;</code> as descendant combinator in addition to the whitespace as combinator.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/selectors-3/#descendant-combinators" class="external">Selectors Level 3<br><small lang="en-US">The definition of 'descendant combinator' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td> </td> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.w3.org/TR/CSS2/selector.html#descendant-selectors" class="external">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'descendant selectors' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td> </td> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.w3.org/TR/CSS1/#contextual-selectors" class="external">CSS Level 1<br><small lang="en-US">The definition of 'contextual selectors' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> <tr> <td>
+<code>&gt;&gt;</code> form</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>10</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_selectors$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_selectors" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_selectors</a>
+  </p>
+</div>

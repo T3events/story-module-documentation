@@ -1,0 +1,14 @@
+<h1>window.fullScreen</h1>  <p>This property indicates whether the window is displayed in full screen mode or not. It is only reliable in Gecko 1.9 (Firefox 3) and later, see the Notes below.</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre class="syntaxbox"><var>isInFullScreen</var> = <var>windowRef</var>.fullScreen;
+</pre> <p>With chrome privileges, the property is read-write, otherwise it is read-only. Bear in mind that if you try to set this property without chrome privileges, it will not throw an exception and instead just silently fail. This is to prevent scripts designed to set this property in Internet Explorer from breaking.</p> <h2 id="Return_Value" name="Return_Value">Return Value</h2> <dl> <dt><code>isInFullScreen</code></dt> <dd>A boolean. Possible Values:</dd> </dl> <ul> <li>
+<code>true</code>: The window is in full screen mode.</li> <li>
+<code>false</code>: The window is not in full screen mode.</li> </ul> <h2 id="Examples" name="Examples">Examples</h2>  <h2 id="Specification" name="Specification">Specification</h2> <p>DOM Level 0. <code>window.fullScreen</code> is not part of any W3C specification or technical recommendation.</p> <h2 id="Notes" name="Notes">Notes</h2> <ul> <li>This property is only reliable in Mozilla 1.9 (Firefox 3) and later. Mozilla 1.8 and earlier do have this property, but it always returns <code>false</code>, even when the window is in full screen mode (<a title="FIXED: fullScreen property operates inconsistently for frames" href="https://bugzilla.mozilla.org/show_bug.cgi?id=127013">bug 127013</a>).</li> <li>Switching between regular window and full screen will fire the "resize" event on the corresponding window.</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/fullScreen$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/fullScreen" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/window/fullScreen</a>
+  </p>
+</div>

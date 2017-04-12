@@ -1,0 +1,29 @@
+<h1>Errors: Bad return or yield</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">SyntaxError: return not in function
+SyntaxError: yield not in function
+</pre> <h2 id="Error_type">Error type</h2> <p><a title="The SyntaxError object represents an error when trying to interpret syntactically invalid code." href="../global_objects/syntaxerror"><code>SyntaxError</code></a>.</p> <h2 id="What_went_wrong">What went wrong?</h2> <p>A <code><a href="../statements/return">return</a></code> or <code><a href="../operators/yield">yield</a></code> statement is called outside of a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">function</a>. Maybe there are missing curly brackets somewhere? The <code>return</code> and <code>yield</code> statements must be in a function, because they end (or pause and resume) function execution and specify a value to be returned to the function caller.</p> <h2 id="Examples">Examples</h2> <pre data-language="js">var cheer = function(score) {
+  if (score === 147)
+    return 'Maximum!';
+  };
+  if (score &gt; 100) {
+    return 'Century!';
+  }
+}
+
+// SyntaxError: return not in function</pre> <p>The curly brackets look correct at a first glance, but this code snippet is missing a <code>{</code> after the first <code>if</code> statement. Correct would be:</p> <pre data-language="js">var cheer = function(score) {
+  if (score === 147) {
+    return 'Maximum!';
+  }
+  if (score &gt; 100) {
+    return 'Century!';
+  }
+};</pre> <h2 id="See_also">See also</h2> <ul> <li><code><a href="../statements/return">return</a></code></li> <li><code><a href="../operators/yield">yield</a></code></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Bad_return_or_yield$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Bad_return_or_yield" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Bad_return_or_yield</a>
+  </p>
+</div>

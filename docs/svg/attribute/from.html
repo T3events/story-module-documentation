@@ -1,0 +1,24 @@
+<h1>from</h1> <p>This attribute indicates the initial value of the attribute that will be modified during the animation. When used with the <a href="to">to</a> attribute, the animation will change the modified attribute from the <code>from</code> value to the <code>to</code> value.</p> <h2 id="Usage_context">Usage context</h2> <table class="standard-table"> <tbody> <tr> <th scope="row">Categories</th> <td>Animation value attribute</td> </tr> <tr> <th scope="row">Value</th> <td>&lt;value&gt;</td> </tr> <tr> <th scope="row">Animatable</th> <td>No</td> </tr> <tr> <th scope="row">Normative document</th> <td><a title="http://www.w3.org/TR/SVG/animate.html#FromAttribute" href="http://www.w3.org/TR/SVG/animate.html#FromAttribute" class="external">SVG 1.1 (2nd Edition)</a></td> </tr> </tbody> </table> <p>The exact value type for this attribute depend on the value of the attribute that will be animated.</p> <h2 id="Example">Example</h2> <p>This example uses a value of <code>100</code> for the <code>from</code> attribute, making the shape animate starting from a width of 100.</p> <pre data-language="xml">&lt;?xml version="1.0"?&gt;
+&lt;svg width="200" height="200"
+  viewPort="0 0 200 200" version="1.1"
+  xmlns="http://www.w3.org/2000/svg"&gt;
+    
+  &lt;rect x="10" y="10" width="100" height="100"&gt;
+    &lt;animate attributeType="XML"
+      attributeName="width"
+      from="100" to="150"
+      dur="3s"
+      fill="freeze"/&gt;
+  &lt;/rect&gt;
+    
+&lt;/svg&gt;</pre> <h2 id="Elements">Elements</h2> <p>The following elements can use the <code>from</code> attribute</p> <ul> <li><a title="The animate element is put inside a shape element and defines how an attribute of an element changes over the animation. The attribute will change from the initial value to the end value in the duration specified." href="../element/animate"><code>&lt;animate&gt;</code></a></li> <li><a title="The animateColor element specifies a color transformation over time." href="../element/animatecolor"><code>&lt;animatecolor&gt;</code></a></li> <li><a title="The animateMotion element causes a referenced element to move along a motion path." href="../element/animatemotion"><code>&lt;animatemotion&gt;</code></a></li> <li><a title="The animateTransform element animates a transformation attribute on a target element, thereby allowing animations to control translation, scaling, rotation and/or skewing." href="../element/animatetransform"><code>&lt;animatetransform&gt;</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/from$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/from" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/from</a>
+  </p>
+</div>

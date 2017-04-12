@@ -1,0 +1,36 @@
+<h1>HTMLHyperlinkElementUtils.hash</h1> <p>The <strong><code>HTMLHyperlinkElementUtils.hash</code></strong> property returns a <a title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String." href="../domstring"><code>DOMString</code></a> containing a <code>'#'</code> followed by the fragment identifier of the URL. The fragment is not percent-decoded.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>string</em> = <em>object</em>.hash;
+<em>object</em>.hash = <em>string</em>;
+</pre> <h2 id="Examples">Examples</h2> <pre data-language="js">// Let's an &lt;a id="myAnchor" href="https://developer.mozilla.org/en-US/docs/HTMLHyperlinkElementUtils.href#youhou"&gt; element be in the document
+var anchor = document.getElementById("myAnchor");
+var result = anchor.hash; // Returns:'#youhou'</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://html.spec.whatwg.org/multipage/#dom-hyperlink-hash" class="external">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'HTMLHyperlinkElementUtils.hash' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a title="Released on 2013-06-25." href="https://developer.mozilla.org/en-US/Firefox/Releases/22">22</a> (22)<sup>[2]</sup>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>22.0 (22)<sup>[2]</sup>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> </tr> </tbody> </table> </div> <p>[1] Though not grouped in a single abstract interface, this method is directly available on the interfaces that implement it, if this interface is supported.</p> <p>[2] From Gecko 22 to Gecko 44, this property was on the <code>URLUtils</code> mixin. It has been moves either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface. Also, from Gecko 29 to Gecko 40, the returned value was incorrectly percent-decoded.</p> <h2 id="See_also">See also</h2> <ul> <li>The <a title="The HTMLHyperlinkElementUtils mixin defines utility methods and properties to work with HTMLAnchorElement and HTMLAreaElement. These utilities allow to deal with common features like URLs." href="../htmlhyperlinkelementutils"><code>HTMLHyperlinkElementUtils</code></a> interface it belongs to.</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/hash$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/hash" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/hash</a>
+  </p>
+</div>

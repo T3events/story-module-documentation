@@ -1,0 +1,28 @@
+<h1>Errors: Invalid assignment left-hand side</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">ReferenceError: invalid assignment left-hand side
+</pre> <h2 id="Error_type">Error type</h2> <p><a title="The ReferenceError object represents an error when a non-existent variable is referenced." href="../global_objects/referenceerror"><code>ReferenceError</code></a>.</p> <h2 id="What_went_wrong">What went wrong?</h2> <p>There was an unexpected assignment somewhere. This might be due to a mismatch of a <a href="../operators/assignment_operators">assignment operator</a> and a <a href="../operators/comparison_operators">comparison operator</a>, for example. While a single "<code>=</code>" sign assigns a value to a variable, the "<code>==</code>" or "<code>===</code>" operators compare a value.</p> <h2 id="Examples">Examples</h2> <pre data-language="js">if (Math.PI = 3 || Math.PI = 4) { 
+  console.log('no way!');
+}
+// ReferenceError: invalid assignment left-hand side
+
+var str = 'Hello, '
++= 'is it me '
++= 'you\'re looking for?';
+// ReferenceError: invalid assignment left-hand side
+</pre> <p>In the <code>if</code> statement, you want to use a comparison operator ("=="), and for the string concatenation, the plus ("+") operator is needed.</p> <pre data-language="js">if (Math.PI == 3 || Math.PI == 4) { 
+  console.log('no way!'); 
+}
+
+var str = 'Hello, ' 
++ 'from the ' 
++ 'other side!';
+</pre> <h2 id="See_also">See also</h2> <ul> <li><a href="../operators/assignment_operators">Assignment operators</a></li> <li><a href="../operators/comparison_operators">Comparison operators</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Invalid_assignment_left-hand_side$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Invalid_assignment_left-hand_side" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Invalid_assignment_left-hand_side</a>
+  </p>
+</div>

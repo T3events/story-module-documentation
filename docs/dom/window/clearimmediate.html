@@ -1,0 +1,20 @@
+<h1>window.clearImmediate</h1>  <p>This method clears the action specified by <a title="This method is used to break up long running operations and run a callback function immediately after the browser has completed other operations such as events and display updates." href="https://developer.mozilla.org/en-US/docs/Web/API/window/setImmediate"><code>window.setImmediate</code></a>.</p> <div class="note">
+<strong>Note:</strong> This method is currently only proposed, is not expected to become standard, and is only implemented by recent builds of Internet Explorer.</div> <h2 id="Syntax">Syntax</h2> <pre>window.clearImmediate(immediateID)
+</pre> <p>where immediateID is a ID returned by <a title="This method is used to break up long running operations and run a callback function immediately after the browser has completed other operations such as events and display updates." href="https://developer.mozilla.org/en-US/docs/Web/API/window/setImmediate"><code>window.setImmediate</code></a>.</p> <h2 id="Examples">Examples</h2> <pre>var immediateID = setImmediate(function () {
+  // Run some code
+}
+
+document.getElementById("button").addEventListener(function () {
+  clearImmediate(immediateID);
+}, false);
+</pre> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <p><a title="This method is used to break up long running operations and run a callback function immediately after the browser has completed other operations such as events and display updates." href="https://developer.mozilla.org/en-US/docs/Web/API/window/setImmediate"><code>window.setImmediate</code></a></p> <p><a href="https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html">Specification: Efficient Script Yielding</a></p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/clearImmediate$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/clearImmediate" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/window/clearImmediate</a>
+  </p>
+</div>

@@ -1,0 +1,40 @@
+<h1>Large-Allocation</h1><div> <div class="overheadIndicator nonStandard nonStandardHeader"> <p><strong> Non-standard</strong><br> This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.</p> </div>
+</div> <p>The <code>Large-Allocation</code> response header tells the browser that the page being loaded is going to want to perform a large allocation.</p> <p><a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly</a> or asm.js applications can use large contiguous blocks of allocated memory. For complex games, for example, these allocations can be quite large, sometimes as large as 1GB. The <code>Large-Allocation</code> tells the browser that the web content in the to-be-loaded page is going to want to perform a large contiguous memory allocation and the browser can react to this header by starting a dedicated process for the to-be-loaded document, for example.</p> <table class="properties"> <tbody> <tr> <th scope="row">Header type</th> <td><a href="https://developer.mozilla.org/en-US/docs/Glossary/Response_header" class="glossaryLink" title="Response header: A response header is an HTTP header that can be used in an HTTP response and that doesn't relate to the content of the message. Response headers, like Age, Location or Server are used to give a more detailed context of the response.">Response header</a></td> </tr> <tr> <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name" class="glossaryLink" title="Forbidden header name: A forbidden header name is an HTTP header name that cannot be modified programmatically.">Forbidden header name</a></th> <td>no</td> </tr> </tbody> </table> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Large-Allocation: 0
+Large-Allocation: &lt;megabytes&gt;
+</pre> <h2 id="Directives">Directives</h2> <dl> <dt><code>0</code></dt> <dd>0 is a special value which represents uncertainty as to what the size of the allocation is.</dd> <dt><code>&lt;megabytes&gt;</code></dt> <dd>The expected size of the allocation to be performed, in megabytes.</dd> </dl> <h2 id="Examples">Examples</h2> <pre>Large-Allocation: 0
+Large-Allocation: 500
+</pre> <h2 id="Specifications">Specifications</h2> <p>Not part of any current specifications. An explainer of the ideas behind this header can be found in <a href="https://gist.github.com/mystor/5739e222e398efc6c29108be55eb6fe3">this document</a>.</p> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Large-Allocation</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td>
+<span style="color: #f00;">No support</span><a href="#note-1"><strong><sup>1</sup></strong></a>
+</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Large-Allocation</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr></tbody>
+</table></div><p id="note-1">1. Available if the preference <code>dom.largeAllocationHeader.enabled</code> is set to true in about:config</p> <h2 id="See_also">See also</h2> <ul> <li><a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Large-Allocation$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Large-Allocation" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Large-Allocation</a>
+  </p>
+</div>

@@ -1,0 +1,28 @@
+<h1>document.title</h1> <p>Gets or sets the title of the document.</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre class="syntaxbox"><em>var docTitle</em> = <em>document</em>.title;
+</pre> <p><code>title</code> is a string containing the <code>document</code>'s title. If the title was overridden by setting <code>document.title</code>, returns that value. Otherwise returns the title specified in the markup (see the <a href="#Notes">Notes</a> below).</p> <pre class="syntaxbox"><em>document</em>.title = <em>newTitle</em>;
+</pre> <p><code>newTitle</code> is the new title of the document. The assignment affects the return value of <code>document.title</code>, the title displayed for the document (e.g. in the titlebar of the window), and it also affects the DOM of the document (e.g. the content of the <code>&lt;title&gt;</code> element in an HTML document).</p> <h2 id="Example" name="Example">Example</h2> <pre data-language="js">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Hello World!&lt;/title&gt; 
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;script&gt;
+alert(document.title); // displays "Hello World!"
+document.title = "Goodbye World!";
+alert(document.title); // displays "Goodbye World!"
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <h2 id="Notes" name="Notes">Notes</h2> <p>This property applies to HTML, SVG, XUL, and other documents in Gecko.</p> <p>For HTML documents the initial value of <code>document.title</code> is the text content of the <code>&lt;title&gt;</code> element. For XUL it's the value of the <code id="a-title"><a href="https://developer.mozilla.org/en-US/docs/XUL/Attribute/title">title</a></code> attribute of the <code><a title="window" href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/window">window</a></code> or other top-level XUL element.</p> <p>In XUL, accessing <code>document.title</code> before the document is fully loaded has undefined behavior (<code>document.title</code> may return an empty string and setting <code>document.title</code> may have no effect).</p> <h2 id="Specification" name="Specification">Specification</h2> <ul> <li><a href="http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-18446827" class="external">DOM Level 2 HTML: document.title</a></li> <li><a title="http://www.whatwg.org/html/#document.title" href="http://www.whatwg.org/html/#document.title" class="external">HTML5</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/title$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/title" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/document/title</a>
+  </p>
+</div>

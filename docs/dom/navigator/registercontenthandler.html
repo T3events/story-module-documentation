@@ -1,0 +1,21 @@
+<h1>navigator.registerContentHandler</h1>   <p>Allows web sites to register themselves as possible handlers for content of a particular MIME type.</p> <div class="note">
+<strong>Note:</strong> Web sites may only register content handlers for themselves. For security reasons, it's not possible for an extension or web site to register content handlers targeting other sites.</div> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox">navigator.registerContentHandler(<em>mimeType</em>, <em>uri</em>, <em>title</em>);</pre> <ul> <li>
+<code>mimeType</code> is the desired MIME type as a string.</li> <li>
+<code>uri</code> is the URI to the handler as a string.</li> <li>
+<code>title</code> is the title of the handler presented to the user as a string.</li> </ul> <h2 name="Example" id="Example">Example</h2> <pre data-language="js">navigator.registerContentHandler(
+    "application/vnd.mozilla.maybe.feed",
+    "http://www.example.tld/?foo=%s",
+    "My Feed Reader"
+);</pre> <h2 name="Notes" id="Notes">Notes</h2> <p>For <a href="https://developer.mozilla.org/en-US/docs/Firefox_2_for_developers" title="Firefox_2_for_developers">Firefox 2</a> and above, only the <code>application/vnd.mozilla.maybe.feed</code>, <code>application/atom+xml</code>, and <code>application/rss+xml</code> MIME types are supported. All values have the same effect, and the registered handler will receive feeds in all Atom and RSS versions (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=391286" title="implement registerContentHandler for arbitrary MIME types">bug 391286</a>).</p> <h2 name="Specification" id="Specification">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://html.spec.whatwg.org/multipage/webappapis.html#dom-navigator-registercontenthandler" class="external" lang="en" hreflang="en">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'registerContentHandler()' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td> </td> </tr> </tbody> </table> <h2 name="See_also" id="See_also">See also</h2> <ul> <li><a href="https://developer.mozilla.org/en-US/docs/Web-based_protocol_handlers" title="Web-based_protocol_handlers">Web-based protocol handlers</a></li> <li>
+<a href="https://developer.mozilla.org/en-US/docs/WebAPI/Web_Activities" title="/en-US/docs/WebAPI/Web_Activities">Web activities</a>, particularly view and open</li> <li>
+<a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIWebContentHandlerRegistrar#registerContentHandler">XPCOM Interface Reference &gt; nsIWebContentHandlerRegistrar &gt; registerContentHandler</a> - This shows how to use this function XPCOM scope</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/navigator/registerContentHandler$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/navigator/registerContentHandler" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/navigator/registerContentHandler</a>
+  </p>
+</div>

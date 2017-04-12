@@ -1,0 +1,52 @@
+<h1>AudioContext.createBufferSource</h1> <div> <p>The <code>createBufferSource()</code> method of the <a href="../audiocontext" title="An AudioContext can be a target of events, therefore it implements the EventTarget interface."><code>AudioContext</code></a> Interface is used to create a new <a href="../audiobuffersourcenode" title="The AudioBufferSourceNode interface represents an audio source consisting of in-memory audio data, stored in an AudioBuffer. It is an AudioNode that acts as an audio source."><code>AudioBufferSourceNode</code></a>, which can be used to play audio data contained within an <a href="../audiobuffer" title="Objects of these types are designed to hold small audio snippets, typically less than 45 s. For longer sounds, objects implementing the MediaElementAudioSourceNode are more suitable. The buffer contains data in the following format:  non-interleaved IEEE754 32-bit linear PCM with a nominal range between -1 and +1, that is, 32bits floating point buffer, with each samples between -1.0 and 1.0. If the AudioBuffer has multiple channels, they are stored in separate buffer."><code>AudioBuffer</code></a> object. <a href="../audiobuffer" title="Objects of these types are designed to hold small audio snippets, typically less than 45 s. For longer sounds, objects implementing the MediaElementAudioSourceNode are more suitable. The buffer contains data in the following format:  non-interleaved IEEE754 32-bit linear PCM with a nominal range between -1 and +1, that is, 32bits floating point buffer, with each samples between -1.0 and 1.0. If the AudioBuffer has multiple channels, they are stored in separate buffer."><code>AudioBuffer</code></a>s are created using <a href="createbuffer" title="An AudioBuffer."><code>AudioContext.createBuffer</code></a> or returned by <a href="decodeaudiodata" title="This is the preferred method of creating an audio source for Web Audio API from an audio track."><code>AudioContext.decodeAudioData</code></a> when it successfully decodes an audio track.</p> </div> <h2 id="Syntax">Syntax</h2> <pre data-language="js">var audioCtx = new AudioContext();
+var source = audioCtx.createBufferSource();</pre> <h3 id="Returns">Returns</h3> <p>An <a href="../audiobuffersourcenode" title="The AudioBufferSourceNode interface represents an audio source consisting of in-memory audio data, stored in an AudioBuffer. It is an AudioNode that acts as an audio source."><code>AudioBufferSourceNode</code></a>.</p> <h2 id="Example">Example</h2> <p>In this example, we create a two second buffer, fill it with white noise, and then play it via an <a href="../audiobuffersourcenode" title="The AudioBufferSourceNode interface represents an audio source consisting of in-memory audio data, stored in an AudioBuffer. It is an AudioNode that acts as an audio source."><code>AudioBufferSourceNode</code></a>. The comments should clearly explain what is going on.</p> <div class="note"> <p><strong>Note</strong>: You can also <a href="http://mdn.github.io/audio-buffer/">run the code live</a>, or <a href="https://github.com/mdn/audio-buffer">view the source</a>.</p> </div> <pre data-language="js">var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+var button = document.querySelector('button');
+var pre = document.querySelector('pre');
+var myScript = document.querySelector('script');
+
+pre.innerHTML = myScript.innerHTML;
+
+// Stereo
+var channels = 2;
+// Create an empty two second stereo buffer at the
+// sample rate of the AudioContext
+var frameCount = audioCtx.sampleRate * 2.0;
+
+var myArrayBuffer = audioCtx.createBuffer(2, frameCount, audioCtx.sampleRate);
+
+button.onclick = function() {
+  // Fill the buffer with white noise;
+  //just random values between -1.0 and 1.0
+  for (var channel = 0; channel &lt; channels; channel++) {
+   // This gives us the actual ArrayBuffer that contains the data
+   var nowBuffering = myArrayBuffer.getChannelData(channel);
+   for (var i = 0; i &lt; frameCount; i++) {
+     // Math.random() is in [0; 1.0]
+     // audio needs to be in [-1.0; 1.0]
+     nowBuffering[i] = Math.random() * 2 - 1;
+   }
+  }
+
+  // Get an AudioBufferSourceNode.
+  // This is the AudioNode to use when we want to play an AudioBuffer
+  var source = audioCtx.createBufferSource();
+  // set the buffer in the AudioBufferSourceNode
+  source.buffer = myArrayBuffer;
+  // connect the AudioBufferSourceNode to the
+  // destination so we can hear the sound
+  source.connect(audioCtx.destination);
+  // start the source playing
+  source.start();
+}</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://webaudio.github.io/web-audio-api/#widl-AudioContext-createBufferSource-AudioBufferSourceNode" class="external" lang="en" hreflang="en">Web Audio API<br><small lang="en-US">The definition of 'createBufferSource()' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <a href="https://developer.mozilla.org/en-US/Firefox/Releases/25" title="Released on 2013-10-29.">25.0</a> (25.0) <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>10.0<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental">webkit</a></span>
+</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span style="color: #f00;">No support</span></td> <td>15.0<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental">webkit</a></span><br> 22 (unprefixed)</td> <td>6.0<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental">webkit</a></span>
+</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>26.0</td> <td>1.2</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>33.0</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="https://developer.mozilla.org/en-US/docs/Web_Audio_API/Using_Web_Audio_API">Using the Web Audio API</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createBufferSource$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createBufferSource" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createBufferSource</a>
+  </p>
+</div>

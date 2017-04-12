@@ -1,0 +1,38 @@
+<h1>date.toISOString</h1> <p>The <strong><code>toISOString()</code></strong> method returns a string in <em>simplified</em> extended ISO format (<a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>), which is always 24 or 27 characters long (<strong><code>YYYY-MM-DDTHH:mm:ss.sssZ</code></strong> or <strong><code>±YYYYYY-MM-DDTHH:mm:ss.sssZ</code></strong><code>, respectively</code>). The timezone is always zero UTC offset, as denoted by the suffix "<code>Z</code>".</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>dateObj</var>.toISOString()</pre> <h3 id="Return_value">Return value</h3> <p>A string representing the given date in the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format according to universal time. </p><h2 id="Examples">Examples</h2> <h3 id="Using_toISOString()">Using <code>toISOString()</code>
+</h3> <pre data-language="js">var today = new Date('05 October 2011 14:48 UTC');
+
+console.log(today.toISOString()); // Returns 2011-10-05T14:48:00.000Z
+</pre> <p>The above example uses parsing of a non–standard string value that may not be correctly parsed in non–Mozilla browsers.</p> <h2 id="Polyfill">Polyfill</h2> <p>This method was standardized in ECMA-262 5th edition. Engines which have not been updated to support this method can work around the absence of this method using the following shim:</p> <pre data-language="js">if (!Date.prototype.toISOString) {
+  (function() {
+
+    function pad(number) {
+      if (number &lt; 10) {
+        return '0' + number;
+      }
+      return number;
+    }
+
+    Date.prototype.toISOString = function() {
+      return this.getUTCFullYear() +
+        '-' + pad(this.getUTCMonth() + 1) +
+        '-' + pad(this.getUTCDate()) +
+        'T' + pad(this.getUTCHours()) +
+        ':' + pad(this.getUTCMinutes()) +
+        ':' + pad(this.getUTCSeconds()) +
+        '.' + (this.getUTCMilliseconds() / 1000).toFixed(3).slice(2, 5) +
+        'Z';
+    };
+
+  }());
+}
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.5.43" class="external" lang="en" hreflang="en">ECMAScript 5.1 (ECMA-262)<br><small lang="en-US">The definition of 'Date.prototype.toISOString' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition. Implemented in JavaScript 1.8.</td> </tr> <tr> <td><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-date.prototype.toisostring" class="external" lang="en" hreflang="en">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Date.prototype.toISOString' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td> </td> </tr> <tr> <td><a href="https://tc39.github.io/ecma262/#sec-date.prototype.toisostring" class="external" lang="en" hreflang="en">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Date.prototype.toISOString' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>9</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="tolocaledatestring" title="The toLocaleDateString() method returns a string with a language sensitive representation of the date portion of this date. The new locales and options arguments let applications specify the language whose formatting conventions should be used and allow to customize the behavior of the function. In older implementations, which ignore the locales and options arguments, the locale used and the form of the string returned are entirely implementation dependent."><code>Date.prototype.toLocaleDateString()</code></a></li> <li><a href="totimestring" title="The toTimeString() method returns the time portion of a Date object in human readable form in American English."><code>Date.prototype.toTimeString()</code></a></li> <li><a href="toutcstring" title="The toUTCString() method converts a date to a string, using the UTC time zone."><code>Date.prototype.toUTCString()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString</a>
+  </p>
+</div>

@@ -1,0 +1,36 @@
+<h1>Access-Control-Allow-Origin</h1> <p>The <code><strong>Access-Control-Allow-Origin</strong></code> response header indicates whether the response can be shared with resources with the given <a href="https://developer.mozilla.org/en-US/docs/Glossary/origin" class="glossaryLink" title="origin: Web content's origin is defined by the scheme (protocol), host (domain), and port of the URL used to access it. Two objects have the same origin only when the scheme, host, and port all match.">origin</a>.</p> <table class="properties"> <tbody> <tr> <th scope="row">Header type</th> <td><a href="https://developer.mozilla.org/en-US/docs/Glossary/Response_header" class="glossaryLink" title="Response header: A response header is an HTTP header that can be used in an HTTP response and that doesn't relate to the content of the message. Response headers, like Age, Location or Server are used to give a more detailed context of the response.">Response header</a></td> </tr> <tr> <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name" class="glossaryLink" title="Forbidden header name: A forbidden header name is an HTTP header name that cannot be modified programmatically.">Forbidden header name</a></th> <td>no</td> </tr> </tbody> </table> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Access-Control-Allow-Origin: *
+Access-Control-Allow-Origin: &lt;origin&gt;
+</pre> <h2 id="Directives">Directives</h2> <dl> <dt>*</dt> <dd>For requests without credentials, the server may specify "*" as a wildcard, thereby allowing any origin to access the resource.</dd> <dt>&lt;origin&gt;</dt> <dd>Specifies a URI that may access the resource.</dd> </dl> <h2 id="Examples">Examples</h2> <p>To allow any resource to access your resource, you can specify:</p> <pre>Access-Control-Allow-Origin: *</pre> <p>To allow <code>https://developer.mozilla.org</code> to access your resource, you can specify:</p> <pre>Access-Control-Allow-Origin: https://developer.mozilla.org</pre> <h3 id="CORS_and_caching">CORS and caching</h3> <p>If the server specifies an origin host rather than "<code>*</code>", then it must also include <code>Origin</code> in the <a href="vary" title="The Vary HTTP response header determines how to match future request headers to decide whether a cached response can be used rather than requesting a fresh one from the origin server. It is used by the server to indicate which headers it used when selecting a representation of a resource in a content negotiation algorithm."><code>Vary</code></a> response header to indicate to clients that server responses will differ based on the value of the <code>Origin</code> request header.</p> <pre>Access-Control-Allow-Origin: https://developer.mozilla.org
+Vary: Origin</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://fetch.spec.whatwg.org/#http-access-control-allow-origin" class="external" lang="en" hreflang="en">Fetch<br><small lang="en-US">The definition of 'Access-Control-Allow-Origin' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Access-Control-Allow-Origin</td>
+<td>4</td>
+<td>12</td>
+<td>3.5</td>
+<td>10</td>
+<td>12</td>
+<td>4</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Access-Control-Allow-Origin</td>
+<td>2.1</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>1.0</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>12</td>
+<td>3.2</td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a href="origin" title="The Origin request header indicates where a fetch originates from. It doesn't include any path information, but only the server name. It is sent with CORS requests, as well as with POST requests. It is similar to the Referer header, but, unlike this header, it doesn't disclose the whole path."><code>Origin</code></a></li> <li><a href="vary" title="The Vary HTTP response header determines how to match future request headers to decide whether a cached response can be used rather than requesting a fresh one from the origin server. It is used by the server to indicate which headers it used when selecting a representation of a resource in a content negotiation algorithm."><code>Vary</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin</a>
+  </p>
+</div>

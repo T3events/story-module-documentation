@@ -1,0 +1,41 @@
+<h1>OES texture half float linear</h1> <p>The <code><strong>OES_texture_half_float_linear</strong></code> extension is part of the <a href="webgl_api">WebGL API</a> and allows linear filtering with half floating-point pixel types for textures.</p> <p>WebGL extensions are available using the <a title="The WebGLRenderingContext.getExtension() method enables a WebGL extension." href="webglrenderingcontext/getextension"><code>WebGLRenderingContext.getExtension()</code></a> method. For more information, see also <a href="webgl_api/using_extensions">Using Extensions</a> in the <a href="webgl_api/tutorial">WebGL tutorial</a>.</p> <div class="note"> <p><strong>Availability:</strong> This extension is available to both, <a title="The WebGLRenderingContext interface provides the OpenGL ES 2.0 rendering context for the drawing surface of an HTML &lt;canvas&gt; element." href="webglrenderingcontext">WebGL1</a> and <a title="The WebGL2RenderingContext interface provides the OpenGL ES 3.0 rendering context for the drawing surface of an HTML &lt;canvas&gt; element." href="webgl2renderingcontext">WebGL2</a> contexts.</p> </div> <h2 id="Linear_filtering">Linear filtering</h2> <p>The <a title="The OES_texture_half_float extension is part of the WebGL API and adds texture formats with 16- (aka half float) and 32-bit floating-point components." href="oes_texture_half_float"><code>OES_texture_half_float</code></a> extension alone does not allow linear filtering with half floating-point textures. This extension enables this ability.</p> <p>With the help of this extension, you can now set the magnification or minification filter in the <a title="The WebGLRenderingContext.texParameter[fi]() methods of the WebGL API set texture parameters." href="webglrenderingcontext/texparameter"><code>WebGLRenderingContext.texParameter()</code></a> method to one of <code>gl.LINEAR</code>, <code>gl.LINEAR_MIPMAP_NEAREST</code>, <code>gl.NEAREST_MIPMAP_LINEAR</code>, or <code>gl.LINEAR_MIPMAP_LINEAR</code>, and use half floating-point textures.</p> <h2 id="Examples">Examples</h2> <pre data-language="js">var halfFloat = gl.getExtension('OES_texture_half_float');
+gl.getExtension('OES_texture_half_float_linear');
+
+var texture = gl.createTexture();
+gl.bindTexture(gl.TEXTURE_2D, texture);
+
+gl.texParameterf(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, halfFloat.HALF_FLOAT_OES, image);
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://www.khronos.org/registry/webgl/extensions/OES_texture_half_float_linear/" class="external">OES_texture_half_float_linear<br><small lang="en-US">The definition of 'OES_texture_half_float_linear' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>30.0</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The WebGLRenderingContext.getExtension() method enables a WebGL extension." href="webglrenderingcontext/getextension"><code>WebGLRenderingContext.getExtension()</code></a></li> <li><a title="The WebGLRenderingContext.texImage2D() method of the WebGL API specifies a two-dimensional texture image." href="webglrenderingcontext/teximage2d"><code>WebGLRenderingContext.texImage2D()</code></a></li> <li><a title="The WebGLRenderingContext.texSubImage2D() method of the WebGL API specifies a sub-rectangle of the current texture." href="webglrenderingcontext/texsubimage2d"><code>WebGLRenderingContext.texSubImage2D()</code></a></li> <li><a title="The OES_texture_float extension is part of the WebGL API and exposes floating-point pixel types for textures." href="https://developer.mozilla.org/en-US/docs/Web/API/OES_texture_float"><code>OES_texture_float</code></a></li> <li><a title="The OES_texture_float_linear extension is part of the WebGL API and allows linear filtering with floating-point pixel types for textures." href="oes_texture_float_linear"><code>OES_texture_float_linear</code></a></li> <li><a title="The OES_texture_half_float extension is part of the WebGL API and adds texture formats with 16- (aka half float) and 32-bit floating-point components." href="oes_texture_half_float"><code>OES_texture_half_float</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/OES_texture_half_float_linear$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/OES_texture_half_float_linear" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/OES_texture_half_float_linear</a>
+  </p>
+</div>

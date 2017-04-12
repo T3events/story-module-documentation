@@ -1,0 +1,56 @@
+<h1>206 Partial Content</h1> <p>The HTTP <code>206 Partial Content</code> success status response code indicates that the request has succeeded and has the body contains the requested ranges of data, as described in the <a title="The Range request HTTP header indicates the part of a document that the server should returns to the requests. Several parts can be requested with one Range header, and the server may send back these ranges in a multipart document. If the server send back ranges, it uses the 206 Partial Content for the response; If the ranges are invalid, the server returns the 416 Range Not Satisfiable error. The server can ignore the Range header and returns the whole document, with the 200 status code." href="../headers/range"><code>Range</code></a> header of the request.</p> <p>If there is only one range, the <a title="The Content-Type entity header is used to indicate the media type of the resource." href="../headers/content-type"><code>Content-Type</code></a> of the whole response is set to the type of the document, and a <a title="The Content-Range response HTTP header" href="../headers/content-range"><code>Content-Range</code></a> is provided.</p> <p>If several ranges are sent back, the <a title="The Content-Type entity header is used to indicate the media type of the resource." href="../headers/content-type"><code>Content-Type</code></a> is set to <code>multipart/byteranges</code> and each fragment cover one range, with <a title="The Content-Range response HTTP header" href="../headers/content-range"><code>Content-Range</code></a> and <a title="The Content-Type entity header is used to indicate the media type of the resource." href="../headers/content-type"><code>Content-Type</code></a> describing it.</p> <h2 id="Status">Status</h2> <pre class="syntaxbox">206 Partial Content</pre> <h2 id="Examples">Examples</h2> <p>A response containing one single range:</p> <pre class="newpage">HTTP/1.1 206 Partial Content
+Date: Wed, 15 Nov 2015 06:25:24 GMT
+Last-Modified: Wed, 15 Nov 2015 04:58:08 GMT
+Content-Range: bytes 21010-47021/47022
+Content-Length: 26012
+Content-Type: image/gif
+
+... 26012 bytes of partial image data ...</pre> <p>A response containing several ranges:</p> <pre class="newpage">HTTP/1.1 206 Partial Content
+Date: Wed, 15 Nov 2015 06:25:24 GMT
+Last-Modified: Wed, 15 Nov 2015 04:58:08 GMT
+Content-Length: 1741
+Content-Type: multipart/byteranges; boundary=String_separator
+
+--String_separator
+Content-Type: application/pdf
+Content-Range: bytes 234-639/8000
+
+...the first range...
+--String_separator
+Content-Type: application/pdf
+Content-Range: bytes 4590-7999/8000
+
+...the second range
+--String_separator--</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Title</th> </tr> <tr> <td><a href="http://tools.ietf.org/html/7233#section-4.1">RFC 7233, section 4.1: 206 Partial Content</a></td> <td>Hypertext Transfer Protocol (HTTP/1.1): Range Requests</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The If-Range request HTTP header makes the range request conditional: if the condition is fulfilled, the range request will be and the server send back a 206 Partial Content answer with the appropriate body. If the condition is not fulfilled, the full resource is sent back, with a 200 OK status." href="../headers/if-range"><code>If-Range</code></a></li> <li><a title="The Range request HTTP header indicates the part of a document that the server should returns to the requests. Several parts can be requested with one Range header, and the server may send back these ranges in a multipart document. If the server send back ranges, it uses the 206 Partial Content for the response; If the ranges are invalid, the server returns the 416 Range Not Satisfiable error. The server can ignore the Range header and returns the whole document, with the 200 status code." href="../headers/range"><code>Range</code></a></li> <li><a title="The Content-Range response HTTP header" href="../headers/content-range"><code>Content-Range</code></a></li> <li><a title="The Content-Type entity header is used to indicate the media type of the resource." href="../headers/content-type"><code>Content-Type</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206</a>
+  </p>
+</div>

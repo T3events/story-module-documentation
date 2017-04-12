@@ -1,0 +1,43 @@
+<h1>Errors: Deprecated caller or arguments usage</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">Warning: ReferenceError: deprecated caller usage (Firefox)
+Warning: ReferenceError: deprecated arguments usage (Firefox)
+TypeError: 'callee' and 'caller' cannot be accessed in strict mode. (Safari)
+</pre> <h2 id="Error_type">Error type</h2> <p>A strict-mode-only warning that a <a title="The ReferenceError object represents an error when a non-existent variable is referenced." href="../global_objects/referenceerror"><code>ReferenceError</code></a> occurred. JavaScript execution won't be halted.</p> <h2 id="What_went_wrong">What went wrong?</h2> <p>In <a href="../strict_mode">strict mode</a>, the <a title="The function.caller property returns the function that invoked the specified function." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/caller"><code>Function.caller</code></a> or <a title="The function.arguments property refers to an an array-like object corresponding to the arguments passed to a function. Use the simple variable arguments instead." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/arguments"><code>Function.arguments</code></a> properties are used and shouldn't be. They are deprecated, because they leak the function caller, are non-standard, hard to optimize and potentially a performance-harmful feature.</p> <h2 id="Examples">Examples</h2> <h3 id="Deprecated_function.caller_or_arguments.callee.caller">Deprecated <code>function.caller</code> or <code>arguments.callee.caller</code>
+</h3> <p><a title="The function.caller property returns the function that invoked the specified function." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/caller"><code>Function.caller</code></a> and <code><a href="../functions/arguments/callee">arguments.callee.caller</a></code> are deprecated (see the reference articles for more information).</p> <pre data-language="js">'use strict';
+
+function myFunc() {
+  if (myFunc.caller == null) {
+    return 'The function was called from the top!';
+  } else {
+    return 'This function\'s caller was ' + myFunc.caller;
+  }
+}
+
+myFunc();
+// Warning: ReferenceError: deprecated caller usage
+// "The function was called from the top!"</pre> <h3 id="Function.arguments"><code>Function.arguments</code></h3> <p><a title="The function.arguments property refers to an an array-like object corresponding to the arguments passed to a function. Use the simple variable arguments instead." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/arguments"><code>Function.arguments</code></a> is deprecated (see the reference article for more information).</p> <pre data-language="js">'use strict';
+
+function f(n) { g(n - 1); }
+
+function g(n) {
+  console.log('before: ' + g.arguments[0]);
+  if (n &gt; 0) { f(n); }
+  console.log('after: ' + g.arguments[0]);
+}
+
+f(2);
+
+console.log('returned: ' + g.arguments);
+// Warning: ReferenceError: deprecated arguments usage
+</pre> <h2 id="See_also">See also</h2> <ul> <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features">Deprecated and obsolete features</a></li> <li><a href="../strict_mode">Strict mode</a></li> <li><a title="The function.arguments property refers to an an array-like object corresponding to the arguments passed to a function. Use the simple variable arguments instead." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/arguments"><code>Function.arguments</code></a></li> <li>
+<a title="The function.caller property returns the function that invoked the specified function." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/caller"><code>Function.caller</code></a> and <code><a href="../functions/arguments/callee">arguments.callee.caller</a></code>
+</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Deprecated_caller_or_arguments_usage$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Deprecated_caller_or_arguments_usage" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Deprecated_caller_or_arguments_usage</a>
+  </p>
+</div>

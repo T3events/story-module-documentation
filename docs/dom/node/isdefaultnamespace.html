@@ -1,0 +1,17 @@
+<h1>Node.isDefaultNamespace</h1> <p>The <strong><code>Node.isDefaultNamespace()</code></strong>method accepts a namespace URI as an argument and returns a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" title="The Boolean object is an object wrapper for a boolean value."><code>Boolean</code></a> with a value of <code>true</code> if the namespace is the default namespace on the given node or <code>false</code> if not.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>result</em> = <em>node</em>.isDefaultNamespace(<em>namespaceURI</em>) 
+</pre> <ul> <li>
+<code>result</code> holds the return value <code>true</code> or <code>false</code>.</li> <li>
+<code>namespaceURI</code> is a string representing the namespace against which the element will be checked.</li> </ul> <h2 name="Example" id="Example">Example</h2> <pre data-language="js">var XULNS = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+var el = document.getElementsByTagNameNS(XULNS, 'textbox')[0];
+
+alert(el.isDefaultNamespace(XULNS)); // true</pre> <h2 name="Specification" id="Specification">Specification</h2> <ul> <li><a href="http://www.w3.org/TR/DOM-Level-3-Core/core.html#Node3-isDefaultNamespace">DOM Level 3 Core: isDefaultNamespace</a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Code_snippets/IsDefaultNamespace" title="Code_snippets/IsDefaultNamespace">Code snippets: isDefaultNamespace</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/isDefaultNamespace$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/isDefaultNamespace" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/Node/isDefaultNamespace</a>
+  </p>
+</div>

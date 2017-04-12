@@ -1,0 +1,40 @@
+<h1>WebGLRenderingContext.hint</h1> <p>The <strong><code>WebGLRenderingContext.hint()</code></strong> method of the <a href="../webgl_api">WebGL API</a> specifies hints for certain behaviors. The interpretation of these hints depend on the implementation.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">void <var>gl</var>.hint(<var>target</var>, <var>mode</var>);
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>target</dt> <dd>Sets which behavior to be controlled. Possible values: <ul> <li>
+<code>gl.GENERATE_MIPMAP_HINT</code>: Quality of filtering when generating mipmap images with <a title="The WebGLRenderingContext.generateMipmap() method of the WebGL API generates a set of mipmaps for a WebGLTexture object." href="generatemipmap"><code>WebGLRenderingContext.generateMipmap()</code></a>.</li> <li>When using the <a title="The OES_standard_derivatives extension is part of the WebGL API and adds the GLSL derivative functions dFdx, dFdy, and fwidth." href="../oes_standard_derivatives"><code>OES_standard_derivatives</code></a> extension: <ul> <li>
+<code>ext.FRAGMENT_SHADER_DERIVATIVE_HINT_OES</code>: Accuracy of the derivative calculation for the GLSL built-in functions: <code>dFdx</code>, <code>dFdy</code>, and <code>fwidth</code>.</li> </ul> </li> </ul> </dd> <dt>mode</dt> <dd>Sets the behavior. The default value is <code>gl.DONT_CARE</code>. The possible values are: <ul> <li>
+<code>gl.FASTEST</code>: The most efficient behavior should be used.</li> <li>
+<code>gl.NICEST</code>: The most correct or the highest quality option should be used.</li> <li>
+<code>gl.DONT_CARE</code>: There is no preference for this behavior.</li> </ul> </dd> </dl> <h3 id="Return_value">Return value</h3> <p>None.</p> <h2 id="Examples">Examples</h2> <p>The following example hints that the quality of filtering when generating mipmap images should be most efficient instead of best quality.</p> <pre data-language="js">gl.hint(gl.GENERATE_MIPMAP_HINT, gl.FASTEST);
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3">WebGL 1.0<br><small lang="en-US">The definition of 'hint' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glHint.xml">OpenGL ES 2.0<br><small lang="en-US">The definition of 'glHint' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Man page of the OpenGL API.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td>9</td>
+<td>12</td>
+<td>4.0</td>
+<td>11</td>
+<td>12</td>
+<td>5.1</td>
+<td><span style="color: #f00;">No support</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>25</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>4.0</td>
+<td>11</td>
+<td>12</td>
+<td>8.1</td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The WebGLRenderingContext.generateMipmap() method of the WebGL API generates a set of mipmaps for a WebGLTexture object." href="generatemipmap"><code>WebGLRenderingContext.generateMipmap()</code></a></li> <li><a title="The OES_standard_derivatives extension is part of the WebGL API and adds the GLSL derivative functions dFdx, dFdy, and fwidth." href="../oes_standard_derivatives"><code>OES_standard_derivatives</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/hint$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/hint" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/hint</a>
+  </p>
+</div>

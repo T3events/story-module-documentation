@@ -1,0 +1,86 @@
+<h1>scroll-snap-points-x</h1><div><div class="overheadIndicator deprecated deprecatedHeader"> <p><strong> Deprecated</strong><br>This feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Avoid using it and update existing code if possible; see the <a href="#Browser_compatibility">compatibility table</a> at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.</p> </div></div>  <p>The <strong><code>scroll-snap-points-x</code></strong> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property defines the horizontal positioning of snap points within the content of the scroll container they are applied to.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>none</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>scroll containers</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>no</td>
+</tr>
+<tr>
+<th scope="row">Percentages</th>
+<td>relative to same axis of the padding-box of the scroll container</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>interactive</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>as specified, but with relative lengths converted into absolute lengths</td>
+</tr>
+<tr>
+<th scope="row">Animation type</th>
+<td>discrete</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">/* Keyword value */
+scroll-snap-points-x: none;
+
+/* Repeating snap points */
+scroll-snap-points-x: repeat(400px);
+
+/* Global values */
+scroll-snap-points-x: inherit;
+scroll-snap-points-x: initial;
+scroll-snap-points-x: unset;
+</pre> <h3 id="Values">Values</h3> <dl> <dt><code>none</code></dt> <dd>The scroll container does not define any snap points. Elements within the scroll container may still define snap points on behalf of the scroll container.</dd> <dt><code>repeat(&lt;length-percentage&gt;)</code></dt> <dd>Defines an interval at which snap points are defined, starting from the container's relevant start edge. Only positive lengths are allowed. Percentages refer to the width of the container.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox">none | repeat( <a href="#length-percentage">&lt;length-percentage&gt;</a> )<p>where <br><span id="length-percentage">&lt;length-percentage&gt;</span> = <a title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0" href="length">&lt;length&gt;</a> | <a title="The &lt;percentage&gt; CSS data types represent a percentage value. Many CSS properties can take percentage values, often to define sizes in terms of parent objects. Percentages are formed by a &lt;number&gt; immediately followed by the percentage sign %. Just as is the case with all other units in CSS, there isn't a space between the '%' and the number." href="percentage">&lt;percentage&gt;</a></p></pre> <h2 id="Example">Example</h2> <h3 id="HTML_Content">HTML Content</h3> <pre data-language="html">&lt;div id="container"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;</pre> <h3 id="CSS_Content">CSS Content</h3> <pre data-language="css">#container {
+  width: 200px;
+  overflow: auto;
+  white-space: nowrap;
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-type: mandatory;
+  font-size: 0;
+}
+
+#container &gt; div {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  line-height: 200px;
+  text-align: center;
+  font-size: 100px;
+}
+
+#container &gt; div:nth-child(even) {
+  background-color: #87ea87;
+}
+
+#container &gt; div:nth-child(odd) {
+  background-color: #87ccea;
+}</pre> <p><iframe width="220" class="live-sample-frame sample-code-frame" frameborder="0" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/scroll-snap-points-x%24samples/Example?revision=1142313" height="220" id="frame_Example"></iframe></p> <h2 id="Specification">Specification</h2> <p>This property was once defined in the <a href="https://www.w3.org/TR/2015/WD-css-snappoints-1-20150326/#scroll-snap-points">early draft of CSS Scroll Snap Points Module</a> but <a href="https://github.com/w3c/csswg-drafts/commit/922af86be789222b8490c92038d1a5142e1c1198">later removed from</a> the specification <a href="https://lists.w3.org/Archives/Public/www-style/2015Nov/0266.html">in favor of element-based snapping</a>.</p> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>
+<a title="Released on 2015-06-30." href="https://developer.mozilla.org/en-US/Firefox/Releases/39">39.0</a> (39.0)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>9<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">-webkit</a></span>
+</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>39.0 (39.0)<sup>[1]</sup>
+</td> <td>39.0 (39.0)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>9<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">-webkit</a></span>
+</td> </tr> </tbody> </table> </div> <p>[1] On Firefox Mobile, available since Gecko 39, but behind the preference <code>layout.css.vertical-text.enabled</code>, disabled by default.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-points-x$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-points-x" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-points-x</a>
+  </p>
+</div>

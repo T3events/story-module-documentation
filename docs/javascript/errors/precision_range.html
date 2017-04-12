@@ -1,0 +1,32 @@
+<h1>Errors: Precision range</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">RangeError: precision {0} out of range (Firefox)
+RangeError: toExponential() argument must be between 0 and 20 (Chrome)
+RangeError: toFixed() digits argument must be between 0 and 20 (Chrome)
+RangeError: toPrecision() argument must be between 1 and 21 (Chrome)
+</pre> <h2 id="Error_type">Error type</h2> <p><a href="../global_objects/rangeerror" title="The RangeError object indicates an error when a value is not in the set or range of allowed values."><code>RangeError</code></a></p> <h2 id="What_went_wrong">What went wrong?</h2> <p>There was an out of range precision argument in one of these methods:</p> <ul> <li><a href="../global_objects/number/toexponential" title="The toExponential() method returns a string representing the Number object in exponential notation."><code>Number.prototype.toExponential()</code></a></li> <li><a href="../global_objects/number/tofixed" title="The toFixed() method formats a number using fixed-point notation."><code>Number.prototype.toFixed()</code></a></li> <li><a href="../global_objects/number/toprecision" title="The toPrecision() method returns a string representing the Number object to the specified precision."><code>Number.prototype.toPrecision()</code></a></li> </ul> <p>The allowed range for these methods is usually between 0 and 20 (or 21). However, the ECMAScript specification allows to extend this range.</p> <table class="standard-table"> <thead> <tr> <th scope="col">Method</th> <th scope="col">Firefox (SpiderMonkey)</th> <th scope="col">Chrome, Opera (V8)</th> </tr> </thead> <tbody> <tr> <td><a href="../global_objects/number/toexponential" title="The toExponential() method returns a string representing the Number object in exponential notation."><code>Number.prototype.toExponential()</code></a></td> <td>0 to 100</td> <td>0 to 20</td> </tr> <tr> <td><a href="../global_objects/number/tofixed" title="The toFixed() method formats a number using fixed-point notation."><code>Number.prototype.toFixed()</code></a></td> <td>-20 to 100</td> <td>0 to 20</td> </tr> <tr> <td><a href="../global_objects/number/toprecision" title="The toPrecision() method returns a string representing the Number object to the specified precision."><code>Number.prototype.toPrecision()</code></a></td> <td>1 to 100</td> <td>1 to 21</td> </tr> </tbody> </table> <h2 id="Examples">Examples</h2> <h3 id="Invalid_cases">Invalid cases</h3> <pre data-language="js">77.1234.toExponential(-1);  // RangeError
+77.1234.toExponential(101); // RangeError
+
+2.34.toFixed(-100);         // RangeError 
+2.34.toFixed(1001);         // RangeError 
+
+1234.5.toPrecision(-1);     // RangeError
+1234.5.toPrecision(101);    // RangeError
+</pre> <h3 id="Valid_cases">Valid cases</h3> <pre data-language="js">77.1234.toExponential(4); // 7.7123e+1
+77.1234.toExponential(2); // 7.71e+1
+
+2.34.toFixed(1); // 2.3
+2.35.toFixed(1); // 2.4 (note that it rounds up in this case)
+
+5.123456.toPrecision(5); // 5.1235
+5.123456.toPrecision(2); // 5.1
+5.123456.toPrecision(1); // 5
+</pre> <h2 id="See_also">See also</h2> <ul> <li><a href="../global_objects/number/toexponential" title="The toExponential() method returns a string representing the Number object in exponential notation."><code>Number.prototype.toExponential()</code></a></li> <li><a href="../global_objects/number/tofixed" title="The toFixed() method formats a number using fixed-point notation."><code>Number.prototype.toFixed()</code></a></li> <li><a href="../global_objects/number/toprecision" title="The toPrecision() method returns a string representing the Number object to the specified precision."><code>Number.prototype.toPrecision()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Precision_range$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Precision_range" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Precision_range</a>
+  </p>
+</div>

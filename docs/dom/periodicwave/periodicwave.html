@@ -1,0 +1,30 @@
+<h1>PeriodicWave.constructor</h1> <p>The <code><strong>PeriodicWave()</strong></code> constructor creates a new <a title="PeriodicWave has no inputs or outputs; it is used to define custom oscillators when calling OscillatorNode.setPeriodicWave(). The PeriodicWave itself is created/returned by AudioContext.createPeriodicWave()." href="../periodicwave"><code>PeriodicWave</code></a> object instance.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">var <em>myWave</em> = new PeriodicWave(<em>context</em>, <em>options</em>);</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><code>context</code></dt> <dd>A <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext"><code>BaseAudioContext</code></a> representing the audio context you want the node to be associated with.</dd> <dt>
+<code>options</code> <span class="inlineIndicator optional optionalInline">Optional</span>
+</dt> <dd>A <code><a href="https://webaudio.github.io/web-audio-api/#idl-def-PannerOptions">PannerOptions</a></code> dictionary object defining the properties you want the <code>PannerNode</code> to have (It also inherits the options defined in the <a href="https://webaudio.github.io/web-audio-api/#idl-def-PeriodicWaveConstraints">PeriodicWaveConstraints</a> dictionary.): <ul> <li>
+<code>real</code>: A <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/Float32Array"><code>Float32Array</code></a> containing the cosine terms that you want to use to form the wave (equivalent to the <code>real</code> parameter of <a title="A PeriodicWave." href="../audiocontext/createperiodicwave"><code>AudioContext.createPeriodicWave</code></a>).</li> <li>
+<code>imag</code>: A <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/Float32Array"><code>Float32Array</code></a> containing the sine terms that you want to use to form the wave (equivalent to the <code>imag</code> parameter of <a title="A PeriodicWave." href="../audiocontext/createperiodicwave"><code>AudioContext.createPeriodicWave</code></a>).</li> </ul> </dd> </dl> <h2 id="Example">Example</h2> <pre data-language="js">var real = new Float32Array(2);
+var imag = new Float32Array(2);
+var ac = new AudioContext();
+
+real[0] = 0;
+imag[0] = 0;
+real[1] = 1;
+imag[1] = 0;
+
+var options = {
+  real : real,
+  imag : imag,
+  disableNormalization : false
+}
+
+var wave = new PeriodicWave(ac, options);</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://webaudio.github.io/web-audio-api/#the-periodicwave-interface" class="external">Web Audio API<br><small lang="en-US">The definition of 'PeriodicWave' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>55.0</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td> <p><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></p> </td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>55.0</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td> <p><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></p> </td> <td><span style="color: #f00;">No support</span></td> <td>55.0</td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PeriodicWave/PeriodicWave$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PeriodicWave/PeriodicWave" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/PeriodicWave/PeriodicWave</a>
+  </p>
+</div>

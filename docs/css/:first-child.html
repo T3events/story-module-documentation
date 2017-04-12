@@ -1,0 +1,31 @@
+<h1>:first-child</h1> <p>The <code>:first-child</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="pseudo-classes">pseudo-class</a> represents any element that is the first child element of its parent.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">:first-child <a href="value_definition_syntax#Curly_braces_(.7B_.7D)" title="Curly braces">{</a> <var>style properties</var> <a href="value_definition_syntax#Curly_braces_(.7B_.7D)" title="Curly braces">}</a>
+</pre> <h2 id="Examples">Examples</h2> <h3 id="Example_1">Example 1</h3> <h4 id="HTML_Content">HTML Content</h4> <pre data-language="html">&lt;div&gt;
+  &lt;span&gt;This span is limed!&lt;/span&gt;
+  &lt;span&gt;This span is not. :(&lt;/span&gt;
+&lt;/div&gt;
+</pre> <h4 id="CSS_Content">CSS Content</h4> <pre data-language="css">span:first-child {
+    background-color: lime;
+}
+</pre> <p>... looks like ...</p> <p><span><iframe class="live-sample-frame sample-code-frame" height="50" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/:first-child%24samples/Example_1?revision=1086667" frameborder="0" width="300" id="frame_Example_1"></iframe></span></p> <h3 id="Example_2_-_Using_UL">Example 2 - Using UL</h3> <h4 id="HTML_Content_2">HTML Content</h4> <pre data-language="html">&lt;ul&gt;
+  &lt;li&gt;List 1&lt;/li&gt;
+  &lt;li&gt;List 2&lt;/li&gt;
+  &lt;li&gt;List 3&lt;/li&gt;
+&lt;/ul&gt;</pre> <h4 id="CSS_Content_2">CSS Content</h4> <pre data-language="css">li{
+  color:red;
+}
+li:first-child{
+  color:green;
+}</pre> <p>... looks like ...</p> <p><span><iframe class="live-sample-frame sample-code-frame" height="100" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/:first-child%24samples/Example_2_-_Using_UL?revision=1086667" frameborder="0" width="300" id="frame_Example_2_-_Using_UL"></iframe></span></p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://drafts.csswg.org/selectors-4/#first-child-pseudo" class="external" lang="en" hreflang="en">Selectors Level 4<br><small lang="en-US">The definition of ':first-child' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>No change</td> </tr> <tr> <td><a href="https://drafts.csswg.org/selectors-3/#first-child-pseudo" class="external" lang="en" hreflang="en">Selectors Level 3<br><small lang="en-US">The definition of ':first-child' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>No change</td> </tr> <tr> <td><a href="http://www.w3.org/TR/CSS2/selector.html#first-child" class="external" lang="en" hreflang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of ':first-child' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>4.0</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/3" title="Released on 2008-06-17.">3.0</a> (1.9)</td> <td>7<sup>[1]</sup>
+</td> <td>9.5</td> <td>4</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>1.0</td> <td>1.0 (1.9.1)</td> <td>7<sup>[1]</sup>
+</td> <td>10.0</td> <td>3.1</td> </tr> </tbody> </table> </div> <p>[1] Internet Explorer 7 doesn't update the styles when elements are added dynamically. In Internet Explorer 8, if an element is inserted dynamically by clicking on a link the first-child style isn't applied until the link loses focus.</p> <h2 id="See_also">See also</h2> <ul> <li><a href=":last-child" title="The :last-child CSS pseudo-class represents any element that is the last child element of its parent."><code>:last-child</code></a></li> <li><a href=":nth-child" title="The :nth-child(an+b) CSS pseudo-class matches an element that has an+b-1 siblings before it in the document tree, for a given positive or zero value for n, and has a parent element. More simply stated, the selector matches a number of child elements whose numeric position in the series of children matches the pattern an+b."><code>:nth-child</code></a></li> <li><a href=":last-of-type" title="The :last-of-type CSS pseudo-class represents the last sibling with the given element name in the list of children of its parent element."><code>:last-of-type</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child</a>
+  </p>
+</div>

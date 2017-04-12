@@ -1,0 +1,20 @@
+<h1>StorageEstimate.quota</h1><div class="overheadIndicator draft"> <p><strong>Draft</strong><br> This page is not complete.</p> </div> <p>The <a href="../storageestimate" title="The StorageEstimate dictionary is used by the StorageManager to provide estimates of the size of a Web site's or application's data store and how much of it is in use. The navigator.storage.estimate() method returns an object that conforms to this dictionary when its Promise is resolved."><code>StorageEstimate</code></a> dictionary's <strong><code>quota</code></strong> property is a conservative approximation of how much storage is allotted to the origin or Web app that called <a href="../storagemanager/estimate" title="The estimate() method of the StorageManager interface asks the Storage Manager to obtain quota and usage information for the current origin. This method operates asynchronously, so it returns a Promise which resolves once the information is available. The promise's fulfillment handler receives as an input a StorageEstimate with the usage and quota data."><code>StorageManager.estimate()</code></a>; there may be more space available, but there will not be less. This value is an estimate to help prevent its use for fingerprinting—that is, identifying a device using an amalgamation of the values of seemingly innocuous properties.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>quota</em> = <em>StorageEstimate</em>.quota;
+</pre> <h3 id="Value">Value</h3> <p>A numeric value specifying an approximation of the total amount of storage space available for use by the application.</p> <h2 name="Example" id="Example">Example</h2> <p>In this example, we obtain the usage estimates and present the percentage of storage capacity currently used to the user.</p> <h3 id="HTML_content">HTML content</h3> <pre data-language="html">&lt;p&gt;
+  You're currently using about &lt;span id="percent"&gt;
+  &lt;/span&gt;% of your available storage.
+&lt;/p&gt;
+</pre> <h3 id="JavaScript_content">JavaScript content</h3> <pre data-language="js">navigator.storage.estimate().then(estimate =&gt; {
+  document.getElementById("percent").innerHTML =
+          (estimate.usage/estimate.quota).toFixed(2);
+});
+</pre> <h3 id="Result">Result</h3> <p><iframe class="live-sample-frame sample-code-frame" height="40" src="https://mdn.mozillademos.org/en-US/docs/Web/API/StorageManager/estimate%24samples/Example?revision=1144544" frameborder="0" width="600" id="frame_Example"></iframe></p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/StorageEstimate/quota$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/StorageEstimate/quota" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/StorageEstimate/quota</a>
+  </p>
+</div>

@@ -1,0 +1,51 @@
+<h1>unset</h1> <p>The <code>unset</code> CSS keyword is the combination of the <a href="initial" title="The initial CSS keyword applies the initial value of a property to an element. It is allowed on every CSS property and causes the element for which it is specified to use the initial value of the property."><code>initial</code></a> and <a href="inherit" title="The inherit CSS-value causes the element for which it is specified to take the computed value of the property from its parent element. It is allowed on every CSS property."><code>inherit</code></a> keywords. Like these two other CSS-wide keywords, it can be applied to any CSS property, including the CSS shorthand <a href="all" title="The CSS all shorthand property resets all properties, apart from unicode-bidi and direction, to their initial or inherited value."><code>all</code></a>. This keyword <em>resets</em> the property to its inherited value if it inherits from its parent or to its initial value if not. In other words, it behaves like the <code>inherit</code> keyword in the first case and like the <code>initial</code> keyword in the second case.</p> <h2 id="Examples">Examples</h2> <h3 id="Color">Color</h3> <pre data-language="css">.foo {
+  color: blue;
+}
+.bar {
+  color: green;
+}
+
+p {
+  color: red;
+}
+.bar p {
+  color: unset;
+}
+</pre> <pre data-language="html">&lt;p&gt;This text is red&lt;/p&gt;
+&lt;div class="foo"&gt;
+  &lt;p&gt;This text is also red&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="bar"&gt;
+  &lt;p&gt;This text is green (default inherited value)&lt;/p&gt;
+&lt;/div&gt;
+</pre> <p>Result:</p> <p><iframe class="live-sample-frame sample-code-frame" height="120" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/unset%24samples/Color?revision=1124153" frameborder="0" width="100%" id="frame_Color"></iframe></p> <h3 id="Border">Border</h3> <pre data-language="css">div {
+	border: 1px solid green;
+}
+
+p {
+  border: 1px solid red;
+}
+
+.bar p {
+	border-color: unset;
+}
+
+</pre> <pre data-language="html">&lt;p&gt;This text has a red border&lt;/p&gt;
+&lt;div&gt;
+  &lt;p&gt;This text has a red border&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="bar"&gt;
+  &lt;p&gt;This text has has a black border (initial default, not inherited)&lt;/p&gt;
+&lt;/div&gt;
+</pre> <p>Result:</p> <p><iframe class="live-sample-frame sample-code-frame" height="200" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/unset%24samples/Border?revision=1124153" frameborder="0" width="100%" id="frame_Border"></iframe></p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://drafts.csswg.org/css-cascade/#inherit-initial" class="external" lang="en" hreflang="en">CSS Cascading and Inheritance Level 4<br><small lang="en-US">The definition of 'unset' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>No changes from Level 3</td> </tr> <tr> <td><a href="https://drafts.csswg.org/css-cascade-3/#unset" class="external" lang="en" hreflang="en">CSS Cascading and Inheritance Level 3<br><small lang="en-US">The definition of 'unset' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td style="vertical-align: top;">41</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/27" title="Released on 2014-02-04.">27</a> (27)</td> <td>Edge build 10565+</td> <td>28</td> <td>9.1</td> </tr> </tbody> </table> </div> <div id="compat-mobile">  <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>27.0 (27)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>9.3</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <p>The CSS-wide property values: <a href="initial" title="The initial CSS keyword applies the initial value of a property to an element. It is allowed on every CSS property and causes the element for which it is specified to use the initial value of the property."><code>initial</code></a>, <a href="inherit" title="The inherit CSS-value causes the element for which it is specified to take the computed value of the property from its parent element. It is allowed on every CSS property."><code>inherit</code></a>, <a href="unset" title="The unset CSS keyword is the combination of the initial and inherit keywords. Like these two other CSS-wide keywords, it can be applied to any CSS property, including the CSS shorthand all. This keyword resets the property to its inherited value if it inherits from its parent or to its initial value if not. In other words, it behaves like the inherit keyword in the first case and like the initial keyword in the second case."><code>unset</code></a>, and <a href="revert" title="The revert CSS keyword rolls back the cascade so that the property takes on the value it would have had if there were no styles in the current style origin (author, user, or user-agent). In author stylesheets (the normal case), for the purposes of the given declaration, it's as if there were no author-level styles, thus resetting the property to the default value established by the user-agent stylesheet (or by user styles, if any exist)."><code>revert</code></a>.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/unset$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/unset" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/unset</a>
+  </p>
+</div>

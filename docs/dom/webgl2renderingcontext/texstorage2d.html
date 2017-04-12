@@ -1,0 +1,39 @@
+<h1>WebGL2RenderingContext.texStorage2D</h1><div> <div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div>
+</div> <p>The <strong><code>WebGL2RenderingContext.texStorage2D()</code></strong> method of the <a href="../webgl_api">WebGL API </a>specifies all levels of two-dimensional texture storage.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">void <var>gl</var>.texStorage2D(<var>target</var>, <var>levels</var>, <var>internalformat</var>, <var>width</var>, <var>height</var>);
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><code>target</code></dt> <dd>A <a href="../webgl_api/types" title="The following types are used in WebGL interfaces."><code>GLenum</code></a> specifying the binding point (target) of the active texture. Possible values: <ul> <li>
+<code>gl.TEXTURE_2D</code>: A two-dimensional texture.</li> <li>
+<code>gl.TEXTURE_CUBE_MAP</code>: A cube-mapped texture.</li> </ul> </dd> <dt><code>level</code></dt> <dd>A <a href="../webgl_api/types" title="The following types are used in WebGL interfaces."><code>GLint</code></a> specifying the number of texture levels.</dd> <dt><code>internalformat</code></dt> <dd>A <a href="../webgl_api/types" title="The following types are used in WebGL interfaces."><code>GLenum</code></a> specifying the texture store format. Possible values: <ul> <li><code>gl.R8</code></li> <li><code>gl.R16F</code></li> <li>
+<code>gl.</code>R32F</li> <li><code>gl.R8UI</code></li> <li><code>gl.RG8</code></li> <li><code>gl.RG16F</code></li> <li><code>gl.RG32F</code></li> <li><code>gl.RGUI</code></li> <li><code>gl.RGB8</code></li> <li><code>gl.SRGB8</code></li> <li><code>gl.RGB565</code></li> <li><code>gl.R11F_G11F_B10F</code></li> <li><code>gl.RGB9_E5</code></li> <li><code>gl.RGB16F</code></li> <li><code>gl.RGB32F</code></li> <li><code>gl.RGB8UI</code></li> <li><code>gl.RGBA8</code></li> <li><code>gl.SRGB_APLHA8</code></li> <li><code>gl.RGB5_A1</code></li> <li><code>gl.RGBA4444</code></li> <li><code>gl.RGBA16F</code></li> <li><code>gl.RGBA32F</code></li> <li><code>gl.RGBA8UI</code></li> <li><code>gl.COMPRESSED_R11_EAC</code></li> <li><code>gl.COMPRESSED_SIGNED_R11_EAC</code></li> <li><code>gl.COMPRESSED_RG11_EAC</code></li> <li><code>gl.COMPRESSED_SIGNED_RG11_EAC</code></li> <li><code>gl.COMPRESSED_RGB8_ETC2</code></li> <li><code>gl.COMPRESSED_RGBA8_ETC2_EAC</code></li> <li><code>gl.COMPRESSED_SRGB8_ETC2</code></li> <li><code>gl.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC</code></li> <li><code>gl.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2</code></li> <li><code>gl.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2</code></li> </ul> </dd> <dt><code>width</code></dt> <dd>A <a href="../webgl_api/types" title="The following types are used in WebGL interfaces."><code>GLsizei</code></a> specifying the width of the texture.</dd> <dt><code>height</code></dt> <dd>A <a href="../webgl_api/types" title="The following types are used in WebGL interfaces."><code>GLsizei</code></a> specifying the height of the texture.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>None.</p> <h2 id="Examples">Examples</h2> <pre data-language="js">gl.texStorage3D(gl.TEXTURE_2D, 1, gl.RGB8, 256, 256);
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.6" class="external" lang="en" hreflang="en">WebGL 2.0<br><small lang="en-US">The definition of 'texStorage2D' in that specification.</small></a></td> <td><span class="spec-ED">Editor's Draft</span></td> <td>Initial definition for WebGL.</td> </tr> <tr> <td><a href="https://www.khronos.org/opengles/sdk/docs/man3/html/glTexStorage2D.xhtml" class="external" lang="en" hreflang="en">OpenGL ES 3.0<br><small lang="en-US">The definition of 'glTexStorage2D' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Man page of the (similar) OpenGL ES 3.0 API.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td>56</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>51.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>43</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a href="texstorage3d" title="The WebGL2RenderingContext.texStorage3D() method of the WebGL API specifies all levels of a three-dimensional texture or two-dimensional array texture."><code>WebGL2RenderingContext.texStorage3D()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/texStorage2D$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/texStorage2D" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/texStorage2D</a>
+  </p>
+</div>

@@ -1,0 +1,19 @@
+<h1>screen.pixelDepth</h1> <p>Returns the bit depth of the screen. Per CSSOM View, the value is always <code>24</code>, for compatibility reasons.</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre class="syntaxbox">depth = window.screen.pixelDepth
+</pre> <h2 id="Example" name="Example">Example</h2> <pre data-language="js">// if there is not adequate bit depth
+// choose a simpler color
+if ( window.screen.pixelDepth &gt; 8 ) {
+  document.style.color = "#FAEBD7";
+} else {
+  document.style.color = "#FFFFFF";
+}
+</pre> <h2 id="Specification" name="Specification">Specification</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="http://dev.w3.org/csswg/cssom-view/#dom-screen-pixeldepth" class="external">CSS Object Model (CSSOM) View Module<br><small lang="en-US">The definition of 'Screen.pixelDepth' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="See_also" name="See_also">See also</h2> <ul> <li><a title="Returns the color depth of the screen." href="colordepth"><code>Screen.colorDepth</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/screen/pixelDepth$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/screen/pixelDepth" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/screen/pixelDepth</a>
+  </p>
+</div>

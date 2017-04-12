@@ -1,0 +1,26 @@
+<h1>Reflect.has</h1> <p>The static <code><strong>Reflect</strong></code><strong><code>.has()</code></strong> method works like the <a href="../../operators/in"><code>in</code> operator</a> as a function.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Reflect.has(target, propertyKey)
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><code>target</code></dt> <dd>The target object in which to look for the property.</dd> <dt><code>propertyKey</code></dt> <dd>The name of the property to check.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>A <a title="The Boolean object is an object wrapper for a boolean value." href="../boolean"><code>Boolean</code></a> indicating whether or not the target has the property.</p> <h3 id="Exceptions">Exceptions</h3> <p>A <a title="The TypeError object represents an error when a value is not of the expected type." href="../typeerror"><code>TypeError</code></a>, if <code>target</code> is not an <a title="The Object constructor creates an object wrapper." href="../object"><code>Object</code></a>.</p> <h2 id="Description">Description</h2> <p>The <code>Reflect.has</code> method allows you to check if a property is in an object. It works like the <a href="../../operators/in"><code>in</code> operator</a> as a function.</p> <h2 id="Examples">Examples</h2> <h3 id="Using_Reflect.has()">Using <code>Reflect.has()</code>
+</h3> <pre data-language="js">Reflect.has({x: 0}, 'x'); // true
+Reflect.has({x: 0}, 'y'); // false
+
+// returns true for properties in the prototype chain 
+Reflect.has({x: 0}, 'toString');
+
+// Proxy with .has() handler method
+obj = new Proxy({}, {
+  has(t, k) { return k.startsWith('door'); }
+});
+Reflect.has(obj, 'doorbell'); // true
+Reflect.has(obj, 'dormitory'); // false
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-reflect.has" class="external">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Reflect.has' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://tc39.github.io/ecma262/#sec-reflect.has" class="external">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Reflect.has' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>49</td> <td>
+<a title="Released on 2015-11-03." href="https://developer.mozilla.org/en-US/Firefox/Releases/42">42</a> (42)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>10</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>49</td> <td>42.0 (42)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>10</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a title="Reflect is a built-in object that provides methods for interceptable JavaScript operations. The methods are the same as those of proxy handlers. Reflect is not a function object, so it's not constructible." href="../reflect"><code>Reflect</code></a></li> <li><a href="../../operators/in"><code>in</code> operator</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/has$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/has" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/has</a>
+  </p>
+</div>

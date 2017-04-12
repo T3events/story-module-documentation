@@ -1,0 +1,35 @@
+<h1>SpeechRecognitionResultList.item</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> </div> <p>The <code><strong>item</strong></code> getter of the <a title="The SpeechRecognitionResultList interface of the Web Speech API represents a list of SpeechRecognitionResult objects, or a single one if results are being captured in continuous mode." href="../speechrecognitionresultlist"><code>SpeechRecognitionResultList</code></a> interface is a standard getter — it allows <a title="The SpeechRecognitionResult interface of the Web Speech API represents a single recognition match, which may contain multiple SpeechRecognitionAlternative objects." href="../speechrecognitionresult"><code>SpeechRecognitionResult</code></a> objects in the list to be accessed via array syntax.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">var myResult = speechRecognitionResultListInstance[0];</pre> <h3 id="Returns">Returns</h3> <p>A <a title="The SpeechRecognitionResult interface of the Web Speech API represents a single recognition match, which may contain multiple SpeechRecognitionAlternative objects." href="../speechrecognitionresult"><code>SpeechRecognitionResult</code></a> object.</p> <h2 id="Examples">Examples</h2> <p>This code is excerpted from our <a href="https://github.com/mdn/web-speech-api/blob/master/speech-color-changer/script.js">Speech color changer</a> example.</p> <pre data-language="js">recognition.onresult = function(event) {
+  // The SpeechRecognitionEvent results property returns a SpeechRecognitionResultList object
+  // The SpeechRecognitionResultList object contains SpeechRecognitionResult objects.
+  // It has a getter so it can be accessed like an array
+  // The first [0] returns the SpeechRecognitionResult at position 0.
+  // Each SpeechRecognitionResult object contains SpeechRecognitionAlternative objects that contain individual results.
+  // These also have getters so they can be accessed like arrays.
+  // The second [0] returns the SpeechRecognitionAlternative at position 0.
+  // We then return the transcript property of the SpeechRecognitionAlternative object
+  var color = event.results[0][0].transcript;
+  diagnostic.textContent = 'Result received: ' + color + '.';
+  bg.style.backgroundColor = color;
+}</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html#dfn-speechrecognitionresultlistitem" class="external">Web Speech API<br><small lang="en-US">The definition of 'item()' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>33 <sup>[1]</sup>
+</td> <td>
+<a title="Released on 2016-01-26." href="https://developer.mozilla.org/en-US/Firefox/Releases/44">44</a> (44) <sup>[2]</sup>
+</td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span><sup>[1]</sup>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>2.5</td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> </tr> </tbody> </table> </div> <ul> <li>[1] Speech recognition interfaces are currently prefixed on Chrome, so you'll need to prefix interface names appropriately, e.g. <code>webkitSpeechRecognition</code>; You'll also need to serve your code through a web server for recognition to work.</li> <li>[2] Can be enabled via the <code>media.webspeech.recognition.enable</code> flag in <a>about:config</a>, although note that currently speech recognition won't work on Desktop Firefox — it will be properly exposed soon, once the required internal permissions are sorted out.</li> </ul> <h3 id="Firefox_OS_permissions">Firefox OS permissions</h3> <p>To use speech recognition in an app, you need to specify the following permissions in your <a href="https://developer.mozilla.org/en-US/docs/Web/Apps/Build/Manifest">manifest</a>:</p> <pre data-language="json">"permissions": {
+  "audio-capture" : {
+    "description" : "Audio capture"
+  },
+  "speech-recognition" : {
+    "description" : "Speech recognition"
+  }
+}</pre> <p>You also need a privileged app, so you need to include this as well:</p> <pre data-language="json">  "type": "privileged"</pre> <h2 id="See_also">See also</h2> <ul> <li><a href="../web_speech_api">Web Speech API</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResultList/item$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResultList/item" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResultList/item</a>
+  </p>
+</div>

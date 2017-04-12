@@ -1,0 +1,67 @@
+<h1>Intl.dateTimeFormat.formatToParts</h1><div> <div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div>
+</div> <p>The <strong><code>Intl.DateTimeFormat.prototype.formatToParts()</code></strong> method allows locale-aware formatting of strings produced by <code>DateTimeFormat</code> formatters.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Intl.DateTimeFormat.prototype.formatToParts(date)</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>
+<code>date</code> <span class="inlineIndicator optional optionalInline">Optional</span>
+</dt> <dd>The date to format.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>An <a title="The JavaScript Array object is a global object that is used in the construction of arrays; which are high-level, list-like objects." href="../array"><code>Array</code></a> of objects containing the formatted date in parts.</p> <h2 id="Description">Description</h2> <p>The <code>formatToParts()</code> method is useful for custom formatting of date strings. It returns an <a title="The JavaScript Array object is a global object that is used in the construction of arrays; which are high-level, list-like objects." href="../array"><code>Array</code></a> of objects containing the locale-specific tokens from which it possible to build custom strings while preserving the locale-specific parts. The structure the <code>formatToParts()</code> method returns, looks like this:</p> <pre data-language="js">[
+  { type: 'day', value: '17' },
+  { type: 'weekday', value 'Monday' }
+]</pre> <p>Possible types are the following:</p> <dl> <dt>day</dt> <dd>The string used for the day, for example "17".</dd> <dt>dayPeriod</dt> <dd>The string used for the day period, for example, "AM" or "PM".</dd> <dt>era</dt> <dd>The string used for the era, for example "BC" or "AD".</dd> <dt>hour</dt> <dd>The string used for the hour, for example "3" or "03".</dd> <dt>literal</dt> <dd>The string used for separating date and time values, for example "/", <code>","</code>, <code>"o'clock"</code>, <code>"de"</code>, etc.</dd> <dt>minute</dt> <dd>The string used for the minute, for example "00".</dd> <dt>month</dt> <dd>The string used for the month, for example "12".</dd> <dt>second</dt> <dd>The string used for the second, for example "07" or "42".</dd> <dt>timeZoneName</dt> <dd>The string used for the name of the time zone, for example "UTC".</dd> <dt>weekday</dt> <dd>The string used for the weekday, for example "M", "Monday", or "Montag".</dd> <dt>year</dt> <dd>The string used for the year, for example "2012" or "96".</dd> </dl> <h2 id="Examples">Examples</h2> <p><code>DateTimeFormat</code> outputs localized, opaque strings that cannot be manipulated directly:</p> <pre data-language="js">var date = Date.UTC(2012, 11, 17, 3, 0, 42);
+
+var formatter = new Intl.DateTimeFormat('en-us', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'numeric',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+  hour12: true,
+  timeZone: 'UTC'
+});
+
+formatter.format(date);
+// "Monday, 12/17/2012, 3:00:42 AM"
+</pre> <p>However, in many User Interfaces there is a desire to customize the formatting of this string. The <code>formatToParts</code> method enables locale-aware formatting of strings produced by <code>DateTimeFormat</code> formatters by providing you the string in parts:</p> <pre data-language="js">formatter.formatToParts(date);
+
+// return value: 
+[ 
+  { type: 'weekday',   value: 'Monday' }, 
+  { type: 'literal',   value: ', '     }, 
+  { type: 'month',     value: '12'     }, 
+  { type: 'literal',   value: '/'      }, 
+  { type: 'day',       value: '17'     }, 
+  { type: 'literal',   value: '/'      }, 
+  { type: 'year',      value: '2012'   }, 
+  { type: 'literal',   value: ', '     }, 
+  { type: 'hour',      value: '3'      }, 
+  { type: 'literal',   value: ':'      }, 
+  { type: 'minute',    value: '00'     }, 
+  { type: 'literal',   value: ':'      }, 
+  { type: 'second',    value: '42'     }, 
+  { type: 'literal',   value: ' '      }, 
+  { type: 'dayPeriod', value: 'AM'     } 
+]
+</pre> <p>Now the information is available separately and it can be formatted and concatenated again in a customized way. For example by using <a title="The map() method creates a new array with the results of calling a provided function on every element in this array." href="../array/map"><code>Array.prototype.map()</code></a>, <a href="../../functions/arrow_functions">arrow functions</a>, a <a href="../../statements/switch">switch statement</a>, <a href="../../template_literals">template literals</a>, and <a title="The reduce() method applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value." href="../array/reduce"><code>Array.prototype.reduce()</code></a>.</p> <pre data-language="js">var dateString = formatter.formatToParts(date).map(({type, value}) =&gt; { 
+  switch (type) {
+    case 'dayPeriod': return `&lt;strong&gt;${value}&lt;/strong&gt;`; 
+    default : return value; 
+  } 
+}).reduce((string, part) =&gt; string + part);
+</pre> <p>This will make the day period bold, when using the <code>formatToParts()</code> method.</p> <pre data-language="js">console.log(formatter.format(date));
+// "Monday, 12/17/2012, 3:00:42 AM"
+
+console.log(dateString);
+// "Monday, 12/17/2012, 3:00:42 &lt;strong&gt;AM&lt;/strong&gt;"</pre> <h2 id="Polyfill">Polyfill</h2> <p>A polyfill for this feature is available in the <a href="https://github.com/zbraniecki/proposal-intl-formatToParts">proposal repository</a>.</p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="http://tc39.github.io/ecma402/#sec-Intl.DateTimeFormat.prototype.formatToParts" class="external">ECMAScript Internationalization API 4.0 (ECMA-402)<br><small lang="en-US">The definition of 'Intl.DateTimeFormat.prototype.formatToParts' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td>
+<a title="Released on 2017-01-24." href="https://developer.mozilla.org/en-US/Firefox/Releases/51">51.0</a> (51.0)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>54.0 (54.0)<sup>[2]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <p>[1] This method is implemented since Chrome 55 behind the <code>--datetime-format-to-part</code>s command line parameter (see <a href="https://bugs.chromium.org/p/v8/issues/detail?id=5244">V8 issue 5244</a>).</p> <p>[2] This method was initially only exposed to B2G system apps starting from Gecko 46 (Firefox 46.0 / Thunderbird 46.0 / SeaMonkey 2.43) (see <a title="FIXED: Implement ECMA 402 DateTimeFormat formatToParts behind a compartment option (enabled only for b2g certified apps)" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1216150">bug 1216150</a>).</p> <h2 id="See_also">See also</h2> <ul> <li><a title="The Intl.DateTimeFormat object is a constructor for objects that enable language sensitive date and time formatting." href="../datetimeformat"><code>Intl.DateTimeFormat</code></a></li> <li><a title="The Intl.DateTimeFormat.prototype.format property returns a getter function that formats a date according to the locale and formatting options of this Intl.DateTimeFormat object." href="format"><code>Intl.DateTimeFormat.prototype.format</code></a></li> <li><a title="The toLocaleString() method returns a string with a language sensitive representation of this date. The new locales and options arguments let applications specify the language whose formatting conventions should be used and customize the behavior of the function. In older implementations, which ignore the locales and options arguments, the locale used and the form of the string returned are entirely implementation dependent." href="../date/tolocalestring"><code>Date.prototype.toLocaleString()</code></a></li> <li><a title="The toLocaleDateString() method returns a string with a language sensitive representation of the date portion of this date. The new locales and options arguments let applications specify the language whose formatting conventions should be used and allow to customize the behavior of the function. In older implementations, which ignore the locales and options arguments, the locale used and the form of the string returned are entirely implementation dependent." href="../date/tolocaledatestring"><code>Date.prototype.toLocaleDateString()</code></a></li> <li><a title="The toLocaleTimeString() method returns a string with a language sensitive representation of the time portion of this date. The new locales and options arguments let applications specify the language whose formatting conventions should be used and customize the behavior of the function. In older implementations, which ignore the locales and options arguments, the locale used and the form of the string returned are entirely implementation dependent." href="../date/tolocaletimestring"><code>Date.prototype.toLocaleTimeString()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat/formatToParts$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat/formatToParts" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat/formatToParts</a>
+  </p>
+</div>

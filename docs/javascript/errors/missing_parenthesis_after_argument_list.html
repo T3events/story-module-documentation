@@ -1,0 +1,15 @@
+<h1>Errors: Missing parenthesis after argument list</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">SyntaxError: missing ) after argument list
+</pre> <h2 id="Error_type">Error type</h2> <p><a title="The SyntaxError object represents an error when trying to interpret syntactically invalid code." href="../global_objects/syntaxerror"><code>SyntaxError</code></a>.</p> <h2 id="What_went_wrong">What went wrong?</h2> <p>There is an error with how a function is called. This might be a typo, a missing operator, or an unescaped string, for example.</p> <h2 id="Examples">Examples</h2> <p>Because there is no "+" operator to concatenate the string, JavaScript expects the argument for the <code>log</code> function to be just <code>"PI: "</code>. In that case, it should be terminated by a closing parenthesis.</p> <pre data-language="js">console.log('PI: ' Math.PI);
+// SyntaxError: missing ) after argument list
+</pre> <p>You can correct the <code>log</code> call by adding the "<code>+</code>" operator:</p> <pre data-language="js">console.log('PI: ' + Math.PI);
+// "PI: 3.141592653589793"</pre> <h2 id="See_also">See also</h2> <ul> <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">Functions</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_parenthesis_after_argument_list$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_parenthesis_after_argument_list" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_parenthesis_after_argument_list</a>
+  </p>
+</div>

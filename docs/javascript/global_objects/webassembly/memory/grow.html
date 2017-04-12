@@ -1,0 +1,25 @@
+<h1>WebAssembly.memory.grow</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div> <p>The <strong><code>grow()</code></strong> protoype property of the <code><a href="../memory">Memory</a></code> object increases the size of the memory instance by a specified number of WebAssembly pages.</p> <h2 id="Syntax">Syntax</h2> <pre data-language="js">memory.grow(<em>number</em>);
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><em>number</em></dt> <dd>The number of WebAssembly pages you want to grow the memory by (each one is 64KB in size).</dd> </dl> <h3 id="Return_value">Return value</h3> <p>Void.</p> <h2 id="Examples">Examples</h2> <p>The following example creates a new WebAssembly Memory instance with an initial size of 10 pages (640KB), and a maximum size of 100 pages (6.4MB).</p> <pre data-language="js">var memory = new WebAssembly.Memory({initial:10, maximum:100});</pre> <p>We can then grow the instance by one page like so:</p> <pre data-language="js">memory.grow(1);</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://github.com/WebAssembly/design/blob/master/JS.md#webassemblymemoryprototypegrow" class="external" lang="en" hreflang="en">Web Assembly JavaScript API<br><small lang="en-US">The definition of 'grow()' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td>Initial draft definition.</td> </tr> </tbody> </table> <h2 name="Browser_compatibility" id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[2]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[2]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> </tr> </tbody> </table> </div> <p>[1] Experimental support can be enabled in Chrome 51+ and Opera 38+ by going to <code>chrome://flags</code> and enabling the <em>Experimental WebAssembly</em> flag.</p> <p>[2] Experimental support can be enabled in Firefox 47+ by enabling the <em>javascript.options.wasm</em> flag in <code>about:config</code>.</p> <h2 id="See_also">See also</h2> <ul> <li>
+<a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly</a> landing page.</li> <li>WebAssembly concepts</li> <li>Using the WebAssembly JavaScript API</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory/grow$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory/grow" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory/grow</a>
+  </p>
+</div>

@@ -1,0 +1,16 @@
+<h1>window.moveBy</h1>  <p>Moves the current window by a specified amount.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">window.moveBy(<em>deltaX</em>, <em>deltaY</em>) 
+</pre> <h3 id="Parameters">Parameters</h3> <ul> <li>
+<code>deltaX</code> is the amount of pixels to move the window horizontally.</li> <li>
+<code>deltaY</code> is the amount of pixels to move the window vertically.</li> </ul> <h2 id="Example">Example</h2> <pre data-language="js">function budge() {
+  moveBy(10, -10);
+}</pre> <h2 id="Notes">Notes</h2> <p>You can use negative numbers as parameters for this function. This function makes a relative move while <a title="Moves the window to the specified coordinates." href="moveto"><code>window.moveTo</code></a> makes an absolute move.</p> <p>Since Firefox 7, it's no longer possible for a web site to move a window in a browser, according to the <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=565541#c24" class="link-https">following rules</a>:</p> <ol> <li>You can't move a window or tab that wasn’t created by window.open.</li> <li>You can't move a window or tab when it’s in a window with more than one tab.</li> </ol> <h2 id="Specification">Specification</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/cssom-view/#dom-window-moveby" class="external">CSS Object Model (CSSOM) View Module<br><small lang="en-US">The definition of 'window.moveBy()' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="See_also">See also</h2> <ul> <li><a title="Moves the window to the specified coordinates." href="moveto"><code>window.moveTo</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/moveBy$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/moveBy" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/window/moveBy</a>
+  </p>
+</div>

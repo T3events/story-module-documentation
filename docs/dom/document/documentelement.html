@@ -1,0 +1,19 @@
+<h1>document.documentElement</h1> <p>The <code><strong>Document.documentElement</strong></code> read-only property returns the <a href="../element"><code>Element</code></a> that is the root element of the <a href="../document"><code>document</code></a> (for example, the <code>&lt;html&gt;</code> element for HTML documents).</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre class="syntaxbox">var <i>element</i> = document.documentElement;
+</pre> <h2 id="Example" name="Example">Example</h2> <pre data-language="js">var rootElement = document.documentElement;
+var firstTier = rootElement.childNodes;
+
+// firstTier is the NodeList of the direct children of the root element
+for (var i = 0; i &lt; firstTier.length; i++) {
+   // do something with each direct kid of the root element
+   // as firstTier[i]
+}</pre> <h2 id="Notes" name="Notes">Notes</h2> <p>This property is a read-only convenience for getting the root element associated with any document.</p> <p>HTML documents typically contain a single child node, <code>&lt;html&gt;</code>, perhaps with a DOCTYPE declaration before it. XML documents often contain multiple child nodes: the root element, the DOCTYPE declaration, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/ProcessingInstruction"> processing instructions</a>.</p> <p>That's why you should use <code>document.documentElement</code> rather than <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/document/firstChild"><code>document.firstChild</code></a> to get the root element.</p> <h2 id="Specification" name="Specification">Specifications</h2> <ul> <li><a href="http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-87CD092" class="external">DOM Level 2 Core: Document.documentElement</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/documentElement$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/documentElement" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/document/documentElement</a>
+  </p>
+</div>

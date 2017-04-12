@@ -1,0 +1,24 @@
+<h1>BeforeInstallPromptEvent.prompt</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div> <p>The <strong><code>prompt()</code></strong> method of the <a title="The BeforeInstallPromptEvent is passed into the Window.onbeforeinstallprompt handler and displatched when a web manifest exists, but before a user is prompted to save a web site to a home screen on mobile." href="https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent"><code>BeforeInstallPromptEvent</code></a> interface allows a developer to show the install prompt at a time of their own choosing. </p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">BeforeInstallPromptEvent.prompt()</pre> <h3 id="Parameters">Parameters</h3> <p>None.</p> <h3 id="Returns">Returns</h3> <p>An empty <a title="The Promise object is used for asynchronous computations. A Promise represents an operation that hasn't completed yet, but is expected in the future." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code>Promise</code></a>.</p> <h2 id="Example">Example</h2> <pre>var isTooSoon = true;
+window.addEventListener("beforeinstallprompt", function(e) {
+  if (isTooSoon) {
+    e.preventDefault(); // Prevents prompt display
+    // Prompt later instead:
+    setTimeout(function() {
+      isTooSoon = false;
+      e.prompt(); // Throws if called more than once or default not prevented
+    }, 10000);
+  }
+
+  // The event was re-dispatched in response to our request
+  // ...
+});</pre> <h2 id="Specifications">Specifications</h2> <article id="wikiArticle"> <p>This method is not part of a specification.</p> </article> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>45.0 [1]</td> <td> </td> <td> </td> <td> </td> <td> </td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>45.0 [1]</td> <td> </td> <td> </td> <td> </td> <td> </td> <td> </td> <td>45.0 [1]</td> </tr> </tbody> </table> </div> <p>[1] Behind the flag: chrome://flags/#bypass-app-banner-engagement-checks</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent/prompt$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent/prompt" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent/prompt</a>
+  </p>
+</div>

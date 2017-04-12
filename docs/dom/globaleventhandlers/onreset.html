@@ -1,0 +1,32 @@
+<h1>GlobalEventHandlers.onreset</h1> <p>The <code><strong>GlobalEventHandlers.onreset</strong></code> property contains an <a title="A possible way to get notified of Events of a particular type (such as click) for a given object is to specify an event handler using:" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> triggered when a <code><a title="/en-US/docs/Web/Events/reset" href="https://developer.mozilla.org/en-US/docs/Web/Events/reset">reset</a></code> event is received.</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre>window.onreset = funcRef;
+</pre> <h3 id="Parameters" name="Parameters">Parameters</h3> <ul> <li>
+<code>funcRef</code> is a reference to a function.</li> </ul> <h2 id="Example" name="Example">Example</h2> <pre class="eval">&lt;html&gt;
+&lt;script&gt;
+function reg() {
+  window.captureEvents(Event.RESET);
+  window.onreset = hit;
+}
+ 
+function hit() {
+ alert('hit');
+}
+&lt;/script&gt;
+
+&lt;body onload="reg();"&gt;
+ &lt;form&gt;
+   &lt;input type="reset" value="reset" /&gt;
+ &lt;/form&gt;
+ &lt;div id="d"&gt; &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <h2 id="Notes" name="Notes">Notes</h2> <p>The reset event is raised when the user clicks a reset button in a form (<code>&lt;input type="reset"/&gt;</code>).</p> <h2 id="Specification" name="Specification">Specification</h2> <table class="spectable standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onreset" class="external">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'onreset' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_Compatibility">Browser Compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset</a>
+  </p>
+</div>

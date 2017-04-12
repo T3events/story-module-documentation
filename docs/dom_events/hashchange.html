@@ -1,0 +1,57 @@
+<h1>hashchange</h1><p>The <code>hashchange</code> event is fired when the fragment identifier of the URL has changed (the part of the URL that follows the # symbol, including the # symbol).</p> <table class="properties"> <tbody> <tr> <td>Bubbles</td> <td>Yes</td> </tr> <tr> <td>Cancelable</td> <td>No</td> </tr> <tr> <td>Target objects</td> <td><a title="The window object represents a window containing a DOM document; the document property points to the DOM document loaded in that window." href="https://developer.mozilla.org/en-US/docs/Web/API/Window"><code>Window</code></a></td> </tr> <tr> <td>Interface</td> <td><a title="The hashchange event is fired when the fragment identifier of the URL has changed (the part of the URL that follows the # symbol, including the # symbol)." href="https://developer.mozilla.org/en-US/docs/Web/API/HashChangeEvent"><code>HashChangeEvent</code></a></td> </tr> <tr> <td>Default action</td> <td>None</td> </tr> </tbody> </table> <h2 id="Properties">Properties</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Property</th> <th scope="col">Type</th> <th scope="col">Description</th> </tr> </thead> <tbody> <tr> <td>
+<code>target</code> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span>
+</td> <td><a title="EventTarget is an interface implemented by objects that can receive events and may have listeners for them." href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget"><code>EventTarget</code></a></td> <td>The browsing context (&lt;code&gt;window&lt;/code&gt;).</td> </tr> <tr> <td>
+<code>type</code> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span>
+</td> <td><a title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String." href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString"><code>DOMString</code></a></td> <td>The type of event.</td> </tr> <tr> <td>
+<code>bubbles</code> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span>
+</td> <td><a title="The Boolean object is an object wrapper for a boolean value." href="https://developer.mozilla.org/en-US/docs/Web/API/Boolean"><code>Boolean</code></a></td> <td>Whether the event normally bubbles or not</td> </tr> <tr> <td>
+<code>cancelable</code> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span>
+</td> <td><a title="The Boolean object is an object wrapper for a boolean value." href="https://developer.mozilla.org/en-US/docs/Web/API/Boolean"><code>Boolean</code></a></td> <td>Whether the event is cancellable or not?</td> </tr>
+<tr> <td>
+<code>oldURL</code> <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span>
+</td> <td>string</td> <td>The previous URL from which the window was navigated.</td> </tr> <tr> <td>newURL <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span>
+</td> <td>string</td> <td></td> </tr>
+</tbody>
+</table> <p>There are several fallback scripts listed on <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills">this page</a>. Basically those scripts check the <code>location.hash</code> at a regular interval. Here is a version that allows only one handler to be bound to the <code>window.onhashchange</code> property:</p> <pre data-language="js">(function(window) {
+
+  // exit if the browser implements that event
+  if ( "onhashchange" in window.document.body ) { return; }
+
+  var location = window.location,
+    oldURL = location.href,
+    oldHash = location.hash;
+
+  // check the location hash on a 100ms interval
+  setInterval(function() {
+    var newURL = location.href,
+      newHash = location.hash;
+
+    // if the hash has changed and a handler has been bound...
+    if ( newHash != oldHash &amp;&amp; typeof window.onhashchange === "function" ) {
+      // execute the handler
+      window.onhashchange({
+        type: "hashchange",
+        oldURL: oldURL,
+        newURL: newURL
+      });
+
+      oldURL = newURL;
+      oldHash = newHash;
+    }
+  }, 100);
+
+})(window);
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://html.spec.whatwg.org/multipage/indices.html#event-hashchange" class="external">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'hashchange' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>5.0</td> <td>
+<a title="Released on 2010-01-21." href="https://developer.mozilla.org/en-US/Firefox/Releases/3.6">3.6</a> (1.9.2)<sup>[1]</sup>
+</td> <td>8.0<sup>[2]</sup>
+</td> <td>10.6</td> <td>5.0</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>2.2</td> <td>1.0 (1.9.2)</td> <td>9.0</td> <td>11.0</td> <td>5.0</td> </tr> </tbody> </table> </div> <p>[1] Support for the <code>oldURL</code>/<code>newURL</code> attributes added in Firefox 6.</p> <p>[2] <code>oldURL</code>/<code>newURL</code> attributes are not supported.</p> <h2 id="See_also">See also</h2> <ul> <li><a href="popstate"><code>popstate</code></a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange">WindowEventHandlers.onhashchange</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Events/hashchange$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Events/hashchange" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/Events/hashchange</a>
+  </p>
+</div>

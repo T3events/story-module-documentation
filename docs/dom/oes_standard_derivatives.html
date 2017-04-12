@@ -1,0 +1,48 @@
+<h1>OES standard derivatives</h1> <p>The <code><strong>OES_standard_derivatives</strong></code> extension is part of the <a href="webgl_api">WebGL API</a> and adds the GLSL derivative functions <code>dFdx</code>, <code>dFdy</code>, and <code>fwidth</code>.</p> <p>WebGL extensions are available using the <a href="webglrenderingcontext/getextension" title="The WebGLRenderingContext.getExtension() method enables a WebGL extension."><code>WebGLRenderingContext.getExtension()</code></a> method. For more information, see also <a href="webgl_api/using_extensions">Using Extensions</a> in the <a href="webgl_api/tutorial">WebGL tutorial</a>.</p> <div class="note"> <p><strong>Availability:</strong> This extension is only available to <a href="webglrenderingcontext" title="The WebGLRenderingContext interface provides the OpenGL ES 2.0 rendering context for the drawing surface of an HTML &lt;canvas&gt; element.">WebGL1</a> contexts. In <a href="webgl2renderingcontext" title="The WebGL2RenderingContext interface provides the OpenGL ES 3.0 rendering context for the drawing surface of an HTML &lt;canvas&gt; element.">WebGL2</a>, the functionality of this extension is available on the WebGL2 context by default. In WebGL 2, the constant is available as <code>gl.FRAGMENT_SHADER_DERIVATIVE_HINT</code> and it requires GLSL <code>#version 300 es</code>.</p> </div> <h2 id="Constants">Constants</h2> <p>This extension exposes one new constant, which can be used in the <a href="webglrenderingcontext/hint" title="The WebGLRenderingContext.hint() method of the WebGL API specifies hints for certain behaviors. The interpretation of these hints depend on the implementation."><code>hint()</code></a> and <a href="webglrenderingcontext/getparameter" title="The WebGLRenderingContext.getParameter() method of the WebGL API returns a value for the passed parameter name."><code>getParameter()</code></a> methods.</p> <dl> <dt><code>ext.FRAGMENT_SHADER_DERIVATIVE_HINT_OES</code></dt> <dd>A <a href="webgl_api/types" title="The following types are used in WebGL interfaces."><code>Glenum</code></a> indicating the accuracy of the derivative calculation for the GLSL built-in functions: <code>dFdx</code>, <code>dFdy</code>, and <code>fwidth</code>.</dd> </dl> <h2 id="GLSL_built-in_functions">GLSL built-in functions</h2> <p>The following new functions can be used in GLSL shader code, if this extension is enabled:</p> <pre data-language="cpp">genType dFdx(genType)
+genType dFdy(genType)
+genType fwidth(genType)
+</pre> <h2 id="Examples">Examples</h2> <p>Enabling the extensions:</p> <pre data-language="js">gl.getExtension('OES_standard_derivatives');
+gl.getExtension('EXT_shader_texture_lod');</pre> <p>Shader code that avoids artifacts when wrapping texture coordinates:</p> <pre data-language="html">&lt;script type="x-shader/x-fragment"&gt;
+#extension GL_EXT_shader_texture_lod : enable
+#extension GL_OES_standard_derivatives : enable
+
+uniform sampler2D myTexture;
+varying vec2 texcoord;
+
+void main(){
+  gl_FragColor = texture2DGradEXT(myTexture, mod(texcoord, vec2(0.1, 0.5)), 
+                                  dFdx(texcoord), dFdy(texcoord));
+}
+&lt;/script&gt;</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://www.khronos.org/registry/webgl/extensions/OES_standard_derivatives/" class="external" lang="en" hreflang="en">OES_standard_derivatives<br><small lang="en-US">The definition of 'OES_standard_derivatives' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>10.0</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a href="webglrenderingcontext/getextension" title="The WebGLRenderingContext.getExtension() method enables a WebGL extension."><code>WebGLRenderingContext.getExtension()</code></a></li> <li><a href="ext_shader_texture_lod" title="The EXT_shader_texture_lod extension is part of the WebGL API and adds additional texture functions to the OpenGL ES Shading Language which provide the shader writer with explicit control of LOD (Level of detail)."><code>EXT_shader_texture_lod</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/OES_standard_derivatives$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/OES_standard_derivatives" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/OES_standard_derivatives</a>
+  </p>
+</div>

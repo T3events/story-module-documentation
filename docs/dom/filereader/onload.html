@@ -1,0 +1,22 @@
+<h1>FileReader.onload</h1> <p>The <strong><code>FileReader.onload</code></strong> property contains a event handler executed when the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Events/load" title="/en-US/docs/Web/Events/load">load</a></code> event is fired, when content read with <a href="readasarraybuffer">readAsArrayBuffer</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsBinaryString">readAsBinaryString</a>, <a href="readasdataurl">readAsDataURL</a> or <a href="readastext">readAsText</a> is available.</p> <h2 id="Example">Example</h2> <pre data-language="js">// Callback from a &lt;input type="file" onchange="onChange(event)"&gt;
+function onChange(event) {
+  var file = event.target.files[0];
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    // The file's text will be printed here
+    console.log(event.target.result)
+  };
+
+  reader.readAsText(file);
+}
+</pre><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/FileReader/onload</a>
+  </p>
+</div>

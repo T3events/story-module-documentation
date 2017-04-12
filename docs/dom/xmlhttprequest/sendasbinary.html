@@ -1,0 +1,35 @@
+<h1>XMLHttpRequest.sendAsBinary</h1><div class="overheadIndicator draft"> <p><strong>Draft</strong><br> This page is not complete.</p> </div><div class="overheadIndicator deprecated deprecatedHeader"> <p><strong> Deprecated since Gecko 31 (Firefox 31 / Thunderbird 31 / SeaMonkey 2.28)</strong><br>This feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Do not use it in old or new projects. Pages or Web apps using it may break at any time.</p> </div> <p>The <strong>XMLHttpRequest.sendAsBinary()</strong> method is a variant of the <code>send()</code> method that sends binary data.</p> <div class="note">
+<strong>Note:</strong> This non-standard method is considered deprecated as of Gecko 31 (Firefox 31 / Thunderbird 31 / SeaMonkey 2.28), and will be removed soon. The standard <code>send(Blob data)</code> method can be used instead.</div> <pre class="syntaxbox">void sendAsBinary(
+   in DOMString body
+);
+</pre> <p>This method, used in conjunction with the <a href="../filereader#readAsBinaryString()"><code>readAsBinaryString</code></a> method of the <a href="../filereader"><code>FileReader</code></a> API, makes it possible to <a href="using_xmlhttprequest#Submitting_forms_and_uploading_files">read and <strong>upload</strong> any type of file</a> and to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">stringify</a> the raw data.</p> <h5 id="Parameters">Parameters</h5> <dl> <dt><code>body</code></dt> <dd>The request body as a DOMstring. This data is converted to a string of single-byte characters by truncation (removing the high-order byte of each character).</dd> </dl> <h5 id="sendAsBinary()_polyfill">
+<code>sendAsBinary()</code> polyfill</h5> <p>Since <code>sendAsBinary()</code> is an experimental feature, here is <strong>a polyfill</strong> for browsers that <em>don't</em> support the <code>sendAsBinary()</code> method but support <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">typed arrays</a>.</p> <pre data-language="js">/*\
+|*|
+|*|  :: XMLHttpRequest.prototype.sendAsBinary() Polyfill ::
+|*|
+|*|  https://developer.mozilla.org/en-US/docs/DOM/XMLHttpRequest#sendAsBinary()
+|*|
+\*/
+
+if (!XMLHttpRequest.prototype.sendAsBinary) {
+  XMLHttpRequest.prototype.sendAsBinary = function (sData) {
+    var nBytes = sData.length, ui8Data = new Uint8Array(nBytes);
+    for (var nIdx = 0; nIdx &lt; nBytes; nIdx++) {
+      ui8Data[nIdx] = sData.charCodeAt(nIdx) &amp; 0xff;
+    }
+    /* send as ArrayBufferView...: */
+    this.send(ui8Data);
+    /* ...or as ArrayBuffer (legacy)...: this.send(ui8Data.buffer); */
+  };
+}</pre> <div class="note">
+<strong>Note:</strong> It's possible to build this polyfill putting two types of data as argument for <code>send()</code>: an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer"><code>ArrayBuffer</code></a> (<code>ui8Data.buffer</code> – the commented code) or an <a href="../arraybufferview"><code>ArrayBufferView</code></a> (<code>ui8Data</code>, which is a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">typed array of 8-bit unsigned integers</a> – uncommented code). However, on Google Chrome, when you try to send an <code>ArrayBuffer</code>, the following warning message will appear: <code>ArrayBuffer is deprecated in XMLHttpRequest.send(). Use ArrayBufferView instead.</code> Another possible approach to send binary data is the <a href="https://developer.mozilla.org/en-US/Add-ons/Code_snippets/StringView"><code>StringView</code></a> <span title="This API is not native." style="background-color: #ffffff;" class="inlineIndicator">Non native</span> typed arrays superclass in conjunction with the <a href="#send()"><code>send()</code></a> method.</div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/sendAsBinary$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/sendAsBinary" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/sendAsBinary</a>
+  </p>
+</div>

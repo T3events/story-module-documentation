@@ -1,0 +1,14 @@
+<h1>HTMLCollection.item</h1> <p><code>HTMLCollection.item()</code> gets an element by position.</p> <h3 id="Parameters">Parameters</h3> <dl> <dt>index</dt> <dd>The position of the Node to be returned. Elements appear in an HTMLCollection in the same order in which they appear in the document source.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>The <a title="A Node is an interface from which a number of DOM types inherit, and allows these various types to be treated (or tested) similarly." href="../node"><code>Node</code></a> at the specified index, or null if index is less than zero or greater than or equal to the length property.</p> <h2 id="Description">Description</h2> <p>The item( ) method returns a numbered element from an HTMLCollection. In JavaScript, it is easier to treat the HTMLCollection as an array and to index it using array notation.</p> <h2 id="Example">Example</h2> <pre data-language="js">var c = document.images;  // This is an HTMLCollection
+var img0 = c.item(0);     // You can use the item( ) method this way
+var img1 = c[1];          // But this notation is easier and more common
+</pre> <h2 id="See_also">See also</h2> <ul> <li><a title="Returns a node from a NodeList by index. This method doesn't throw exceptions as long as you provide arguments; a value of null is returned if the index is out of range and a TypeError is thrown if no argument is provided." href="../nodelist/item"><code>NodeList.item()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection/item$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection/item" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection/item</a>
+  </p>
+</div>

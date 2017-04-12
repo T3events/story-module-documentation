@@ -1,0 +1,31 @@
+<h1>ServiceWorkerGlobalScope.oninstall</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div> <p>The <strong>oninstall</strong> property of the <a href="../serviceworkerglobalscope" title="The ServiceWorkerGlobalScope interface of the ServiceWorker API represents the global execution context of a service worker."><code>ServiceWorkerGlobalScope</code></a> interface is an event handler fired whenever an <code><a href="https://developer.mozilla.org/en-US/docs/Web/Events/install" title="/en-US/docs/Web/Events/install">install</a></code> event occurs (when the service worker installs). This happens before activation.</p> <h2 id="Syntax">Syntax</h2> <pre data-language="js">ServiceWorkerGlobalScope.oninstall = function(event) { ... };
+ServiceWorkerGlobalScope.addEventListener('install', function(event) { ... });</pre> <h2 id="Example">Example</h2> <p>The following snippet comes from <a href="../service_worker_api/using_service_workers#Install_and_activate.3A_populating_your_cache">Using Service Workers</a>; go there for more details.</p> <pre data-language="js">this.addEventListener('install', function(event) {
+  event.waitUntil(
+   caches.create('v1').then(function(cache) {
+         return cache.add(
+        '/sw-test/',
+        '/sw-test/index.html',
+        '/sw-test/style.css',
+        '/sw-test/app.js',
+        '/sw-test/image-list.js',
+        '/sw-test/star-wars-logo.jpg',
+        '/sw-test/gallery/',
+        '/sw-test/gallery/bountyHunters.jpg',
+        '/sw-test/gallery/myLittleVader.jpg',
+        '/sw-test/gallery/snowTroopers.jpg'
+     );
+   })
+   );
+});</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://www.w3.org/TR/service-workers/#service-worker-global-scope-event-handlers" class="external" lang="en" hreflang="en">Service Workers<br><small lang="en-US">The definition of 'Event Handlers' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>40.0</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/44" title="Released on 2016-01-26.">44.0</a> (44.0)<sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>44.0 (44.0)</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td>40.0</td> </tr> </tbody> </table> </div> <p>[1] Service workers (and <a href="../push_api">Push</a>) have been disabled in the <a href="https://www.mozilla.org/en-US/firefox/organizations/">Firefox 45 Extended Support Release</a> (ESR.)</p> <h2 id="See_also">See also</h2> <ul> <li><a href="../service_worker_api/using_service_workers">Using Service Workers</a></li> <li><a href="https://github.com/mdn/sw-test" class="external external-icon">Service workers basic code example</a></li> <li><a href="https://jakearchibald.github.io/isserviceworkerready/" class="external external-icon">Is ServiceWorker ready?</a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" title="The Promise object is used for deferred and asynchronous computations. A Promise represents an operation that hasn't completed yet, but is expected in the future."><code>Promise</code></a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Performance/Using_web_workers">Using web workers</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/oninstall$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/oninstall" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/oninstall</a>
+  </p>
+</div>

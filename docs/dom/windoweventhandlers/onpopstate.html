@@ -1,0 +1,23 @@
+<h1>WindowEventHandlers.onpopstate</h1>  <p>An event handler for the <code>popstate</code> event on the window.</p> <p>A <code>popstate</code> event is dispatched to the window every time the active history entry changes between two history entries for the same document. If the history entry being activated was created by a call to <code>history.pushState()</code> or was affected by a call to <code>history.replaceState()</code>, the <code>popstate</code> event's <code>state</code> property contains a copy of the history entry's state object.</p> <p>Note that just calling <code>history.pushState()</code> or <code>history.replaceState()</code> won't trigger a <code>popstate</code> event. The <code>popstate</code> event is only triggered by doing a browser action such as clicking on the back button (or calling <code>history.back()</code> in JavaScript). And the event is only triggered when the user navigates between two history entries for the same document.</p> <p>Browsers tend to handle the <code>popstate</code> event differently on page load. Chrome (prior to v34) and Safari (prior to 10.0) always emit a <code>popstate</code> event on page load, but Firefox doesn't.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox">window.onpopstate = <var>funcRef</var>;
+</pre> <ul> <li>
+<var>funcRef</var> is a handler function.</li> </ul> <h2 name="The_popstate_event" id="The_popstate_event">The popstate event</h2> <p>As an example, a page at <code><var>http://example.com/example.html</var></code> running the following code will generate alerts as indicated:</p> <pre data-language="js">window.onpopstate = function(event) {
+  alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+};
+
+history.pushState({page: 1}, "title 1", "?page=1");
+history.pushState({page: 2}, "title 2", "?page=2");
+history.replaceState({page: 3}, "title 3", "?page=3");
+history.back(); // alerts "location: http://example.com/example.html?page=1, state: {"page":1}"
+history.back(); // alerts "location: http://example.com/example.html, state: null
+history.go(2);  // alerts "location: http://example.com/example.html?page=3, state: {"page":3}
+</pre> <p>Note that even though the original history entry (for <code><var>http://example.com/example.html</var></code>) has no state object associated with it, a <code>popstate</code> event is still fired when we activate that entry after the second call to <code>history.back()</code>.</p> <h2 name="Specification" id="Specification">Specification</h2> <ul> <li><a href="http://www.whatwg.org/specs/web-apps/current-work/#handler-window-onpopstate">HTML5 popstate event</a></li> </ul> <h2 name="See_also" id="See_also">See also</h2> <ul> <li><a title="The Window.history read-only property returns a reference to the History object, which provides an interface for manipulating the browser session history (pages visited in the tab or frame that the current page is loaded in)." href="../window/history"><code>window.history</code></a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/DOM/Manipulating_the_browser_history">Manipulating the browser history</a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/DOM/Manipulating_the_browser_history/Example">Ajax navigation example</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate</a>
+  </p>
+</div>

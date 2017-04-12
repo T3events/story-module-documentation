@@ -1,0 +1,65 @@
+<h1>font-variant-east-asian</h1>  <p>The <strong><code>font-variant-east-asian</code></strong> CSS property controls the usage of alternate glyphs for East Asian scripts, like Japanese and Chinese.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>normal</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>all elements. It also applies to <a title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line." href="::first-letter"><code>::first-letter</code></a> and <a title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the element, width of the document, and the font size of the text. As all pseudo-elements, ::first-line does not match any real HTML element." href="::first-line"><code>::first-line</code></a>.</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>yes</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Animation type</th>
+<td>discrete</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>order of appearance in the formal grammar of the values</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">font-variant-east-asian: normal;
+font-variant-east-asian: ruby;
+font-variant-east-asian: jis78;              /* &lt;east-asian-variant-values&gt; */
+font-variant-east-asian: jis83;              /* &lt;east-asian-variant-values&gt; */
+font-variant-east-asian: jis90;              /* &lt;east-asian-variant-values&gt; */
+font-variant-east-asian: jis04;              /* &lt;east-asian-variant-values&gt; */
+font-variant-east-asian: simplified;         /* &lt;east-asian-variant-values&gt; */
+font-variant-east-asian: traditional;        /* &lt;east-asian-variant-values&gt; */
+font-variant-east-asian: full-width;         /* &lt;east-asian-width-values&gt; */
+font-variant-east-asian: proportional-width; /* &lt;east-asian-width-values&gt; */
+font-variant-east-asian: ruby full-width jis83;
+
+/* Global values */
+font-variant-east-asian: inherit;
+font-variant-east-asian: initial;
+font-variant-east-asian: unset;
+</pre> <h3 id="Values">Values</h3> <dl> <dt><code>normal</code></dt> <dd>This keyword leads to the deactivation of the use of such alternate glyphs.</dd> <dt><code>ruby</code></dt> <dd>This keyword forces the use of special glyphs for ruby characters. As these are usually smaller, font creators often designs specific forms, usually slightly bolder to improve the contrast. This keyword corresponds to the OpenType values <code>ruby</code>.</dd> <dt>
+<em>&lt;east-asian-variant-values</em>&gt;</dt> <dd>These values activates the figures defined in specific standard. Possible values are: <table class="standard-table"> <tbody> <tr> <th>Keyword</th> <th>Standard defining the glyphs</th> <th>OpenType equivalent</th> </tr> <tr> <td><code>jis78</code></td> <td><a href="http://en.wikipedia.org/wiki/JIS_X_0208">JIS X 208 version 1978</a></td> <td><code>jp78</code></td> </tr> <tr> <td><code>jis83</code></td> <td><a href="http://en.wikipedia.org/wiki/JIS_X_0208">JIS X 208 version 1983</a></td> <td><code>jp83</code></td> </tr> <tr> <td><code>jis90</code></td> <td><a href="http://en.wikipedia.org/wiki/JIS_X_0208">JIS X 208 version 1990</a></td> <td><code>jp90</code></td> </tr> <tr> <td><code>jis04</code></td> <td><a href="http://en.wikipedia.org/wiki/JIS_X_0208">JIS X 208 version 2004</a></td> <td><code>jp04</code></td> </tr> <tr> <td><code>simplified</code></td> <td>None, use the simplified Chinese glyphs</td> <td><code>smpl</code></td> </tr> <tr> <td><code>traditional</code></td> <td>None, use the traditional Chinese glyphs</td> <td><code>trad</code></td> </tr> </tbody> </table> </dd> <dt>
+<em>&lt;<em>east-asian-width-values</em></em>&gt;</dt> <dd>These values controls the sizing of figures used for East Asian characters. Two values are possible: <ul> <li>
+<code>proportional-width</code> activating the set of figures where numbers are not all of the same size. It corresponds to the OpenType values <code>pwid</code>.</li> <li>
+<code>full-width</code> activating the set of figures where numbers are all of the same size, allowing them to be easily aligned like in tables. It corresponds to the OpenType values <code>fwid</code>.</li> </ul> </dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox">normal | <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">[</a> <a href="#east-asian-variant-values">&lt;east-asian-variant-values&gt;</a> || <a href="#east-asian-width-values">&lt;east-asian-width-values&gt;</a> || ruby <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">]</a><p>where <br><span id="east-asian-variant-values">&lt;east-asian-variant-values&gt;</span> = <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">[</a> jis78 | jis83 | jis90 | jis04 | simplified | traditional <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">]</a><br><span id="east-asian-width-values">&lt;east-asian-width-values&gt;</span> = <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">[</a> full-width | proportional-width <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">]</a></p></pre> <h2 id="Examples">Examples</h2> <h4 id="HTML">HTML</h4> <pre data-language="html">&lt;p class="normal"&gt;!&lt;/p&gt;
+
+</pre> <h4 id="CSS">CSS</h4> <pre data-language="css">p {
+  font-variant-east-asian: ruby;
+}</pre> <h3 id="Result">Result</h3> <p><iframe frameborder="0" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/font-variant-east-asian%24samples/Examples?revision=1153672" id="frame_Examples" class="live-sample-frame sample-code-frame"></iframe></p> <p><a href="https://mdn.mozillademos.org/en-US/docs/Web/CSS/font-variant-east-asian%24samples/Examples?revision=1153672">Live sample link</a></p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a hreflang="en" class="external" lang="en" href="https://drafts.csswg.org/css-fonts-3/#propdef-font-variant-east-asian">CSS Fonts Module Level 3<br><small lang="en-US">The definition of 'font-variant-east-asian' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 name="Browser_Compatibility" id="Browser_Compatibility">Browser Compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>
+<a title="Released on 2014-12-01." href="https://developer.mozilla.org/en-US/Firefox/Releases/34">34</a> (34) [1]</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>34.0 (34)[1]</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <p>[1] Experimental implementation was available since Gecko 24. It was governed by the preference <code>layout.css.font-features.enabled</code> defaulting to <code>true</code> on Nightly and Aurora only.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian</a>
+  </p>
+</div>

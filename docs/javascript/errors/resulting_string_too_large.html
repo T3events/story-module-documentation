@@ -1,0 +1,20 @@
+<h1>Errors: Resulting string too large</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">RangeError: repeat count must be less than infinity and not overflow maximum string size (Firefox)
+
+RangeError: Invalid count value (Chrome)
+</pre> <h2 id="Error_type">Error type</h2> <p><a title="The RangeError object indicates an error when a value is not in the set or range of allowed values." href="../global_objects/rangeerror"><code>RangeError</code></a></p> <h2 id="What_went_wrong">What went wrong?</h2> <p>The <a title="The repeat() method constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together." href="../global_objects/string/repeat"><code>String.prototype.repeat()</code></a> method has been used. It has a <code>count</code> parameter indicating the number of times to repeat the string. It must be between 0 and less than positive <a title="The global Infinity property is a numeric value representing infinity." href="../global_objects/infinity"><code>Infinity</code></a> and cannot be a negative number. The range of allowed values can be described like this: [0, +∞).</p> <p>The resulting string can also not be larger than the maximum string size, which can differ in JavaScript engines. In Firefox (SpiderMonkey) the maximum string size is 2<sup>28</sup> -1 (<code>0xFFFFFFF</code>).</p> <h2 id="Examples">Examples</h2> <h3 id="Invalid_cases">Invalid cases</h3> <pre data-language="js">'abc'.repeat(Infinity); // RangeError
+'a'.repeat(2**28);      // RangeError
+</pre> <h3 id="Valid_cases">Valid cases</h3> <pre data-language="js">'abc'.repeat(0);    // ''
+'abc'.repeat(1);    // 'abc'
+'abc'.repeat(2);    // 'abcabc'
+'abc'.repeat(3.5);  // 'abcabcabc' (count will be converted to integer)
+</pre> <h2 id="See_also">See also</h2> <ul> <li><a title="The repeat() method constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together." href="../global_objects/string/repeat"><code>String.prototype.repeat()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Resulting_string_too_large$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Resulting_string_too_large" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Resulting_string_too_large</a>
+  </p>
+</div>

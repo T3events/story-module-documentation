@@ -1,0 +1,45 @@
+<h1>Geolocation.watchPosition</h1> <p>The <strong><code>Geolocation.watchPosition()</code></strong> method is used to register a handler function that will be called automatically each time the position of the device changes. You can also, optionally, specify an error handling callback function.</p> <p>This method returns a watch ID value that then can be used to unregister the handler by passing it to the <a title="The Geolocation.clearWatch() method is used to unregister location/error monitoring handlers previously installed using Geolocation.watchPosition()." href="clearwatch"><code>Geolocation.clearWatch()</code></a> method.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>id</em> = navigator.geolocation.watchPosition(<em>success[</em>, <em>error[</em>, <em>options]]</em>)</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><em>success</em></dt> <dd>A callback function that takes a <a title="The Position interface represents the position of the concerned device at a given time. The position, represented by a Coordinates object, comprehends the 2D position of the device, on a spheroid representing the Earth, but also its altitude and its speed." href="../position"><code>Position</code></a> object as an input parameter.</dd> <dt>
+<em>error</em> <span class="inlineIndicator optional optionalInline">Optional</span>
+</dt> <dd>An optional callback function that takes a <a title="The PositionError interface represents the reason of an error occurring when using the geolocating device." href="../positionerror"><code>PositionError</code></a> object as an input parameter.</dd> <dt>
+<em>options</em> <span class="inlineIndicator optional optionalInline">Optional</span>
+</dt> <dd>An optional <a title="The PositionOptions interface describes an object containing option properties to pass as a parameter of Geolocation.getCurrentPosition() and Geolocation.watchPosition()." href="../positionoptions"><code>PositionOptions</code></a> object.</dd> </dl> <h2 id="Example">Example</h2> <pre data-language="js">var id, target, options;
+
+function success(pos) {
+  var crd = pos.coords;
+
+  if (target.latitude === crd.latitude &amp;&amp; target.longitude === crd.longitude) {
+    console.log('Congratulations, you reached the target');
+    navigator.geolocation.clearWatch(id);
+  }
+}
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+}
+
+target = {
+  latitude : 0,
+  longitude: 0
+};
+
+options = {
+  enableHighAccuracy: false,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+id = navigator.geolocation.watchPosition(success, error, options);
+</pre> <h2 id="Note">Note</h2> <p>If your application is running on firefox OS, please take a look at <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/navigator.requestWakeLock()">geolocation wake lock</a> to keep your application getting position updates while in the background or screen off.</p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a hreflang="en" class="external" lang="en" href="https://dev.w3.org/geo/api/spec-source.html#watch-position">Geolocation API<br><small lang="en-US">The definition of 'Geolocation.watchPosition()' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial specification.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>5</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a title="Released on 2009-06-30." href="https://developer.mozilla.org/en-US/Firefox/Releases/3.5">3.5</a> (1.9.1)</td> <td>9</td> <td>10.60<br> Removed in 15.0<br> Reintroduced in 16.0</td> <td>5</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>4.0 (4)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>10.60</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/navigator.requestWakeLock()">geolocation wake lock</a></li> <li><a title="/en-US/docs/WebAPI/Using_geolocation" href="https://developer.mozilla.org/en-US/docs/WebAPI/Using_geolocation">Using geolocation</a></li> <li>The interface it belongs to, <a title="The Geolocation interface represents an object able to programmatically obtain the position of the device. It gives Web content access to the location of the device. This allows a Web site or app to offer customized results based on the user's location." href="../geolocation"><code>Geolocation</code></a>, and the way to access it <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/navigator/geolocation"><code>NavigatorGeolocation.geolocation</code></a>.</li> <li>The opposite operation: <a title="The Geolocation.clearWatch() method is used to unregister location/error monitoring handlers previously installed using Geolocation.watchPosition()." href="clearwatch"><code>Geolocation.clearWatch()</code></a>
+</li> <li>A similar method: <a title="The Geolocation.getCurrentPosition() method is used to get the current position of the device." href="getcurrentposition"><code>Geolocation.getCurrentPosition()</code></a>
+</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition</a>
+  </p>
+</div>

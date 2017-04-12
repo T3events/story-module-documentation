@@ -1,0 +1,41 @@
+<h1>CustomEvent.constructor</h1> <p>The <code><strong>CustomEvent()</strong></code> constructor creates a new <a href="../customevent" title="This interface inherits properties from its parent, Event:"><code>CustomEvent</code></a>.</p> <div class="note">
+<strong>Note:</strong> This feature is available in <a href="../web_workers_api">Web Workers</a>.</div> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"> <em>event</em> = new CustomEvent(<em>typeArg</em>, <em>customEventInit</em>);</pre> <h3 id="Values">Values</h3> <dl> <dt><em>typeArg</em></dt> <dd>Is a <a href="../domstring" title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String."><code>DOMString</code></a> representing the name of the event.</dd> <dt>
+<em>customEventInit</em><span class="inlineIndicator optional optionalInline">Optional</span>
+</dt> </dl> <dl> <dd>Is a <code>CustomEventInit</code> dictionary, having the following fields: <ul> <li>
+<code>"detail"</code>, optional and defaulting to <code>null</code>, of type any, that is an event-dependent value associated with the event.</li> </ul> <div class="note"> <p><em>The <code>CustomEventInit</code></em><em> dictionary also accepts fields from the <a href="../event/event" title="The Event() constructor creates a new Event."><code>EventInit</code></a> dictionary.</em></p> </div> </dd> </dl> <h2 id="Example">Example</h2> <pre data-language="js">// add an appropriate event listener
+obj.addEventListener("cat", function(e) { process(e.detail) });
+
+// create and dispatch the event
+var event = new CustomEvent("cat", {
+  detail: {
+    hazcheeseburger: true
+  }
+});
+obj.dispatchEvent(event);</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://dom.spec.whatwg.org/#interface-customevent" class="external" lang="en" hreflang="en">DOM<br><small lang="en-US">The definition of 'CustomEvent()' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>BasicSupport</td> <td>15</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/11" title="Released on 2012-03-13.">11</a> (11)</td> <td><span style="color: #f00;">No support</span></td> <td>11.60</td> <td>
+<em>Nightly build</em> (535.2)</td> </tr> <tr> <td>Available in workers</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/48" title="Released on 2016-08-02.">48</a> (48)</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>11.0 (11)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> <tr> <td>Available in workers</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>48.0 (48)</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table>  </div> <h2 id="Polyfill">Polyfill</h2> <p>You can polyfill the <code>CustomEvent()</code> constructor functionality in Internet Explorer 9 and higher with the following code:</p> <pre data-language="js">(function () {
+
+  if ( typeof window.CustomEvent === "function" ) return false;
+
+  function CustomEvent ( event, params ) {
+    params = params || { bubbles: false, cancelable: false, detail: undefined };
+    var evt = document.createEvent( 'CustomEvent' );
+    evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+    return evt;
+   }
+
+  CustomEvent.prototype = window.Event.prototype;
+
+  window.CustomEvent = CustomEvent;
+})();</pre> <p>Internet Explorer &gt;= 9 adds a CustomEvent object to the window, but with correct implementations, this is a function.</p> <h2 id="See_also">See also</h2> <ul> <li><a href="../customevent" title="This interface inherits properties from its parent, Event:"><code>CustomEvent</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent</a>
+  </p>
+</div>

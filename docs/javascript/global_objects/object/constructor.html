@@ -1,0 +1,87 @@
+<h1>object.constructor</h1> <p>Returns a reference to the <a title="The Object constructor creates an object wrapper." href="../object"><code>Object</code></a> constructor function that created the instance object. Note that the value of this property is a reference to the function itself, not a string containing the function's name. The value is only read-only for primitive values such as <code>1</code>, <code>true</code> and <code>"test"</code>.</p> <h2 id="Description">Description</h2> <p>All objects will have a <code>constructor</code> property. Objects created without the explicit use of a constructor function (i.e. the object and array literals) will have a <code>constructor</code> property that points to the Fundamental Object constructor type for that object.</p> <pre data-language="js">var o = {};
+o.constructor === Object; // true
+
+var o = new Object;
+o.constructor === Object; //true
+
+var a = [];
+a.constructor === Array; // true
+
+var a = new Array;
+a.constructor === Array //true
+
+var n = new Number(3);
+n.constructor === Number; // true
+</pre> <h2 id="Examples">Examples</h2> <h3 id="Displaying_the_constructor_of_an_object">Displaying the constructor of an object</h3> <p>The following example creates a prototype, <code>Tree</code>, and an object of that type, <code>theTree</code>. The example then displays the <code>constructor</code> property for the object <code>theTree</code>.</p> <pre data-language="js">function Tree(name) {
+  this.name = name;
+}
+
+var theTree = new Tree('Redwood');
+console.log('theTree.constructor is ' + theTree.constructor);
+</pre> <p>This example displays the following output:</p> <pre data-language="js">theTree.constructor is function Tree(name) {
+  this.name = name;
+}
+</pre> <h3 id="Changing_the_constructor_of_an_object">Changing the constructor of an object</h3> <p>The following example shows how to modify constructor value of generic objects. Only <code>true</code>, <code>1</code> and <code>"test"</code> will not be affected as they have read-only native constructors. This example shows that it is not always safe to rely on the <code>constructor</code> property of an object.</p> <pre data-language="js">function Type () {}
+
+var types = [
+  new Array(),
+  [],
+  new Boolean(),
+  true,             // remains unchanged
+  new Date(),
+  new Error(),
+  new Function(),
+  function () {},
+  Math,
+  new Number(),
+  1,                // remains unchanged
+  new Object(),
+  {},
+  new RegExp(),
+  /(?:)/,
+  new String(),
+  'test'            // remains unchanged
+];
+
+for (var i = 0; i &lt; types.length; i++) {
+  types[i].constructor = Type;
+  types[i] = [types[i].constructor, types[i] instanceof Type, types[i].toString()];
+}
+
+console.log(types.join('\n'));
+</pre> <p>This example displays the following output:</p> <pre data-language="js">function Type() {},false,
+function Type() {},false,
+function Type() {},false,false
+function Boolean() {
+    [native code]
+},false,true
+function Type() {},false,Mon Sep 01 2014 16:03:49 GMT+0600
+function Type() {},false,Error
+function Type() {},false,function anonymous() {
+
+}
+function Type() {},false,function () {}
+function Type() {},false,[object Math]
+function Type() {},false,0
+function Number() {
+    [native code]
+},false,1
+function Type() {},false,[object Object]
+function Type() {},false,[object Object]
+function Type() {},false,/(?:)/
+function Type() {},false,/(?:)/
+function Type() {},false,
+function String() {
+    [native code]
+},false,test
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a title="The 'ECMAScript 1st Edition (ECMA-262)' specification" hreflang="en" class="external" lang="en" href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf">ECMAScript 1st Edition (ECMA-262)</a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition. Implemented in JavaScript 1.1.</td> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="http://www.ecma-international.org/ecma-262/5.1/#sec-15.2.4.1">ECMAScript 5.1 (ECMA-262)<br><small lang="en-US">The definition of 'Object.prototype.constructor' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td> </td> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-object.prototype.constructor">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Object.prototype.constructor' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td> </td> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://tc39.github.io/ecma262/#sec-object.prototype.constructor">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Object.prototype.constructor' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor</a>
+  </p>
+</div>

@@ -1,0 +1,43 @@
+<h1>@font-face.font-style</h1>  <p>The font-style CSS descriptor allows authors to specify font styles for the fonts specified in the <code>@font-face</code> rule.</p> <p>For a particular font family, authors can download various font faces which correspond to the different styles of the same font family, and then use the <code>font-style </code>descriptor to explicitly specify the font face's style. The values for the CSS descriptor is same as that of its corresponding font property.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row">Related <a href="../at-rule">at-rule</a>
+</th>
+<td><a title="The @font-face CSS at-rule allows authors to specify online fonts to display text on their web pages. By allowing authors to provide their own fonts, @font-face eliminates the need to depend on the limited number of fonts users have installed on their computers. The @font-face at-rule may be used not only at the top level of a CSS, but also inside any CSS conditional-group at-rule." href="../@font-face"><code>@font-face</code></a></td>
+</tr>
+<tr>
+<th scope="row"><a href="../initial_value">Initial value</a></th>
+<td><code>normal</code></td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>all</td>
+</tr>
+<tr>
+<th scope="row"><a href="../computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2>  <pre data-language="css">font-style: normal;
+font-style: italic;
+font-style: oblique;</pre> <h3 id="Values">Values</h3> <p><code><strong>normal</strong></code><br> Selects the normal version of the font-family.</p> <p><strong><code>italic</code></strong><br> Specifies that font-face is an italicized version of the normal font .</p> <p><strong><code>oblique</code></strong><br> Specifies that the font-face is an artificially sloped version of the normal font.</p> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox">normal | italic | oblique</pre> <h2 id="Examples">Examples</h2> <p>As an example, consider the garamond font family, in its normal form, we get the following result:</p> <pre data-language="css">@font-face {
+  font-family: garamond;
+  src: url('garamond.ttf');
+}</pre> <p><img src="https://mdn.mozillademos.org/files/12265/garamondunstyled.JPG" style="height: 101px; width: 276px;" alt="unstyled Garamond"></p> <p>The italicized version of this text uses the same glyphs present in the unstyled version, but they are artificially sloped by a few degrees.</p> <p><img src="https://mdn.mozillademos.org/files/12267/garamondartificialstyle.JPG" style="height: 101px; width: 276px;" alt="artificially sloped garamond"></p> <p>On the other hand, if a true italicized version of the font family exists, we can include it in the <code>src </code>descriptor and specify the font style as italic, so that it is clear that the font is italicized. True italics use different glyphs and are a bit different from their upright counterparts, having some unique features and generally have a rounded and calligraphic quality. These fonts are specially created by font designers and are <strong>not</strong> artificially sloped.</p> <pre data-language="css">@font-face {
+  font-family: garamond;
+  src: url('garamond-italic.ttf');
+  font-style: italic;
+}</pre> <p><img src="https://mdn.mozillademos.org/files/12269/garamonditalic.JPG" style="height: 101px; width: 267px;" alt="italic garamond"></p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/css-fonts-3/#descdef-font-face-unicode-range" class="external">CSS Fonts Module Level 3<br><small lang="en-US">The definition of 'unicode-range' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>
+<a title="Released on 2009-06-30." href="https://developer.mozilla.org/en-US/Firefox/Releases/3.5">3.5</a> (1.9.1)</td> <td>4.0 </td> <td>4.0</td> <td>10.0</td> <td>3.1</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mini</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>1.0 (1.9.1)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">Not supported</span></td> <td>10.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-style$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-style" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-style</a>
+  </p>
+</div>

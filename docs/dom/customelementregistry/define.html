@@ -1,0 +1,21 @@
+<h1>CustomElementRegistry.define</h1> <p>The <code><strong>define()</strong></code> method of the <a title="The CustomElementRegistry interface provides methods for registering custom elements and querying registered elements." href="../customelementregistry"><code>CustomElementRegistry</code></a> interface defines a new custom element.</p> <div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">customElements.define(<em>name</em>,<em>constructor</em>,<em>options</em>);
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>name</dt> <dd>Name for the new custom element.</dd> <dt>constructor</dt> <dd>Constructor for the new custom element.</dd> <dt>options <span class="inlineIndicator optional optionalInline">Optional</span>
+</dt> <dd>Object that controls how the element is defined. One option is currently supported: <ul> <li>
+<code>extends</code>. String specifying the name of a built-in element to extend. Used to create a<em> customized built-in element</em>.</li> </ul> </dd> </dl> <h3 id="Return_value">Return value</h3> <p>Void.</p> <h2 id="Examples">Examples</h2> <pre data-language="js">class BasicElement extends HTMLElement {
+  connectedCallback() {
+    this.textContent = 'Just a basic custom element.';
+  }
+}
+customElements.define('basic-element', BasicElement);
+</pre> <pre data-language="html">&lt;basic-element&gt;&lt;basic-element&gt;
+</pre> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>54</td> <td><span style="color: #f00;">No support</span></td> <td>41</td> <td>WebKit nightly</td> </tr> <tr> <td>Customized built-in elements</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>54</td> <td><span style="color: #f00;">No support</span></td> <td>41</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Firefox Mobile (Gecko)</th> <th>Chrome for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>54</td> <td><span style="color: #f00;">No support</span></td> <td>41</td> <td><span style="color: #f00;">No support</span></td> </tr> <tr> <td>Customized built-in elements</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>54</td> <td><span style="color: #f00;">No support</span></td> <td>41</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define</a>
+  </p>
+</div>

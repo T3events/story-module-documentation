@@ -1,0 +1,49 @@
+<h1>&lt;animatemotion&gt;</h1> <p>The <strong><code>&lt;animateMotion&gt;</code></strong> element causes a referenced element to move along a motion path.</p> <h2 id="Usage_context">Usage context</h2> <table class="properties"><tbody>
+<tr>
+<th scope="row">Categories</th>
+<td>Animation element</td>
+</tr>
+<tr>
+<th scope="row">Permitted content</th>
+<td>Any number of the following elements, in any order:<br><a href="../element#Descriptive_elements">Descriptive elements</a><br><a href="mpath" title="the mpath sub-element for the &lt;animateMotion&gt; element provides the ability to reference an external &lt;path&gt; element as the definition of a motion path."><code>&lt;mpath&gt;</code></a>
+</td>
+</tr>
+</tbody></table> <h2 id="Attributes">Attributes</h2> <h3 id="Global_attributes">Global attributes</h3> <ul> <li>
+<a href="../attribute#Conditional_processing_attributes" title="en/SVG/Attribute#ConditionalProccessing">Conditional processing attributes</a> »</li> <li>
+<a href="../attribute#Core_attributes" title="en/SVG/Attribute#Core">Core attributes</a> »</li> <li>
+<a href="../attribute#Animation_event_attributes" title="en/SVG/Attribute#AnimationEvent">Animation event attributes</a> »</li> <li>
+<a href="../attribute#XLink_attributes" title="en/SVG/Attribute#XLink">Xlink attributes</a> »</li> <li>
+<a href="../attribute#Animation_timing_attributes" title="en/SVG/Attribute#AnimationTiming">Animation timing attributes</a> »</li> <li>
+<a href="../attribute#Animation_value_attributes" title="en/SVG/Attribute#AnimationValue">Animation value attributes</a> »</li> <li>
+<a href="../attribute#Animation_addition_attributes" title="en/SVG/Attribute#AnimationAddition">Animation addition attributes</a> »</li> <li><code><a href="../attribute/externalresourcesrequired">externalResourcesRequired</a></code></li> </ul> <h3 id="Specific_attributes">Specific attributes</h3> <ul> <li><code><a href="../attribute/calcmode">calcMode</a></code></li> <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/path">path</a></code></li> <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/keyPoints">keyPoints</a></code></li> <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/rotate">rotate</a></code></li> <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/origin">origin</a></code></li> </ul> <h2 id="DOM_Interface">DOM Interface</h2> <p>This element implements the <a href="https://developer.mozilla.org/en-US/docs/Web/API/SVGAnimateMotionElement" title="The SVGAnimateMotionElement interface corresponds to the &lt;animateMotion&gt; element."><code>SVGAnimateMotionElement</code></a> interface.</p> <h2 id="Example">Example</h2> <h3 id="SVG">SVG</h3> <pre data-language="html">&lt;?xml version="1.0"?&gt;
+&lt;svg width="120" height="120" viewBox="0 0 120 120"
+    xmlns="http://www.w3.org/2000/svg" version="1.1"
+    xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
+
+  &lt;!-- Draw the outline of the motion path in grey, along
+       with 2 small circles at key points --&gt;
+  &lt;path d="M10,110 A120,120 -45 0,1 110 10 A120,120 -45 0,1 10,110"
+      stroke="lightgrey" stroke-width="2" 
+      fill="none" id="theMotionPath"/&gt;
+  &lt;circle cx="10" cy="110" r="3" fill="lightgrey"  /&gt;
+  &lt;circle cx="110" cy="10" r="3" fill="lightgrey"  /&gt;
+
+  &lt;!-- Red circle which will be moved along the motion path. --&gt;
+  &lt;circle cx="" cy="" r="5" fill="red"&gt;
+
+    &lt;!-- Define the motion path animation --&gt;
+    &lt;animateMotion dur="6s" repeatCount="indefinite"&gt;
+      &lt;mpath xlink:href="#theMotionPath"/&gt;
+    &lt;/animateMotion&gt;
+  &lt;/circle&gt;
+&lt;/svg&gt;</pre> <h3 id="Result">Result</h3> <p><iframe class="live-sample-frame sample-code-frame" height="120" src="https://mdn.mozillademos.org/en-US/docs/Web/SVG/Element/animateMotion%24samples/Example?revision=1119501" frameborder="0" width="120" id="frame_Example"></iframe></p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://svgwg.org/specs/animations/#AnimateMotionElement" class="external" lang="en" hreflang="en">SVG Animations Level 2<br><small lang="en-US">The definition of '&lt;animateMotion&gt;' in that specification.</small></a></td> <td><span class="spec-ED">Editor's Draft</span></td> <td>No change</td> </tr> <tr> <td><a href="http://www.w3.org/TR/SVG11/animate.html#AnimateMotionElement" class="external" lang="en" hreflang="en">Scalable Vector Graphics (SVG) 1.1 (Second Edition)<br><small lang="en-US">The definition of '&lt;animateMotion&gt;' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>IE</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="mpath" title="the mpath sub-element for the &lt;animateMotion&gt; element provides the ability to reference an external &lt;path&gt; element as the definition of a motion path."><code>&lt;mpath&gt;</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateMotion$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateMotion" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animateMotion</a>
+  </p>
+</div>

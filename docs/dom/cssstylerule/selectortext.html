@@ -1,0 +1,16 @@
+<h1>CSSStyleRule.selectorText</h1>  <p>The <code><strong>CSSRule.selectorText</strong></code> property gets the textual representation of the selector for the rule set. This is implemented in a readonly manner; to set stylesheet rules dynamically, see <a href="https://developer.mozilla.org/en-US/docs/DOM/Using_dynamic_styling_information" title="/en-US/docs/DOM/Using_dynamic_styling_information">Using dynamic styling information</a>.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>string</em> = cssRule.selectorText 
+</pre> <h2 name="Example" id="Example">Example</h2> <pre data-language="js">// for cssrule: body { background-color: darkblue; }
+var stylesheet = document.styleSheets[0];
+
+alert(stylesheet.cssRules[0].selectorText); // body
+</pre> <h2 id="Notes" class="Notes">Notes</h2> <p>The implementation may have stripped out insignificant whitespace while parsing the selector.</p> <h2 name="Specification" id="Specification">Specification</h2> <ul> <li><a href="http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSSRule" title="Document Object Model CSS #CSS-CSSRule">Document Object Model CSS - #CSS-CSSRuleCSS</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/selectorText$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/selectorText" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleRule/selectorText</a>
+  </p>
+</div>

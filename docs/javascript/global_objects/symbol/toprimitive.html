@@ -1,0 +1,34 @@
+<h1>Symbol.toPrimitive</h1> <p>The <code><strong>Symbol.toPrimitive</strong></code> is a symbol that specifies a function valued property that is called to convert an object to a corresponding primitive value.</p> <div><table class="standard-table"> <thead> <tr> <th colspan="2" class="header">Property attributes of <code>Symbol.toPrimitive</code>
+</th> </tr> </thead> <tbody> <tr> <td>Writable</td> <td>no</td> </tr> <tr> <td>Enumerable</td> <td>no</td> </tr> <tr> <td>Configurable</td> <td>no</td> </tr> </tbody> </table></div> <h2 id="Description">Description</h2> <p>With the help of the <strong><code>Symbol.toPrimitive</code></strong> property (used as a function value), an object can be converted to a primitive value. The function is called with a string argument <strong><code>hint</code></strong>, which specifies the preferred type of the result primitive value. The <strong><code>hint</code></strong> argument can be one of <code>"<em>number</em>"</code>, <code>"<em>string</em>"</code>, and <code>"<em>default</em>"</code>.</p> <h2 id="Examples">Examples</h2> <p>Following example describes how <strong><code>Symbol.toPrimitive</code></strong> property can modify the primitive value converted from an object.</p> <pre data-language="js">// An object without Symbol.toPrimitive property.
+var obj1 = {};
+console.log(+obj1);     // NaN
+console.log(`${obj1}`); // "[object Object]"
+console.log(obj1 + ''); // "[object Object]"
+
+// An object with Symbol.toPrimitive property.
+var obj2 = {
+  [Symbol.toPrimitive](hint) {
+    if (hint == 'number') {
+      return 10;
+    }
+    if (hint == 'string') {
+      return 'hello';
+    }
+    return true;
+  }
+};
+console.log(+obj2);     // 10      -- hint is "number"
+console.log(`${obj2}`); // "hello" -- hint is "string"
+console.log(obj2 + ''); // true    -- hint is "default"
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-symbol.toprimitive">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Symbol.toPrimitive' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://tc39.github.io/ecma262/#sec-symbol.toprimitive">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Symbol.toPrimitive' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>48</td> <td>
+<a title="Released on 2016-01-26." href="https://developer.mozilla.org/en-US/Firefox/Releases/44">44</a> (44)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>44.0 (44)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a title="The [@@toPrimitive]() method converts a Date object to a primitive value." href="../date/@@toprimitive"><code>Date.prototype[@@toPrimitive]</code></a></li> <li><a title="The [@@toPrimitive]() method converts a Symbol object to a primitive value." href="@@toprimitive"><code>Symbol.prototype[@@toPrimitive]</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/toPrimitive</a>
+  </p>
+</div>

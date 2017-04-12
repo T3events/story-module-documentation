@@ -1,0 +1,11 @@
+<h1>Errors: Already has pragma</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">Warning: -file- is being assigned a //# sourceMappingURL, but already has one.</pre> <h2 id="Error_type">Error type</h2> <p>A warning. JavaScript execution won't be halted.</p> <h2 id="What_went_wrong">What went wrong?</h2> <p>A source map has been specified more than once for a given JavaScript source.</p> <p>JavaScript sources are often combined and minified to make delivering them from the server more efficient. With <a href="http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/">source maps</a>, the debugger can map the code being executed to the original source files. There are two ways to assign a source map, either by using a comment or by setting a header to the JavaScript file.</p> <h2 id="Examples">Examples</h2> <p>Setting a source map by using a comment in the file:</p> <pre data-language="js">//# sourceMappingURL=http://example.com/path/to/your/sourcemap.map</pre> <p>Or, alternatively, you can set a header to your JavaScript file:</p> <pre data-language="js">X-SourceMap: /path/to/file.js.map</pre> <h2 id="See_also">See also</h2> <ul> <li><a href="https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map">How to use a source map – Firefox Tools documentation</a></li> <li><a href="http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/">Introduction to source maps – HTML5 rocks</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Already_has_pragma$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Already_has_pragma" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Already_has_pragma</a>
+  </p>
+</div>

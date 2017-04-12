@@ -1,0 +1,52 @@
+<h1>return</h1> <p>The <strong><code>return</code> statement</strong> ends function execution and specifies a value to be returned to the function caller.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">return [[expression]]; </pre> <dl> <dt><code>expression</code></dt> <dd>The expression to return. If omitted, <code>undefined</code> is returned instead.</dd> </dl> <h2 id="Description">Description</h2> <p>When a <code>return</code> statement is called in a function, the execution of this function is stopped. If specified, a given value is returned to the function caller. If the expression is omitted, <code>undefined</code> is returned instead. The following return statements all break the function execution:</p> <pre data-language="js">return;
+return true;
+return false;
+return x;
+return x + y / 3;
+</pre> <h3 id="Automatic_Semicolon_Insertion">Automatic Semicolon Insertion</h3> <p>The <code>return</code> statement is affected by <a href="../lexical_grammar#Automatic_semicolon_insertion">automatic semicolon insertion (ASI)</a>. No line terminator is allowed between the <code>return</code> keyword and the expression.</p> <pre data-language="js">return
+a + b;
+</pre> <p>is transformed by ASI into:</p> <pre>return; 
+a + b;
+</pre> <p>The console will warn "unreachable code after return statement".</p> <div class="note">Starting with Gecko 40 (Firefox 40 / Thunderbird 40 / SeaMonkey 2.37), a warning is shown in the console if unreachable code is found after a return statement.</div> <h2 id="Examples">Examples</h2> <h3 id="return">return</h3> <p>The following function returns the square of its argument, <code>x</code>, where <code>x</code> is a number.</p> <pre data-language="js">function square(x) {
+   return x * x;
+}
+</pre> <h3 id="Interrupt_a_function">Interrupt a function</h3> <p>A function immediately stops at the point where <code>return</code> is called.</p> <pre data-language="js">function counter() {
+  for (var count = 1; ; count++) {  // infinite loop
+    console.log(count + 'A'); // until 5
+      if (count === 5) {          
+        return;
+      }
+      console.log(count + 'B');  // until 4
+    }
+  console.log(count + 'C');  // never appears
+}
+
+counter();
+
+// Output:
+// 1A
+// 1B
+// 2A
+// 2B
+// 3A
+// 3B
+// 4A
+// 4B
+// 5A
+</pre> <h3 id="Returning_a_function">Returning a function</h3> <p>See also the article about <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">Closures</a>.</p> <pre data-language="js">function magic(x) {
+  return function calc(x) { return x * 42; };
+}
+
+var answer = magic();
+answer(1337); // 56154
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf" class="external" lang="en" hreflang="en" title="The 'ECMAScript 1st Edition (ECMA-262)' specification">ECMAScript 1st Edition (ECMA-262)</a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a href="http://www.ecma-international.org/ecma-262/5.1/#sec-12.9" class="external" lang="en" hreflang="en">ECMAScript 5.1 (ECMA-262)<br><small lang="en-US">The definition of 'Return statement' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td> </td> </tr> <tr> <td><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-return-statement" class="external" lang="en" hreflang="en">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Return statement' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td> </td> </tr> <tr> <td><a href="https://tc39.github.io/ecma262/#sec-return-statement" class="external" lang="en" hreflang="en">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Return statement' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="../functions" title="En/Core_JavaScript_1.5_Reference/Functions">Functions</a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">Closures</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return</a>
+  </p>
+</div>

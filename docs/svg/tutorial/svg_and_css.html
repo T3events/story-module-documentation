@@ -1,0 +1,141 @@
+<h1>SVG and CSS</h1><div>This page illustrates the application of CSS to the specialized language for creating graphics: <a href="../index">SVG</a>.</div> <p>Below you'll create a simple demonstration that runs in your SVG-enabled browser.</p> <p>Make a new SVG document as a plain text file, <code>doc8.svg</code>. Copy and paste the content from here, making sure that you scroll to get all of it:</p> <pre data-language="xml">&lt;?xml version="1.0" standalone="no"?&gt;
+
+&lt;?xml-stylesheet type="text/css" href="style8.css"?&gt;
+
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;
+
+&lt;svg width="600px" height="600px" viewBox="-300 -300 600 600"
+  xmlns="http://www.w3.org/2000/svg" version="1.1"
+  xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
+
+&lt;title&gt;SVG demonstration&lt;/title&gt;
+&lt;desc&gt;Mozilla CSS Getting Started - SVG demonstration&lt;/desc&gt;
+
+&lt;defs&gt;
+  &lt;g id="segment" class="segment"&gt;
+    &lt;path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"/&gt;
+    &lt;path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"/&gt;
+    &lt;/g&gt;
+  &lt;g id="quadrant"&gt;
+    &lt;use xlink:href="#segment"/&gt;
+    &lt;use xlink:href="#segment" transform="rotate(18)"/&gt;
+    &lt;use xlink:href="#segment" transform="rotate(36)"/&gt;
+    &lt;use xlink:href="#segment" transform="rotate(54)"/&gt;
+    &lt;use xlink:href="#segment" transform="rotate(72)"/&gt;
+    &lt;/g&gt;
+  &lt;g id="petals"&gt;
+    &lt;use xlink:href="#quadrant"/&gt;
+    &lt;use xlink:href="#quadrant" transform="rotate(90)"/&gt;
+    &lt;use xlink:href="#quadrant" transform="rotate(180)"/&gt;
+    &lt;use xlink:href="#quadrant" transform="rotate(270)"/&gt;
+    &lt;/g&gt;
+  &lt;radialGradient id="fade" cx="0" cy="0" r="200"
+      gradientUnits="userSpaceOnUse"&gt;
+    &lt;stop id="fade-stop-1" offset="33%"/&gt;
+    &lt;stop id="fade-stop-2" offset="95%"/&gt;
+    &lt;/radialGradient&gt;
+  &lt;/defs&gt;
+
+&lt;text id="heading" x="-280" y="-270"&gt;
+  SVG demonstration&lt;/text&gt;
+&lt;text  id="caption" x="-280" y="-250"&gt;
+  Move your mouse pointer over the flower.&lt;/text&gt;
+
+&lt;g id="flower"&gt;
+  &lt;circle id="overlay" cx="0" cy="0" r="200"
+    stroke="none" fill="url(#fade)"/&gt;
+  &lt;use id="outer-petals" xlink:href="#petals"/&gt;
+  &lt;use id="inner-petals" xlink:href="#petals"
+    transform="rotate(9) scale(0.33)"/&gt;
+  &lt;/g&gt;
+
+&lt;/svg&gt;
+</pre> <p>Make a new CSS file, <code>style8.css</code>. Copy and paste the content from here, making sure that you scroll to get all of it:</p> <pre data-language="css">/*** SVG demonstration ***/
+
+/* page */
+svg {
+  background-color: beige;
+  }
+
+#heading {
+  font-size: 24px;
+  font-weight: bold;
+  }
+
+#caption {
+  font-size: 12px;
+  }
+
+/* flower */
+#flower:hover {
+  cursor: crosshair;
+  }
+
+/* gradient */
+#fade-stop-1 {
+  stop-color: blue;
+  }
+
+#fade-stop-2 {
+  stop-color: white;
+  }
+
+/* outer petals */
+#outer-petals {
+  opacity: .75;
+  }
+
+#outer-petals .segment-fill {
+  fill: azure;
+  stroke: lightsteelblue;
+  stroke-width: 1;
+  }
+
+#outer-petals .segment-edge {
+  fill: none;
+  stroke: deepskyblue;
+  stroke-width: 3;
+  }
+
+#outer-petals .segment:hover &gt; .segment-fill {
+  fill: plum;
+  stroke: none;
+  }
+
+#outer-petals .segment:hover &gt; .segment-edge {
+  stroke: slateblue;
+  }
+
+/* inner petals */
+#inner-petals .segment-fill {
+  fill: yellow;
+  stroke: yellowgreen;
+  stroke-width: 1;
+  }
+
+#inner-petals .segment-edge {
+  fill: none;
+  stroke: yellowgreen;
+  stroke-width: 9;
+  }
+
+#inner-petals .segment:hover &gt; .segment-fill {
+  fill: darkseagreen;
+  stroke: none;
+  }
+
+#inner-petals .segment:hover &gt; .segment-edge {
+  stroke: green;
+  }
+</pre> <p>Open the document in your SVG-enabled browser. Move your mouse pointer over the graphic.</p> <p>This wiki does not support SVG in pages, so it is not possible to show the demonstration here. The graphic looks like this:</p> <table> <tbody> <tr> <td><img src="https://mdn.mozillademos.org/files/719/SVG-flower.png" alt="SVG demonstration"></td> </tr> </tbody> </table> <p>Notes about this demonstration:</p> <ul> <li>The SVG document links the stylesheet in the usual way.</li> <li>SVG has its own CSS properties and values. Some of them are similar to CSS properties for HTML.</li> </ul> <table> <caption>Challenge</caption> <tbody> <tr> <td>Change the stylesheet so that the inner petals all turn pink when the mouse pointer is over any one of them, without changing the way the outer petals work.</td> </tr> </tbody> </table> <p><a title="https://developer.mozilla.org/en/CSS/Getting_Started/Challenge_solutions#SVG_and_CSS" href="https://developer.mozilla.org/en/CSS/Getting_Started/Challenge_solutions#SVG_and_CSS">See a solution to this challenge.</a></p> <h4 id="What_next.3F" name="What_next.3F">What next?</h4> <p>In this demonstration, your SVG-enabled browser already knows how to display SVG elements. The stylesheet only modifies the display in certain ways. This is also true for HTML and XUL documents. But you can use CSS for general-purpose XML documents, where there is no predefined way to display the elements. The next page demonstrates this: <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/XML_data">XML data</a></p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_and_CSS$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_and_CSS" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_and_CSS</a>
+  </p>
+</div>

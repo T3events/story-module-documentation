@@ -1,0 +1,84 @@
+<h1>Errors: For-each-in loops are deprecated</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">Warning: JavaScript 1.6's for-each-in loops are deprecated; consider using ES6 for-of instead
+</pre> <h2 id="Error_Type">Error Type</h2> <p>Warning</p> <h2 id="What_went_wrong">What went wrong?</h2> <p>JavaScript 1.6's <a title="The for each...in statement iterates a specified variable over all values of object's properties. For each distinct property, a specified statement is executed." href="../statements/for_each...in"><code>for each (variable in obj)</code></a> statement is deprecated, and will be removed in the near future.</p> <h2 id="Examples">Examples</h2> <h3 id="Object_iteration">Object iteration</h3> <p><a title="The for each...in statement iterates a specified variable over all values of object's properties. For each distinct property, a specified statement is executed." href="../statements/for_each...in"><code>for each...in</code></a> has been used to iterate over the specified object values.</p> <h4 id="Deprecated_syntax">Deprecated syntax</h4> <pre data-language="js">var object = { a: 10, b: 20 };
+
+for each (var x in object) {
+  console.log(x);        // 10
+                         // 20
+}
+</pre> <h4 id="Alternative_standard_syntax">Alternative standard syntax</h4> <p>You can now use the standard <a title="The for...in statement iterates over the enumerable properties of an object, in arbitrary order. For each distinct property, statements can be executed." href="../statements/for...in"><code>for...in</code></a> loop to iterate over specified object keys, and get each value inside the loop:</p> <pre data-language="js">var object = { a: 10, b: 20 };
+
+for (var key in object) {
+  var x = object[key];
+  console.log(x);        // 10
+                         // 20
+}
+</pre> <p>Or, using <a title="The for...of statement creates a loop iterating over iterable objects (including Array, Map, Set, String, TypedArray, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property." href="../statements/for...of"><code>for...of</code></a> (ES2015) and <a title="The Object.values() method returns an array of a given object's own enumerable property values, in the same order as that provided by a for...in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well)." href="../global_objects/object/values"><code>Object.values</code></a> (ES2017), you can get an array of the specified object values and iterate over the array like this:</p> <pre data-language="js">var object = { a: 10, b: 20 };
+
+for (var x of Object.values(object)) {
+  console.log(x);        // 10
+                         // 20
+}
+</pre> <h3 id="Array_iteration">Array iteration</h3> <p><a title="The for each...in statement iterates a specified variable over all values of object's properties. For each distinct property, a specified statement is executed." href="../statements/for_each...in"><code>for each...in</code></a> has been used to iterate over specified array elements.</p> <h4 id="Deprecated_syntax_2">Deprecated syntax</h4> <pre data-language="js">var array = [10, 20, 30];
+
+for each (var x in array) {
+  console.log(x);        // 10
+                         // 20
+                         // 30
+}
+</pre> <h4 id="Alternative_standard_syntax_2">Alternative standard syntax</h4> <p>This is now possible with <a title="The for...of statement creates a loop iterating over iterable objects (including Array, Map, Set, String, TypedArray, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property." href="../statements/for...of"><code>for...of</code></a> (ES2015) loops as well.</p> <pre data-language="js">var array = [10, 20, 30];
+
+for (var x of array) {
+  console.log(x);        // 10
+                         // 20
+                         // 30
+}
+</pre> <h3 id="Iterating_over_a_null-able_array">Iterating over a null-able array</h3> <p><a title="The for each...in statement iterates a specified variable over all values of object's properties. For each distinct property, a specified statement is executed." href="../statements/for_each...in"><code>for each...in</code></a> does nothing if the specified value is <code>null</code> or <code>undefined</code>, but <a title="The for...of statement creates a loop iterating over iterable objects (including Array, Map, Set, String, TypedArray, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property." href="../statements/for...of"><code>for...of</code></a> will throw an exception in these cases.</p> <h4 id="Deprecated_syntax_3">Deprecated syntax</h4> <pre data-language="js">function func(array) {
+  for each (var x in array) {
+    console.log(x);
+  }
+}
+func([10, 20]);        // 10
+                       // 20
+func(null);            // prints nothing
+func(undefined);       // prints nothing
+</pre> <h4 id="Alternative_standard_syntax_3">Alternative standard syntax</h4> <p>To rewrite <a title="The for each...in statement iterates a specified variable over all values of object's properties. For each distinct property, a specified statement is executed." href="../statements/for_each...in"><code>for each...in</code></a> statements so that values can be <code>null</code> or <code>undefined</code> with <a title="The for...of statement creates a loop iterating over iterable objects (including Array, Map, Set, String, TypedArray, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property." href="../statements/for...of"><code>for...of</code></a> as well, you need to guard around <a title="The for...of statement creates a loop iterating over iterable objects (including Array, Map, Set, String, TypedArray, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property." href="../statements/for...of"><code>for...of</code></a>.</p> <pre data-language="js">function func(array) {
+  if (array) {
+    for (var x of array) {
+      console.log(x);
+    }
+  }
+}
+func([10, 20]);        // 10
+                       // 20
+func(null);            // prints nothing
+func(undefined);       // prints nothing
+</pre> <h3 id="Iterating_over_an_object's_key-value_pair">Iterating over an object's key-value pair</h3> <h4 id="Deprecated_syntax_4">Deprecated syntax</h4> <p>There's a deprecated idiom to iterate over the specified object's key-value pairs using <a title="The for each...in statement iterates a specified variable over all values of object's properties. For each distinct property, a specified statement is executed." href="../statements/for_each...in"><code>for each...in</code></a> and the deprecated <a title="The Iterator function returns an object which implements legacy iterator protocol and iterates over enumerable properties of an object." href="../global_objects/iterator"><code>Iterator</code></a> object.</p> <pre data-language="js">var object = { a: 10, b: 20 };
+
+for each (var [key, value] in Iterator(object)) {
+  console.log(key, value);  // "a", 10
+                            // "b", 20
+}
+</pre> <h4 id="Alternative_standard_syntax_4">Alternative standard syntax</h4> <p>You can now use the standard <a title="The for...in statement iterates over the enumerable properties of an object, in arbitrary order. For each distinct property, statements can be executed." href="../statements/for...in"><code>for...in</code></a> loop to iterate over specified object keys, and get each value inside the loop:</p> <pre data-language="js">var object = { a: 10, b: 20 };
+
+for (var key in object) {
+  var value = object[key];
+  console.log(key, value);  // "a", 10
+                            // "b", 20
+}
+</pre> <p>Or, using <a title="The for...of statement creates a loop iterating over iterable objects (including Array, Map, Set, String, TypedArray, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property." href="../statements/for...of"><code>for...of</code></a> (ES2015) and <a title="The Object.values() method returns an array of a given object's own enumerable property values, in the same order as that provided by a for...in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well)." href="../global_objects/object/values"><code>Object.values</code></a> (ES2017), you can get an array of the specified object values and iterate over the array like this:</p> <pre data-language="js">var object = { a: 10, b: 20 };
+
+for (var [key, value] of Object.entries(object)) {
+  console.log(key, value);  // "a", 10
+                            // "b", 20
+}
+</pre> <h2 id="See_also">See also</h2> <ul> <li><a title="The for...of statement creates a loop iterating over iterable objects (including Array, Map, Set, String, TypedArray, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property." href="../statements/for...of"><code>for...of</code></a></li> <li><a title="The Object.values() method returns an array of a given object's own enumerable property values, in the same order as that provided by a for...in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well)." href="../global_objects/object/values"><code>Object.values</code></a></li> <li><a title="The Object.entries() method returns an array of a given object's own enumerable property [key, value] pairs, in the same order as that provided by a for...in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well)." href="../global_objects/object/entries"><code>Object.entries</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/For-each-in_loops_are_deprecated$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/For-each-in_loops_are_deprecated" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/For-each-in_loops_are_deprecated</a>
+  </p>
+</div>

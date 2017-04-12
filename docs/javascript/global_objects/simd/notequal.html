@@ -1,0 +1,32 @@
+<h1>SIMD.notEqual</h1><div> <div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div>
+</div> <p>The static <strong><code>SIMD.%type%.notEqual()</code></strong> method returns a selection mask with values depending on an inequality comparison (<code>a != b</code>) in each lane.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">SIMD.Float32x4.notEqual(a, b)
+SIMD.Float64x2.notEqual(a, b)
+
+SIMD.Int8x16.notEqual(a, b)
+SIMD.Int16x8.notEqual(a, b)
+SIMD.Int32x4.notEqual(a, b)
+
+SIMD.Uint8x16.notEqual(a, b)
+SIMD.Uint16x8.notEqual(a, b)
+SIMD.Uint32x4.notEqual(a, b) 
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>a</dt> <dd>An instance of a SIMD type.</dd> <dt><code>b</code></dt> <dd>Another instance of a SIMD type.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>A selection mask (of type <code>Bool64x2</code>, <code>Bool32x4</code>, <code>Bool16x8</code> or <code>Bool8x16</code> depending on the size). The lane values of the mask are either <code>true</code> or <code>false</code> depending on the result of <code>a != b</code>.</p> <h2 id="Description">Description</h2> <p>The <code>SIMD.%type%.notEqual</code> method is one of the SIMD<a href="../simd#Comparisons"> comparison operations</a> and does not give you back the values of the inequality comparison of two instances directly. Instead, a selection mask with Boolean values is returned.</p> <h2 id="Examples">Examples</h2> <h3 id="Selecting_unequal_lanes_from_two_vectors">Selecting unequal lanes from two vectors</h3> <p>In this example, two SIMD <code>Float32x4</code> data types are compared against inequality of their lane values and a selection mask gets created based on the result. This selection mask is then used to select the unequal values into a new <code>Float32x4</code>. At the lane positions where the vectors <code>a</code> and <code>b</code> have equal values, the result vector uses the <code>zero</code> vector and fills the lanes with <code>0</code>.</p> <pre data-language="js">var a = SIMD.Float32x4(1, 2, 3, 9);
+var b = SIMD.Float32x4(1, 4, 7, 9);
+
+var mask = SIMD.Float32x4.notEqual(a, b);
+// Bool32x4[false, true, true, false]
+
+var zero = SIMD.Float32x4(0, 0, 0, 0);
+
+var result = SIMD.Float32x4.select(mask, a, zero);
+// Float32x4[0, 2, 3, 0]
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://tc39.github.io/ecmascript_simd/#simd-not-equal">SIMD<br><small lang="en-US">The definition of 'SIMDConstructor.notEqual' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><em><a href="http://nightly.mozilla.org/">Nightly build</a></em></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><em><a href="http://nightly.mozilla.org/">Nightly build</a></em></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a title='SIMD (pronounced "sim-dee") is short for Single Instruction/Multiple Data which is one classification of computer architectures. SIMD operations perform the same computation on multiple data points resulting in data level parallelism and thus performance gains, for example for 3D graphics and video processing, physics simulations or cryptography, and other domains.' href="../simd"><code>SIMD</code></a></li> <li><a title="The static SIMD.%type%.select() method creates a new integer SIMD data type with the lane values being a selection match from a selector mask." href="select"><code>SIMD.%type%.select()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/notEqual$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/notEqual" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/notEqual</a>
+  </p>
+</div>

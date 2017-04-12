@@ -1,0 +1,29 @@
+<h1>window.closed</h1>  <p>This read-only property indicates whether the referenced window is closed or not.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>isClosed</var> = <var>windowRef</var>.closed;
+</pre> <dl> <dt> <code>isClosed</code>
+</dt> <dd> A boolean. Possible Values: <ul> <li>
+<code>true</code>: The window has been closed.</li> <li>
+<code>false</code>: The window is open.</li> </ul> </dd> </dl> <h2 id="Examples">Examples</h2> <h3 id="Change_the_URL_of_a_window_from_a_popup">Change the URL of a window from a popup</h3> <p>The following example demonstrates how a popup window can change the URL of the window that opened it. Before attempting to change the URL, it checks that the current window has an opener using the <a href="opener">window.opener</a> property and that the opener isn't closed:</p> <pre data-language="js">// Check that an opener exists and is not closed
+if (window.opener &amp;&amp; !window.opener.closed) {
+  window.opener.location.href = "http://www.mozilla.org";
+}</pre> <p>Note that popups can only access the window that opened them.</p> <h3 id="Refreshing_a_previously_opened_popup">Refreshing a previously opened popup</h3> <p>In this example the function <code>refreshPopupWindow()</code> calls the <code>reload</code> method of the popup's location object to refresh its data. If the popup hasn't been opened yet or the user has closed it a new window is opened.</p> <pre data-language="js">var popupWindow = null;
+
+function refreshPopupWindow() {
+  if (popupWindow &amp;&amp; !popupWindow.closed) {
+    // popupWindow is open, refresh it
+    popupWindow.location.reload(true);
+  } else {
+    // Open a new popup window
+    popupWindow = window.open("popup.html","dataWindow");
+  }
+}
+</pre> <h2 id="Specification">Specification</h2> <p>HTML5</p> <h2 id="See_also">See also</h2> <ul> <li><a href="http://msdn.microsoft.com/en-us/library/ms533574(VS.85).aspx">MSDN: window.closed Property</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/closed$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/closed" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/window/closed</a>
+  </p>
+</div>

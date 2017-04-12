@@ -1,0 +1,26 @@
+<h1>StyleSheet.ownerNode</h1>  <p><b>ownerNode</b> returns the node that associates this style sheet with the document.</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre class="eval"><i>objRef</i> = stylesheet.ownerNode 
+</pre> <h2 id="Example" name="Example">Example</h2> <pre class="eval">&lt;html&gt;
+ &lt;head&gt;
+  &lt;link rel="StyleSheet" href="example.css" type="text/css" /&gt;
+  &lt;script&gt;
+   function stilo() {
+    alert(document.styleSheets[0].ownerNode);
+   }
+  &lt;/script&gt; 
+ &lt;/head&gt;
+ &lt;body&gt;
+   &lt;button onclick="stilo()"&gt;ss&lt;/button&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+// displays "object HTMLLinkElement"
+</pre> <h2 id="Notes" name="Notes">Notes</h2> <p>For HTML, <b>ownerNode</b> may be the corresponding <a href="https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/en/LINK">LINK</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/en/STYLE">STYLE</a> element. For XML, it may be the linking processing instruction. For style sheets that are included by other style sheets, the value of this attribute is NULL.</p> <h2 id="Specification" name="Specification">Specification</h2> <p>DOM Level 2 Styles - STYLESHEET</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/ownerNode$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/ownerNode" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/StyleSheet/ownerNode</a>
+  </p>
+</div>

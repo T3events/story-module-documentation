@@ -1,0 +1,51 @@
+<h1>:only-child</h1>  <p>The <code>:only-child</code> CSS <a title="Pseudo-classes" href="pseudo-classes">pseudo-class</a> represents any element which is the only child of its parent. This is the same as <code>:first-child:last-child</code> or <code>:nth-child(1):nth-last-child(1)</code>, but with a lower specificity.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">:only-child <a title="Curly braces" href="value_definition_syntax#Curly_braces_(.7B_.7D)">{</a> <var>style properties</var> <a title="Curly braces" href="value_definition_syntax#Curly_braces_(.7B_.7D)">}</a>
+</pre> <h2 id="Examples">Examples</h2> <h3 id="Basic_example">Basic example</h3> <pre data-language="css">span:only-child {
+  color: red;
+}
+</pre> <pre data-language="html">&lt;div&gt;
+  &lt;span&gt;This span is the only child of its father&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;span&gt;This span is one of the two children of its father&lt;/span&gt;
+  &lt;span&gt;This span is one of the two children of its father&lt;/span&gt;
+&lt;/div&gt; 
+</pre> <h4 id="Result">Result</h4> <p><iframe width="100%" frameborder="0" class="live-sample-frame sample-code-frame" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/:only-child%24samples/Basic_example?revision=1086699" height="60" id="frame_Basic_example"></iframe></p> <h3 id="A_list_example">A list example</h3> <pre data-language="css">li li {
+  list-style-type: disc;
+}
+li:only-child {
+  color: #6699ff;
+  font-style: italic;
+  list-style-type: square;
+}</pre> <pre data-language="html">&lt;ol&gt;
+  &lt;li&gt;First
+    &lt;ul&gt;
+      &lt;li&gt;This is only child element
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Second
+    &lt;ul&gt;
+      &lt;li&gt;This list has two elements
+      &lt;li&gt;This list has two elements
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Third
+    &lt;ul&gt;
+      &lt;li&gt;This list has three elements
+      &lt;li&gt;This list has three elements
+      &lt;li&gt;This list has three elements
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;ol&gt;
+</pre> <h4 id="Result_2">Result</h4> <p><iframe width="100%" frameborder="0" class="live-sample-frame sample-code-frame" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/:only-child%24samples/A_list_example?revision=1086699" height="220" id="frame_A_list_example"></iframe></p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/selectors-4/#only-child-pseudo" class="external">Selectors Level 4<br><small lang="en-US">The definition of ':only-child' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>No change</td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/selectors-3/#only-child-pseudo" class="external">Selectors Level 3<br><small lang="en-US">The definition of ':only-child' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>2</td> <td>
+<a title="Released on 2005-11-25." href="https://developer.mozilla.org/en-US/Firefox/Releases/1.5">1.5</a> (1.8)</td> <td>9</td> <td>9.5</td> <td>3.1</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>2.1</td> <td>1.0 (1.8)</td> <td>9</td> <td>10.0</td> <td>3.1</td> </tr> </tbody> </table> </div> <div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:only-child$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:only-child" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/:only-child</a>
+  </p>
+</div>

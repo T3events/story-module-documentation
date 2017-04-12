@@ -1,0 +1,47 @@
+<h1>WebGLRenderingContext.getContextAttributes</h1> <p>The <code><strong>WebGLRenderingContext.getContextAttributes()</strong></code> method returns a <code>WebGLContextAttributes</code> object that contains the actual context parameters. Might return <a title="The value null represents the intentional absence of any object value. It is one of JavaScript's primitive values." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null"><code>null</code></a>, if the context is lost.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><var><em>gl</em></var>.getContextAttributes();</pre> <h3 id="Return_value">Return value</h3> <p>A <code>WebGLContextAttributes</code> object that contains the actual context parameters, or <a title="The value null represents the intentional absence of any object value. It is one of JavaScript's primitive values." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null"><code>null</code></a> if the context is lost.</p> <h2 id="Examples">Examples</h2> <p>Given this <a title="Use the HTML &lt;canvas&gt; element with the canvas scripting API to draw graphics and animations." href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas"><code>&lt;canvas&gt;</code></a> element</p> <pre data-language="html">&lt;canvas id="canvas"&gt;&lt;/canvas&gt;
+</pre> <p>and given this WebGL context</p> <pre data-language="js">var canvas = document.getElementById('canvas');
+var gl = canvas.getContext('webgl');
+gl.getContextAttributes();
+</pre> <p>the <code>getContextAttributes</code> method returns an object that describes the attributes set on this context, for example:</p> <pre data-language="js">{ 
+  alpha: true, 
+  antialias: true, 
+  depth: true, 
+  failIfMajorPerformanceCaveat: false, 
+  premultipliedAlpha: true, 
+  preserveDrawingBuffer: false, 
+  stencil: false 
+}</pre> <p>The context attributes can be set when creating the context using the <a title="The HTMLCanvasElement.getContext() method returns a drawing context on the canvas, or null if the context identifier is not supported." href="../htmlcanvaselement/getcontext"><code>HTMLCanvasElement.getContext()</code></a> method:</p> <pre data-language="js">canvas.getContext('webgl',
+                 { antialias: false,
+                   depth: false });</pre> <p>See <a title="The HTMLCanvasElement.getContext() method returns a drawing context on the canvas, or null if the context identifier is not supported." href="../htmlcanvaselement/getcontext"><code>getContext()</code></a> for more information about the individual attributes.</p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.2" class="external">WebGL 1.0<br><small lang="en-US">The definition of 'WebGLRenderingContext.getContextAttributes' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td>9</td>
+<td>12</td>
+<td>4.0</td>
+<td>11</td>
+<td>12</td>
+<td>5.1</td>
+<td><span style="color: #f00;">No support</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>25</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>4.0</td>
+<td>11</td>
+<td>12</td>
+<td>8.1</td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The WebGLRenderingContext interface provides the OpenGL ES 2.0 rendering context for the drawing surface of an HTML &lt;canvas&gt; element." href="../webglrenderingcontext"><code>WebGLRenderingContext</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getContextAttributes$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getContextAttributes" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getContextAttributes</a>
+  </p>
+</div>

@@ -1,0 +1,44 @@
+<h1>HTMLTableRowElement.rowIndex</h1> <p>The <strong><code>HTMLTableRowElement.rowIndex</code></strong> property represents the position of a row in relation to the whole table.</p> <p>Even when the <a href="https://developer.mozilla.org/en-US/docs/Web/API/thead" title="The documentation about this has not yet been written; please consider contributing!"><code>thead</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/tbody" title="The documentation about this has not yet been written; please consider contributing!"><code>tbody</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/tfoot" title="The documentation about this has not yet been written; please consider contributing!"><code>tfoot</code></a> elements are out of order in the HTML, all main browsers (Chrome, Safari, Firefox, Internet Explorer) except Opera render the table in the right order. Therefore the rows count from thead to tbody, from tbody to tfoot. Opera will give the rowIndex value accordingly to their position within the HTML.</p> <h2 id="Example">Example</h2> <pre data-language="html">&lt;table&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Groceries&lt;/th&gt;
+			&lt;th&gt;Price&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Bananas&lt;/td&gt;
+			&lt;td&gt;$2&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Oranges&lt;/td&gt;
+			&lt;td&gt;$8&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Top Sirloin&lt;/td&gt;
+			&lt;td&gt;$20&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+	&lt;tfoot&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Total&lt;/td&gt;
+			&lt;td&gt;$30&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tfoot&gt;
+&lt;/table&gt;</pre> <p><br> Showing the rowIndex value:</p> <pre data-language="javascript">var rows = document.getElementsByTagName('tr');
+
+for(var x = 0, xLength = rows.length; x &lt; xLength; x++) {
+
+  alert('rowIndex=' + rows[x].rowIndex);
+
+}</pre><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/rowIndex$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/rowIndex" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/HTMLTableRowElement/rowIndex</a>
+  </p>
+</div>

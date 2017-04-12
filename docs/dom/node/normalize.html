@@ -1,0 +1,24 @@
+<h1>Node.normalize</h1> <p>The <code><strong>Node.normalize()</strong></code> method puts the specified node and all of its sub-tree into a "normalized" form. In a normalized sub-tree, no text nodes in the sub-tree are empty and there are no adjacent text nodes.</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre class="syntaxbox"><em>element</em>.normalize();
+</pre> <h2 id="Example" name="Example">Example</h2> <pre data-language="js">var wrapper = document.createElement("div");
+
+wrapper.appendChild( document.createTextNode("Part 1 ") );
+wrapper.appendChild( document.createTextNode("Part 2 ") );
+
+// At this point, wrapper.childNodes.length === 2
+// wrapper.childNodes[0].textContent === "Part 1 "
+// wrapper.childNodes[1].textContent === "Part 2 "
+
+wrapper.normalize();
+
+// Now, wrapper.childNodes.length === 1
+// wrapper.childNodes[0].textContent === "Part 1 Part 2 "</pre> <h2 id="Specification" name="Specification">Specification</h2> <ul> <li><a href="http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-normalize" class="external">DOM Level 2 Core: Node.normalize</a></li> </ul> <h2 id="See_also" name="See_also">See also</h2> <ul> <li><a title="DOM/Text.splitText" href="../text/splittext"><code>Text.splitText</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/normalize$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/normalize" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/Node/normalize</a>
+  </p>
+</div>

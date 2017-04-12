@@ -1,0 +1,27 @@
+<h1>window.ondeviceorientation</h1>  <p>An event handler for the <code><a title="/en-US/docs/Web/Events/deviceorientation" href="https://developer.mozilla.org/en-US/docs/Web/Events/deviceorientation">deviceorientation</a></code> event, which contains information about a relative device orientation change.</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre class="syntaxbox">window.ondeviceorientation = function(event) { ... };
+window.addEventListener('deviceorientation', function(event) { ... });
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" title="The 'Device Orientation Events' specification" class="external" href="https://w3c.github.io/deviceorientation/spec-source-orientation.html" hreflang="en">Device Orientation Events</a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial specification.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2> <div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>7.0 [1]</td> <td>6 [2]</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div> <div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr>
+<tr>
+<td>Basic support</td> <td>3.0</td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span> [1]</td> <td>6 [2]</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>4.2</td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span> [1]</td> </tr>
+</tbody></table>
+</div> <p>[1] Before version 50, Chrome provided absolute values instead of relative values for this event. Developers still needing absolute values may use the <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/Ondeviceorientationabsolute"><code>ondeviceorientationabsolute</code></a> event.</p> <p>[2] Firefox 3.6, 4, and 5 supported <a href="https://developer.mozilla.org/en-US/DOM/MozOrientation">mozOrientation </a>instead of the standard <code>DeviceOrientationEvent</code> interface</p> <h2 id="See_also">See also</h2> <ul> <li><code><a title="/en-US/docs/Web/Events/deviceorientation" href="https://developer.mozilla.org/en-US/docs/Web/Events/deviceorientation">deviceorientation</a></code></li> <li><a title="The DeviceOrientationEvent provides web developers with information from the physical orientation of the device running the web page." href="../deviceorientationevent"><code>DeviceOrientationEvent</code></a></li> <li><a title="Detecting device orientation" href="https://developer.mozilla.org/en/Detecting_device_orientation">Detecting device orientation</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/ondeviceorientation$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/ondeviceorientation" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/window/ondeviceorientation</a>
+  </p>
+</div>

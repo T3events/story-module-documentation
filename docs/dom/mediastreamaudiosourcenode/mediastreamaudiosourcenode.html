@@ -1,0 +1,39 @@
+<h1>MediaStreamAudioSourceNode.constructor</h1> <p>The <code><strong>MediaStreamAudioSourceNode()</strong></code> constructor creates a new <a title="A MediaElementSourceNode has no inputs and exactly one output, and is created using the AudioContext.createMediaStreamSource method. The amount of channels in the output equals the number of channels in AudioMediaStreamTrack. If there is no valid media stream, then the number of output channels will be one silent channel." href="../mediastreamaudiosourcenode"><code>MediaStreamAudioSourceNode</code></a> object instance.</p> <h2 id="Syntax">Syntax</h2> <pre data-language="js">var myAudioSource = new MediaStreamAudioSourceNode(<em>context</em>, <em>options</em>);</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><em>context</em></dt> <dd>An <a title="An AudioContext can be a target of events, therefore it implements the EventTarget interface." href="../audiocontext"><code>AudioContext</code></a> representing the audio context you want the node to be associated with.</dd> <dt><em>options</em></dt> <dd>A <code>MediaStreamAudioSourceOptions</code> dictionary object defining the properties you want the <code>MediaStreamAudioSourceNode</code> to have: <ul> <li>
+<code>mediaStream</code>: The media stream that will be used as the source for the audio.</li> </ul> </dd> </dl> <h2 id="Example">Example</h2> <pre data-language="js">// define variables
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+// getUserMedia block - grab stream
+// put it into a MediaStreamAudioSourceNode
+if (navigator.mediaDevices.getUserMedia) {
+   console.log('new getUserMedia supported.');
+   navigator.mediaDevices.getUserMedia (
+      // constraints: audio and video for this app
+      {
+         audio: true,
+         video: false
+     }).then(function(stream) {
+
+       // Create a MediaStreamAudioSourceNode
+       var options = {
+         mediaStream : stream
+       }
+
+       var source = new MediaStreamAudioSourceNode(audioCtx, options);
+        source.connect(audioCtx.destination);
+        }).catch(function(err) {
+         console.log('The following gUM error occured: ' + err);
+      });
+} else {
+   console.log('new getUserMedia not supported on your browser!');
+}</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://webaudio.github.io/web-audio-api/#idl-def-MediaStreamAudioSourceNode">Web Audio API<br><small lang="en-US">The definition of 'MediaStreamAudioSourceNode' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span><br> </td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td> <p><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></p> </td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioSourceNode/MediaStreamAudioSourceNode$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioSourceNode/MediaStreamAudioSourceNode" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamAudioSourceNode/MediaStreamAudioSourceNode</a>
+  </p>
+</div>

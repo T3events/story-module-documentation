@@ -1,0 +1,14 @@
+<h1>fill-rule</h1> <p>The <strong><code>fill-rule</code></strong> attribute indicates how to determine what side of a path is inside a <a href="../tutorial/basic_shapes">shape</a>, to determine how the <code><a href="fill">fill</a></code> property paints the shape. For a simple, non-intersecting path, it is intuitively clear what region lies "inside"; however, for a more complex path, such as a path that intersects itself or where one subpath encloses another, the interpretation of "inside" is not so obvious.</p> <h2 id="Usage_context">Usage context</h2> <table class="standard-table"> <tbody> <tr> <th scope="row">Categories</th> <td>Presentation attribute</td> </tr> <tr> <th scope="row">Value</th> <td>
+<strong>nonzero</strong> <em>(default)</em> | evenodd | inherit</td> </tr> <tr> <th scope="row">Animatable</th> <td>Yes</td> </tr> <tr> <th scope="row">Normative document</th> <td><a href="http://www.w3.org/TR/SVG/painting.html#FillRuleProperty" class="external">SVG 1.1 (2nd Edition)</a></td> </tr> </tbody> </table> <p>The <code>fill-rule</code> property provides two options for how the inside of a shape is determined:</p> <dl> <dt><code>nonzero</code></dt> <dd>This value determines the "insideness" of a point in the shape by drawing a ray from that point to infinity in any direction and then examining the places where a segment of the shape crosses the ray. Starting with a count of zero, add one each time a path segment crosses the ray from left to right and subtract one each time a path segment crosses the ray from right to left. After counting the crossings, if the result is zero then the point is outside the path. Otherwise, it is inside.</dd> <dt><code>evenodd</code></dt> <dd>This value determines the "insideness" of a point in the shape by drawing a ray from that point to infinity in any direction and counting the number of path segments from the given shape that the ray crosses. If this number is odd, the point is inside; if even, the point is outside.</dd> </dl> <h2 id="Examples">Examples</h2> <h2 id="Elements">Elements</h2> <p>The following elements can use the <code>fill-rule</code> attribute</p> <ul> <li>
+<a href="../element#Shape">Shape elements</a> »</li> <li>
+<a href="../element#TextContent">Text content elements</a> »</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule</a>
+  </p>
+</div>

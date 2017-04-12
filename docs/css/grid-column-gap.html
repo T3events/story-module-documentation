@@ -1,0 +1,89 @@
+<h1>grid-column-gap</h1><div><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div></div>  <p>The <code>grid-column-gap</code> CSS property specifies the gutter between grid columns.</p> <p>The effect is as though the affected grid lines acquired width: the grid track between two grid lines is the space between the gutters that represent them. For the purpose of track sizing, each gutter is essentially treated as an extra track of the specified length. Negative values are invalid.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>0</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>grid containers</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>no</td>
+</tr>
+<tr>
+<th scope="row">Percentages</th>
+<td>yes, as the dimension of the element</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>the percentage as specified or the absolute length</td>
+</tr>
+<tr>
+<th scope="row">Animation type</th>
+<td>a <a href="length#Interpolation" title="Values of the &lt;length&gt; CSS data type are interpolated as real, floating-point numbers.">length</a>
+</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">/* &lt;length&gt; values */
+grid-column-gap: 20px;
+grid-column-gap: 1em;
+grid-column-gap: 3vmin;
+grid-column-gap: 0.5cm;
+
+/* &lt;percentage&gt; value */
+grid-column-gap: 10%;
+
+/* Global values */
+grid-column-gap: inherit;
+grid-column-gap: initial;
+grid-column-gap: unset;
+</pre> <h3 id="Values">Values</h3> <dl> <dt><code>&lt;length-percentage&gt;</code></dt> <dd>Is the width of the gutter separating the grid columns. <a href="percentage" title="The &lt;percentage&gt; CSS data types represent a percentage value. Many CSS properties can take percentage values, often to define sizes in terms of parent objects. Percentages are formed by a &lt;number&gt; immediately followed by the percentage sign %. Just as is the case with all other units in CSS, there isn't a space between the '%' and the number."><code>&lt;percentage&gt;</code></a> values are relative to the dimension of the element.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox"><a href="#length-percentage">&lt;length-percentage&gt;</a><p>where <br><span id="length-percentage">&lt;length-percentage&gt;</span> = <a href="length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> | <a href="percentage" title="The &lt;percentage&gt; CSS data types represent a percentage value. Many CSS properties can take percentage values, often to define sizes in terms of parent objects. Percentages are formed by a &lt;number&gt; immediately followed by the percentage sign %. Just as is the case with all other units in CSS, there isn't a space between the '%' and the number.">&lt;percentage&gt;</a></p></pre> <h2 id="Example">Example</h2> <h3 id="HTML_Content">HTML Content</h3> <pre data-language="html">&lt;div id="grid"&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</pre> <h3 id="CSS_Content">CSS Content</h3> <pre data-language="css">#grid {
+  display: grid;
+  height: 100px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px;
+  grid-column-gap: 20px;
+}
+
+#grid &gt; div {
+  background-color: lime;
+}
+</pre> <p><iframe class="live-sample-frame sample-code-frame" height="100px" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/grid-column-gap%24samples/Example?revision=1169921" frameborder="0" width="100%" id="frame_Example"></iframe></p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://drafts.csswg.org/css-grid/#propdef-grid-column-gap" class="external" lang="en" hreflang="en">CSS Grid Layout<br><small lang="en-US">The definition of 'grid-column-gap' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Edge</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>57.0<sup>[1]</sup>
+</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/52" title="Released on 2017-03-07.">52.0</a> (52.0)<sup>[2]</sup>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[3]</sup>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[3]</sup>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td>
+<em><a href="http://nightly.webkit.org/">Nightly build</a></em><span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental">-webkit</a></span>
+</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/52" title="Released on 2017-03-07.">52.0</a> (52.0)<sup>[2]</sup>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[3]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <p>[1] Implemented behind the <em>experimental Web Platform features</em> flag in <code>chrome://flags</code> since Chrome 29.0.</p> <p>[2] Implemented behind the preference <code>layout.css.grid.enabled</code> since Gecko 40.0 (Firefox 40.0 / Thunderbird 40.0 / SeaMonkey 2.37), defaulting to <code>false</code>. Since Gecko 52.0 (Firefox 52.0 / Thunderbird 52.0 / SeaMonkey 2.49) it is enabled by default.</p> <p>[3] Internet Explorer implements an <a href="https://www.w3.org/TR/2011/WD-css3-grid-layout-20110407/">older version of the specification</a>, which didn't define this property.</p> <p>[4] Implemented behind the <em>Enable experimental Web Platform features</em> flag in <code>chrome://flags</code> since Opera 28.0.</p> <h2 id="See_also">See also</h2> <ul> <li>Related CSS properties: <a href="grid-row-gap" title="The grid-row-gap CSS property specifies the gutter between grid rows."><code>grid-row-gap</code></a>, <a href="grid-gap" title="The grid-gap CSS property is a shorthand property for grid-row-gap and grid-column-gap specifying the gutters between grid rows and columns."><code>grid-gap</code></a>
+</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap</a>
+  </p>
+</div>

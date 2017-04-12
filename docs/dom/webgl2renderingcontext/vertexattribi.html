@@ -1,0 +1,103 @@
+<h1>WebGL2RenderingContext.vertexAttribI</h1><div> <div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div>
+</div> <p>The <strong><code>WebGL2RenderingContext.vertexAttribI4[u]i[v]()</code></strong> methods of the <a href="../webgl_api">WebGL 2 API</a> specify integer values for generic vertex attributes.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">void <var>gl</var>.vertexAttribI4i(<var>index</var>, <var>v0</var>, <var>v1</var>, <var>v2</var>, <var>v3</var>);
+void <var>gl</var>.vertexAttribI4ui(<var>index</var>, <var>v0</var>, <var>v1</var>, <var>v2</var>, <var>v3</var>);
+
+void <var>gl</var>.vertexAttribI4iv(<var>index</var>, <var>value</var>);
+void <var>gl</var>.vertexAttribI4uiv(<var>index</var>, <var>value</var>);
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><code>index</code></dt> <dd>A <a href="../webgl_api/types" title="The following types are used in WebGL interfaces."><code>GLuint</code></a> specifying the position of the vertex attribute to be modified.</dd> <dt><code>v0, v1, v2, v3</code></dt> <dd>An integer <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" title="The Number JavaScript object is a wrapper object allowing you to work with numerical values. A Number object is created using the Number() constructor."><code>Number</code></a> for the vertex attribute value.</dd> <dt><code>value</code></dt> <dd> <p>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array" title="The Uint32Array typed array represents an array of 32-bit unsigned integers in the platform byte order. If control over byte order is needed, use DataView instead. The contents are initialized to 0. Once established, you can reference elements in the array using the object's methods, or using standard array index syntax (that is, using bracket notation)."><code>Uint32Array</code></a>/<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array" title="The Int32Array typed array represents an array of twos-complement 32-bit signed integers in the platform byte order. If control over byte order is needed, use DataView instead. The contents are initialized to 0. Once established, you can reference elements in the array using the object's methods, or using standard array index syntax (that is, using bracket notation)."><code>Int32Array</code></a> or sequences of <a href="../webgl_api/types" title="The following types are used in WebGL interfaces."><code>GLuint</code></a>/ <a href="../webgl_api/types" title="The following types are used in WebGL interfaces."><code>GLint</code></a> for integer vector vertex attribute values.</p> </dd> </dl> <h3 id="Return_value">Return value</h3> <p>None.</p> <h2 id="Examples">Examples</h2> <pre data-language="js">gl.vertexAttribI4i(a_foobar, 10);</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.8" class="external" lang="en" hreflang="en">WebGL 2.0<br><small lang="en-US">The definition of 'vertexAttribI' in that specification.</small></a></td> <td><span class="spec-ED">Editor's Draft</span></td> <td>Initial definition for WebGL.</td> </tr> <tr> <td><a href="https://www.khronos.org/opengles/sdk/docs/man3/html/glVertexAttrib.xhtml" class="external" lang="en" hreflang="en">OpenGL ES 3.0<br><small lang="en-US">The definition of 'glVertexAttribI' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Man page of the (similar) OpenGL API.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody>
+<tr>
+<td>WebGL2RenderingContext.vertexAttribI4i</td>
+<td>56</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>51.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>43</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+<tr>
+<td>WebGL2RenderingContext.vertexAttribI4ui</td>
+<td>56</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>51.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>43</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+<tr>
+<td>WebGL2RenderingContext.vertexAttribI4iv</td>
+<td>56</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>51.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>43</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+<tr>
+<td>WebGL2RenderingContext.vertexAttribI4uiv</td>
+<td>56</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>51.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>43</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+</tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody>
+<tr>
+<td>WebGL2RenderingContext.vertexAttribI4i</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+<tr>
+<td>WebGL2RenderingContext.vertexAttribI4ui</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+<tr>
+<td>WebGL2RenderingContext.vertexAttribI4iv</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+<tr>
+<td>WebGL2RenderingContext.vertexAttribI4uiv</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+</tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a href="../webglrenderingcontext/getvertexattrib" title="The WebGLRenderingContext.getVertexAttrib() method of the WebGL API returns information about a vertex attribute at a given position."><code>WebGLRenderingContext.getVertexAttrib()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/vertexAttribI$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/vertexAttribI" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext/vertexAttribI</a>
+  </p>
+</div>

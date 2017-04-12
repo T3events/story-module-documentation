@@ -1,0 +1,41 @@
+<h1>@page.marks</h1><div><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div></div>  <p>The <code>marks</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> <a href="../at-rule">at-rule</a> descriptor adds crop and/or cross marks to the presentation of the document. <em>Crop marks</em> indicate where the page should be cut. <em>Cross marks</em> are used to align sheets.</p> <p>Crop marks and cross marks are printed outside the page box. To have room to show crop and cross marks, the final pages will have to be somewhat bigger than the page box.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row">Related <a href="../at-rule">at-rule</a>
+</th>
+<td><a title="The @page CSS at-rule is used to modify some CSS properties when printing a document. You can't change all CSS properties with @page. You can only change the margins, orphans, widows, and page breaks of the document. Attempts to change any other CSS properties will be ignored." href="../@page"><code>@page</code></a></td>
+</tr>
+<tr>
+<th scope="row"><a href="../initial_value">Initial value</a></th>
+<td><code>none</code></td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual, paged</td>
+</tr>
+<tr>
+<th scope="row"><a href="../computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>order of appearance in the formal grammar of the values</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">/* Keyword values */
+marks: none;
+marks: crop;
+marks: cross;
+marks: crop cross;
+</pre> <h3 id="Values">Values</h3> <dl> <dt><code>crop</code></dt> <dd>Crop marks will be displayed.</dd> <dt><code>cross</code></dt> <dd>Cross marks will be displayed.</dd> <dt><code>none</code></dt> <dd>No marks will be displayed.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox">none | <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="../value_definition_syntax#Brackets">[</a> crop || cross <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="../value_definition_syntax#Brackets">]</a></pre> <h2 id="Examples">Examples</h2> <pre data-language="css">@page {
+  marks: crop cross;
+}
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a hreflang="en" class="external" lang="en" href="https://drafts.csswg.org/css-page-3/#marks">CSS Paged Media Module Level 3<br><small lang="en-US">The definition of 'marks' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial definition</td> </tr> </tbody> </table> <p>This CSS property was initially proposed in CSS Level 2, but was dropped from CSS Level 2 (Revision 1).</p> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@page/bleed"><code>bleed</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@page/marks$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@page/marks" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/@page/marks</a>
+  </p>
+</div>

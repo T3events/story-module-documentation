@@ -1,0 +1,24 @@
+<h1>Errors: Not a codepoint</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">RangeError: {0} is not a valid code point (Firefox)
+RangeError: Invalid code point {0} (Chrome)
+</pre> <h2 id="Error_type">Error type</h2> <p><a href="../global_objects/rangeerror" title="The RangeError object indicates an error when a value is not in the set or range of allowed values."><code>RangeError</code></a></p> <h2 id="What_went_wrong">What went wrong?</h2> <p>The <a href="../global_objects/string/fromcodepoint" title="The static String.fromCodePoint() method returns a string created by using the specified sequence of code points."><code>String.fromCodePoint()</code></a> method accepts valid code points only.</p> <p>A <a href="https://en.wikipedia.org/wiki/Code_point">code point</a> is a value in the Unicode codespace; that is, the range of integers from <code>0</code> to <code>0x10FFFF</code>.</p> <p>Using <a href="../global_objects/nan" title="The global NaN property is a value representing Not-A-Number."><code>NaN</code></a> values, negative Integers (<code>-1</code>), non-Integers (<code>3.14</code>), or values larger than <code>0x10FFFF</code> (<code>1114111</code>) won't work with this method.</p> <h2 id="Examples">Examples</h2> <h3 id="Invalid_cases">Invalid cases</h3> <pre data-language="js">String.fromCodePoint('_');      // RangeError
+String.fromCodePoint(Infinity); // RangeError
+String.fromCodePoint(-1);       // RangeError
+String.fromCodePoint(3.14);     // RangeError
+String.fromCodePoint(3e-2);     // RangeError
+String.fromCodePoint(NaN);      // RangeError</pre> <h3 id="Valid_cases">Valid cases</h3> <pre data-language="js">String.fromCodePoint(42);       // "*"
+String.fromCodePoint(65, 90);   // "AZ"
+String.fromCodePoint(0x404);    // "\u0404"
+String.fromCodePoint(0x2F804);  // "\uD87E\uDC04"
+String.fromCodePoint(194564);   // "\uD87E\uDC04"
+String.fromCodePoint(0x1D306, 0x61, 0x1D307) // "\uD834\uDF06a\uD834\uDF07"
+</pre> <h2 id="See_also">See also</h2> <ul> <li><a href="../global_objects/string/fromcodepoint" title="The static String.fromCodePoint() method returns a string created by using the specified sequence of code points."><code>String.fromCodePoint()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_a_codepoint$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_a_codepoint" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_a_codepoint</a>
+  </p>
+</div>

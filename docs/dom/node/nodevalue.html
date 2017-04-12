@@ -1,0 +1,12 @@
+<h1>Node.nodeValue</h1> <p>The <code><strong>Node.nodeValue</strong></code> property returns or sets the value of the current node.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>value</var> = <var>node</var>.nodeValue;
+</pre> <p><code>value</code> is a string containing the value of the current node, if any.</p> <h2 name="Notes" id="Notes">Notes</h2> <p>For the document itself, <code>nodeValue</code> returns <code>null</code>. For text, comment, and CDATA nodes, <code>nodeValue</code> returns the content of the node. For attribute nodes, the value of the attribute is returned.</p> <p>The following table shows the return values for different elements:</p> <table> <thead> <tr> <th>Attr</th> <th>value of attribute</th> </tr> </thead> <tbody> <tr> <td>CDATASection</td> <td>content of the CDATA Section</td> </tr> <tr> <td>Comment</td> <td>content of the comment</td> </tr> <tr> <td>Document</td> <td>null</td> </tr> <tr> <td>DocumentFragment</td> <td>null</td> </tr> <tr> <td>DocumentType</td> <td>null</td> </tr> <tr> <td>Element</td> <td>null</td> </tr> <tr> <td>NamedNodeMap</td> <td>null</td> </tr> <tr> <td>EntityReference</td> <td>null</td> </tr> <tr> <td>Notation</td> <td>null</td> </tr> <tr> <td>ProcessingInstruction</td> <td>entire content excluding the target</td> </tr> <tr> <td>Text</td> <td>content of the text node</td> </tr> </tbody> </table> <p>When <code>nodeValue</code> is defined to be <code>null</code>, setting it has no effect.</p> <h2 name="Specification" id="Specification">Specification</h2> <ul> <li><a href="http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-F68D080">DOM Level 2 Core: Node.nodeValue</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeValue$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeValue" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeValue</a>
+  </p>
+</div>

@@ -1,0 +1,15 @@
+<h1>window.opener</h1>  <p>Returns a reference to the window that opened this current window.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>objRef</var> = window.opener;
+</pre> <h2 name="Example" id="Example">Example</h2> <pre data-language="js">if (window.opener != indexWin) {
+  referToTop(window.opener);
+}
+</pre> <h2 name="Notes" id="Notes">Notes</h2> <p>When a window is opened from another window (using <a href="open" title="Loads a resource into either a new browsing context (such as a window) or one that already exists, depending on the specified parameters."><code>Window.open</code></a>), it maintains a reference to that first window as <strong>window.opener</strong>. If the current window has no opener, <span style="line-height: 1.5;">this method returns NULL. </span></p> <p><span style="line-height: 1.5;">Windows Phone browser does not support window.opener (tested with Microsoft Edge 25.10586.36.0). It is also not supported in IE if the opener is in a different security zone. </span></p> <p>In <a href="http://caniuse.com/#feat=rel-noopener">some browsers</a>, a <code>rel="noopener"</code> attribute on the originating anchor tag will prevent the <code>window.opener</code> reference from being set.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/opener$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/opener" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/window/opener</a>
+  </p>
+</div>

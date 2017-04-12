@@ -1,0 +1,39 @@
+<h1>WebGLVertexArrayObject</h1> <p>The <strong><code>WebGLVertexArrayObject</code></strong> interface is part of the <a href="webgl_api">WebGL 2 API</a>, represents vertex array objects (VAOs) pointing to vertex array data, and provides names for different sets of vertex data.</p> <p>When working with <code>WebGLVertexArrayObject</code> objects, the following methods are useful:</p> <ul> <li><a title="The WebGL2RenderingContext.createVertexArray() method of the WebGL 2 API creates and initializes a WebGLVertexArrayObject object that represents a vertex array object (VAO) pointing to vertex array data and which provides names for different sets of vertex data." href="webgl2renderingcontext/createvertexarray"><code>WebGL2RenderingContext.createVertexArray()</code></a></li> <li><a title="The WebGL2RenderingContext.deleteVertexArray() method of the WebGL 2 API deletes a given WebGLVertexArrayObject object." href="webgl2renderingcontext/deletevertexarray"><code>WebGL2RenderingContext.deleteVertexArray()</code></a></li> <li><a title="The WebGL2RenderingContext.isVertexArray() method of the WebGL API returns true if the passed object is a valid WebGLVertexArrayObject object." href="webgl2renderingcontext/isvertexarray"><code>WebGL2RenderingContext.isVertexArray()</code></a></li> <li><a title="The WebGL2RenderingContext.bindVertexArray() method of the WebGL 2 API binds a passed WebGLVertexArrayObject object to the buffer." href="webgl2renderingcontext/bindvertexarray"><code>WebGL2RenderingContext.bindVertexArray()</code></a></li> </ul> <div class="note"> <p><strong>WebGL 1:</strong> The <a title="The OES_vertex_array_object extension is part of the WebGL API and provides vertex array objects (VAOs) which encapsulate vertex array states. These objects keep pointers to vertex data and provide names for different sets of vertex data." href="oes_vertex_array_object"><code>OES_vertex_array_object</code></a> extension allows you to use vertex array objects in a WebGL 1 context.</p> </div> <h2 id="Examples">Examples</h2> <pre data-language="js">var vao = gl.createVertexArray();
+gl.bindVertexArray(vao);
+
+// ...
+// calls to bindBuffer or vertexAttribPointer 
+// which will be "recorded" in the VAO
+// ...</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.6" class="external">WebGL 2.0<br><small lang="en-US">The definition of 'WebGLVertexArrayObject' in that specification.</small></a></td> <td><span class="spec-ED">Editor's Draft</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td>56</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>51.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>43</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The OES_vertex_array_object extension is part of the WebGL API and provides vertex array objects (VAOs) which encapsulate vertex array states. These objects keep pointers to vertex data and provide names for different sets of vertex data." href="oes_vertex_array_object"><code>OES_vertex_array_object</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLVertexArrayObject$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLVertexArrayObject" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/WebGLVertexArrayObject</a>
+  </p>
+</div>

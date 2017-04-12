@@ -1,0 +1,27 @@
+<h1>array.values</h1> <p>The <strong><code>values()</code></strong> method returns a new <strong><code>Array Iterator</code></strong> object that contains the values for each index in the array.</p> <pre data-language="js">var a = ['w', 'y', 'k', 'o', 'p']; 
+var iterator = a.values();
+
+console.log(iterator.next().value); // w 
+console.log(iterator.next().value); // y 
+console.log(iterator.next().value); // k 
+console.log(iterator.next().value); // o 
+console.log(iterator.next().value); // p</pre> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>arr</var>.values()</pre> <h3 id="Return_value">Return value</h3> <p>A new <a title="The JavaScript Array object is a global object that is used in the construction of arrays; which are high-level, list-like objects." href="../array"><code>Array</code></a> iterator object.</p> <h2 id="Examples">Examples</h2> <h3 id="Iteration_using_for...of_loop">Iteration using <code><a href="../../statements/for...of">for...of</a></code> loop</h3> <pre data-language="js">var arr = ['w', 'y', 'k', 'o', 'p'];
+var iterator = arr.values();
+
+for (let letter of iterator) {
+  console.log(letter);
+}
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-array.prototype.values" class="external">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Array.prototype.values' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://tc39.github.io/ecma262/#sec-array.prototype.values" class="external">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Array.prototype.values' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Edge</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>
+<span style="color: #f00;">No support</span> [1]</td> <td>
+<em><a href="http://nightly.mozilla.org/">Nightly build</a></em> [2]</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>9</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span> [1]</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <p>[1] See <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=615873">bug 615873</a> (compatibilty issues).</p> <p>[2] See <a title="FIXED: Microsoft Dynamics CRM 2011 Lookup Error since Firefox Version 48.0.2 due to Array.prototype.values" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1299593">bug 1299593</a> which disables A<code>rray.prototype.values</code> outside of Firefox Nightly due to compatibility issues.</p> <h2 id="See_also">See also</h2> <ul> <li><a title="The keys() method returns a new Array Iterator that contains the keys for each index in the array." href="keys"><code>Array.prototype.keys()</code></a></li> <li><a title="The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array." href="entries"><code>Array.prototype.entries()</code></a></li> <li><a title="The forEach() method executes a provided function once for each array element." href="foreach"><code>Array.prototype.forEach()</code></a></li> <li><a title="The every() method tests whether all elements in the array pass the test implemented by the provided function." href="every"><code>Array.prototype.every()</code></a></li> <li><a title="The some() method tests whether some element in the array passes the test implemented by the provided function." href="some"><code>Array.prototype.some()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values</a>
+  </p>
+</div>

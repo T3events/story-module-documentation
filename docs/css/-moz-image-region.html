@@ -1,0 +1,48 @@
+<h1>-moz-image-region</h1><div><div class="overheadIndicator nonStandard nonStandardHeader"> <p><strong> Non-standard</strong><br> This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.</p> </div></div> <p><em>For a system that works on any background, see <a href="-moz-image-rect" title="This value for CSS background-image lets you use a portion of a larger image as a background. This allows you to, for example, use different parts of one larger image as backgrounds in different parts of your content."><code>-moz-image-rect</code></a>.</em></p>  <p>For certain XUL elements and pseudo-elements that use an image from the <a href="list-style-image" title="The list-style-image property specifies an image to be used as the list item marker."><code>list-style-image</code></a> property, this property specifies a region of the image that is used in place of the whole image. This allows elements to use different pieces of the same image to improve performance.</p> <p>The syntax is similar to the <a href="clip" title="The clip CSS property defines what portion of an element is visible. The clip property applies only to absolutely positioned elements, that is elements with position:absolute or position:fixed."><code>clip</code></a> property. All four values are relative to the upper left corner of the image.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>auto</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>XUL <a href="image" title="The &lt;image&gt; CSS data type represents a 2D image. There are two kinds of images in CSS: plain static images, often referenced using a URL, and dynamically-generated images like gradients or representations of parts of the tree."><code>&lt;image&gt;</code></a> elements and <a href=":-moz-tree-image" title="Activated by the 'properties' attribute."><code>:-moz-tree-image</code></a>, <a href=":-moz-tree-twisty" title="Activated by the 'properties' attribute."><code>:-moz-tree-twisty</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-tree-checkbox" title="The documentation about this has not yet been written; please consider contributing!"><code>:-moz-tree-checkbox</code></a> pseudo-elements. <strong>Note:</strong> <code>-moz-image-region</code> only works with <a href="image" title="The &lt;image&gt; CSS data type represents a 2D image. There are two kinds of images in CSS: plain static images, often referenced using a URL, and dynamically-generated images like gradients or representations of parts of the tree."><code>&lt;image&gt;</code></a> elements where the icon is specified using <a href="list-style-image" title="The list-style-image property specifies an image to be used as the list item marker."><code>list-style-image</code></a>. It will not work with XUL <code>&lt;image src="url" /&gt;</code>.</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>yes</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Animatable</th>
+<td>no</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><a href="#shape">&lt;shape&gt;</a><p>where <br><span id="shape">&lt;shape&gt;</span> = rect(&lt;top&gt;, &lt;right&gt;, &lt;bottom&gt;, &lt;left&gt;)</p></pre> <h2 id="Examples">Examples</h2> <pre data-language="css">#example-button {
+  /* display only the 4x4 area from the top left of this image */
+  list-style-image: url("chrome://example/skin/example.png");
+  -moz-image-region: rect(0px, 4px, 4px, 0px);
+}
+#example-button:hover {
+  /* use the 4x4 area to the right of the first for the hovered button */
+  -moz-image-region: rect(0px, 8px, 4px, 4px);
+}</pre><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-image-region$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-image-region" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-image-region</a>
+  </p>
+</div>

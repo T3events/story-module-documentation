@@ -1,0 +1,33 @@
+<h1>document.getElementsByName</h1> <p>Returns a nodelist collection with a given <a href="../element/name" title="name gets or sets the name property of a DOM object; it only applies to the following elements: &lt;a&gt;, &lt;applet&gt;, &lt;button&gt;, &lt;form&gt;, &lt;frame&gt;, &lt;iframe&gt;, &lt;img&gt;, &lt;input&gt;, &lt;map&gt;, &lt;meta&gt;, &lt;object&gt;, &lt;param&gt;, &lt;select&gt;, and &lt;textarea&gt;."><code>name</code></a> in the (X)HTML document.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>elements</em> = document.getElementsByName(<em>name</em>) 
+</pre> <ul> <li>
+<code>elements</code> is a live <a href="../nodelist" title="NodeList objects are collections of nodes such as those returned by Node.childNodes and the document.querySelectorAll method."><code>NodeList</code></a> Collection</li> <li>
+<code>name</code> is the value of the <code>name</code> attribute of the element.</li> </ul> <h2 name="Example" id="Example">Example</h2> <pre data-language="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+ ...
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;form name="up"&gt;&lt;input type="text"&gt;&lt;/form&gt;
+&lt;div name="down"&gt;&lt;input type="text"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+var up_forms = document.getElementsByName("up");
+console.log(up_forms[0].tagName); // returns "FORM"
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <h2 name="Notes" id="Notes">Notes</h2> <p>The <a href="../element/name"><code>name</code></a> attribute is only applicable to (X)HTML documents. The method returns a live <a href="../nodelist" title="NodeList objects are collections of nodes such as those returned by Node.childNodes and the document.querySelectorAll method."><code>NodeList</code></a> Collection that contains all elements with a given value for the name attribute, such as <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta" title="The HTML &lt;meta&gt; element represents any metadata information that cannot be represented by one of the other HTML meta-related elements (&lt;base&gt;, &lt;link&gt;, &lt;script&gt;, &lt;style&gt; or &lt;title&gt;)."><code>&lt;meta&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object" title="The HTML Embedded Object Element (&lt;object&gt;) represents an external resource, which can be treated as an image, a nested browsing context, or a resource to be handled by a plugin."><code>&lt;object&gt;</code></a> or even if <code>name</code> is placed on elements which do not support a name attribute at all.</p> <p>The <strong>getElementsByName</strong> method works differently in different browsers. In IE &amp; Opera, getElementsByName() method will also return elements that have an id attribute with the specified value. so you should be careful not to use the same string as both a name and an ID.</p> <h2 name="Specifications" id="Specifications">Specifications</h2> <ul> <li><a href="http://www.w3.org/TR/DOM-Level-2-HTML/">DOM Level 2 HTML: getElementsByName</a></li> <li><a href="http://www.whatwg.org/html/#dom-document-getelementsbyname" title="http://www.whatwg.org/html/">HTML5: getElementsByName</a></li> </ul> <h2 id="Specifications_2">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://html.spec.whatwg.org/multipage/#dom-document-getelementsbyname" class="external" lang="en" hreflang="en">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'Document.getElementsByName()' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td> </td> </tr> <tr> <td><a href="http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-71555259" class="external" lang="en" hreflang="en">Document Object Model (DOM) Level 2 HTML Specification<br><small lang="en-US">The definition of 'Document.getElementsByName()' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 name="See_also" id="See_also">See also</h2> <ul> <li>
+<a href="getelementbyid" title="Returns a reference to the element by its ID; the ID is a string which can be used to identify the element; it can be established using the id attribute in HTML, or from script."><code>document.getElementById()</code></a> to return a reference to an element by its ID</li> <li>
+<a href="queryselector" title="Editorial review completed."><code>document.querySelector()</code></a> for selectors via queries like <code>'div.myclass'</code>
+</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/getElementsByName$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/getElementsByName" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/document/getElementsByName</a>
+  </p>
+</div>

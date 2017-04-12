@@ -1,0 +1,71 @@
+<h1>tab-size</h1><div><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div></div> <p>The<strong> <code>tab-size</code></strong> CSS property is used to customize the width of a tab (<code>U+0009</code>) character.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>8</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>block containers</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>yes</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>the specified integer or an absolute length</td>
+</tr>
+<tr>
+<th scope="row">Animation type</th>
+<td>discrete</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">/* &lt;integer&gt; values */
+tab-size: 4;
+tab-size: 0;
+
+/* &lt;length&gt; values */
+tab-size: 10px;
+tab-size: 2em;
+
+/* Global values */
+tab-size: inherit;
+tab-size: initial;
+tab-size: unset;
+</pre> <h3 id="Values">Values</h3> <dl> <dt><a href="integer" title="The &lt;integer&gt; CSS data type denotes an integer number, positive or negative. There isn't any associated unit with the value. An integer consists of one or several decimal digits, 0 to 9, optionally preceded by one single + or - sign."><code>&lt;integer&gt;</code></a></dt> <dd>The number of spaces in a tab. Must be nonnegative.</dd> <dt><a href="length" title="The &lt;length&gt; CSS data type denotes distance measurements. It is a &lt;number&gt; immediately followed by a length unit (px, em, pc, in, mm, …). Like for any CSS dimension, there is no space between the unit literal and the number. The length unit is optional after the &lt;number&gt; 0."><code>&lt;length&gt;</code></a></dt> <dd>The width of a tab. Must be nonnegative.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox"><a href="integer" title="The &lt;integer&gt; CSS data type denotes an integer number, positive or negative. There isn't any associated unit with the value. An integer consists of one or several decimal digits, 0 to 9, optionally preceded by one single + or - sign.">&lt;integer&gt;</a> | <a href="length" title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a></pre> <h2 id="Examples">Examples</h2> <pre data-language="css">pre {
+  tab-size: 4; /* Set tab size to 4 spaces */
+}
+</pre> <pre data-language="css">pre {
+  tab-size: 0; /* Remove indentation */
+}
+</pre> <pre data-language="css">pre {
+  tab-size: 2; /* Set tab size to 2 spaces */
+}
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://drafts.csswg.org/css-text-3/#tab-size-property" class="external" lang="en" hreflang="en">CSS Text Level 3<br><small lang="en-US">The definition of 'tab-size' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>21<sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/4" title="Released on 2011-03-22.">4.0</a> (2.0)<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with '-moz' as this browser considers it experimental">-moz</a></span><sup>[2]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td>10.60<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with '-o' as this browser considers it experimental">-o</a></span><br> 15<sup>[1]</sup>
+</td> <td>6.1</td> </tr> <tr> <td><a href="length" title="The &lt;length&gt; CSS data type denotes distance measurements. It is a &lt;number&gt; immediately followed by a length unit (px, em, pc, in, mm, …). Like for any CSS dimension, there is no space between the unit literal and the number. The length unit is optional after the &lt;number&gt; 0."><code>&lt;length&gt;</code></a></td> <td>42</td> <td><span style="color: #f00;">No support</span></td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/53" title="Released on 2017-04-18.">53.0</a> (53.0)<sup>[3]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mini</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>4.4</td> <td>4.0 (2.0)<sup>[2]</sup>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>5<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with '-o' as this browser considers it experimental">-o</a></span>
+</td> <td>11.5<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with '-o' as this browser considers it experimental">-o</a></span><br> 24</td> <td>7.1</td> </tr> <tr> <td><a href="length" title="The &lt;length&gt; CSS data type denotes distance measurements. It is a &lt;number&gt; immediately followed by a length unit (px, em, pc, in, mm, …). Like for any CSS dimension, there is no space between the unit literal and the number. The length unit is optional after the &lt;number&gt; 0."><code>&lt;length&gt;</code></a></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>53.0 (53.0)<sup>[3]</sup>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <p>[1] The implementation doesn't allow to animate the property yet.</p> <p>[2] This feature is currently prefixed with <code>-moz</code>. It will be unprefixed in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=737785" title="Implement 'tab-size' (dropping the -moz- prefix)">bug 737785</a>. The implementation doesn't allow to animate the property yet. See <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1308110" title="'tab-size' should be animatable">bug 1308110</a>.</p> <p>[3] This was implemented in <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=943918" title="FIXED: tab-size should accept &lt;length&gt; values">bug 943918</a>.</p> <h2 id="See_also">See also</h2> <ul> <li>
+<a href="https://lists.w3.org/Archives/Public/www-style/2008Dec/0009.html" class="external"><cite>Controlling size of a tab character (U+0009)</cite></a>, an email by Anne van Kesteren to the CSSWG.</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/tab-size$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/tab-size" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/tab-size</a>
+  </p>
+</div>

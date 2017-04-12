@@ -1,0 +1,23 @@
+<h1>PaymentAddress.PaymentAddress.country</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div> <p>The <strong><code>country</code></strong> read-only property of the <a href="../paymentaddress" title="The PaymentAddress interface of the the Payment Request API stores address information."><code>PaymentAddress</code></a> interface returns a string containing the Common Locale Data Repository (CLDR) region code for the user's country, for example, US, GB, CN, etc.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">var paymentCountry = PaymentAddress.country;</pre> <h2 id="Example">Example</h2> <p>In the example below, the various properties of the <code>PaymentAddress</code> object are retrieved into individual variables for later use, with the exception of the <code>addressLine</code> array property, which is copied into another array.</p> <pre>var pmtcountry = PaymentAddress.country;
+var pmtaddress = PaymentAddress.addressLine.slice(0);
+var pmtregion = PaymentAddress.region;
+var pmtcity = PaymentAddress.city;
+var pmtdeploc = PaymentAddress.dependentLocality;
+var pmtpostal = PaymentAddress.postalCode;
+var pmtsorting = PaymentAddress.sortingCode;
+var pmtlang = PaymentAddress.languageCode;
+var pmtorg = PaymentAddress.organization;
+var pmtrecip = PaymentAddress.recipient;
+var pmtcareof = PaymentAddress.careOf;
+var pmtphone = PaymentAddress.phone;
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://www.w3.org/TR/payment-request/#paymentaddress" class="external" lang="en" hreflang="en">Payment Request API<br><small lang="en-US">The definition of 'paymentaddress' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_Compatibility">Browser Compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td> <p>53.0</p> </td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>53.0</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>53.0</td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/PaymentAddress.country$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/PaymentAddress.country" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/PaymentAddress/PaymentAddress.country</a>
+  </p>
+</div>

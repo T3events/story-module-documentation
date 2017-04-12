@@ -1,0 +1,25 @@
+<h1>Node.firstChild</h1> <p>The <code><strong>Node.firstChild</strong></code> read-only property returns the node's first child in the tree, or <code>null</code> if the node is childless. If the node is a <code>Document</code>, it returns the first node in the list of its direct children.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>var childNode</em> = <em>node</em>.firstChild;
+</pre> <h2 id="Description">Description</h2> <p><code>childNode</code> is a reference to the first child of <code>node</code> if there is one, otherwise it's <code>null</code>.</p> <h2 name="Example" id="Example">Example</h2> <p>This example demonstrates the use of <code>firstChild</code> and how whitespace nodes might interfere with using this property. See the <a href="#Notes">Notes</a> section for more information about whitespace handling in Gecko DOM.</p> <pre data-language="html">&lt;p id="para-01"&gt;
+  &lt;span&gt;First span&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;script type="text/javascript"&gt;
+  var p01 = document.getElementById('para-01');
+  alert(p01.firstChild.nodeName)
+&lt;/script&gt;</pre> <p>In the above, the alert will show '#text' because a text node is inserted to maintain the whitespace between the end of the opening &lt;p&gt; and &lt;span&gt; tags. <strong>Any</strong> whitespace will cause the #text node to be inserted, from a single space to any number of spaces, returns, tabs, and so on.</p> <p>Another #text node is inserted between the closing &lt;/span&gt; and &lt;/p&gt;tags.</p> <p>If this whitespace is removed from the source, the #text nodes are not inserted and the span element becomes the paragraph's first child.</p> <pre data-language="html">&lt;p id="para-01"&gt;&lt;span&gt;First span&lt;/span&gt;&lt;/p&gt;
+
+&lt;script type="text/javascript"&gt;
+  var p01 = document.getElementById('para-01');
+  alert(p01.firstChild.nodeName)
+&lt;/script&gt;
+</pre> <p>Now the alert will show 'SPAN'.</p> <h2 name="Specification" id="Specification">Specification</h2> <ul> <li><a class="external" href="http://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#attribute-firstChild">DOM Level 1 Core: firstChild</a></li> <li><a class="external" href="http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-169727388">DOM Level 2 Core: firstChild</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild</a>
+  </p>
+</div>

@@ -1,0 +1,21 @@
+<h1>NodeIterator.referenceNode</h1><div class="notice experimental"> <p><strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> </div> <p>The <strong><code>NodeIterator.referenceNode</code></strong> read-only returns the <a href="../node" title="A Node is an interface from which a number of DOM types inherit, and allows these various types to be treated (or tested) similarly."><code>Node</code></a> to which the iterator is anchored; as new nodes are inserted, the iterator remains anchored to the reference node as specified by this property.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>node</em> = <em>nodeIterator</em>.referenceNode;
+</pre> <h2 name="Example" id="Example">Example</h2> <pre data-language="js">var nodeIterator = document.createNodeIterator(
+    document.body,
+    NodeFilter.SHOW_ELEMENT,
+    { acceptNode: function(node) { return NodeFilter.FILTER_ACCEPT; } },
+    false
+);
+node = nodeIterator.referenceNode;
+</pre> <h2 name="Specification" id="Specification">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="http://dom.spec.whatwg.org/#dom-nodeiterator-referencenode" class="external" lang="en" hreflang="en">DOM<br><small lang="en-US">The definition of 'NodeIterator.referenceNode' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>1.0</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/3.5" title="Released on 2009-06-30.">3.5</a> (1.9.1)</td> <td><span style="color: #f00;">Not supported</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>3.0</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>1.0 (1.9.1)</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>3.0</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li>The interface it belongs to: <a href="../nodeiterator" title="The NodeIterator interface represents an iterator over the members of a list of the nodes in a subtree of the DOM. The nodes will be returned in document order."><code>NodeIterator</code></a>
+</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/referenceNode$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/referenceNode" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator/referenceNode</a>
+  </p>
+</div>

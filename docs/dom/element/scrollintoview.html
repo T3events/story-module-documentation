@@ -1,0 +1,36 @@
+<h1>element.scrollIntoView</h1><div><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div></div> <p>The <code><strong>Element.scrollIntoView()</strong></code> method scrolls the element on which it's called into the visible area of the browser window.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">element.scrollIntoView(); // Equivalent to element.scrollIntoView(true)
+element.scrollIntoView(<var>alignToTop</var>); // Boolean arguments
+element.scrollIntoView(<var>scrollIntoViewOptions</var>); // Object argument
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>
+<code>alignToTop</code> <span class="inlineIndicator optional optionalInline">Optional</span>
+</dt> <dd>Is a <a title="The Boolean object is an object wrapper for a boolean value." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean"><code>Boolean</code></a> value: <ul> <li>If <code>true</code>, the top of the element will be aligned to the top of the visible area of the scrollable ancestor. This is the default value.</li> <li>If <code>false</code>, the bottom of the element will be aligned to the bottom of the visible area of the scrollable ancestor.</li> </ul> </dd> <dt>
+<code>scrollIntoViewOptions</code> <span class="inlineIndicator optional optionalInline">Optional</span>
+</dt> <dd>A Boolean or an object with the following options:</dd> <dd> <pre class="idl">{
+  behavior: <strong>"auto"</strong>  | "instant" | "smooth",
+  block:    <strong>"start"</strong> | "end",
+}</pre> </dd> <dd>If it's a Boolean value, <code>true</code> corresponds to <code>{block: "start"}</code> and <code>false</code> to <code>{block: "end"}</code>.</dd> </dl> <h2 id="Example">Example</h2> <pre data-language="js">var element = document.getElementById("box");
+
+element.scrollIntoView();
+element.scrollIntoView(false);
+element.scrollIntoView({block: "end"});
+element.scrollIntoView({block: "end", behavior: "smooth"});
+</pre> <h2 id="Notes">Notes</h2> <p>The element may not be scrolled completely to the top or bottom depending on the layout of other elements.</p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th>Specification</th> <th>Status</th> <th>Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/cssom-view/#dom-element-scrollintoview" class="external">CSS Object Model (CSSOM) View Module<br><small lang="en-US">The definition of 'Element.scrollIntoView()' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>29<sup>[1]</sup>
+</td> <td>1.0 (1.7 or earlier)</td> <td>8<sup>[1]</sup>
+</td> <td>38<sup>[1]</sup>
+</td> <td>5.0<sup>[1]</sup>
+</td> </tr> <tr> <td><code>scrollIntoViewOptions</code></td> <td><span style="color: #f00;">No support</span></td> <td>
+<a title="Released on 2015-02-24." href="https://developer.mozilla.org/en-US/Firefox/Releases/36">36</a> (36)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>4.3<sup>[1]</sup>
+</td> <td>1.0 (1.0)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td>5.0<sup>[1]</sup>
+</td> </tr> <tr> <td><code>scrollIntoViewOptions</code></td> <td><span style="color: #f00;">No support</span></td> <td>36.0 (36)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <p>[1] Supports scrollIntoView with boolean parameter, but not <code>smooth</code> behavior option</p> <h2 id="See_also">See also</h2> <ul> <li>
+<a title="The Element.scrollIntoViewIfNeeded() method scrolls the current element into the visible area of the browser window if it's not already within the visible area of the browser window. If the element is already within the visible area of the browser window, then no scrolling takes place. This method is a proprietary variation of the standard Element.scrollIntoView() method." href="https://developer.mozilla.org/en-US/docs/Web/API/element/scrollIntoViewIfNeeded"><code>Element.scrollIntoViewIfNeeded()</code></a>
+</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/element/scrollIntoView$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/element/scrollIntoView" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/element/scrollIntoView</a>
+  </p>
+</div>

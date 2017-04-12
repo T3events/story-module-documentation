@@ -1,0 +1,28 @@
+<h1>generator.return</h1> <p>The <code><strong>return()</strong></code> method returns the given value and finishes the generator.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>gen</var>.return(value)</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><code>value</code></dt> <dd>The value to return.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>The value that is given as an argument.</p> <h2 id="Examples">Examples</h2> <h3 id="Using_return()">Using <code>return()</code>
+</h3> <p>The following example shows a simple generator and the <code>return</code> method.</p> <pre data-language="js">function* gen() { 
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+var g = gen();
+
+g.next();        // { value: 1, done: false }
+g.return('foo'); // { value: "foo", done: true }
+g.next();        // { value: undefined, done: true }
+</pre> <h2 id="Note">Note:</h2> <p>if done is true, <code>return(value) as same as </code>next()，value is undefined. (It does not look like this in Chrome; version: 54)</p> <pre>function* gen() {yield 1;}
+var g = gen();
+console.log(g.next()); //{ value: 1, done: false }
+console.log(g.next()); //{ value: undefined, done: true }
+console.log(g.return(1)); //{ value: undefined, done: true }</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-generator.prototype.return" class="external">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Generator.prototype.return' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://tc39.github.io/ecma262/#sec-generator.prototype.return" class="external">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Generator.prototype.return' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>50</td> <td>13</td> <td>
+<a title="Released on 2015-05-19." href="https://developer.mozilla.org/en-US/Firefox/Releases/38">38</a> (38)</td> <td><span style="color: #f00;">No support</span></td> <td>37</td> <td>10</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>50</td> <td>38.0 (38)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>10</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><code><a href="../../statements/function*">function*</a></code></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator/return$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator/return" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator/return</a>
+  </p>
+</div>

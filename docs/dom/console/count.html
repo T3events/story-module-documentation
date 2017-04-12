@@ -1,0 +1,46 @@
+<h1>console.count</h1> <p>Logs the number of times that this particular call to <code>count()</code> has been called. This function takes an optional argument <code>label</code>.</p> <div class="note">
+<strong>Note:</strong> This feature is available in <a href="../web_workers_api">Web Workers</a>.</div> <p>If <code>label</code> is supplied, this function logs the number of times <code>count()</code> has been called with that particular label.</p> <p>If <code>label</code> is omitted, the function logs the number of times <code>count()</code> has been called at this particular line.</p> <p>For example, given code like this:</p> <pre data-language="js">var user = "";
+
+function greet() {
+  console.count();
+  return "hi " + user;
+}
+
+user = "bob";
+greet();
+user = "alice";
+greet();
+greet();
+console.count();</pre> <p>Console output will look something like this:</p> <pre class="eval">"&lt;no label&gt;: 1"
+"&lt;no label&gt;: 2"
+"&lt;no label&gt;: 3"
+"&lt;no label&gt;: 1"
+</pre> <p>Note the final line of log output: the separate call to <code>count()</code> at line 11 is treated as an independent event.</p> <p>If we pass the <code>user</code> variable as the <code>label</code> argument to the first invocation of <code>count()</code>, and the string "alice" to the second:</p> <pre data-language="js">var user = "";
+
+function greet() {
+  console.count(user);
+  return "hi " + user;
+}
+
+user = "bob";
+greet();
+user = "alice";
+greet();
+greet();
+console.count("alice");</pre> <p>We will see output like this:</p> <pre class="eval">"bob: 1"
+"alice: 1"
+"alice: 2"
+"alice: 3"</pre> <p>We're now maintaining separate counts based only on the value of <code>label</code>. Because the label "alice" in line 11 matched the value of <code>user</code> twice, it is not considered an independent event.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">console.count([label]);
+</pre> <h2 id="Parameters">Parameters</h2> <dl> <dt><code>label</code></dt> <dd>A string. If this is supplied, <code>count()</code> outputs the number of times it has been called at this line and with that label.</dd> </dl> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://console.spec.whatwg.org/#count" class="external">Console API<br><small lang="en-US">The definition of 'console.count()' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a title="Released on 2014-06-10." href="https://developer.mozilla.org/en-US/Firefox/Releases/30">30.0</a> (30.0)</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> <tr> <td>Available in workers</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a title="Released on 2015-05-19." href="https://developer.mozilla.org/en-US/Firefox/Releases/38">38.0</a> (38.0)</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>30.0 (30.0)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> <tr> <td>Available in workers</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>38.0 (38.0)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/count$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/count" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/console/count</a>
+  </p>
+</div>

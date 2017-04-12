@@ -1,0 +1,19 @@
+<h1>XMLHttpRequest.abort</h1> <p>The <strong>XMLHttpRequest.abort()</strong> method aborts the request if it has already been sent. When a request is aborted, its readyState is set to <code>0</code> (<code>UNSENT</code>), but the <a href="https://developer.mozilla.org/en-US/docs/Web/Events/readystatechange">readystatechange</a> event is not fired.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">xhrInstance.abort();</pre> <h3 id="Parameters">Parameters</h3> <p>None.</p> <h3 id="Return_value">Return value</h3> <p>Void.</p> <h2 id="Example">Example</h2> <pre data-language="js">var xhr = new XMLHttpRequest(),
+    method = "GET",
+    url = "https://developer.mozilla.org/";
+xhr.open(method,url,true);
+
+xhr.send();
+
+xhr.abort();
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a title="The 'XMLHttpRequest' specification" hreflang="en" class="external" lang="en" href="https://xhr.spec.whatwg.org#the-abort()-method">XMLHttpRequest</a></td> <td><span class="spec-Living">Living Standard</span></td> <td>WHATWG living standard</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>1</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>5<sup>[1]</sup><br> 7</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>1.2</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>1.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <p>[1] This feature was implemented via ActiveXObject(). Internet Explorer implements the standard XMLHttpRequest since version 7.</p> <h2 id="See_also">See also</h2> <ul> <li><a href="using_xmlhttprequest">Using XMLHttpRequest</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/abort$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/abort" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/abort</a>
+  </p>
+</div>

@@ -1,0 +1,18 @@
+<h1>document.createComment</h1> <p><code>createComment()</code> creates a new comment node, and returns it.</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre class="syntaxbox"><em>CommentNode</em> = document.createComment(data) 
+</pre> <h3 id="Parameters" name="Parameters">Parameters</h3> <dl> <dt><code>data</code></dt> <dd>A string containing the data to be added to the Comment.</dd> </dl> <h2 id="Example" name="Example">Example</h2> <pre data-language="js">var docu = new DOMParser().parseFromString('&lt;xml&gt;&lt;/xml&gt;',  "application/xml");
+var comment = docu.createComment('This is a not-so-secret comment in your document');
+
+docu.getElementsByTagName('xml')[0].appendChild(comment);
+
+alert(new XMLSerializer().serializeToString(docu));
+// Displays: &lt;xml&gt;&lt;!--This is a not-so-secret comment in your document--&gt;&lt;/xml&gt;</pre> <h2 id="Specification" name="Specification">Specification</h2>  <ul> <li><a href="http://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#method-createComment" class="external">createComment</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/createComment$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/createComment" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/document/createComment</a>
+  </p>
+</div>

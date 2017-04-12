@@ -1,0 +1,25 @@
+<h1>for each...in</h1> <div class="warning"> <p>The <code>for each...in</code> statement is deprecated as the part of ECMA-357 (<a href="https://developer.mozilla.org/en-US/docs/Archive/Web/E4X" title="/en-US/docs/E4X">E4X</a>) standard. E4X support has been removed. Consider using <a href="for...of">for...of</a> instead. (Please refer to <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=791343" title="disable for-each statement on javascript.options.xml.{content|chrome} = false">bug 791343</a>.)<br> <br> <strong>Firefox now warns about the usage of <code>for each...in</code> and <code>for each...in</code> is removed from nightly. Please see <a href="../errors/for-each-in_loops_are_deprecated">Warning: JavaScript 1.6's for-each-in loops are deprecated</a> for migration help.</strong></p> </div> <p>The<code> <strong>for each...in</strong></code><strong> statement</strong> iterates a specified variable over all values of object's properties. For each distinct property, a specified statement is executed.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">for each (<em>variable</em> in <em>object</em>) {
+  <em>statement</em>
+}</pre> <dl> <dt><code>variable</code></dt> <dd>Variable to iterate over property values, optionally declared with the <code>var</code> keyword. This variable is local to the function, not to the loop.</dd> </dl> <dl> <dt><code>object</code></dt> <dd>Object for which the properties are iterated.</dd> </dl> <dl> <dt><code>statement</code></dt> <dd>A statement to execute for each property. To execute multiple statements within the loop, use a <a href="block">block</a> statement (<code>{ ... }</code>) to group those statements.</dd> </dl> <h2 id="Description">Description</h2> <p>Some built-in properties are not iterated over. These include all built-in methods of objects, e.g. <code>String</code>'s <code>indexOf</code> method. However, all user-defined properties are iterated over.</p> <h2 id="Examples">Examples</h2> <h3 id="Using_for_each...in">Using <code>for each...in</code>
+</h3> <p><strong>Warning:</strong> Never use a loop like this on arrays. Only use it on objects. See <a href="for...in"><code>for...in</code></a> for more details.</p> <p>The following snippet iterates over an object's properties, calculating their sum:</p> <pre data-language="js">var sum = 0;
+var obj = {prop1: 5, prop2: 13, prop3: 8};
+
+for each (var item in obj) {
+  sum += item;
+}
+
+console.log(sum); // logs "26", which is 5+13+8</pre> <h2 id="Specifications">Specifications</h2> <p>Not part of a current ECMA-262 specification. Implemented in JavaScript 1.6 and deprecated.</p> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/1.5" title="Released on 2005-11-25.">1.5</a> (1.8)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>1.0 (1.0)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <h2 id="Firefox_specific_note">Firefox specific note</h2> <ul> <li>
+<code>for each...in</code> is removed only on Nightly from Firefox 53</li> </ul> <h2 id="See_also">See also</h2> <ul> <li>
+<code><a href="for...in">for...in</a></code> - a similar statement that iterates over the property <em>names</em>.</li> <li>
+<code><a href="for...of">for...of</a></code> - a similar statement that iterates over the property <em>values</em> but can only be used for iteratable types, so not for generic objects</li> <li><code><a href="for">for</a></code></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for_each...in$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for_each...in" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for_each...in</a>
+  </p>
+</div>

@@ -1,0 +1,50 @@
+<h1>DynamicsCompressorNode.reduction</h1> <p>The <code>reduction</code> property of the <a href="../dynamicscompressornode" title="Inherits properties from its parent, AudioNode."><code>DynamicsCompressorNode</code></a> interface is a float representing the amount of gain reduction currently applied by the compressor to the signal.</p> <div class="note"> <p><strong>Note:</strong> Some browsers implement this as a <a href="../audioparam#k-rate">k-rate</a> <a href="../audioparam" title="There are two kinds of AudioParam, a-rate and k-rate parameters:"><code>AudioParam</code></a> . The current version of the spec specifies it as a float.</p> </div> <p>Intended for metering purposes, it returns a value in dB, or <code>0</code> (no gain reduction) if no signal is fed into the <code>DynamicsCompressorNode</code>. The range of this value is between <code>-20</code> and <code>0</code> (in dB).</p> <h2 id="Syntax">Syntax</h2> <pre data-language="js">var audioCtx = new AudioContext();
+var compressor = audioCtx.createDynamicsCompressor();
+</pre> <h3 id="Value">Value</h3> <p>An <a href="../audioparam" title="There are two kinds of AudioParam, a-rate and k-rate parameters:"><code>AudioParam</code></a>.</p> <div class="note"> <p><strong>Note</strong>: Though the <a href="../audioparam" title="There are two kinds of AudioParam, a-rate and k-rate parameters:"><code>AudioParam</code></a> returned is read-only, the value it represents is not.</p> </div> <h2 id="Example">Example</h2> <p>The below code demonstrates a simple usage of <code>createDynamicsCompressor()</code> to add compression to an audio track. For a more complete example, have a look at our <a href="http://mdn.github.io/compressor-example/">basic Compressor example</a> (<a href="https://github.com/mdn/compressor-example">view the source code</a>).</p> <pre data-language="js">// Create a MediaElementAudioSourceNode
+// Feed the HTMLMediaElement into it
+var source = audioCtx.createMediaElementSource(myAudio);
+
+// Create a compressor node
+var compressor = audioCtx.createDynamicsCompressor();
+compressor.threshold.value = -50;
+compressor.knee.value = 40;
+compressor.ratio.value = 12;
+compressor.reduction.value = -20;
+compressor.attack.value = 0;
+compressor.release.value = 0.25;
+
+// connect the AudioBufferSourceNode to the destination
+source.connect(audioCtx.destination);
+
+button.onclick = function() {
+  var active = button.getAttribute('data-active');
+  if(active == 'false') {
+    button.setAttribute('data-active', 'true');
+    button.innerHTML = 'Remove compression';
+
+    source.disconnect(audioCtx.destination);
+    source.connect(compressor);
+    compressor.connect(audioCtx.destination);
+  } else if(active == 'true') {
+    button.setAttribute('data-active', 'false');
+    button.innerHTML = 'Add compression';
+
+    source.disconnect(compressor);
+    compressor.disconnect(audioCtx.destination);
+    source.connect(audioCtx.destination);
+  }
+}</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://webaudio.github.io/web-audio-api/#widl-DynamicsCompressorNode-reduction" class="external" lang="en" hreflang="en">Web Audio API<br><small lang="en-US">The definition of 'reduction' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>10.0<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental">webkit</a></span><br> <span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span> (unprefixed) [1]</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/25" title="Released on 2013-10-29.">25.0</a> (25.0) </td> <td><span style="color: #f00;">No support</span></td> <td>15.0<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental">webkit</a></span><br> 22 (unprefixed) [1]</td> <td>6.0<span class="inlineIndicator prefixBox prefixBoxInline" title="prefix"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes" title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental">webkit</a></span>
+</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span> (unprefixed) [1]</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>26.0</td> <td>1.2</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>
+<span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span> [1]</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>33.0 [1]</td> </tr> </tbody> </table> </div> <p>[1] Before Chrome 52 and Opera 39, this was an <a href="../audioparam" title="There are two kinds of AudioParam, a-rate and k-rate parameters:"><code>AudioParam</code></a></p> <h2 id="See_also">See also</h2> <ul> <li><a href="https://developer.mozilla.org/en-US/docs/Web_Audio_API/Using_Web_Audio_API">Using the Web Audio API</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/reduction$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/reduction" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/DynamicsCompressorNode/reduction</a>
+  </p>
+</div>

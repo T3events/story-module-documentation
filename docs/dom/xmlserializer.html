@@ -1,0 +1,27 @@
+<h1>XMLSerializer</h1><div style="text-align: left;" dir="ltr" id="result_box">XMLSerializer can be used to convert a DOM subtree or DOM document into text. XMLSerializer is available to unprivileged scripts.</div>  <p>For more information about using <code>XMLSerializer</code> in Firefox extensions, please see the documentation for <a title="nsIDOMSerializer" href="https://developer.mozilla.org/en-US/docs/nsIDOMSerializer"><code>nsIDOMSerializer</code></a>.</p> <h2 id="Methods" name="Methods">Methods</h2> <dl> <dt id="serializeToString">
+<code>XMLSerializer.serializeToString</code>()</dt> <dd>Returns the serialized subtree of a string.</dd> <dt id="serializeToStream">
+<code>XMLSerializer.serializeToStream()</code> 
+</dt> <dd>The subtree rooted by the specified element is serialized to a byte stream using the character set specified.</dd> </dl> <h2 id="Examples" name="Examples">Examples</h2> <pre data-language="js"> var s = new XMLSerializer();
+ var d = document;
+ var str = s.serializeToString(d);
+ alert(str);</pre> <p>The next example uses XMLSerializer with <a title="/en-US/docs/DOM/element.insertAdjacentHTML" href="element/insertadjacenthtml">insertAdjacentHTML()</a> to insert a newly created DOM Node into the Document's body. Because <a title="/en-US/docs/DOM/element.insertAdjacentHTML" href="element/insertadjacenthtml">insertAdjacentHTML()</a> accepts a string and not a Node for its second parameter, XMLSerializer is used to first convert the node into a string.</p> <pre data-language="js">var inp = document.createElement('input');
+var XMLS = new XMLSerializer(); 
+var inp_xmls = XMLS.serializeToString(inp); // First convert DOM node into a string
+
+
+// Insert a newly created node into the document's body
+document.body.insertAdjacentHTML('afterbegin', inp_xmls);</pre> <h2 id="Browser_compatibility" name="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>9.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>3.0.4</td> </tr> <tr> <td>
+<code>serializeToStream()</code> 
+</td> <td><span style="color: #f00;">No support</span></td> <td>Removed in <a title="Released on 2013-04-02." href="https://developer.mozilla.org/en-US/Firefox/Releases/20">20.0</a> (20.0)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> <tr> <td>
+<code>serializeToStream()</code> 
+</td> <td><span style="color: #f00;">No support</span></td> <td>Removed in <a title="Released on 2013-04-02." href="https://developer.mozilla.org/en-US/Firefox/Releases/20">20.0</a> (20.0)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <h2 id="See_also" name="See_also">See also</h2> <ul> <li><a title="en-US/Parsing_and_serializing_XML" href="https://developer.mozilla.org/en-US/Parsing_and_serializing_XML">Parsing and serializing XML</a></li> <li><a title="en-US/XMLHttpRequest" href="https://developer.mozilla.org/en-US/XMLHttpRequest">XMLHttpRequest</a></li> <li><a title="en-US/DOMParser" href="https://developer.mozilla.org/en-US/DOMParser">DOMParser</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLSerializer$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLSerializer" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/XMLSerializer</a>
+  </p>
+</div>

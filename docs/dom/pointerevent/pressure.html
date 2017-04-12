@@ -1,0 +1,26 @@
+<h1>PointerEvent.pressure</h1> <p>The normalized pressure of the pointer input in the range of 0 to 1, where 0 and 1 represent the minimum and maximum pressure the hardware is capable of detecting, respectively. For hardware that does not support pressure, including but not limited to mouse, the value MUST be 0.5 when the pointer is active and 0 otherwise.</p> <p>This property is <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span>.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">var <em>pressure</em> = <em>pointerEvent</em>.pressure;
+</pre> <h3 id="Return_value">Return value</h3> <dl> <dt><code>pressure</code></dt> <dd>The amount of pressure applied to the pointer.</dd> </dl> <h2 id="Example">Example</h2> <p>This example illustrates using the <a title="The normalized pressure of the pointer input in the range of 0 to 1, where 0 and 1 represent the minimum and maximum pressure the hardware is capable of detecting, respectively. For hardware that does not support pressure, including but not limited to mouse, the value MUST be 0.5 when the pointer is active and 0 otherwise." href="pressure"><code>pressure</code></a> property.</p> <p>When a <code><a title="/en-US/docs/Web/Events/pointerdown" href="https://developer.mozilla.org/en-US/docs/Web/Events/pointerdown">pointerdown</a></code> event is fired, different functions are called depending on the value of the event's <code>pressure</code> property.</p> <pre data-language="js">someElement.addEventListener('pointerdown', function(ev) {
+   if (ev.pressure == 0) {
+     // No pressure
+     process_no_pressure(ev);
+   } else if (ev.pressure == 1) {
+     // Maximum pressure
+     process_max_pressure(ev);
+   } else {
+     // Default
+     process_pressure(ev);
+   }
+ }, false);
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://w3c.github.io/pointerevents/#widl-PointerEvent-pressure" class="external">Pointer Events – Level 2<br><small lang="en-US">The definition of 'pressure' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Non-stable version.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.w3.org/TR/pointerevents/#widl-PointerEvent-pressure" class="external">Pointer Events<br><small lang="en-US">The definition of 'pressure' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>55.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span> <sup>[1]</sup>
+</td> <td>10</td> <td>42</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>55.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>10</td> <td>42</td> <td><span style="color: #f00;">No support</span></td> <td>55.0</td> </tr> </tbody> </table> </div> <p>[1] This feature is currently hidden behind a flag; to enable it and experiment, set the <code>dom.w3c_pointer_events.enabled</code> preference to <code>true</code> in <code>about:config</code>.</p> <h2 id="See_also">See also</h2> <ul> <li><a title="The Touch.force read-only property returns the amount of pressure the user is applying to the touch surface for a Touch point." href="../touch/force"><code>Touch.force</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pressure$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pressure" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent/pressure</a>
+  </p>
+</div>

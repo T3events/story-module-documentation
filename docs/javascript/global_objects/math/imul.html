@@ -1,0 +1,27 @@
+<h1>Math.imul</h1> <p>The <strong><code>Math.imul()</code></strong> function returns the result of the C-like 32-bit multiplication of the two parameters.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Math.imul(<var>a</var>, <var>b</var>)</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><code>a</code></dt> <dd>First number.</dd> <dt><code>b</code></dt> <dd>Second number.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>The result of the C-like 32-bit multiplication of the given arguments.</p> <h2 id="Description">Description</h2> <p><code>Math.imul()</code> allows for fast 32-bit integer multiplication with C-like semantics. This feature is useful for projects like <a href="http://en.wikipedia.org/wiki/Emscripten">Emscripten</a>. Because <code>imul()</code> is a static method of <code>Math</code>, you always use it as <code>Math.imul()</code>, rather than as a method of a <code>Math</code> object you created (<code>Math</code> is not a constructor).</p> <h2 id="Examples">Examples</h2> <h3 id="Using_Math.imul()">Using <code>Math.imul()</code>
+</h3> <pre data-language="js">Math.imul(2, 4);          // 8
+Math.imul(-1, 8);         // -8
+Math.imul(-2, -2);        // 4
+Math.imul(0xffffffff, 5); // -5
+Math.imul(0xfffffffe, 5); // -10
+</pre> <h2 id="Polyfill">Polyfill</h2> <p>This can be emulated with the following function:</p> <pre data-language="js">Math.imul = Math.imul || function(a, b) {
+  var ah = (a &gt;&gt;&gt; 16) &amp; 0xffff;
+  var al = a &amp; 0xffff;
+  var bh = (b &gt;&gt;&gt; 16) &amp; 0xffff;
+  var bl = b &amp; 0xffff;
+  // the shift by 0 fixes the sign on the high part
+  // the final |0 converts the unsigned value into a signed value
+  return ((al * bl) + (((ah * bl + al * bh) &lt;&lt; 16) &gt;&gt;&gt; 0)|0);
+};
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-math.imul">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Math.imul' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://tc39.github.io/ecma262/#sec-math.imul">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Math.imul' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>28</td> <td>
+<a title="Released on 2013-04-02." href="https://developer.mozilla.org/en-US/Firefox/Releases/20">20</a> (20)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>16</td> <td>7</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>20.0 (20)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>7</td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/imul$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/imul" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/imul</a>
+  </p>
+</div>

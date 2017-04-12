@@ -1,0 +1,18 @@
+<h1>NodeList.item</h1>  <p>Returns a node from a <a href="../nodelist"><code>NodeList</code></a> by index. This method doesn't throw exceptions as long as you provide arguments; a value of <code>null</code> is returned if the index is out of range and a <code>TypeError</code> is thrown if no argument is provided.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="eval"><em>nodeItem</em> = <em>nodeList</em>.item(<em>index</em>) 
+</pre> <ul> <li>
+<code>nodeList</code> is a <code>NodeList</code>. This is usually obtained from another DOM property or method, such as <a title="en/DOM/Node.childNodes" href="../node/childnodes">childNodes</a>.</li> <li>
+<code>index</code> is the index of the node to be fetched. The index is zero-based.</li> <li>
+<code>nodeItem</code> is the <code>index</code>th node in the <code>nodeList</code> returned by the <code>item</code> method.</li> </ul> <p>JavaScript has a special simpler syntax for obtaining an item from a NodeList by index:</p> <pre class="eval"><em>nodeItem</em> = <em>nodeList</em>[<em>index</em>]
+</pre> <h2 name="Example" id="Example">Example</h2> <pre data-language="js">var tables = document.getElementsByTagName("table"); 
+var firstTable = tables.item(1); // or simply tables[1] - returns the <strong>second</strong> table in the DOM
+</pre> <h2 name="Specification" id="Specification">Specification</h2> <p><a class="external" href="http://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#method-item">DOM Level 1 Core: NodeList.item()</a></p> <p><a class="external" href="http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-844377136">DOM Level 2 Core: NodeList.item()</a></p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList/item$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList/item" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/NodeList/item</a>
+  </p>
+</div>

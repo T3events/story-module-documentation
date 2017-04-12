@@ -1,0 +1,27 @@
+<h1>HTMLHyperlinkElementUtils.searchParams</h1> <p>The <code><strong>URLUtils</strong></code><strong><code>.searchParams</code></strong> property is a <a href="../urlsearchparams" title="The URLSearchParams interface defines utility methods to work with the query string of a URL."><code>URLSearchParams</code></a> containing the query/search parameters of the URL.</p> <div class="note">
+<strong>Note:</strong> This feature is available in <a href="../web_workers_api">Web Workers</a>.</div> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">object2 = object.searchParams;
+object.searchParams = object2;
+</pre> <h2 id="Examples">Examples</h2> <pre data-language="js">var anchor = document.createElement("a");
+anchor.href = "https://developer.mozilla.org/en-US/search?q=URLUtils.searchParams&amp;topic=api"
+var searchParams = anchor.searchParams;
+
+searchParams.has("topic") === true; // true
+searchParams.get("topic") === "api"; // true
+searchParams.getAll("topic"); // ["api"]
+searchParams.get("foo") === ""; // true
+searchParams.append("topic", "webdev");
+searchParams.toString(); // "q=URLUtils.searchParams&amp;topic=api&amp;topic=webdev"
+searchParams.delete("topic");
+searchParams.toString(); // "q=URLUtils.searchParams"
+anchor.href; // "https://developer.mozilla.org/en-US/search?q=URLUtils.searchParams"</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://url.spec.whatwg.org/#dom-url-searchparams" class="external" lang="en" title="The 'URL' specification" hreflang="en">URL</a></td> <td><span class="spec-Living">Living Standard</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">Not supported</span></td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/29" title="Released on 2014-04-29.">29.0</a> (29.0)</td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> <td>29.0 (29.0)</td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils" title="The documentation about this has not yet been written; please consider contributing!"><code>URLUtils</code></a> interface it belongs to.</li> <li>The <a href="../urlsearchparams" title="The URLSearchParams interface defines utility methods to work with the query string of a URL."><code>URLSearchParams</code></a> interface this attribute implements</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/searchParams$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/searchParams" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/searchParams</a>
+  </p>
+</div>

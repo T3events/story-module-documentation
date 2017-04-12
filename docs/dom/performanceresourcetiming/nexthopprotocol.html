@@ -1,0 +1,26 @@
+<h1>PerformanceResourceTiming.nextHopProtocol</h1> <p>The <strong><code>nextHopProtocol</code></strong> property is a <a title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String." href="../domstring"><code>string</code></a> representing the <em>network protocol</em> used to fetch the resource, as identified by the <a href="https://tools.ietf.org/html/rfc7301">ALPN Protocol ID (RFC7301)</a>.</p> <p>When a proxy is used, if a tunnel connection is established, this property returns the ALPN Protocol ID of the tunneled protocol. Otherwise, this property returns the ALPN Protocol ID of the first hop to the proxy.</p> <p>This property is <span title="This value may not be changed." class="inlineIndicator readOnly readOnlyInline">Read only </span>.</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre class="syntaxbox"><em>resource</em>.nextHopProtocol;
+</pre> <h3 id="Return_Value" name="Return_Value">Return value</h3> <p>A <a title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String." href="../domstring"><code>string</code></a> representing the <em>network protocol</em> used to fetch the resource, as identified by the <a href="https://tools.ietf.org/html/rfc7301">ALPN Protocol ID (RFC7301)</a>.</p> <h2 id="Example">Example</h2> <p>The following example uses the <code>nextHopProtocol</code> property.</p> <pre data-language="js">function print_PerformanceEntries() {
+  // Use getEntriesByType() to just get the "resource" events
+  var p = performance.getEntriesByType("resource");
+  for (var i=0; i &lt; p.length; i++) {
+    print_nextHopProtocol(p[i]);
+  }
+}
+function print_nextHopProtocol(perfEntry) {
+  var value = "nextHopProtocol" in perfEntry;
+  if (value)
+    console.log("nextHopProtocol = " + perfEntry.nextHopProtocol);
+  else
+    console.log("nextHopProtocol = NOT supported");
+}
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://w3c.github.io/resource-timing/#widl-PerformanceResourceTiming-nextHopProtocol" class="external">Resource Timing<br><small lang="en-US">The definition of 'nextHopProtocol' in that specification.</small></a></td> <td><span class="spec-ED">Editor's Draft</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>   <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support.</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support.</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/nextHopProtocol$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/nextHopProtocol" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/nextHopProtocol</a>
+  </p>
+</div>

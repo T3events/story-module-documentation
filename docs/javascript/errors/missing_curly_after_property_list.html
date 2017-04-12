@@ -1,0 +1,22 @@
+<h1>Errors: Missing curly after property list</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">SyntaxError: missing } after property list
+</pre> <h2 id="Error_type">Error type</h2> <p><a title="The SyntaxError object represents an error when trying to interpret syntactically invalid code." href="../global_objects/syntaxerror"><code>SyntaxError</code></a></p> <h2 id="What_went_wrong">What went wrong?</h2> <p>There is a mistake in the <a href="../operators/object_initializer">object initializer</a> syntax somewhere. Might be in fact a missing curly bracket, but could also be a missing comma, for example. Also check if any closing curly brackets or parenthesis are in the correct order. Indenting or formatting the code a bit nicer might also help you to see through the jungle.</p> <h2 id="Examples">Examples</h2> <h3 id="Forgotten_comma">Forgotten comma</h3> <p>Oftentimes, there is a missing comma in your object initializer code:</p> <pre data-language="js">var obj = { 
+  a: 1, 
+  b: { myProp: 2 }
+  c: 3
+};
+</pre> <p>Correct would be:</p> <pre data-language="js">var obj = {
+  a: 1,
+  b: { myProp: 2 },
+  c: 3
+};
+</pre> <h2 id="See_also">See also</h2> <ul> <li><a href="../operators/object_initializer">Object initializer</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_curly_after_property_list$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_curly_after_property_list" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_curly_after_property_list</a>
+  </p>
+</div>

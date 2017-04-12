@@ -1,0 +1,40 @@
+<h1>ext.getQueryEXT</h1> <p>The <strong><code>EXT_disjoint_timer_query.getQueryEXT()</code></strong> method of the <a href="../webgl_api">WebGL API</a> returns information about a query target.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">any <var>ext</var>.getQueryEXT(<var>target</var>, <var>pname</var>);
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>target</dt> <dd>A <a href="../webgl_api/types" title="The following types are used in WebGL interfaces."><code>GLenum</code></a> specifying the target of the time query. Must be <code>ext.TIMESTAMP_EXT</code> or <code>ext.TIME_ELAPSED_EXT</code>.</dd> <dt><code>pname</code></dt> <dd>A <a href="../webgl_api/types" title="The following types are used in WebGL interfaces."><code>GLenum</code></a> specifying which information to return. Must be <code>ext.CURRENT_QUERY_EXT</code> or <code>ext.QUERY_COUNTER_BITS_EXT</code>.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>Depends on <code>pname</code>:</p> <ul> <li>If <code>pname</code> is <code>ext.CURRENT_QUERY_EXT</code>: A <a href="../webglquery" title="The WebGLQuery interface is part of the WebGL 2 API and provides ways to asynchronously query for information. By default, occlusion queries and primitive queries are available."><code>WebGLQuery</code></a> object, which is the currently active query for the given target.</li> <li>If <code>pname</code> is <code>ext.QUERY_COUNTER_BITS_EXT</code>: A <a href="../webgl_api/types" title="The following types are used in WebGL interfaces."><code>GLint</code></a> indicating the number of bits used to hold the query result for the given target.</li> </ul> <h2 id="Examples">Examples</h2> <pre data-language="js">var ext = gl.getExtension('EXT_disjoint_timer_query');
+var startQuery = ext.createQueryEXT();
+ext.queryCounterEXT(startQuery, ext.TIMESTAMP_EXT);
+
+var currentQuery = ext.getQueryEXT(ext.TIMESTAMP_EXT, 
+                                   ext.CURRENT_QUERY_EXT);
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://www.khronos.org/registry/webgl/extensions/EXT_disjoint_timer_query/" class="external" lang="en" hreflang="en">EXT_disjoint_timer_query<br><small lang="en-US">The definition of 'EXT_disjoint_timer_query' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td>47</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>51.0</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>47</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a href="../webglrenderingcontext/getextension" title="The WebGLRenderingContext.getExtension() method enables a WebGL extension."><code>WebGLRenderingContext.getExtension()</code></a></li> <li><a href="../webglquery" title="The WebGLQuery interface is part of the WebGL 2 API and provides ways to asynchronously query for information. By default, occlusion queries and primitive queries are available."><code>WebGLQuery</code></a></li> <li><a href="../ext_disjoint_timer_query" title="The EXT_disjoint_timer_query extension is part of the WebGL API and provides a way to measure the duration of a set of GL commands, without stalling the rendering pipeline."><code>EXT_disjoint_timer_query</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/getQueryEXT$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/getQueryEXT" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/EXT_disjoint_timer_query/getQueryEXT</a>
+  </p>
+</div>

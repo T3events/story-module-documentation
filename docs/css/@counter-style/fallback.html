@@ -1,0 +1,47 @@
+<h1>@counter-style.fallback</h1> <p><span class="seoSummary">The <code>fallback</code> descriptor can be used to specify a counter style to fall back to if the current counter style cannot create a marker representation for a particular counter value.</span> If the specified fallback style is also unable to construct a representation, then its fallback style will be used. If a valid fallback style is not specified, it defaults to <code>decimal</code>. A few scenarios where fallback style will be used are:</p> <ul> <li>When the <a title="When defining custom counter styles, the range descriptor lets the author specify a range of counter values over which the style is applied. If a counter value is outside the specified range, then the fallback style will be used to construct the representation of that marker." href="range"><code>range</code></a> descriptor is specified for a counter style, the fallback style will be used to represent values that fall outside the range.</li> <li>When the <code>fixed</code> <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style/system"><code>system</code></a> is used and there are not enough symbols to cover all the list items, the fallback style will be used for the rest of the list items.</li> </ul> <table class="properties"><tbody>
+<tr>
+<th scope="row">Related <a href="../at-rule">at-rule</a>
+</th>
+<td><a title="The @counter-style CSS at-rule lets authors define specific counter styles that are not part of the predefined set of styles. A @counter-style rule defines how to convert a counter value into a string representation." href="../@counter-style"><code>@counter-style</code></a></td>
+</tr>
+<tr>
+<th scope="row"><a href="../initial_value">Initial value</a></th>
+<td><code>decimal</code></td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>all</td>
+</tr>
+<tr>
+<th scope="row"><a href="../computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">/* Keyword values */
+fallback: lower-alpha;
+fallback: custom-gangnam-style;
+</pre> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox"><a href="#counter-style-name">&lt;counter-style-name&gt;</a><p>where <br><span id="counter-style-name">&lt;counter-style-name&gt;</span> = &lt;custom-ident&gt;</p></pre> <h2 id="Example" name="Example">Example</h2> <h3 id="HTML_Content">HTML Content</h3> <div id="htmlOutputWrapper"> <pre id="htmlOutput" data-language="html"><span class="tag">&lt;ul</span><span class="atn">class</span><span class="pun">=</span><span class="atv">"list"</span><span class="tag">&gt;</span><span class="tag">&lt;li&gt;</span><span class="pln">One</span><span class="tag">&lt;/li&gt;</span><span class="tag">&lt;li&gt;</span><span class="pln">Two</span><span class="tag">&lt;/li&gt;</span><span class="tag">&lt;li&gt;</span><span class="pln">Three</span><span class="tag">&lt;/li&gt;</span><span class="tag">&lt;li&gt;</span><span class="pln">Four</span><span class="tag">&lt;/li&gt;</span><span class="tag">&lt;li&gt;</span><span class="pln">Five</span><span class="tag">&lt;/li&gt;</span><span class="tag">&lt;/ul&gt;</span></pre> </div> <h3 id="CSS_Content">CSS Content</h3> <pre data-language="css">@counter-style fallback-example { 
+  system: fixed; symbols: "\24B6" "\24B7" "\24B8"; 
+  fallback: upper-alpha; 
+} 
+.list { 
+  list-style: fallback-example; 
+}</pre> <h3 id="Result">Result</h3> <p><iframe id="frame_Example" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/@counter-style/fallback%24samples/Example?revision=1006123" frameborder="0" class="live-sample-frame sample-code-frame"></iframe></p> <h2 id="Specifications" name="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/css-counter-styles-3/#counter-style-fallback" class="external">CSS Counter Styles Level 3<br><small lang="en-US">The definition of 'fallback' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>
+<a title="Released on 2014-10-14." href="https://developer.mozilla.org/en-US/Firefox/Releases/33">33</a> (33)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>
+<a title="Released on 2014-10-14." href="https://developer.mozilla.org/en-US/Firefox/Releases/33">33</a> (33)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li>
+<a title="The list-style property is a shorthand property for setting list-style-type, list-style-image and list-style-position." href="../list-style"><code>list-style</code></a>, <a title="The list-style-image property specifies an image to be used as the list item marker." href="../list-style-image"><code>list-style-image</code></a>, <a title="The list-style-position property specifies the position of the marker box in the principal block box." href="../list-style-position"><code>list-style-position</code></a>
+</li> <li>
+<a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style/symbols"><code>symbols()</code></a>, the functional notation creating anonymous counter styles.</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style/fallback$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style/fallback" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/@counter-style/fallback</a>
+  </p>
+</div>

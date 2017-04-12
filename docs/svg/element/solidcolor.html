@@ -1,0 +1,31 @@
+<h1>&lt;solidcolor&gt;</h1><p>The <strong><code>&lt;solidColor&gt;</code></strong> <a href="../index">SVG</a> element lets authors define a single color for use in multiple places in an SVG document.</p> <p><strong><code>&lt;solidColor&gt;</code></strong> is an experimental technology, and not yet implemented in browsers. A workaround is to use a linearGradient with only one color stop. This is less elegant, and, unlike solidColor, cannot itself be used in the definition of gradients.</p> <h2 name="SVG_using_solidColor" id="SVG_using_solidColor">SVG using solidColor</h2> <h3 id="HTML_Content">HTML Content</h3> <pre data-language="html">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" height="150"&gt;
+   &lt;defs&gt;
+      &lt;!-- solidColor is experimental. --&gt;
+      &lt;solidColor id="myColor" solid-color="gold" solid-opacity="0.8"/&gt;
+      
+      &lt;!-- linearGradient with a single color stop is a less elegant way to 
+           achieve the same effect, but it works in current browsers. --&gt;
+      &lt;linearGradient id="myGradient"&gt;
+         &lt;stop offset="0" stop-color="green" /&gt;
+      &lt;/linearGradient&gt;
+   &lt;/defs&gt;
+   
+   &lt;text x="10" y="20"&gt;Circles colored with solidColor&lt;/text&gt;
+   &lt;circle cx="150" cy="65" r="35" stroke-width="2" stroke="url(#myColor)" fill="white"/&gt;
+   &lt;circle cx="50" cy="65" r="35" fill="url(#myColor)"/&gt;
+
+   &lt;text x="10" y="120"&gt;Circles colored with linearGradient&lt;/text&gt;
+   &lt;circle cx="150" cy="165" r="35" stroke-width="2" stroke="url(#myGradient)" fill="white"/&gt;
+   &lt;circle cx="50" cy="165" r="35" fill="url(#myGradient)"/&gt;
+&lt;/svg&gt;
+</pre> <h3 id="Result">Result</h3> <p><iframe frameborder="0" src="https://mdn.mozillademos.org/en-US/docs/Web/SVG/Element/solidColor%24samples/SVG_using_solidColor?revision=1135073" id="frame_SVG_using_solidColor" class="live-sample-frame sample-code-frame"></iframe></p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/solidcolor$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/solidcolor" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/SVG/Element/solidcolor</a>
+  </p>
+</div>

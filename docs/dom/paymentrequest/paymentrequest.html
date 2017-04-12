@@ -1,0 +1,53 @@
+<h1>PaymentRequest.constructor</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div> <p>The <strong><code>PaymentRequest()</code></strong> constructor creates a new <a href="https://github.com/google/Chrome.Docs/blob/master/m53/PaymentRequest.md">PaymentRequest</a> object.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">var paymentRequest = new PaymentRequest(methodData, details [, options]);</pre> <h3 id="Returns">Returns</h3> <p>An instance of the <a href="https://github.com/google/Chrome.Docs/blob/master/m53/PaymentRequest.md">PaymentRequest</a> interface.</p> <h3 id="Parameters">Parameters</h3> <dl> <dt>methodData</dt> <dd>Contains the payment method identifiers for the payment methods the merchant web site accepts and any associated payment method specific data. <strong>methodData</strong> contains the following fields. <dl>
+<br> <dt>supportedMethods</dt> <dd>A required sequence of strings containing payment method identifiers for payment methods that the merchant web site accepts.</dd> <dt>data</dt> <dd>A JSON-serializable object that provides optional information that might be needed by the supported payment methods.</dd> </dl> </dd> <dt>details</dt> <dd>Provides information about the requested transaction. <strong>details</strong> contains the following fields. <dl>
+<br> <dt>total</dt> <dd>The total amount of the payment request.</dd> <dt>displayItems</dt> <dd>Optional line items for the payment request that the user agent may display, such as product details, tax, and shipping.</dd> <dt>shippingOptions</dt> <dd>The shipping options the user may choose from. If this sequence is blank, it indicates the merchant cannot ship to the current shipping address. The default shipping option may be indicated in this sequence.</dd> <dt>modifiers</dt> <dd>Modifiers for specific payment methods; for example, adjusting the total amount based on the payment method.</dd> </dl> </dd> </dl> <h2 id="Example">Example</h2> <p>The following example shows minimal functionality and focuses instead on showing the complete context of instantiating a <code>PaymentRequest</code> object.</p> <pre data-language="js">  var supportedInstruments = [{
+    supportedMethods: [
+      'amex', 'diners', 'discover', 'jcb', 'maestro', 'mastercard', 'visa'
+    ]
+  }];
+
+  var details = {
+    total: {label: 'Donation', amount: {currency: 'USD', value: '55.00'}},
+    displayItems: [
+      {
+        label: 'Original donation amount',
+        amount: {currency: 'USD', value: '65.00'}
+      }
+    ],
+    shippingOptions: [
+      {
+        id: 'standard',
+        label: 'Standard shipping',
+        amount: {currency: 'USD', value: '0.00'},
+        selected: true
+      }
+    ]
+  };
+
+  var options = {requestShipping: true};
+
+  try {
+    var request = new PaymentRequest(supportedInstruments, details, options);
+
+    // Add event listeners here.
+
+    // Call show() to trigger the browser's payment flow.
+    request.show().then(function(instrumentResponse) {
+      // Do something with the response from the UI.
+    })
+    .catch(function(err) {
+      // Do something with the error from request.show().
+    });
+  } catch (e) {
+    // Catch any other errors.
+  }</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://www.w3.org/TR/payment-request/#paymentrequest-constructor" class="external">Payment Request API<br><small lang="en-US">The definition of 'constructor' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_Compatibility">Browser Compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td> <p>53.0</p> </td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>53.0</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>53.0</td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/PaymentRequest$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/PaymentRequest" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/PaymentRequest</a>
+  </p>
+</div>

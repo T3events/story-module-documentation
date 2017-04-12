@@ -1,0 +1,42 @@
+<h1>Node.nextSibling</h1> <p>The <code><strong>Node.nextSibling</strong></code> read-only property returns the node immediately following the specified one in its parent's <a href="childnodes" title="The Node.childNodes read-only property returns a live collection of child nodes of the given element."><code>childNodes</code></a> list, or <code>null</code> if the specified node is the last node in that list.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>nextNode</var> = <var>node</var>.nextSibling
+</pre> <h2 name="Notes" id="Notes">Notes</h2> <div>
+<p>Gecko-based browsers insert text nodes into a document to represent whitespace in the source markup. Therefore a node obtained, for example, using <a href="firstchild" title="The Node.firstChild read-only property returns the node's first child in the tree, or null if the node is childless. If the node is a Document, it returns the first node in the list of its direct children."><code>Node.firstChild</code></a> or <a href="previoussibling" title="The Node.previousSibling read-only property returns the node immediately preceding the specified one in its parent's childNodes list, or null if the specified node is the first in that list."><code>Node.previousSibling</code></a> may refer to a whitespace text node rather than the actual element the author intended to get.</p> <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/DOM/Whitespace_in_the_DOM">Whitespace in the DOM</a> and <a href="http://www.w3.org/DOM/faq.html#emptytext">W3C DOM 3 FAQ: Why are some Text nodes empty?</a> for more information.</p>
+</div> <h2 name="Example" id="Example">Example</h2> <pre data-language="html">&lt;div id="div-01"&gt;Here is div-01&lt;/div&gt;
+&lt;div id="div-02"&gt;Here is div-02&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+var el = document.getElementById('div-01').nextSibling,
+    i = 1;
+
+console.log('Siblings of div-01:');
+
+while (el) {
+  console.log(i + '. ' + el.nodeName);
+  el = el.nextSibling;
+  i++;
+}
+
+&lt;/script&gt;
+
+/**************************************************
+  The following is written to the console as it loads:
+
+     Siblings of div-01
+
+      1. #text
+      2. DIV
+      3. #text
+      4. SCRIPT
+
+**************************************************/
+</pre> <p>In the above example, it can be seen that <code>#text</code> nodes are inserted in the DOM where whitespace occurs in the markup between tags (i.e. after the closing tag of an element and before the opening tag of the next). No whitespace is created between the elements inserted by the <code>document.write</code> statement.</p> <p>The possible inclusion of text nodes in the DOM must be allowed for when traversing the DOM using <code>nextSibling</code>. See the resources in the Notes section.</p> <h2 name="Specification" id="Specification">Specification</h2> <ul> <li><a href="http://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#attribute-nextSibling">DOM Level 1 Core: nextSibling</a></li> <li><a href="http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-6AC54C2F">DOM Level 2 Core: nextSibling</a></li> </ul> <h2 id="See_also">See also</h2> <ul> <li><a href="../nondocumenttypechildnode/nextelementsibling" title="The NonDocumentTypeChildNode.nextElementSibling read-only property returns the element immediately following the specified one in its parent's children list, or null if the specified element is the last one in the list."><code>Element.nextElementSibling</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling</a>
+  </p>
+</div>

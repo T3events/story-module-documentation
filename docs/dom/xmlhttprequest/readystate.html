@@ -1,0 +1,29 @@
+<h1>XMLHttpRequest.readyState</h1> <p>The <strong>XMLHttpRequest.readyState</strong> property returns the state an XMLHttpRequest client is in. An <abbr title="XMLHttpRequest">XHR</abbr> client exists in one of the following states:</p> <table class="standard-table"> <tbody> <tr> <th class="header">Value</th> <th class="header">State</th> <th class="header">Description</th> </tr> <tr> <td><code>0</code></td> <td><code>UNSENT</code></td> <td>Client has been created. <code>open()</code> not called yet.</td> </tr> <tr> <td><code>1</code></td> <td><code>OPENED</code></td> <td>
+<code>open()</code> has been called.</td> </tr> <tr> <td><code>2</code></td> <td><code>HEADERS_RECEIVED</code></td> <td>
+<code>send()</code> has been called, and headers and status are available.</td> </tr> <tr> <td><code>3</code></td> <td><code>LOADING</code></td> <td>Downloading; <code>responseText</code> holds partial data.</td> </tr> <tr> <td><code>4</code></td> <td><code>DONE</code></td> <td>The operation is complete.</td> </tr> </tbody> </table> <dl> <dt>UNSENT</dt> <dd>The XMLHttpRequest client has been created, but the open() method hasn't been called yet.</dd> <dt>OPENED</dt> <dd>open() method has been invoked. During this state, the request headers can be set using the <a href="setrequestheader">setRequestHeader()</a> method and the <a href="send">send()</a> method can be called which will initiate the fetch.</dd> <dt>HEADERS_RECEIVED</dt> <dd>send() has been called and the response headers have been received.</dd> <dt>LOADING</dt> <dd>Response's body is being received. If <code><a href="responsetype">responseType</a></code> is "text" or empty string, <code><a href="responsetext">responseText</a></code> will have the partial text response as it loads.</dd> <dt>DONE</dt> <dd>The fetch operation is complete. This could mean that either the data transfer has been completed successfully or failed.</dd> </dl> <div class="note"> <p>The state names are different in Internet Explorer. Instead of <code>UNSENT</code>, <code>OPENED</code>,<code> HEADERS_RECEIVED</code>,<code> LOADING</code> and <code>DONE, the names READYSTATE_UNINITIALIZED</code> (0), <code>READYSTATE_LOADING</code> (1), <code>READYSTATE_LOADED</code> (2), <code>READYSTATE_INTERACTIVE</code> (3) and <code>READYSTATE_COMPLETE</code> (4) are used.</p> </div> <h2 id="Example">Example</h2> <pre data-language="js">var xhr = new XMLHttpRequest();
+console.log('UNSENT', xhr.readyState); // readyState will be 0
+
+xhr.open('GET', '/api', true);
+console.log('OPENED', xhr.readyState); // readyState will be 1
+
+xhr.onprogress = function () {
+    console.log('LOADING', xhr.readyState); // readyState will be 3
+};
+
+xhr.onload = function () {
+    console.log('DONE', xhr.readyState); // readyState will be 4
+};
+
+xhr.send(null);
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" title="The 'XMLHttpRequest' specification" class="external" href="https://xhr.spec.whatwg.org#states" hreflang="en">XMLHttpRequest</a></td> <td><span class="spec-Living">Living Standard</span></td> <td>WHATWG living standard</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>1</td> <td>1.0 (1.7 or earlier)<sup>[1]</sup>
+</td> <td>7</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>1.2</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>1.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState</a>
+  </p>
+</div>

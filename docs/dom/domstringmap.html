@@ -1,0 +1,42 @@
+<h1>DOMStringMap</h1> <p>Used by the <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-dataset">dataset</a></code> HTML attribute to represent data for custom attributes added to elements.</p> <h2 name="Method_overview" id="Method_overview">Method overview</h2> <table class="standard-table"> <tbody> <tr> <td>
+<code>DOMString <a href="#getDataAttr()">getDataAttr</a>(in DOMString prop);</code> <span class="inlineIndicator noscript noscriptInline" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span>
+</td> </tr> <tr> <td>
+<code>boolean <a href="#hasDataAttr()">hasDataAttr</a>(in DOMString prop);</code> <span class="inlineIndicator notXPCOM notXPCOMInline" title="Only use this method if you REALLY know what you are doing!">Violates the XPCOM interface guidelines</span>
+</td> </tr> <tr> <td>
+<code>void <a href="#removeDataAttr()">removeDataAttr</a>(in DOMString prop);</code> <span class="inlineIndicator notXPCOM notXPCOMInline" title="Only use this method if you REALLY know what you are doing!">Violates the XPCOM interface guidelines</span>
+</td> </tr> <tr> <td>
+<code>void <a href="#removeProp()">removeProp</a>(in nsIAtom attr);</code> <span class="inlineIndicator notXPCOM notXPCOMInline" title="Only use this method if you REALLY know what you are doing!">Violates the XPCOM interface guidelines</span>
+</td> </tr> <tr> <td>
+<code>void <a href="#setDataAttr()">setDataAttr</a>(in DOMString prop, in DOMString value);</code> <span class="inlineIndicator noscript noscriptInline" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span>
+</td> </tr> </tbody> </table> <h2 name="Methods" id="Methods">Methods</h2> <div>
+<span class="indicatorInHeadline noscript noscriptMethod" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span><h3 id="getDataAttr">getDataAttr</h3>
+</div> <pre class="eval">DOMString getDataAttr(
+  in DOMString prop
+);
+</pre> <h6 name="Parameters" id="Parameters">Parameters</h6> <dl> <dt><code>prop</code></dt> <dd>The property for which to retrieve the value.</dd> </dl> <h6 name="Return_value" id="Return_value">Return value</h6> <p>The value for the specified property name.</p> <div> <span class="indicatorInHeadline notXPCOM notXPCOMMethod" title="Only use this method if you REALLY know what you are doing!">Violates the XPCOM interface guidelines</span> <h3 id="hasDataAttr()">hasDataAttr()</h3> </div> <pre class="eval">boolean hasDataAttr(
+  in DOMString prop
+);
+</pre> <h6 name="Parameters" id="Parameters">Parameters</h6> <dl> <dt><code>prop</code></dt> <dd>The property for which to check for the existence of a value.</dd> </dl> <h6 name="Return_value" id="Return_value">Return value</h6> <p><code>true</code> if the property exists; otherwise <code>false</code>.</p> <div> <span class="indicatorInHeadline notXPCOM notXPCOMMethod" title="Only use this method if you REALLY know what you are doing!">Violates the XPCOM interface guidelines</span> <h3 id="removeDataAttr()">removeDataAttr()</h3> </div> <pre class="eval">void removeDataAttr(
+  in DOMString prop
+);
+</pre> <h6 name="Parameters" id="Parameters">Parameters</h6> <dl> <dt><code>prop</code></dt> <dd>The property to remove from the data set.</dd> </dl> <div> <span class="indicatorInHeadline notXPCOM notXPCOMMethod" title="Only use this method if you REALLY know what you are doing!">Violates the XPCOM interface guidelines</span> <h3 id="removeProp()">removeProp()</h3> </div> <p>Removes the property from the dataset object. Used to update the dataset object when data-* attribute has been removed from the element.</p> <pre class="eval">void removeProp(
+  in nsIAtom attr
+);
+</pre> <h6 name="Parameters" id="Parameters">Parameters</h6> <dl> <dt><code>attr</code></dt> <dd>The property to remove from the dataset.</dd> </dl> <div>
+<span class="indicatorInHeadline noscript noscriptMethod" title="This method may only be called from C++; don't use it from JavaScript.">Native code only!</span><h3 id="setDataAttr">setDataAttr</h3>
+</div> <p>Sets the value of the specified property.</p> <pre class="eval">void setDataAttr(
+  in DOMString prop,
+  in DOMString value
+);
+</pre> <h6 name="Parameters" id="Parameters">Parameters</h6> <dl> <dt><code>prop</code></dt> <dd>The property whose value is to be set.</dd> <dt><code>value</code></dt> <dd>The property's new value.</dd> </dl> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/6" title="Released on 2011-08-16.">6.0</a> (6.0)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="htmlelement/dataset" title='The HTMLElement.dataset property allows access, both in reading and writing mode, to all the custom data attributes (data-*) set on the element, either in HTML or in the DOM.  It is a map of DOMString, one entry for each custom data attribute.  Note that the dataset property itself can be read, but not directly written.  Instead, all writes must be to its "properties", which in turn represent the data attributes.   Note also that an HTML data-attribute and its corresponding DOM dataset.property do not share the same name, but they are always similar:'><code>HTMLElement.dataset</code></a></li> <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-dataset">dataset</a></code></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMStringMap$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMStringMap" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/DOMStringMap</a>
+  </p>
+</div>

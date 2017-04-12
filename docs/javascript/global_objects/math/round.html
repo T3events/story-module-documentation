@@ -1,0 +1,95 @@
+<h1>Math.round</h1> <p>The <strong><code>Math.round()</code></strong> function returns the value of a number rounded to the nearest integer.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Math.round(<var>x</var>)</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><code>x</code></dt> <dd>A number.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>The value of the given number rounded to the nearest integer.</p> <h2 id="Description">Description</h2> <p>If the fractional portion of the argument is greater than 0.5, the argument is rounded to the integer with the next higher absolute value. If it is less than 0.5, the argument is rounded to the integer with the lower absolute value. If the fractional portion is exactly 0.5, the argument is rounded to the next integer in the direction of +∞. <strong>Note that this differs from many languages' <code>round()</code> functions, which often round this case to the next integer <em>away from zero</em>, instead</strong> (giving a different result in the case of negative numbers with a fractional part of exactly 0.5).</p> <p>Because <code>round()</code> is a static method of <code>Math</code>, you always use it as <code>Math.round()</code>, rather than as a method of a <code>Math</code> object you created (<code>Math</code> has no constructor).</p> <h2 id="Examples">Examples</h2> <pre data-language="js">Math.round( 20.49); //  20
+Math.round( 20.5);  //  21
+Math.round( 42  );  //  42
+Math.round(-20.5);  // -20
+Math.round(-20.51); // -21
+</pre> <h3 id="Decimal_rounding">Decimal rounding</h3> <pre data-language="js">// Closure
+(function() {
+  /**
+   * Decimal adjustment of a number.
+   *
+   * @param {String}  type  The type of adjustment.
+   * @param {Number}  value The number.
+   * @param {Integer} exp   The exponent (the 10 logarithm of the adjustment base).
+   * @returns {Number} The adjusted value.
+   */
+  function decimalAdjust(type, value, exp) {
+    // If the exp is undefined or zero...
+    if (typeof exp === 'undefined' || +exp === 0) {
+      return Math[type](value);
+    }
+    value = +value;
+    exp = +exp;
+    // If the value is not a number or the exp is not an integer...
+    if (isNaN(value) || !(typeof exp === 'number' &amp;&amp; exp % 1 === 0)) {
+      return NaN;
+    }
+    // Shift
+    value = value.toString().split('e');
+    value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
+    // Shift back
+    value = value.toString().split('e');
+    return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+  }
+
+  // Decimal round
+  if (!Math.round10) {
+    Math.round10 = function(value, exp) {
+      return decimalAdjust('round', value, exp);
+    };
+  }
+  // Decimal floor
+  if (!Math.floor10) {
+    Math.floor10 = function(value, exp) {
+      return decimalAdjust('floor', value, exp);
+    };
+  }
+  // Decimal ceil
+  if (!Math.ceil10) {
+    Math.ceil10 = function(value, exp) {
+      return decimalAdjust('ceil', value, exp);
+    };
+  }
+})();
+
+// Round
+Math.round10(55.55, -1);   // 55.6
+Math.round10(55.549, -1);  // 55.5
+Math.round10(55, 1);       // 60
+Math.round10(54.9, 1);     // 50
+Math.round10(-55.55, -1);  // -55.5
+Math.round10(-55.551, -1); // -55.6
+Math.round10(-55, 1);      // -50
+Math.round10(-55.1, 1);    // -60
+Math.round10(1.005, -2);   // 1.01 -- compare this with Math.round(1.005*100)/100 above
+// Floor
+Math.floor10(55.59, -1);   // 55.5
+Math.floor10(59, 1);       // 50
+Math.floor10(-55.51, -1);  // -55.6
+Math.floor10(-51, 1);      // -60
+// Ceil
+Math.ceil10(55.51, -1);    // 55.6
+Math.ceil10(51, 1);        // 60
+Math.ceil10(-55.59, -1);   // -55.5
+Math.ceil10(-59, 1);       // -50
+</pre> <h3 id="PHP-Like_rounding_Method">PHP-Like rounding Method</h3> <p>The code below can be used to add your own version of Math.round to your own namespace which takes a precision parameter. Unlike Decimal rounding in the example above, this performs no conversion to and from strings, and the precision parameter works same way as PHP and Excel whereby a positive 1 would round to 1 decimal place and -1 would round to the tens.</p> <pre data-language="js">var myNamespace = {};
+
+myNamespace.round = function(number, precision) {
+    var factor = Math.pow(10, precision);
+    var tempNumber = number * factor;
+    var roundedTempNumber = Math.round(tempNumber);
+    return roundedTempNumber / factor;
+};
+
+myNamespace.round(1234.5678, 1); // 1234.6
+myNamespace.round(1234.5678, -1); // 1230</pre>  <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" title="The 'ECMAScript 1st Edition (ECMA-262)' specification" class="external" href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf" hreflang="en">ECMAScript 1st Edition (ECMA-262)</a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition. Implemented in JavaScript 1.0.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.ecma-international.org/ecma-262/5.1/#sec-15.8.2.15" class="external">ECMAScript 5.1 (ECMA-262)<br><small lang="en-US">The definition of 'Math.round' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td> </td> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-math.round" class="external">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Math.round' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td> </td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://tc39.github.io/ecma262/#sec-math.round" class="external">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Math.round' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a title="The Math.abs() function returns the absolute value of a number, that is" href="abs"><code>Math.abs()</code></a></li> <li><a title="The Math.ceil() function returns the smallest integer greater than or equal to a given number." href="ceil"><code>Math.ceil()</code></a></li> <li><a title="The Math.floor() function returns the largest integer less than or equal to a given number." href="floor"><code>Math.floor()</code></a></li> <li><a title="The Math.sign() function returns the sign of a number, indicating whether the number is positive, negative or zero." href="sign"><code>Math.sign()</code></a></li> <li><a title="The Math.trunc() function returns the integral part of a number by removing any fractional digits." href="trunc"><code>Math.trunc()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round</a>
+  </p>
+</div>

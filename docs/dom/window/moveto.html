@@ -1,0 +1,17 @@
+<h1>window.moveTo</h1>  <p>Moves the window to the specified coordinates.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">window.moveTo(<var>x</var>, <var>y</var>) 
+</pre> <h3 id="Parameters">Parameters</h3> <ul> <li>
+<code>x</code> is the horizontal coordinate to be moved to.</li> <li>
+<code>y</code> is the vertical coordinate to be moved to.</li> </ul> <h2 name="Example" id="Example">Example</h2> <pre data-language="js">function origin() {
+  // moves to top left corner of screen
+  window.moveTo(0, 0);
+}</pre> <h2 id="Notes">Notes</h2> <p>This function moves the window absolutely while <a title="Moves the current window by a specified amount." href="moveby"><code>window.moveBy</code></a> moves the window relative to its current location.</p> <p>Since Firefox 7, it's no longer possible for a web site to move a window in a browser, according to the <a class="link-https" href="https://bugzilla.mozilla.org/show_bug.cgi?id=565541#c24">following rules</a>:</p> <ol> <li>You can't move a window or tab that wasn’t created by <a title="Loads a resource into either a new browsing context (such as a window) or one that already exists, depending on the specified parameters." href="open"><code>window.open</code></a>.</li> <li>You can't move a window or tab when it’s in a window with more than one tab.</li> </ol> <h2 id="Specification">Specification</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a hreflang="en" class="external" lang="en" href="https://drafts.csswg.org/cssom-view/#dom-window-moveto">CSS Object Model (CSSOM) View Module<br><small lang="en-US">The definition of 'window.moveTo()' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial definition</td> </tr> </tbody> </table><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/moveTo$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/moveTo" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/window/moveTo</a>
+  </p>
+</div>

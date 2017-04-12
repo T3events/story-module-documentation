@@ -1,0 +1,37 @@
+<h1>Errors: Invalid array length</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">RangeError: invalid array length (Firefox)
+RangeError: Invalid array length (Chrome)
+RangeError: Invalid array buffer length (Chrome)
+</pre> <h2 id="Error_type">Error type</h2> <p><a title="The RangeError object indicates an error when a value is not in the set or range of allowed values." href="../global_objects/rangeerror"><code>RangeError</code></a></p> <h2 id="What_went_wrong">What went wrong?</h2> <p>An invalid array length might appear in these situations:</p> <ul> <li>When creating an <a title="The JavaScript Array object is a global object that is used in the construction of arrays; which are high-level, list-like objects." href="../global_objects/array"><code>Array</code></a> or an <a title="The ArrayBuffer object is used to represent a generic, fixed-length raw binary data buffer. You cannot directly manipulate the contents of an ArrayBuffer; instead, you create one of the typed array objects or a DataView object which represents the buffer in a specific format, and use that to read and write the contents of the buffer." href="../global_objects/arraybuffer"><code>ArrayBuffer</code></a> which has a length which is either negative or larger or equal to 2<sup>32</sup>, or</li> <li>when setting the <a title="The array length property sets or returns the number of elements in an array. It represents an unsigned, 32-bit integer that is always numerically greater than the highest index in the array." href="../global_objects/array/length"><code>Array.length</code></a> property to a value which is either negative or larger or equal to 2<sup>32</sup>.</li> </ul> <p>Why are <code>Array</code> and <code>ArrayBuffer</code> length limited? The <code>length</code> property of an <code>Array</code> or an <code>ArrayBuffer</code> is represented with an unsigned 32-bit integer, that can only store values which are in the range from 0 to 2<sup>32</sup>-1.</p> <p>If you are creating an <code>Array</code>, using the constructor, you probably want to use the literal notation instead, as the first argument is interpreted as the length of the <code>Array</code>.</p> <p>Otherwise, you might want to clamp the length before setting the length property, or using it as argument of the constructor.</p> <h2 id="Examples">Examples</h2> <h3 id="Invalid_cases">Invalid cases</h3> <pre data-language="js">new Array(Math.pow(2, 40))
+new Array(-1)
+new ArrayBuffer(Math.pow(2, 32))
+new ArrayBuffer(-1)
+
+let a = [];
+a.length = a.length - 1;         // set -1 to the length property
+
+let b = new Array(Math.pow(2, 32) - 1);
+b.length = b.length + 1;         // set 2^32 to the length property
+</pre> <h3 id="Valid_cases">Valid cases</h3> <pre data-language="js">[ Math.pow(2, 40) ]                     // [ 1099511627776 ]
+[ -1 ]                                  // [ -1 ]
+new ArrayBuffer(Math.pow(2, 32) - 1)
+new ArrayBuffer(0)
+
+let a = [];
+a.length = Math.max(0, a.length - 1);
+
+let b = new Array(Math.pow(2, 32) - 1);
+b.length = Math.min(0xffffffff, b.length + 1);   
+
+// 0xffffffff is the hexadecimal notation for 2^32 - 1
+// which can also be written as (-1 &gt;&gt;&gt; 0)
+</pre> <h2 id="See_also">See also</h2> <ul> <li><a title="The JavaScript Array object is a global object that is used in the construction of arrays; which are high-level, list-like objects." href="../global_objects/array"><code>Array</code></a></li> <li><a title="The array length property sets or returns the number of elements in an array. It represents an unsigned, 32-bit integer that is always numerically greater than the highest index in the array." href="../global_objects/array/length"><code>Array.length</code></a></li> <li><a title="The ArrayBuffer object is used to represent a generic, fixed-length raw binary data buffer. You cannot directly manipulate the contents of an ArrayBuffer; instead, you create one of the typed array objects or a DataView object which represents the buffer in a specific format, and use that to read and write the contents of the buffer." href="../global_objects/arraybuffer"><code>ArrayBuffer</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Invalid_array_length$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Invalid_array_length" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Invalid_array_length</a>
+  </p>
+</div>

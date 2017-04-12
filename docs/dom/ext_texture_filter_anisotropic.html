@@ -1,0 +1,43 @@
+<h1>EXT texture filter anisotropic</h1> <p>The <code><strong>EXT_texture_filter_anisotropic</strong></code> extension is part of the <a href="webgl_api">WebGL API</a> and exposes two constants for <a href="https://en.wikipedia.org/wiki/Anisotropic_filtering">anisotropic filtering (AF)</a>.</p> <p>AF improves the quality of mipmapped texture access when viewing a textured primitive at an oblique angle. Using just mipmapping, these lookups have a tendency to average to grey.</p> <p>WebGL extensions are available using the <a title="The WebGLRenderingContext.getExtension() method enables a WebGL extension." href="webglrenderingcontext/getextension"><code>WebGLRenderingContext.getExtension()</code></a> method. For more information, see also <a href="webgl_api/using_extensions">Using Extensions</a> in the <a href="webgl_api/tutorial">WebGL tutorial</a>.</p> <div class="note"> <p><strong>Availability:</strong> This extension is available to both, <a title="The WebGLRenderingContext interface provides the OpenGL ES 2.0 rendering context for the drawing surface of an HTML &lt;canvas&gt; element." href="webglrenderingcontext">WebGL1</a> and <a title="The WebGL2RenderingContext interface provides the OpenGL ES 3.0 rendering context for the drawing surface of an HTML &lt;canvas&gt; element." href="webgl2renderingcontext">WebGL2</a> contexts.</p> </div> <h2 id="Constants">Constants</h2> <dl> <dt><code>ext.MAX_TEXTURE_MAX_ANISOTROPY_EXT</code></dt> <dd>This is the <code>pname</code> argument to the <a title="The WebGLRenderingContext.getParameter() method of the WebGL API returns a value for the passed parameter name." href="webglrenderingcontext/getparameter"><code>gl.getParameter()</code></a> call, and it returns the maximum available anisotropy.</dd> <dt><code>ext.TEXTURE_MAX_ANISOTROPY_EXT</code></dt> <dd>This is the <code>pname</code> argument to the <a title="The WebGLRenderingContext.getTexParameter() method of the WebGL API returns information about the given texture." href="webglrenderingcontext/gettexparameter"><code>gl.getTexParameter()</code></a> and <a title="The WebGLRenderingContext.texParameter[fi]() methods of the WebGL API set texture parameters." href="webglrenderingcontext/texparameter"><code>gl.texParameterf()</code></a> / <a title="The WebGLRenderingContext.texParameter[fi]() methods of the WebGL API set texture parameters." href="webglrenderingcontext/texparameter"><code>gl.texParameteri()</code></a> calls and sets the desired maximum anisotropy for a texture.</dd> </dl> <h2 id="Examples">Examples</h2> <pre data-language="js">var texture = gl.createTexture();
+gl.bindTexture(gl.TEXTURE_2D, texture);
+var ext = (
+  gl.getExtension('EXT_texture_filter_anisotropic') ||
+  gl.getExtension('MOZ_EXT_texture_filter_anisotropic') ||
+  gl.getExtension('WEBKIT_EXT_texture_filter_anisotropic')
+);
+if (ext){
+  var max = gl.getParameter(ext.MAX_TEXTURE_MAX_ANISOTROPY_EXT);
+  gl.texParameterf(gl.TEXTURE_2D, ext.TEXTURE_MAX_ANISOTROPY_EXT, max);
+}</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://www.khronos.org/registry/webgl/extensions/EXT_texture_filter_anisotropic/" class="external">EXT_texture_filter_anisotropic<br><small lang="en-US">The definition of 'EXT_texture_filter_anisotropic' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>17.0</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The WebGLRenderingContext.getExtension() method enables a WebGL extension." href="webglrenderingcontext/getextension"><code>WebGLRenderingContext.getExtension()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/EXT_texture_filter_anisotropic$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/EXT_texture_filter_anisotropic" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/EXT_texture_filter_anisotropic</a>
+  </p>
+</div>

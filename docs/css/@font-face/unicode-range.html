@@ -1,0 +1,58 @@
+<h1>@font-face.unicode-range</h1> <p>The <strong><code>unicode-range</code></strong> CSS descriptor sets the specific range of characters to be used from a font defined by <a title="Technical review completed." href="../@font-face"><code>@font-face</code></a> and made available for use on the current page. If the page doesn't use any character in this range, the font is not downloaded; if it uses at least one, the whole font is downloaded.</p> <p>The purpose of this descriptor is to allow the font resources to be segmented so that a browser only needs to download the font resource needed for the text content of a particular page. For example, a site with many localizations could provide separate font resources for English, Greek and Japanese. For users viewing the English version of a page, the font resources for Greek and Japanese fonts wouldn't need to be downloaded, saving bandwidth.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row">Related <a href="../at-rule">at-rule</a>
+</th>
+<td><a title="Technical review completed." href="../@font-face"><code>@font-face</code></a></td>
+</tr>
+<tr>
+<th scope="row"><a href="../initial_value">Initial value</a></th>
+<td><code>U+0-10FFFF</code></td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>all</td>
+</tr>
+<tr>
+<th scope="row"><a href="../computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>order of appearance in the formal grammar of the values</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">/* &lt;unicode-range&gt; values */
+unicode-range: U+26;               /* single codepoint */
+unicode-range: U+0-7F;
+unicode-range: U+0025-00FF;        /* codepoint range */
+unicode-range: U+4??;              /* wildcard range */
+unicode-range: U+0025-00FF, U+4??; /* multiple values */
+</pre> <h3 id="Values">Values</h3> <dl> <dt><em><strong>single codepoint</strong></em></dt> <dd>A single Unicode character code point, for example <code>U+26</code>.</dd> <dt><em><strong>codepoint range</strong></em></dt> <dd>A range of Unicode code points. So for example, <code>U+0025-00FF</code> means <em>include all characters in the range <code>U+0025</code> to <code>U+00FF</code></em>.</dd> <dt><em><strong>wildcard range</strong></em></dt> <dd>A range of Unicode code points containing wildcard characters, that is using the <code>'?'</code> character, so for example <code>U+4??</code> means <em>include all characters in the range <code>U+400</code> to <code>U+4FF</code></em>.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox">&lt;unicode-range&gt;<a title="Hash mark" href="../value_definition_syntax#Hash_mark_(.23)">#</a></pre> <h2 id="Examples">Examples</h2> <p>We create a simple HTML containing a single <a title="The HTML &lt;div&gt; element (or HTML Document Division Element) is the generic container for flow content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element (such as &lt;article&gt; or &lt;nav&gt;) is appropriate." href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div"><code>&lt;div&gt;</code></a> element, including an ampersand, that we want to style with a different font. To make it obvious, we will use a sans-serif font, <em>Helvetica</em>, for the text, and a serif font, <em>Times New Roman</em>, for the ampersand.</p> <div class="example"> <pre data-language="html">&lt;div&gt;Me &amp; You = Us&lt;/div&gt;</pre> </div> <p>In the CSS, you can see that we are in effect defining a completely separate <a title="Technical review completed." href="../@font-face"><code>@font-face</code></a> that only includes a single character in it, meaning that only this character will be styled with this font. We could also have done this by wrapping the ampersand in a <a title="The HTML &lt;span&gt; element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang." href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span"><code>&lt;span&gt;</code></a> and applying a different font just to that, but that is an extra element and rule set.</p> <div class="example"> <pre data-language="css">@font-face {
+  font-family: 'Ampersand';
+  src: local('Times New Roman');
+  unicode-range: U+26;
+}
+
+div {
+  font-size: 4em;
+  font-family: Ampersand, Helvetica, sans-serif;	
+}</pre> <h3 id="Reference_result">Reference result</h3> <p><img src="https://mdn.mozillademos.org/files/6043/Refresult.png" alt="What the example should looks like if your browser supports it."></p> <h3 id="Live_result">Live result</h3> <p><iframe width="500" class="live-sample-frame sample-code-frame" frameborder="0" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/@font-face/unicode-range%24samples/Examples?revision=1113237" height="104" id="frame_Examples"></iframe></p> </div> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a hreflang="en" class="external" lang="en" href="https://drafts.csswg.org/css-fonts-3/#descdef-font-face-unicode-range">CSS Fonts Module Level 3<br><small lang="en-US">The definition of 'unicode-range' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>
+<a title="Released on 2016-01-26." href="https://developer.mozilla.org/en-US/Firefox/Releases/44">44</a> (44)<sup>[1]</sup>
+</td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span><sup>[2]</sup>
+</td> <td>9.0<sup>[2]</sup>
+</td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span><sup>[2]</sup>
+</td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span><sup>[2]</sup>
+</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mini</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>44.0 (44)<sup>[1]</sup>
+</td> <td>9.0</td> <td><span style="color: #f00;">No support</span></td> <td>10.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <p>[1] From Firefox 4 through Firefox 34, the <code>unicode-range</code> descriptor in <a title="Technical review completed." href="../@font-face"><code>@font-face</code></a> rules was parsed but the codepoint range ignored. From Firefox 35, <code>unicode-range</code> can be enabled on non-Linux platforms using the <code>layout.css.unicode-range.enabled</code> pref, which was on by default in nightly/developer builds. On Linux, this was possible from Firefox 41 onwards.</p> <p>[2] Firefox and Chrome respect the <code>unicode-range</code> value when deciding which fonts to download (from Chrome 36, <a rel="external" class="external" href="https://code.google.com/p/chromium/issues/detail?id=247920">Chromium bug 247920</a>). Safari and Internet Explorer ignore the unicode-range value when deciding which fonts to download but respect it when deciding which font to use.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/unicode-range</a>
+  </p>
+</div>

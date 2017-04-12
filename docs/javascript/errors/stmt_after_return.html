@@ -1,0 +1,33 @@
+<h1>Errors: Stmt after return</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">Warning: unreachable code after return statement (Firefox)
+</pre> <h2 id="Error_Type">Error Type</h2> <p>Warning</p> <h2 id="What_went_wrong">What went wrong?</h2> <p>Unreachable code after a return statement might occur in these situations:</p> <ul> <li>When using an expression after a <a title="The return statement ends function execution and specifies a value to be returned to the function caller." href="../statements/return"><code>return</code></a> statement, or</li> <li>when using a semicolon-less return statement but including an expression directly after.</li> </ul> <p>When an expression exists after a valid <code>return</code> statement, a warning is given to indicate that the code after the <code>return</code> statement is unreachable, meaning it can never be run.</p> <p>Why should I have semicolons after <code>return</code> statements? In the case of semicolon-less <code>return</code> statements, it can be unclear whether the developer intended to return the statement on the following line, or to stop execution and return. The warning indicates that there is ambiguity in the way the <code>return</code> statement is written.</p> <p>Warnings will not be shown for semicolon-less returns if these statements follow it:</p> <ul> <li><a title="The throw statement throws a user-defined exception. Execution of the current function will stop (the statements after throw won't be executed), and control will be passed to the first catch block in the call stack. If no catch block exists among caller functions, the program will terminate." href="../statements/throw"><code>throw</code></a></li> <li><a title="The break statement terminates the current loop, switch, or label statement and transfers program control to the statement following the terminated statement." href="../statements/break"><code>break</code></a></li> <li><a title="The variable statement declares a variable, optionally initializing it to a value." href="../statements/var"><code>var</code></a></li> <li><a title="The function declaration defines a function with the specified parameters." href="../statements/function"><code>function</code></a></li> </ul> <h2 id="Examples">Examples</h2> <h3 id="Invalid_cases">Invalid cases</h3> <pre data-language="js">function f() {
+  var x = 3;
+  x += 4;
+  return x;   // return exits the function immediately
+  x -= 3;     // so this line will never run; it is unreachable
+}
+
+function f() {
+  return     // this is treated like `return;`
+    3 + 4;   // so the function returns, and this line is never reached
+}
+</pre> <h3 id="Valid_cases">Valid cases</h3> <pre data-language="js">function f() {
+  var x = 3;
+  x += 4;
+  x -= 3;
+  return x;  // OK: return after all other statements
+}
+
+function f() {
+  return 3 + 4  // OK: semicolon-less return with expression on the same line
+}
+</pre> <h2 id="See_also">See also</h2> <ul> <li><a title="The return statement ends function execution and specifies a value to be returned to the function caller." href="../statements/return#Automatic_Semicolon_Insertion">Automatic Semicolon Insertion</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Stmt_after_return$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Stmt_after_return" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Stmt_after_return</a>
+  </p>
+</div>

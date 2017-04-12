@@ -1,0 +1,38 @@
+<h1>ServiceWorkerGlobalScope.onfetch</h1><div><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div></div> <p>The <strong>onfetch</strong> property of the <a title="The ServiceWorkerGlobalScope interface of the ServiceWorker API represents the global execution context of a service worker." href="../serviceworkerglobalscope"><code>ServiceWorkerGlobalScope</code></a> interface is an event handler fired whenever a <code><a title="/en-US/docs/Web/Events/fetch" href="https://developer.mozilla.org/en-US/docs/Web/Events/fetch">fetch</a></code> event occurs (usually when the <a title="The fetch() method of the GlobalFetch interface starts the process of fetching a resource. This returns a promise that resolves to the Response object representing the response to your request." href="../windoworworkerglobalscope/fetch"><code>ServiceWorkerGlobalScope.fetch</code></a> method is called.)</p> <h2 id="Syntax">Syntax</h2> <pre>ServiceWorkerGlobalScope.onfetch = function(FetchEvent) { ... }</pre> <h2 id="Example">Example</h2> <p>This code snippet is from the <a href="https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/prefetch/service-worker.js">service worker fetch sample</a> (see <a href="https://googlechrome.github.io/samples/service-worker/prefetch/">prefetch example live</a>.) The <a title="The onfetch property of the ServiceWorkerGlobalScope interface is an event handler fired whenever a fetch event occurs (usually when the ServiceWorkerGlobalScope.fetch method is called.)" href="onfetch"><code>ServiceWorkerGlobalScope.onfetch</code></a> event handler listens for the <code>fetch</code> event. When fired, the code returns a promise that resolves to the first matching request in the <a title="The Cache interface of the ServiceWorker API represents the storage for Request / Response object pairs that are cached as part of the ServiceWorker life cycle." href="../cache"><code>Cache</code></a> object. If no match is found, the code fetches a response from the network.</p> <p>The code also handles exceptions thrown from the <a title="The fetch() method of the GlobalFetch interface starts the process of fetching a resource. This returns a promise that resolves to the Response object representing the response to your request." href="../windoworworkerglobalscope/fetch"><code>ServiceWorkerGlobalScope.fetch</code></a> operation. Note that an HTTP error response (e.g., 404) will not trigger an exception. It will return a normal response object that has the appropriate error code set.</p> <pre data-language="js">self.addEventListener('fetch', function(event) {
+  console.log('Handling fetch event for', event.request.url);
+
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      if (response) {
+        console.log('Found response in cache:', response);
+
+        return response;
+      }
+      console.log('No response found in cache. About to fetch from network...');
+
+      return fetch(event.request).then(function(response) {
+        console.log('Response from network is:', response);
+
+        return response;
+      }).catch(function(error) {
+        console.error('Fetching failed:', error);
+
+        throw error;
+      });
+    })
+  );
+});</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://www.w3.org/TR/service-workers/#service-worker-global-scope-event-handlers" class="external">Service Workers<br><small lang="en-US">The definition of 'Event Handlers' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>40.0</td> <td>
+<a title="Released on 2016-01-26." href="https://developer.mozilla.org/en-US/Firefox/Releases/44">44.0</a> (44.0)<sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>44.0 (44.0)</td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span><sup>[3]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td>40.0</td> </tr> </tbody> </table> </div> <p>[1] Service workers (and <a href="../push_api">Push</a>) have been disabled in the <a href="https://www.mozilla.org/en-US/firefox/organizations/">Firefox 45 Extended Support Release</a> (ESR.)</p> <h2 id="See_also">See also</h2> <ul> <li><a href="../service_worker_api/using_service_workers">Using Service Workers</a></li> <li><a href="https://github.com/mdn/sw-test" class="external external-icon">Service workers basic code example</a></li> <li><a href="https://jakearchibald.github.io/isserviceworkerready/" class="external external-icon">Is ServiceWorker ready?</a></li> <li><a title="The Promise object is used for deferred and asynchronous computations. A Promise represents an operation that hasn't completed yet, but is expected in the future." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code>Promise</code></a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Performance/Using_web_workers">Using web workers</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/onfetch$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/onfetch" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/onfetch</a>
+  </p>
+</div>

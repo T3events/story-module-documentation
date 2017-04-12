@@ -1,0 +1,22 @@
+<h1>map.values</h1> <p>The <code><strong>values()</strong></code> method returns a new <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators">Iterator</a></strong> object that contains the values for each element in the <code>Map</code> object in insertion order.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>myMap</em>.values()</pre> <h3 id="Return_value">Return value</h3> <p>A new <a title="The Map object is a simple key/value map. Any value (both objects and primitive values) may be used as either a key or a value." href="../map"><code>Map</code></a> iterator object.</p> <h2 id="Examples">Examples</h2> <h3 id="Using_values()">Using <code>values()</code>
+</h3> <pre data-language="js">var myMap = new Map();
+myMap.set('0', 'foo');
+myMap.set(1, 'bar');
+myMap.set({}, 'baz');
+
+var mapIter = myMap.values();
+
+console.log(mapIter.next().value); // "foo"
+console.log(mapIter.next().value); // "bar"
+console.log(mapIter.next().value); // "baz"</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-map.prototype.values" class="external">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Map.prototype.values' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://tc39.github.io/ecma262/#sec-map.prototype.values" class="external">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Map.prototype.values' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>38</td> <td>
+<a title="Released on 2013-04-02." href="https://developer.mozilla.org/en-US/Firefox/Releases/20">20</a> (20)</td> <td><span style="color: #f00;">No support</span></td> <td>25</td> <td>7.1</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>38</td> <td>20.0 (20)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>8</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a title="The entries() method returns a new Iterator object that contains the [key, value] pairs for each element in the Map object in insertion order." href="entries"><code>Map.prototype.entries()</code></a></li> <li><a title="The keys() method returns a new Iterator object that contains the keys for each element in the Map object in insertion order." href="keys"><code>Map.prototype.keys()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values</a>
+  </p>
+</div>

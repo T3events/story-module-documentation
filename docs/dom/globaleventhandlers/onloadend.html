@@ -1,0 +1,27 @@
+<h1>GlobalEventHandlers.onloadend</h1> <p>The <strong><code>onloadend</code></strong> property of the <a title="The GlobalEventHandlers mixin describes the event handlers common to several interfaces like HTMLElement, Document, or Window. Each of these interfaces can, of course, add more event handlers in addition to the ones listed below." href="../globaleventhandlers"><code>GlobalEventHandlers</code></a> mixin is an <a title="A possible way to get notified of Events of a particular type (such as click) for a given object is to specify an event handler using:" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called when the <code><a title="/en-US/docs/Web/Events/loadend" href="https://developer.mozilla.org/en-US/docs/Web/Events/loadend">loadend</a></code> event is raised (when progress has stopped on the loading of a resource.)</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>img</var>.onloadend = <var>funcRef</var>;
+</pre> <h3 id="Value">Value</h3> <p><code>funcRef</code> is the handler function to be called when the resource's <code>loadend</code> event fires.</p> <h2 id="Examples">Examples</h2> <h3 id="HTML_content">HTML content</h3> <pre data-language="html">&lt;img src="myImage.jpg"&gt;</pre> <h3 id="JavaScript_content">JavaScript content</h3> <pre data-language="js">// 'loadstart' fires first, then 'load', then 'loadend'
+
+image.addEventListener('load', function(e) {
+  console.log('Image loaded');
+});
+
+image.addEventListener('loadstart', function(e) {
+  console.log('Image load started');
+});
+
+image.addEventListener('loadend', function(e) {
+  console.log('Image load finished');
+});</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadend" class="external">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'onloadend' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_Compatibility">Browser Compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>
+<a title="Released on 2017-03-07." href="https://developer.mozilla.org/en-US/Firefox/Releases/52">52</a> (52)<sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td>52.0 (52)<sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <p>[1] As of Firefox 52, The <code>loadend</code> event is now fired on <a title="The HTML &lt;img&gt; element represents an image in the document." href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"><code>&lt;img&gt;</code></a> elements.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadend$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadend" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadend</a>
+  </p>
+</div>

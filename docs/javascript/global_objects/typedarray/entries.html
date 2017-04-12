@@ -1,0 +1,26 @@
+<h1>typedArray.entries</h1> <p>The <strong><code>entries()</code></strong> method returns a new <code>Array Iterator</code> object that contains the key/value pairs for each index in the array.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>arr</var>.entries()</pre> <h3 id="Return_value">Return value</h3> <p>A new <code><strong>Array Iterator</strong></code> object.</p> <h2 id="Examples">Examples</h2> <h3 id="Iteration_using_for...of_loop">Iteration using <code>for...of</code> loop</h3> <pre data-language="js">var arr = new Uint8Array([10, 20, 30, 40, 50]);
+var eArray = arr.entries();
+// your browser must support for..of loop
+// and let-scoped variables in for loops
+for (let n of eArray) {
+  console.log(n);
+}
+</pre> <h3 id="Alternative_iteration">Alternative iteration</h3> <pre data-language="js">var arr = new Uint8Array([10, 20, 30, 40, 50]);
+var eArr = arr.entries();
+console.log(eArr.next().value); // [0, 10]
+console.log(eArr.next().value); // [1, 20]
+console.log(eArr.next().value); // [2, 30]
+console.log(eArr.next().value); // [3, 40]
+console.log(eArr.next().value); // [4, 50]
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="#">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of '%TypedArray%.prototype.entries()' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="#">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of '%TypedArray%.prototype.entries()' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>45.0</td> <td>
+<a title="Released on 2015-04-07." href="https://developer.mozilla.org/en-US/Firefox/Releases/37">37</a> (37)</td> <td><span style="color: #f00;">No support</span></td> <td>36.0</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>37.0 (37)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">JavaScript typed arrays</a></li> <li><a title="A TypedArray object describes an array-like view of an underlying binary data buffer. There is no global property named TypedArray, nor is there a directly visible TypedArray constructor.  Instead, there are a number of different global properties, whose values are typed array constructors for specific element types, listed below. On the following pages you will find common properties and methods that can be used with any typed array containing elements of any type." href="../typedarray"><code>TypedArray</code></a></li> <li><a title="The keys() method returns a new Array Iterator object that contains the keys for each index in the array." href="keys"><code>TypedArray.prototype.keys()</code></a></li> <li><a title="The values() method returns a new Array Iterator object that contains the values for each index in the array." href="values"><code>TypedArray.prototype.values()</code></a></li> <li><a title="The initial value of the @@iterator property is the same function object as the initial value of the values property." href="@@iterator"><code>TypedArray.prototype[@@iterator]()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/entries$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/entries" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/entries</a>
+  </p>
+</div>

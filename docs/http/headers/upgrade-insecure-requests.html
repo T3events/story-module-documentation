@@ -1,0 +1,36 @@
+<h1>Upgrade-Insecure-Requests</h1> <p>The HTTP <code>Upgrade-Insecure-Requests</code> request header sends a signal to the server expressing the client’s preference for an encrypted and authenticated response, and that it can successfully handle the <a title="The HTTP Content-Security-Policy (CSP) upgrade-insecure-requests directive instructs user agents to treat all of a site's insecure URLs (those served over HTTP) as though they have been replaced with secure URLs (those served over HTTPS). This directive is intended for web sites with large numbers of insecure legacy URLs that need to be rewritten." href="content-security-policy/upgrade-insecure-requests"><code>upgrade-insecure-requests</code></a> <a href="https://developer.mozilla.org/en-US/docs/Web/Security/CSP">CSP</a> directive.</p> <table class="properties"> <tbody> <tr> <th scope="row">Header type</th> <td><a title="Request header: A request header is an HTTP header that can be used in an HTTP request, and that doesn't relate to the content of the message. Request headers, like Accept, Accept-*, or If-* allow to perform conditional requests; others like Cookie, User-Agent or Referer precise the context so that the server can tailor the answer." href="https://developer.mozilla.org/en-US/docs/Glossary/Request_header" class="glossaryLink">Request header</a></td> </tr> <tr> <th scope="row"><a title="Forbidden header name: A forbidden header name is an HTTP header name that cannot be modified programmatically." href="https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name" class="glossaryLink">Forbidden header name</a></th> <td>no</td> </tr> </tbody> </table> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Upgrade-Insecure-Requests: 1</pre> <h2 id="Examples">Examples</h2> <p>A client requests signals to the server that it supports the upgrade mechanisms of <a title="The HTTP Content-Security-Policy (CSP) upgrade-insecure-requests directive instructs user agents to treat all of a site's insecure URLs (those served over HTTP) as though they have been replaced with secure URLs (those served over HTTPS). This directive is intended for web sites with large numbers of insecure legacy URLs that need to be rewritten." href="content-security-policy/upgrade-insecure-requests"><code>upgrade-insecure-requests</code></a>:</p> <pre>GET / HTTP/1.1 
+Host: example.com 
+Upgrade-Insecure-Requests: 1</pre> <p>The server can now redirect to a secure version of the site. A <a title="The Vary HTTP response header determines how to match future request headers to decide whether a cached response can be used rather than requesting a fresh one from the origin server. It is used by the server to indicate which headers it used when selecting a representation of a resource in a content negotiation algorithm." href="vary"><code>Vary</code></a> header can be used so that the site isn't served by caches to clients that don’t support the upgrade mechanism.</p> <pre>Location: https://example.com/ 
+Vary: Upgrade-Insecure-Requests</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://w3c.github.io/webappsec/specs/upgrade/#preference" class="external">Upgrade Insecure Requests<br><small lang="en-US">The definition of 'upgrade-insecure-requests' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Upgrade-Insecure-Requests</td>
+<td>44</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>48.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Upgrade-Insecure-Requests</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>44</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td>48.0</td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+<td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The HTTP Content-Security-Policy response header allows web site administrators to control resources the user agent is allowed to load for a given page. With a few exceptions, policies mostly involve specifying server origins and script endpoints. This helps guard against cross-site scripting attacks (XSS)." href="content-security-policy"><code>Content-Security-Policy</code></a></li> <li>CSP <a title="The HTTP Content-Security-Policy (CSP) upgrade-insecure-requests directive instructs user agents to treat all of a site's insecure URLs (those served over HTTP) as though they have been replaced with secure URLs (those served over HTTPS). This directive is intended for web sites with large numbers of insecure legacy URLs that need to be rewritten." href="content-security-policy/upgrade-insecure-requests"><code>upgrade-insecure-requests</code></a> directive</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Upgrade-Insecure-Requests$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Upgrade-Insecure-Requests" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Upgrade-Insecure-Requests</a>
+  </p>
+</div>

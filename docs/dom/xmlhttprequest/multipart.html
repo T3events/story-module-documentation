@@ -1,0 +1,11 @@
+<h1>XMLHttpRequest.multipart</h1><div class="overheadIndicator draft"> <p><strong>Draft</strong><br> This page is not complete.</p> </div> <div class="warning"> <p>Obsolete since Gecko 22</p> </div> <p>Is a boolean. <strong>This Gecko-only feature was removed in Firefox/Gecko 22.</strong> Please use <a href="../server-sent_events">Server-Sent Events</a>, <a href="../websockets_api">Web Sockets</a>, or <code>responseText</code> from progress events instead.</p> <p>Indicates whether or not the response is expected to be a stream of possibly multiple XML documents. If set to <code>true</code>, the content type of the initial response must be <code>multipart/x-mixed-replace</code> or an error will occur. All requests must be asynchronous.</p> <p>This enables support for server push; for each XML document that's written to this request, a new XML DOM document is created and the <code>onload</code> handler is called between documents.</p> <div class="note"> <p><strong>Note:</strong> When this is set, the <code>onload</code> handler and other event handlers are not reset after the first XMLdocument is loaded, and the <code>onload</code> handler is called after each part of the response is received.</p> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/multipart$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/multipart" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/multipart</a>
+  </p>
+</div>

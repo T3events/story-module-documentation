@@ -1,0 +1,18 @@
+<h1>document.width</h1><div class="overheadIndicator obsolete obsoleteHeader"><p><strong> Obsolete</strong><br>This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time. Try to avoid using it.</p></div> <div class="note"> <p><strong>Note:</strong> Starting in <span title="(Firefox 6.0 / Thunderbird 6.0 / SeaMonkey 2.3)">Gecko 6.0</span>,<code> document.width </code>is no longer supported. Instead, use <code>document.body.clientWidth</code>. See <a title="The Element.clientWidth property is zero for elements with no CSS or inline layout boxes, otherwise it's the inner width of an element in pixels. It includes padding but not the vertical scrollbar (if present, if rendered), border or margin." href="../element/clientwidth"><code>element.clientWidth</code></a>.</p> </div> <p>Returns the width of the <a title="The HTML &lt;body&gt; Element represents the content of an HTML document. There can be only one &lt;body&gt; element in a document." href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body"><code>&lt;body&gt;</code></a> element of the current document in pixels.</p> <p>Not supported by Internet Explorer.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>pixels</em> = document.width;
+</pre> <h2 name="Example" id="Example">Example</h2> <pre data-language="js">function init() {
+    alert("The width of the document is " + document.width + " pixels.");
+}
+</pre> <h2 name="Alternatives" id="Alternatives">Alternatives</h2> <pre class="syntaxbox">document.body.clientWidth              /* width of &lt;body&gt; */
+document.documentElement.clientWidth   /* width of &lt;html&gt; */
+window.innerWidth                      /* window's width */
+</pre> <h2 name="Specification" id="Specification">Specification</h2> <p>HTML5</p> <h2 name="See_also" id="See_also">See also</h2> <ul> <li><a title="Returns the height of the document object. In most cases, this is equal to the &lt;body&gt; element of the current document." href="height"><code>document.height</code></a></li> <li><a title="The Element.clientWidth property is zero for elements with no CSS or inline layout boxes, otherwise it's the inner width of an element in pixels. It includes padding but not the vertical scrollbar (if present, if rendered), border or margin." href="../element/clientwidth"><code>Element.clientWidth</code></a></li> <li><a title="The Element.scrollWidth read–only property returns either the width in pixels of the content of an element or the width of the element itself, whichever is greater. If the element is wider than its content area (for example, if there are scroll bars for scrolling through the content), the scrollWidth is larger than the clientWidth." href="../element/scrollwidth"><code>Element.scrollWidth</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/width$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/width" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/document/width</a>
+  </p>
+</div>

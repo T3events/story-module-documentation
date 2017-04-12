@@ -1,0 +1,26 @@
+<h1>lengthadjust</h1><p>When an SVG <code>&lt;text&gt;</code>or <code>&lt;tspan&gt; </code>element has a specific length set using the <code>textLength </code>attribute, the <code>lengthAdjust </code>attribute controls how the text is stretched or compressed into that length.</p> <p>The two possible values for the attribute are <strong><code>spacing </code></strong>and <strong><code>spacingAndGlyphs</code></strong>. Using <code>spacing </code>(the default), the letter forms are preserved, but the space between them grows or shrinks. Using <code>spacingAndGlyphs</code>, the entire text element is stretched in the direction of the text.</p> <h2 id="SVG_text_fitting_using_lengthAdjust" name="SVG_text_fitting_using_lengthAdjust">SVG text fitting using lengthAdjust</h2> <h3 id="HTML_Content">HTML Content</h3> <pre data-language="html">&lt;svg width="300" height="150" xmlns="http://www.w3.org/2000/svg"&gt;
+   &lt;g font-face="sans-serif"&gt;
+      &lt;text x="0" y="20" textLength="300" lengthAdjust="spacing"&gt;
+         Stretched using spacing only.
+      &lt;/text&gt;
+      &lt;text x="0" y="50" textLength="300" lengthAdjust="spacingAndGlyphs"&gt;
+         Stretched using spacing and glyphs.
+      &lt;/text&gt;
+      &lt;text x="0" y="80" textLength="100" lengthAdjust="spacing"&gt;
+         Shrunk using spacing only.
+      &lt;/text&gt;
+      &lt;text x="0" y="110" textLength="100" lengthAdjust="spacingAndGlyphs"&gt;
+         Shrunk using spacing and glyphs.
+      &lt;/text&gt;
+   &lt;/g&gt;
+&lt;/svg&gt;</pre> <h3 id="Result">Result</h3> <p><iframe id="frame_SVG_text_fitting_using_lengthAdjust" src="https://mdn.mozillademos.org/en-US/docs/Web/SVG/Attribute/lengthAdjust%24samples/SVG_text_fitting_using_lengthAdjust?revision=1135489" frameborder="0" class="live-sample-frame sample-code-frame"></iframe></p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lengthAdjust$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lengthAdjust" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/lengthAdjust</a>
+  </p>
+</div>

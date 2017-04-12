@@ -1,0 +1,36 @@
+<h1>document.forms</h1> <p><code>forms</code> returns a collection (an <a title="The HTMLCollection interface represents a generic collection (array-like object similar to arguments) of elements (in document order) and offers methods and properties for selecting from the list." href="../htmlcollection"><code>HTMLCollection</code></a>) of the <a title="The HTML &lt;form&gt; element represents a document section that contains interactive controls to submit information to a web server." href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form"><code>&lt;form&gt;</code></a> elements within the current document.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>collection</var> = document.forms;</pre> <h2 name="Example" id="Example">Example: Getting form information</h2> <pre data-language="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+&lt;title&gt;document.forms example&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;form id="robby"&gt;
+  &lt;input type="button" onclick="alert(document.forms[0].id);" value="robby's form" /&gt;
+&lt;/form&gt;
+
+&lt;form id="dave"&gt;
+  &lt;input type="button" onclick="alert(document.forms[1].id);" value="dave's form" /&gt;
+&lt;/form&gt;
+
+&lt;form id="paul"&gt;
+  &lt;input type="button" onclick="alert(document.forms[2].id);" value="paul's form" /&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre> <h2 id="Example_2_Getting_an_element_from_within_a_form">Example 2: Getting an element from within a form</h2> <pre data-language="js">var selectForm = document.forms[index];
+var selectFormElement = document.forms[index].elements[index];
+</pre> <h2 name="Specifications" id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://html.spec.whatwg.org/multipage/#dom-document-forms" class="external">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'Document.forms' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td> </td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-1689064" class="external">Document Object Model (DOM) Level 2 HTML Specification<br><small lang="en-US">The definition of 'Document.forms' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 name="See_Also" id="See_Also">See also</h2> <ul> <li><a title="The HTMLFormElement interface provides methods to create and modify &lt;form&gt; elements.document.forms - returns an array of HTMLFormElement objects referencing all forms on the page.document.forms[index] - returns an HTMLFormElement object referencing the form at the specified index.document.forms['id'] - returns an HTMLFormElement object referencing the form with the specified id.document.forms['name'] - returns an HTMLFormElement object referencing the form with the specified name." href="../htmlformelement"><code>HTMLFormElement</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/forms$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/forms" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/document/forms</a>
+  </p>
+</div>

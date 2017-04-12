@@ -1,0 +1,42 @@
+<h1>Proxy.handler.get</h1> <p>The <strong><code>handler.get()</code></strong> method is a trap for getting a property value.</p> <h2 id="Syntax">Syntax</h2> <pre data-language="js">var p = new Proxy(target, {
+  get: function(target, property, receiver) {
+  }
+});
+</pre> <h3 id="Parameters">Parameters</h3> <p>The following parameters are passed to the <code>get</code> method. <code>this</code> is bound to the handler.</p> <dl> <dt><code>target</code></dt> <dd>The target object.</dd> <dt><code>property</code></dt> <dd>The name of the property to get.</dd> <dt><code>receiver</code></dt> <dd>Either the proxy or an object that inherits from the proxy.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>The <code>get</code> method can return any value.</p> <h2 id="Description">Description</h2> <p>The <code><strong>handler.get</strong></code> method is a trap for getting a property value.</p> <h3 id="Interceptions">Interceptions</h3> <p>This trap can intercept these operations:</p> <ul> <li>Property access: <code>proxy[foo]</code>and <code>proxy.bar</code>
+</li> <li>Inherited property access: <code>Object.create(proxy)[foo]</code>
+</li> <li><a href="../../reflect/get" title="The static Reflect.get() method works like getting a property from an object (target[propertyKey]) as a function."><code>Reflect.get()</code></a></li> </ul> <h3 id="Invariants">Invariants</h3> <p>If the following invariants are violated, the proxy will throw a <a href="../../typeerror" title="The TypeError object represents an error when a value is not of the expected type."><code>TypeError</code></a>:</p> <ul> <li>The value reported for a property must be the same as the value of the corresponding target object property if the target object property is a non-writable, non-configurable data property.</li> <li>The value reported for a property must be undefined if the corresponding target object property is non-configurable accessor property that has undefined as its [[Get]] attribute.</li> </ul> <h2 id="Examples">Examples</h2> <p>The following code traps getting a property value.</p> <pre data-language="js">var p = new Proxy({}, {
+  get: function(target, prop, receiver) {
+    console.log('called: ' + prop);
+    return 10;
+  }
+});
+
+console.log(p.a); // "called: a"
+                  // 10
+</pre> <p>The following code violates an invariant.</p> <pre data-language="js">var obj = {};
+Object.defineProperty(obj, 'a', { 
+  configurable: false, 
+  enumerable: false, 
+  value: 10, 
+  writable: false 
+});
+
+var p = new Proxy(obj, {
+  get: function(target, prop) {
+    return 20;
+  }
+});
+
+p.a; // TypeError is thrown
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-proxy-object-internal-methods-and-internal-slots-get-p-receiver" class="external" lang="en" hreflang="en">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of '[[Get]]' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a href="https://tc39.github.io/ecma262/#sec-proxy-object-internal-methods-and-internal-slots-get-p-receiver" class="external" lang="en" hreflang="en">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of '[[Get]]' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/18" title="Released on 2013-01-08.">18</a> (18)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>18.0 (18)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="../../proxy" title="The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc)."><code>Proxy</code></a></li> <li><a href="../handler" title="The proxy's handler object is a placeholder object which contains traps for proxies."><code>handler</code></a></li> <li><a href="../../reflect/get" title="The static Reflect.get() method works like getting a property from an object (target[propertyKey]) as a function."><code>Reflect.get()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/get$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/get" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy/handler/get</a>
+  </p>
+</div>

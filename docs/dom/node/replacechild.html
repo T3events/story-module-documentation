@@ -1,0 +1,43 @@
+<h1>Node.replaceChild</h1> <p>The <strong><code>Node.replaceChild()</code></strong> method replaces one child node of the specified node with another.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>replacedNode</em> = <em>parentNode</em>.replaceChild(<em>newChild</em>, <em>oldChild</em>);
+</pre> <ul> <li>
+<code>newChild</code> is the new node to replace <code>oldChild</code>. If it already exists in the DOM, it is first removed.</li> <li>
+<code>oldChild</code> is the existing child to be replaced.</li> <li>
+<code>replacedNode</code> is the replaced node. This is the same node as <code>oldChild</code>.</li> </ul> <h2 name="Example" id="Example">Example</h2> <pre data-language="js">// &lt;div&gt;
+//  &lt;span id="childSpan"&gt;foo bar&lt;/span&gt;
+// &lt;/div&gt;
+
+// create an empty element node
+// without an ID, any attributes, or any content
+var sp1 = document.createElement("span");
+
+// give it an id attribute called 'newSpan'
+sp1.id = "newSpan";
+
+// create some content for the new element.
+var sp1_content = document.createTextNode("new replacement span element.");
+
+// apply that content to the new element
+sp1.appendChild(sp1_content);
+
+// build a reference to the existing node to be replaced
+var sp2 = document.getElementById("childSpan");
+var parentDiv = sp2.parentNode;
+
+// replace existing node sp2 with the new span element sp1
+parentDiv.replaceChild(sp1, sp2);
+
+// result:
+// &lt;div&gt;
+//   &lt;span id="newSpan"&gt;new replacement span element.&lt;/span&gt;
+// &lt;/div&gt; 
+</pre> <h2 name="Specification" id="Specification">Specification</h2> <ul> <li><a href="http://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#method-replaceChild">DOM Level 1 Core: replaceChild</a></li> <li><a href="http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-785887307">DOM Level 2 Core: replaceChild</a></li> <li><a href="http://www.w3.org/TR/DOM-Level-3-Core/core.html#ID-785887307">DOM Level 3 Core: replaceChild</a></li> </ul> <h2 name="See_also" id="See_also">See also</h2> <ul> <li><a title="The Node.removeChild() method removes a child node from the DOM. Returns removed node." href="removechild"><code>Node.removeChild</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild</a>
+  </p>
+</div>

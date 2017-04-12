@@ -1,0 +1,73 @@
+<h1>text-underline-position</h1>  <p>The <a href="https://developer.mozilla.org/en-US/docs/CSS">CSS</a> <strong><code>text-underline-position</code></strong> property specifies the position of the underline which is set using the <a title="The text-decoration CSS property is used to set the text formatting to underline, overline, line-through or blink. Underline and overline decorations are positioned under the text, line-through over it." href="text-decoration"><code>text-decoration</code></a> property <code>underline</code> value.</p> <p>This property inherits and is not reset by the <a title="The text-decoration CSS property is used to set the text formatting to underline, overline, line-through or blink. Underline and overline decorations are positioned under the text, line-through over it." href="text-decoration"><code>text-decoration</code></a> shorthand, allowing to easily set it globally for a given document:</p> <pre data-language="css">:root { /* Better default for document with a lot of chemical formulas */
+  text-underline-position: under;
+}</pre> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>auto</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>all elements</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>yes</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Animation type</th>
+<td>discrete</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>order of appearance in the formal grammar of the values</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">/* Keyword values */
+text-underline-position: auto;
+text-underline-position: under;
+text-underline-position: left;
+text-underline-position: right;
+text-underline-position: under left;
+text-underline-position: right under;
+
+/* Global values */
+text-underline-position: inherit;
+text-underline-position: initial;
+text-underline-position: unset;
+</pre> <h3 id="Values">Values</h3> <dl> <dt><code>auto</code></dt> <dd>This keyword allows the browser to use an algorithm to choose between <code>under</code> and <code>alphabetic</code>.</dd> <dt><code>under</code></dt> <dd>This keyword forces the line to be set below the <em>alphabetic baseline</em>, at a position where it won't cross any descender. This is useful to prevent chemical or mathematical formulas, which make a large use of subscripts, to be illegible.</dd> <dt><code>left</code></dt> <dd>In vertical writing-modes, this keyword forces the line to be placed on the <em>left</em> of the characters. In horizontal writing-modes, it is a synonym of <code>under.</code>
+</dd> <dt><code>right</code></dt> <dd>In vertical writing-modes, this keyword forces the line to be placed on the <em>right</em> of the characters. In horizontal writing-modes, it is a synonym of <code>under.</code>
+</dd> <dt>
+<code>auto-pos</code>
+</dt> <dd>This keyword is a synonym of <code>auto</code> which must be used instead</dd> <dt>
+<code>above</code>
+</dt> <dd>This keyword forces the line to be above the text. When used with East-Asian text, using the <code>auto</code> keyword will lead to a similar effect.</dd> <dt>
+<code>below</code>
+</dt> <dd>This keyword forces the line to be under the text. When used with alphabetic text, using the <code>auto</code> keyword will lead to a similar effect.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox">auto | <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">[</a> under || <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">[</a> left | right <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">]</a> <a title="Brackets: enclose several entities, combinators, and multipliers to transform them as a single component" href="value_definition_syntax#Brackets">]</a></pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/css-text-decor-3/#text-underline-position-property" class="external">CSS Text Decoration Level 3<br><small lang="en-US">The definition of 'text-underline-position' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support (<code>auto</code>)</td> <td>33.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span style="color: #f00;">No support</span></td> <td>6<sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> <tr> <td><code>under</code></td> <td>33.0</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> <tr> <td>
+<code>left</code>, <code>right</code>
+</td> <td>
+<span style="color: #f00;">No support</span><sup>[2]</sup>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> <tr> <td>
+<code>above</code>, <code>below</code>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td>5<sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> <tr> <td>
+<code>auto-pos</code>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td>6<sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <p>[1] Internet Explorer implements different values, with somewhat different effects for this value. From IE 5 to IE 7, included, only a non-prefixed version existed. From IE 8 onwards, the prefix can be used.</p> <p>[2] See Chrome <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=313888">Issue 313888</a></p> <h2 id="See_also">See also</h2> <ul> <li>Text-decorations-related CSS properties: <a title="The text-decoration CSS property is used to set the text formatting to underline, overline, line-through or blink. Underline and overline decorations are positioned under the text, line-through over it." href="text-decoration"><code>text-decoration</code></a>, <a title="The text-decoration-line CSS property sets what kind of line decorations are added to an element." href="text-decoration-line"><code>text-decoration-line</code></a>, <a title="The text-decoration-style CSS property defines the style of the lines specified by text-decoration-line. The style applies to all lines: there is no way to define different styles for each of the lines defined by text-decoration-line." href="text-decoration-style"><code>text-decoration-style</code></a>, <a title="The CSS text-decoration-color property sets the line color used when drawing underlines, overlines, and strikethrough lines specified by the corresponding text-decoration-line property. The color specified will be the same for all three line types." href="text-decoration-color"><code>text-decoration-color</code></a>.</li> <li>Microsoft <a href="http://msdn.microsoft.com/en-us/library/ie/ms531176%28v=vs.85%29.aspx">non-standard values documentation</a>.</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-position$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-position" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/text-underline-position</a>
+  </p>
+</div>

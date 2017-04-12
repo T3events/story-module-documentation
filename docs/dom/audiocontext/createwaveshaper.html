@@ -1,0 +1,37 @@
+<h1>AudioContext.createWaveShaper</h1> <div> <p>The <code>createWaveShaper()</code> method of the <a title="An AudioContext can be a target of events, therefore it implements the EventTarget interface." href="../audiocontext"><code>AudioContext</code></a> interface creates a <a title="Technical review completed." href="../waveshapernode"><code>WaveShaperNode</code></a>, which represents a non-linear distortion. It is used to apply distortion effects to your audio.</p> </div> <h2 id="Syntax">Syntax</h2> <pre data-language="js">var audioCtx = new AudioContext();
+var distortion = audioCtx.createWaveShaper();</pre> <h3 id="Description" name="Description">Returns</h3> <p>A <a title="Technical review completed." href="../waveshapernode"><code>WaveShaperNode</code></a>.</p> <h2 id="Example" name="Example">Example</h2> <p>The following example shows basic usage of an AudioContext to create a wave shaper node. For applied examples/information, check out our <a href="http://mdn.github.io/voice-change-o-matic/">Voice-change-O-matic</a><a href="http://mdn.github.io/voice-change-o-matic/"> demo</a> (<a href="https://github.com/mdn/voice-change-o-matic/blob/gh-pages/scripts/app.js">see app.js</a> for relevant code).</p> <div class="note"> <p><strong>Note</strong>: Distortion curves are not the easiest thing to work out, and you will probably need to look around to find such algorithms. We found the below distortion curve code on <a href="http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion">Stack Overflow</a>.</p> </div> <pre data-language="js">var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+var distortion = audioCtx.createWaveShaper();
+
+  ...
+
+function makeDistortionCurve(amount) {
+  var k = typeof amount === 'number' ? amount : 50,
+    n_samples = 44100,
+    curve = new Float32Array(n_samples),
+    deg = Math.PI / 180,
+    i = 0,
+    x;
+  for ( ; i &lt; n_samples; ++i ) {
+    x = i * 2 / n_samples - 1;
+    curve[i] = ( 3 + k ) * x * 20 * deg / ( Math.PI + k * Math.abs(x) );
+  }
+  return curve;
+};
+
+  ...
+
+distortion.curve = makeDistortionCurve(400);
+distortion.oversample = '4x';</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://webaudio.github.io/web-audio-api/#widl-AudioContext-createWaveShaper-WaveShaperNode" class="external">Web Audio API<br><small lang="en-US">The definition of 'createWaveShaper()' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>10.0<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">webkit</a></span>
+</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a title="Released on 2013-10-29." href="https://developer.mozilla.org/en-US/Firefox/Releases/25">25.0</a> (25.0) </td> <td><span style="color: #f00;">No support</span></td> <td>15.0<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">webkit</a></span><br> 22 (unprefixed)</td> <td>6.0<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with 'webkit' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">webkit</a></span>
+</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>26.0</td> <td>1.2</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>33.0</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="https://developer.mozilla.org/en-US/docs/Web_Audio_API/Using_Web_Audio_API">Using the Web Audio API</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createWaveShaper$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createWaveShaper" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createWaveShaper</a>
+  </p>
+</div>

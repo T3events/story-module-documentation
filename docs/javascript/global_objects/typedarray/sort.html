@@ -1,0 +1,31 @@
+<h1>typedArray.sort</h1> <p>The <code><strong>sort()</strong></code> method sorts the elements of a typed array <em>in place</em> and returns the typed array. This method has the same algorithm as <a title="The sort() method sorts the elements of an array in place and returns the array. The sort is not necessarily stable. The default sort order is according to string Unicode code points." href="../array/sort"><code>Array.prototype.sort()</code></a><em>.</em> <em>TypedArray</em> is one of the <a href="../typedarray#TypedArray_objects">typed array types</a> here.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>typedarray</var>.sort([<var>compareFunction</var>])</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>
+<code>compareFunction</code> <span class="inlineIndicator optional optionalInline">Optional</span>
+</dt> <dd>Specifies a function that defines the sort order.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>The sorted typed array.</p> <h2 id="Examples">Examples</h2> <p>For more examples, see also the <a title="The sort() method sorts the elements of an array in place and returns the array. The sort is not necessarily stable. The default sort order is according to string Unicode code points." href="../array/sort"><code>Array.prototype.sort()</code></a> method.</p> <pre data-language="js">var numbers = new Uint8Array([40, 1, 5, 200]);
+numbers.sort();
+// Uint8Array [ 1, 5, 40, 200 ] 
+// A compare function is not required as in the case of Array 
+// to sort the numbers numerically.
+
+var numbers = [40, 1, 5, 200];
+numbers.sort();
+// The elements are sorted as strings.
+// [1, 200, 40, 5]
+
+function compareNumbers(a, b) {
+  return a - b;
+}
+
+numbers.sort(compareNumbers);
+// [ 1, 5, 40, 200 ]
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="#" class="external">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'TypedArray.prototype.sort' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="#" class="external">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'TypedArray.prototype.sort' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a title="Released on 2016-04-26." href="https://developer.mozilla.org/en-US/Firefox/Releases/46">46</a> (46)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>46.0 (46)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a title="The sort() method sorts the elements of an array in place and returns the array. The sort is not necessarily stable. The default sort order is according to string Unicode code points." href="../array/sort"><code>Array.prototype.sort()</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/sort</a>
+  </p>
+</div>

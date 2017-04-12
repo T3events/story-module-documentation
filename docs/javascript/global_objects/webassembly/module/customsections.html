@@ -1,0 +1,45 @@
+<h1>WebAssembly.module.customSections</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div> <p>The <strong><code>customSections()</code></strong> method of the <a title="The Module() constructor of the WebAssembly global object creates a new Module object instance." href="../module"><code>WebAssembly.Module()</code></a> constructor returns an array containing custom sections available in a given WebAssembly module with a given name.</p> <h2 id="Syntax">Syntax</h2> <pre data-language="js">var custSec = WebAssembly.Module.customSections(<em>module</em>, <em>sectionName</em>);</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><em>module</em></dt> <dd>The <a title="The Module() constructor of the WebAssembly global object creates a new Module object instance." href="../module"><code>WebAssembly.Module</code></a> object instance you want to return custom sections from.</dd> <dt><em>sectionName</em></dt> <dd>The name you want the returned custom sections to have.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>An array containing <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/ArrayBuffer"><code>ArrayBuffer</code></a>s representing the custom sections of the given module. Each <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/ArrayBuffer"><code>ArrayBuffer</code></a> contains a copy of the corresponding custom section's data.</p> <h3 id="Exceptions">Exceptions</h3> <p>If module is not a <a title="The Module() constructor of the WebAssembly global object creates a new Module object instance." href="../module"><code>WebAssembly.Module</code></a> object instance, a <a title="The TypeError object represents an error when a value is not of the expected type." href="../../typeerror"><code>TypeError</code></a> is thrown.</p> <h2 id="Custom_sections">Custom sections</h2> <p>A wasm module is comprised of a sequence of <strong>sections</strong>. Most of these sections are fully specified and validated by the wasm spec, but modules can also contain <strong>custom sections</strong> that are ignored and skipped over during validation. (Read <a href="https://github.com/WebAssembly/design/blob/master/BinaryEncoding.md#high-level-structure">High level structure</a> for information on section structures, and how normal sections ("known sections") and custom sections are distinguished.)</p> <p>This provides developers with a way to include custom data inside wasm modules for other purposes, for example the <a href="https://github.com/WebAssembly/design/blob/master/BinaryEncoding.md#name-section">name custom section</a>, which allows developers to provide names for all the functions and locals in the module (like "symbols" in a native build).</p> <p>Note that the WebAssembly text format currently doesn't have a syntax specified for adding new custom sections; you can however add a name section to your wasm during conversion from text format over to .wasm. The wast2wasm command available as part of the <a href="https://github.com/webassembly/wabt">wabt tool</a> has a <code>--debug-names</code> option — specify this during conversion to get a .wasm with a names custom section, for example:</p> <pre data-language="bash">wast2wasm simple-name-section.was -o simple-name-section.wasm --debug-names</pre> <h2 id="Example">Example</h2> <p>The following example (see the custom-section.html <a href="https://github.com/mdn/webassembly-examples/blob/master/other-examples/custom-section.html">source</a> and <a href="https://mdn.github.io/webassembly-examples/other-examples/custom-section.html">live example</a>) compiles and instantiates the loaded simple-name-section.wasm byte code, importing a JavaScript function into the WebAssembly Module in the process. It then exports a function from the module via Instance.exports.</p> <p>In addition, we do a check using <code>WebAssembly.Module.customSections</code>, looking to see whether the module instance contains a "name" custom section by checking that its <code>length</code> is more than 0. Since this module does contain a name section, the console.log calls are executed, showing that the contents of the returned array is an <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/ArrayBuffer"><code>ArrayBuffer</code></a>.</p> <pre data-language="js">var importObject = {
+  imports: {
+    imported_func: function(arg) {
+      console.log(arg);
+    }
+  }
+};
+
+fetch('simple-name-section.wasm').then(function(response) {
+  response.arrayBuffer().then(function(bytes) {
+    WebAssembly.compile(bytes).then(function(mod) {
+      var instance = new WebAssembly.Instance(mod, importObject);
+      instance.exports.exported_func();
+
+      if (WebAssembly.Module.customSections(mod, "name").length != 0) {
+       console.log("Module contains a name section");
+       var nameSections = WebAssembly.Module.customSections(mod, "name");
+       console.log(nameSections[0]);
+      }
+    })
+  })
+});</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a hreflang="en" class="external" lang="en" href="https://github.com/WebAssembly/design/blob/master/JS.md#webassemblymodulecustomsections">Web Assembly JavaScript API<br><small lang="en-US">The definition of 'customSections()' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td>Initial draft definition.</td> </tr> </tbody> </table> <h2 name="Browser_compatibility" id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[2]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[2]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span><sup>[1]</sup>
+</td> </tr> </tbody> </table> </div> <p>[1] Experimental support can be enabled in Chrome 51+ and Opera 38+ by going to <code>chrome://flags</code> and enabling the <em>Experimental WebAssembly</em> flag.</p> <p>[2] Experimental support can be enabled in Firefox 47+ by enabling the <em>javascript.options.wasm</em> flag in <code>about:config</code>.</p> <h2 id="See_also">See also</h2> <ul> <li>
+<a href="https://developer.mozilla.org/en-US/docs/WebAssembly">WebAssembly</a> landing page.</li> <li>WebAssembly concepts</li> <li>Using the WebAssembly JavaScript API</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module/customSections$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module/customSections" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Module/customSections</a>
+  </p>
+</div>

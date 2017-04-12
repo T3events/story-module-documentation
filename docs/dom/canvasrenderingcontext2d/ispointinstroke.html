@@ -1,0 +1,53 @@
+<h1>CanvasRenderingContext2D.isPointInStroke</h1> <p>The <code><strong>CanvasRenderingContext2D</strong></code><strong><code>.isPointInStroke()</code></strong> method of the Canvas 2D API reports whether or not the specified point is inside the area contained by the stroking of a path.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">boolean <var><em>ctx</em>.isPointInStroke(x, y);
+<var>boolean <var><em>ctx</em>.isPointInStroke(path, x, y);</var></var></var>
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>x</dt> <dd>The X coordinate of the point to check.</dd> <dt>y</dt> <dd>The Y coordinate of the point to check.</dd> <dt><code>path</code></dt> <dd>A <a title="The Path2D interface of the Canvas 2D API is used to declare paths that are then later used on CanvasRenderingContext2D objects. The path methods of the CanvasRenderingContext2D interface are present on this interface as well and are allowing you to create paths that you can retain and replay as required on a canvas." href="../path2d"><code>Path2D</code></a> path to use.</dd> </dl> <h3 id="Return_value">Return value</h3> <dl> <dt><a title="The Boolean object is an object wrapper for a boolean value." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean"><code>Boolean</code></a></dt> <dd>A Boolean, which is <code>true</code> if the point is inside the area contained by the stroking of a path, otherwise <code>false</code>.</dd> </dl> <h2 id="Examples">Examples</h2> <h3 id="Using_the_isPointInStroke_method">Using the <code>isPointInStroke</code> method</h3> <p>This is just a simple code snippet which uses the <code>isPointInStroke</code> method to check if a point is inside the area contained by the stroking of a path.</p> <h4 id="HTML">HTML</h4> <pre data-language="html">&lt;canvas id="canvas"&gt;&lt;/canvas&gt;
+</pre> <h4 id="JavaScript">JavaScript</h4> <pre data-language="js">var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+ctx.rect(10, 10, 100, 100);
+ctx.stroke();
+console.log(ctx.isPointInStroke(10, 10)); // true
+</pre> <p>Edit the code below, see your changes update live in the canvas and watch for loggings in your <a href="https://developer.mozilla.org/en-US/docs/Tools/Browser_Console">console</a>:</p> <div style="display: none;"> <h6 id="Playable_code">Playable code</h6> <pre data-language="html">&lt;canvas id="canvas" width="400" height="200" class="playable-canvas"&gt;&lt;/canvas&gt;
+&lt;div class="playable-buttons"&gt;
+  &lt;input id="edit" type="button" value="Edit" /&gt;
+  &lt;input id="reset" type="button" value="Reset" /&gt;
+&lt;/div&gt;
+&lt;textarea id="code" class="playable-code"&gt;
+ctx.rect(10, 10, 100, 100);
+ctx.stroke();
+console.log(ctx.isPointInStroke(10, 10)); // true&lt;/textarea&gt;
+</pre> <pre data-language="js">var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var textarea = document.getElementById("code");
+var reset = document.getElementById("reset");
+var edit = document.getElementById("edit");
+var code = textarea.value;
+
+function drawCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  eval(textarea.value);
+}
+
+reset.addEventListener("click", function() {
+  textarea.value = code;
+  drawCanvas();
+});
+
+edit.addEventListener("click", function() {
+  textarea.focus();
+})
+
+textarea.addEventListener("input", drawCanvas);
+window.addEventListener("load", drawCanvas);
+</pre> </div> <p><iframe width="700" frameborder="0" class="live-sample-frame sample-code-frame" src="https://mdn.mozillademos.org/en-US/docs/Web/API/CanvasRenderingContext2D/isPointInStroke%24samples/Playable_code?revision=1175561" height="360" id="frame_Playable_code"></iframe></p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-ispointinstroke" class="external">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'CanvasRenderingContext2D.isPointInStroke' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> <tr> <td>Path parameter</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a title="Released on 2014-07-22." href="https://developer.mozilla.org/en-US/Firefox/Releases/31">31</a> (31)</td> <td><span style="color: #f00;">No support</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> <tr> <td>Path parameter</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>31.0 (31)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li>The interface defining it, <a title='To get an object of this interface, call getContext() on a &lt;canvas&gt; element, supplying "2d" as the argument:' href="../canvasrenderingcontext2d"><code>CanvasRenderingContext2D</code></a>.</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/isPointInStroke$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/isPointInStroke" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/isPointInStroke</a>
+  </p>
+</div>

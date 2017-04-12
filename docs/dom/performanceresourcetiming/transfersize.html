@@ -1,0 +1,37 @@
+<h1>PerformanceResourceTiming.transferSize</h1> <p>The <strong><code>transferSize</code></strong> read-only property represents the size (in octets) of the fetched resource. The size includes the response header fields plus the response payload body (as defined by <a href="http://httpwg.github.io/specs/rfc7230.html#message.body">RFC7230</a>.</p> <p>If the resource is fetched from a local cache, this property returns zero.</p> <h2 id="Syntax" name="Syntax">Syntax</h2> <pre class="syntaxbox"><em>resource</em>.transferSize;
+</pre> <h3 id="Return_Value" name="Return_Value">Return value</h3> <p>A <code>number</code> representing the size (in octets) of the fetched resource. The size includes the response header fields plus the <a href="http://httpwg.github.io/specs/rfc7230.html#message.body">response payload body</a> (RFC7230).</p> <h2 id="Example">Example</h2> <p>The following example, the value of size properties of all "<code>resource</code>" <a title="The entryType property returns the performance entry's type. The valid entryType values are:" href="../performanceentry/entrytype"><code>type</code></a> events are logged.</p> <pre data-language="js">function log_sizes(perfEntry){
+  // Check for support of the PerformanceEntry.*size properties and print their values
+  // if supported.
+  if ("decodedBodySize" in perfEntry)
+    console.log("decodedBodySize = " + perfEntry.decodedBodySize);
+  else
+    console.log("decodedBodySize = NOT supported");
+
+  if ("encodedBodySize" in perfEntry)
+    console.log("encodedBodySize = " + perfEntry.encodedBodySize);
+  else
+    console.log("encodedBodySize = NOT supported");
+
+  if ("transferSize" in perfEntry)
+    console.log("transferSize = " + perfEntry.transferSize);
+  else
+    console.log("transferSize = NOT supported");
+}
+function check_PerformanceEntries() {
+  // Use getEntriesByType() to just get the "resource" events
+  var p = performance.getEntriesByType("resource");
+  for (var i=0; i &lt; p.length; i++) {
+    log_sizes(p[i]);
+  }
+}
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://w3c.github.io/resource-timing/#widl-PerformanceResourceTiming-transferSize" class="external">Resource Timing<br><small lang="en-US">The definition of 'transferSize' in that specification.</small></a></td> <td><span class="spec-ED">Editor's Draft</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support.</td> <td>54.0</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>41</td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support.</td> <td><span style="color: #f00;">No support</span></td> <td>54.0</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>41</td> <td><span style="color: #f00;">No support</span></td> <td>54.0</td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/transferSize$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/transferSize" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/transferSize</a>
+  </p>
+</div>

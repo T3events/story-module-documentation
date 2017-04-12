@@ -1,0 +1,31 @@
+<h1>Number.isInteger</h1> <p>The <strong><code>Number.isInteger()</code></strong> method determines whether the passed value is an integer.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Number.isInteger(v<var>alue</var>)</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><code>value</code></dt> <dd>The value to be tested for being an integer.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>A <a title="The Boolean object is an object wrapper for a boolean value." href="../boolean"><code>Boolean</code></a> indicating whether or not the given value is an integer.</p> <h2 id="Description">Description</h2> <p>If the target value is an integer, return <code>true</code>, otherwise return <code>false</code>. If the value is <a title="The global NaN property is a value representing Not-A-Number." href="../nan"><code>NaN</code></a> or infinite, return <code>false</code>.</p> <h2 id="Examples">Examples</h2> <pre data-language="js">Number.isInteger(0);         // true
+Number.isInteger(1);         // true
+Number.isInteger(-100000);   // true
+
+Number.isInteger(0.1);       // false
+Number.isInteger(Math.PI);   // false
+
+Number.isInteger(NaN);       // false
+Number.isInteger(Infinity);  // false
+Number.isInteger(-Infinity); // false
+Number.isInteger('10');      // false
+Number.isInteger(true);      // false
+Number.isInteger(false);     // false
+Number.isInteger([1]);       // false
+</pre> <h2 id="Polyfill">Polyfill</h2> <pre data-language="js">Number.isInteger = Number.isInteger || function(value) {
+  return typeof value === 'number' &amp;&amp; 
+    isFinite(value) &amp;&amp; 
+    Math.floor(value) === value;
+};
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-number.isinteger" class="external">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Number.isInteger' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://tc39.github.io/ecma262/#sec-number.isinteger" class="external">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Number.isInteger' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a title="Released on 2012-10-09." href="https://developer.mozilla.org/en-US/Firefox/Releases/16">16</a> (16)</td> <td><span style="color: #f00;">No support</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>16.0 (16)</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li>The <a title="The Number JavaScript object is a wrapper object allowing you to work with numerical values. A Number object is created using the Number() constructor." href="../number"><code>Number</code></a> object it belongs to.</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger</a>
+  </p>
+</div>

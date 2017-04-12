@@ -1,0 +1,27 @@
+<h1>Errors: Not defined</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">ReferenceError: "x" is not defined
+</pre> <h2 id="Error_type">Error type</h2> <p><a title="The ReferenceError object represents an error when a non-existent variable is referenced." href="../global_objects/referenceerror"><code>ReferenceError</code></a>.</p> <h2 id="What_went_wrong">What went wrong?</h2> <p>There is a non-existent variable referenced somewhere. This variable needs to be declared, or you need make sure it is available in your current script or <a title='scope: The current context of execution. The context in which values and expressions are "visible," or can be referenced. If a variable or other expression is not "in the current scope," then it is unavailable for use. Scopes can also be layered in a hierarchy, so that child scopes have access to parent scopes, but not vice versa.' href="https://developer.mozilla.org/en-US/docs/Glossary/scope" class="glossaryLink">scope</a>.</p> <div class="note"> <p><strong>Note:</strong> When loading a library (such as jQuery), make sure it is loaded before you access library variables, such as "$". Put the <a title="The HTML &lt;script&gt; element is used to embed or reference an executable script." href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script"><code>&lt;script&gt;</code></a> tag that loads the library before your code that uses it.</p> </div> <h2 id="Examples">Examples</h2> <h3 id="Variable_not_declared">Variable not declared</h3> <pre data-language="js">foo.substring(1); // ReferenceError: foo is not defined
+</pre> <p>The "foo" variable isn't defined anywhere. It needs to be some string, so that the <a title="The substring() method returns a subset of a string between one index and another, or through the end of the string." href="../global_objects/string/substring"><code>String.prototype.substring()</code></a> method will work.</p> <pre data-language="js">var foo = 'bar';
+foo.substring(1); // "ar"</pre> <h3 id="Wrong_scope">Wrong scope</h3> <p>A variable needs to be available in the current context of execution. Variables defined inside a <a href="../functions">function</a> cannot be accessed from anywhere outside the function, because the variable is defined only in the scope of the function</p> <pre data-language="js">function numbers() { 
+  var num1 = 2, 
+      num2 = 3;
+  return num1 + num2;
+}
+
+console.log(num1); // ReferenceError num1 is not defined.</pre> <p>However, a function can access all variables and functions defined inside the scope in which it is defined. In other words, a function defined in the global scope can access all variables defined in the global scope.</p> <pre data-language="js">var num1 = 2,
+    num2 = 3;
+
+function numbers() {
+  return num1 + num2; 
+}
+
+console.log(num1); // 2</pre> <h2 id="See_also">See also</h2> <ul> <li><a title='Scope: The current context of execution. The context in which values and expressions are "visible," or can be referenced. If a variable or other expression is not "in the current scope," then it is unavailable for use. Scopes can also be layered in a hierarchy, so that child scopes have access to parent scopes, but not vice versa.' href="https://developer.mozilla.org/en-US/docs/Glossary/Scope" class="glossaryLink">Scope</a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Declaring_variables">Declaring variables in the JavaScript Guide</a></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Function_scope/en-US/docs/">Function scope in the JavaScript Guide</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_defined$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_defined" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Not_defined</a>
+  </p>
+</div>

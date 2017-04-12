@@ -1,0 +1,26 @@
+<h1>SIMD.shiftLeftByScalar</h1><div> <div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div>
+</div> <p>The static <strong><code>SIMD.%type%.shiftLeftByScalar()</code></strong> method returns a new instance with the lane values shifted left by a given bit count (<code>a &lt;&lt; bits</code>).</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">SIMD.Int8x16.shiftLeftByScalar(a, bits)
+SIMD.Int16x8.shiftLeftByScalar(a, bits)
+SIMD.Int32x4.shiftLeftByScalar(a, bits)
+
+SIMD.Uint8x16.shiftLeftByScalar(a, bits)
+SIMD.Uint16x8.shiftLeftByScalar(a, bits)
+SIMD.Uint32x4.shiftLeftByScalar(a, bits)
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>a</dt> <dd>An instance of a SIMD type.</dd> <dt><code>bits</code></dt> <dd>Bit count to shift by.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>A new corresponding SIMD data type with the lane values shifted left by a given bit count (<code>a &lt;&lt; bits</code>).</p> <h2 id="Description">Description</h2> <p>The bitwise left shift operation shifts the specified number of bits to the left. Excess bits shifted off to the left are discarded. Zero bits are shifted in from the right.</p> <p>For example, a bitwise left shift of <code>5 &lt;&lt; 1</code> results in <code>1010</code> which is 10 in decimal.</p> <pre>5  0101
+   ----
+10 1010
+</pre> <h2 id="Examples">Examples</h2> <h3 id="Bitwise_left_shift_of_an_Int32x4">Bitwise left shift of an <code>Int32x4</code>
+</h3> <pre data-language="js">var a = SIMD.Int32x4(1, 2, 4, 8);
+SIMD.Int32x4.shiftLeftByScalar(a, 1);
+// Int32x4[2, 4, 8, 16]
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://tc39.github.io/ecmascript_simd/#simd-shift-left-by-scalar" class="external">SIMD<br><small lang="en-US">The definition of 'SIMDConstructor.shiftLeftByScalar' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><em><a href="http://nightly.mozilla.org/">Nightly build</a></em></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><em><a href="http://nightly.mozilla.org/">Nightly build</a></em></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a title='SIMD (pronounced "sim-dee") is short for Single Instruction/Multiple Data which is one classification of computer architectures. SIMD operations perform the same computation on multiple data points resulting in data level parallelism and thus performance gains, for example for 3D graphics and video processing, physics simulations or cryptography, and other domains.' href="../simd"><code>SIMD</code></a></li> <li><a href="../../operators/bitwise_operators">Bitwise operators</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/shiftLeftByScalar$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/shiftLeftByScalar" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/shiftLeftByScalar</a>
+  </p>
+</div>

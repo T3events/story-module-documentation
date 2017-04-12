@@ -1,0 +1,37 @@
+<h1>navigator</h1> <p>The <code>Window.navigator</code> read-only property returns a reference to the <a title="The Navigator interface represents the state and the identity of the user agent. It allows scripts to query it and to register themselves to carry on some activities." href="../navigator"><code>Navigator</code></a> object, which can be queried for information about the application running the script.</p> <h2 id="Example" name="Example">Syntax</h2> <pre class="syntaxbox"><em>navigatorObject = window.navigator</em></pre> <h2 id="Specification" name="Specification">Examples</h2> <h3 id="Example_1_Browser_detect_and_return_a_string">Example #1: Browser detect and return a string</h3> <pre data-language="js">var sBrowser, sUsrAg = navigator.userAgent;
+
+if(sUsrAg.indexOf("Chrome") &gt; -1) {
+    sBrowser = "Google Chrome";
+} else if (sUsrAg.indexOf("Safari") &gt; -1) {
+    sBrowser = "Apple Safari";
+} else if (sUsrAg.indexOf("Opera") &gt; -1) {
+    sBrowser = "Opera";
+} else if (sUsrAg.indexOf("Firefox") &gt; -1) {
+    sBrowser = "Mozilla Firefox";
+} else if (sUsrAg.indexOf("MSIE") &gt; -1) {
+    sBrowser = "Microsoft Internet Explorer";
+}
+
+alert("You are using: " + sBrowser);</pre> <h3 id="Example_2_Browser_detect_and_return_an_index">Example #2: Browser detect and return an index</h3> <pre data-language="js">function getBrowserId () {
+
+    var
+        aKeys = ["MSIE", "Firefox", "Safari", "Chrome", "Opera"],
+        sUsrAg = navigator.userAgent, nIdx = aKeys.length - 1;
+
+    for (nIdx; nIdx &gt; -1 &amp;&amp; sUsrAg.indexOf(aKeys[nIdx]) === -1; nIdx--);
+
+    return nIdx
+
+}
+
+console.log(getBrowserId());</pre> <h2 id="Specification" name="Specification">Specification</h2> <ul> <li><a lang="en" hreflang="en" href="http://www.w3.org/TR/html5/webappapis.html#the-navigator-object" class="external">HTML5<br><small lang="en-US">The definition of 'window.navigator' in that specification.</small></a></li> <li><a lang="en" hreflang="en" href="http://www.w3.org/html/wg/drafts/html/master/webappapis.html#the-navigator-object" class="external">HTML5.1<br><small lang="en-US">The definition of 'window.navigator' in that specification.</small></a></li> <li><a lang="en" hreflang="en" href="https://html.spec.whatwg.org/multipage/timers.html#the-navigator-object" class="external">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'window.navigator' in that specification.</small></a></li> </ul> <h2 id="See_also" name="See_also">See also</h2><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/navigator$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/navigator" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/window/navigator</a>
+  </p>
+</div>

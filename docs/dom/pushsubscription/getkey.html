@@ -1,0 +1,39 @@
+<h1>PushSubscription.getKey</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div> <p>The <code>getKey()</code> method of the <a title="The PushSubscription interface of the Push API provides a subcription's URL endpoint and allows unsubscription from a push service." href="../pushsubscription"><code>PushSubscription</code></a> interface returns an <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/ArrayBuffer"><code>ArrayBuffer</code></a> representing a client public key, which can then be sent to a server and used in encrypting push message data.</p> <div class="note"> <p><strong>Note</strong>: This is currently Firefox-only, and not yet included in the Push API spec</p> </div> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">​<span class="pl-k">var</span> key <span class="pl-k">=</span> subscription.getKey(<span class="pl-s"><span class="pl-pds">method</span></span>);</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>method</dt> <dd>The encryption method used to generate the client public key. <code>p256dh</code> is currently the only option. The method value can be: <ul> <li>
+<code>p256dh</code>: an <a href="https://en.wikipedia.org/wiki/Elliptic_curve_Diffie%E2%80%93Hellman">Elliptic curve Diffie–Hellman</a> public key on the P-256 curve (that is, the NIST secp256r1 elliptic curve). The resulting key is an uncompressed point in ANSI X9.62 format.</li> </ul> </dd> </dl> <h3 id="Returns">Returns</h3> <p>An <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/ArrayBuffer"><code>ArrayBuffer</code></a>.</p> <h2 id="Example">Example</h2> <p>In our <a href="https://github.com/chrisdavidmills/push-api-demo/blob/gh-pages/main.js#L51-L116">Push API demo</a>, we call getKey('p256dh') and <a title="The endpoint read-only property of the PushSubscription interface returns a USVString containing the endpoint associated with the push subscription." href="endpoint"><code>PushSubscription.endpoint</code></a> to get the necessary credentials we need to encrypt push message data, and send push messages from <a href="https://github.com/chrisdavidmills/push-api-demo/blob/gh-pages/server.js">our server</a> to specific subscribers.</p> <pre>reg.pushManager.getSubscription()  
+  .then(function(subscription) {  
+  // Enable any UI which subscribes / unsubscribes from  
+  // push messages.  
+ 
+  subBtn.disabled = false;
+
+  if (!subscription) {  
+    console.log('Not yet subscribed to Push')
+    // We aren't subscribed to push, so set UI  
+    // to allow the user to enable push  
+    return;  
+  }
+
+  // Set your UI to show they have subscribed for  
+  // push messages  
+  subBtn.textContent = 'Unsubscribe from Push Messaging';  
+  isPushEnabled = true;  
+        
+  // initialize status, which includes setting UI elements for subscribed status
+  // and updating Subscribers list via push
+  var endpoint = subscription.endpoint;
+  var key = subscription.getKey('p256dh');
+
+    ...</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a title="The 'Push API' specification" hreflang="en" class="external" lang="en" href="https://w3c.github.io/push-api/">Push API</a></td> <td><span class="spec-WD">Working Draft</span></td> <td>This is the Push API spec, but note that <code>getKey()</code> is not currently specified in here. It is currently Firefox-only experimental.</td> </tr> </tbody> </table> <h2 id="Browser_Compatibility">Browser Compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>
+<a title="Released on 2016-01-26." href="https://developer.mozilla.org/en-US/Firefox/Releases/44">44.0</a> (44.0)<sup>[1]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>48.0 (48)<sup>[2]</sup>
+</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <ul> <li>[1] Push (and <a href="../service_worker_api">Service Workers</a>) have been disabled in the <a href="https://www.mozilla.org/en-US/firefox/organizations/">Firefox 45 Extended Support Release</a> (ESR.)</li> <li>[2] Push has been enabled by default on Firefox for Android version 48.</li> </ul> <h2 id="See_also">See also</h2> <ul> <li><a href="../push_api/using_the_push_api">Using the Push API</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/getKey$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/getKey" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/PushSubscription/getKey</a>
+  </p>
+</div>

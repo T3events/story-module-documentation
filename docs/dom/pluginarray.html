@@ -1,0 +1,45 @@
+<h1>PluginArray</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div>  <p>The <code>PluginArray</code> interface is used to store a list of <a title="The Plugin interface provides information about a browser plugin." href="plugin"><code>Plugin</code></a> objects describing the available <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/Plugins">plugins</a>; it's returned by the <a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/window/navigator/plugins"><code>window.navigator.plugins</code></a> property. The <code>PluginArray</code> is not a JavaScript array, but has the <code>length</code> property and supports accessing individual items using bracket notation (<code>plugins[2]</code>), as well as via <code>item(<var>index</var>)</code> and <code>namedItem(<em>"name"</em>)</code> methods.</p> <h2 name="Properties" id="Properties">Properties</h2> <table class="standard-table"> <tbody> <tr> <th>Name</th> <th>Description</th> <th>Return Type</th> <th>Availability</th> </tr> <tr> <td><a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/PluginArray/length"><code>PluginArray.length</code></a></td> <td>The number of plugins in the array. <strong>Read only.</strong>
+</td> <td>unsigned long</td> <td>DOM 0</td> </tr> </tbody> </table> <h2 name="Methods" id="Methods">Methods</h2> <dl> <dt><a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/PluginArray/item"><code>PluginArray.item</code></a></dt> <dd>Returns the <a title="The Plugin interface provides information about a browser plugin." href="plugin"><code>Plugin</code></a> at the specified index into the array.</dd> <dt><a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/PluginArray/namedItem"><code>PluginArray.namedItem</code></a></dt> <dd>Returns the <a title="The Plugin interface provides information about a browser plugin." href="plugin"><code>Plugin</code></a> with the specified name.</dd> <dt><a title="The documentation about this has not yet been written; please consider contributing!" href="https://developer.mozilla.org/en-US/docs/Web/API/PluginArray/refresh"><code>PluginArray.refresh</code></a></dt> <dd>Refreshes all plugins on the current page, optionally reloading documents.</dd> </dl> <h2 name="Examples" id="Examples">Examples</h2> <p>The following example function returns the version of the Shockwave Flash plugin.</p> <pre data-language="js">var pluginsLength = navigator.plugins.length;
+
+document.body.innerHTML = pluginsLength + " Plugin(s)&lt;br&gt;"
+  + <span class="tag">'&lt;table</span><span class="atn">id</span><span class="pun">=</span><span class="atv">"</span>pluginTable<span class="atv">"</span><span class="tag">&gt;</span><span class="tag">&lt;thead&gt;</span>'
+  +'&lt;tr&gt;<span class="tag">&lt;th&gt;</span><span class="pln">Name</span><span class="tag">&lt;/th&gt;</span><span class="tag">&lt;th&gt;</span><span class="pln">Filename</span><span class="tag">&lt;/th&gt;</span><span class="tag">&lt;th&gt;description</span><span class="tag">&lt;/th&gt;</span><span class="tag">&lt;th&gt;version</span><span class="tag">&lt;/th&gt;</span><span class="tag">&lt;/tr&gt;</span><span class="pln">'
+  +'</span><span class="tag">&lt;/thead&gt;</span><span class="tag">&lt;tbody&gt;</span><span class="tag">&lt;/tbody&gt;</span>&lt;/table&gt;';
+
+var table = document.getElementById('pluginTable');
+
+for(var i = 0; i &lt; pluginsLength; i++) {
+  let newRow = table.insertRow();
+  newRow.insertCell().textContent = navigator.plugins[i].name;
+  newRow.insertCell().textContent = navigator.plugins[i].filename;
+  newRow.insertCell().textContent = navigator.plugins[i].description;
+  newRow.insertCell().textContent = navigator.plugins[i].version?navigator.plugins[i].version:"";
+}</pre> <p>The following example displays information about the installed plugin(s).</p> <pre data-language="js">var pluginsLength = navigator.plugins.length;
+
+document.write(
+  pluginsLength.toString() + " Plugin(s)&lt;br&gt;" +
+  "Name | Filename | description&lt;br&gt;"
+);
+
+for(var i = 0; i &lt; pluginsLength; i++) {
+  document.write(
+    navigator.plugins[i].name +
+    " | " +
+    navigator.plugins[i].filename +
+    " | " +
+    navigator.plugins[i].description +
+    " | " +
+    navigator.plugins[i].version +
+    "&lt;br&gt;"
+  );
+}</pre> <h2 id="Browser_compatibility">Browser compatibility</h2> <p>In addition to listing each plugin as a pseudo-array by zero-indexed numeric properties, Firefox provides properties that are the plugin name directly on the PluginArray object.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PluginArray$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/PluginArray" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/PluginArray</a>
+  </p>
+</div>

@@ -1,0 +1,27 @@
+<h1>CanvasCaptureMediaStream.canvas</h1><div><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> </div></div> <p>The <strong><code>CanvasCaptureMediaStream.canvas</code></strong> read-only property returns the <a title="The HTMLCanvasElement interface provides properties and methods for manipulating the layout and presentation of canvas elements. The HTMLCanvasElement interface also inherits the properties and methods of the HTMLElement interface." href="../htmlcanvaselement"><code>HTMLCanvasElement</code></a> associated with the stream.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">var <var>elt</var> = <var>stream</var>.canvas;
+</pre> <h2 id="Example">Example</h2> <pre data-language="js">// Find the canvas element to capture
+var canvasElt = document.getElementsByTagName("canvas")[0];
+
+// Get the stream
+var stream = canvasElt.captureStream(25); // 25 FPS
+
+// Do things to the stream
+...
+
+// Obtain the canvas associated with the stream
+var canvas = stream.canvas;
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a hreflang="en" class="external" lang="en" href="https://w3c.github.io/mediacapture-fromelement/#widl-CanvasCaptureMediaStream-canvas">Media Capture from DOM Elements<br><small lang="en-US">The definition of 'HTMLCanvasElement' in that specification.</small></a></td> <td><span class="spec-ED">Editor's Draft</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">Not supported</span></td> <td>
+<a title="Released on 2015-09-22." href="https://developer.mozilla.org/en-US/Firefox/Releases/41">41</a> (41)<sup>[1]</sup>
+</td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">Not supported</span></td> <td>41.0 (41)<sup>[1]</sup>
+</td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> <td><span style="color: #f00;">Not supported</span></td> </tr> </tbody> </table> </div> <p>[1] Disabled by default; set the preference <code>canvas.capturestream.enabled</code> to <code>true</code> to activate.</p> <h2 id="See_also">See also</h2> <ul> <li>
+<a title="The HTMLCanvasElement.captureStream() method returns a CanvasCaptureMediaStream that is a real-time video capture of the surface of the canvas." href="../htmlcanvaselement/capturestream"><code>HTMLCanvasElement.captureStream()</code></a> to create a stream associated to a given canvas element.</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasCaptureMediaStream/canvas$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasCaptureMediaStream/canvas" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/CanvasCaptureMediaStream/canvas</a>
+  </p>
+</div>

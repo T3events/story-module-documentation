@@ -1,0 +1,26 @@
+<h1>HTMLHyperlinkElementUtils.origin</h1> <p>The <strong><code>HTMLHyperlinkElementUtils.origin</code></strong> read-only property is a <a title="USVString corresponds to the set of all possible sequences of unicode scalar values. USVString maps to a String when returned in JavaScript; it's generally only used for APIs that perform text processing and need a string of unicode scalar values to operate on." href="../usvstring"><code>USVString</code></a> containing the Unicode serialization of the origin of the represented URL, that is:</p> <ul> <li>for URL using the <code>http</code> or <code>https</code>, the scheme followed by <code>'://'</code>, followed by the domain, followed by <code>':'</code>, followed by the port (the default port, <code>80</code> and <code>443</code> respectively, if explicitely specified);</li> <li>for URL using <code>file:</code> scheme, the value is browser dependant;</li> <li>for URL using the <code>blob:</code> scheme, the origin of the URL following <code>blob:</code>. E.g <code>"blob:https://mozilla.org"</code> will have <code>"https://mozilla.org".</code>
+</li> </ul> <div class="note">
+<strong>Note:</strong> This feature is available in <a href="../web_workers_api">Web Workers</a>.</div> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>string</em> = <em>object</em>.origin;
+</pre> <h2 id="Examples">Examples</h2> <pre data-language="js">// On this page, returns the origin
+var result = window.location.origin; // Returns:'https://developer.mozilla.org'
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://html.spec.whatwg.org/multipage/#dom-hyperlink-origin" class="external">WHATWG HTML Living Standard<br><small lang="en-US">The definition of 'HTMLHyperlinkElementUtils.origin' in that specification.</small></a></td> <td><span class="spec-Living">Living Standard</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>
+<a title="Released on 2013-12-10." href="https://developer.mozilla.org/en-US/Firefox/Releases/26">26.0</a> (26.0)<sup> [2][3]</sup>
+</td> <td>
+<span style="color: #f00;">No support</span> [1]</td> <td>
+<span style="color: #f00;">No support</span> [1]</td> <td>
+<span style="color: #f00;">No support</span> [1]</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>
+<span style="color: #f00;">No support</span> [1]</td> <td>
+<span style="color: #f00;">No support</span> [1]</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>26.0 (26.0)<sup> [2][3</sup>]</td> <td>
+<span style="color: #f00;">No support</span> [1]</td> <td>
+<span style="color: #f00;">No support</span> [1]</td> <td>
+<span style="color: #f00;">No support</span> [1]</td> </tr> </tbody> </table> </div> <p>[1] Though not grouped in a single abstract interface, this method is directly available on the interfaces that implement it, if this interface is supported.</p> <p>[2] From Gecko 26 to Gecko 44, this property was on the <code>URLUtils</code> mixin. It has been moves either on the <code>HTMLHyperlinkElementUtils</code> mixin, or directly on the interface.</p> <p>[3] Before Gecko 49, results for URL using the <code>blob</code> scheme incorrectly returned <code>null</code>.</p> <h2 id="See_also">See also</h2> <ul> <li>The <a title="The HTMLHyperlinkElementUtils mixin defines utility methods and properties to work with HTMLAnchorElement and HTMLAreaElement. These utilities allow to deal with common features like URLs." href="../htmlhyperlinkelementutils"><code>HTMLHyperlinkElementUtils</code></a> mixin it belongs to.</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/origin$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/origin" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/origin</a>
+  </p>
+</div>

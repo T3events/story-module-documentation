@@ -1,0 +1,44 @@
+<h1>@font-face.font-family</h1> <p>The <strong><code>font-family</code></strong> CSS descriptor allows authors to specify the font family for the font specified in an <a title="The @font-face CSS at-rule allows authors to specify online fonts to display text on their web pages. By allowing authors to provide their own fonts, @font-face eliminates the need to depend on the limited number of fonts users have installed on their computers. The @font-face at-rule may be used not only at the top level of a CSS, but also inside any CSS conditional-group at-rule." href="../@font-face"><code>@font-face</code></a> rule.</p> <table class="properties"><tbody>
+<tr>
+<th scope="row">Related <a href="../at-rule">at-rule</a>
+</th>
+<td><a title="The @font-face CSS at-rule allows authors to specify online fonts to display text on their web pages. By allowing authors to provide their own fonts, @font-face eliminates the need to depend on the limited number of fonts users have installed on their computers. The @font-face at-rule may be used not only at the top level of a CSS, but also inside any CSS conditional-group at-rule." href="../@font-face"><code>@font-face</code></a></td>
+</tr>
+<tr>
+<th scope="row"><a href="../initial_value">Initial value</a></th>
+<td>n/a (required)</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>all</td>
+</tr>
+<tr>
+<th scope="row"><a href="../computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <h2 id="Syntax">Syntax</h2> <pre data-language="css">/* &lt;string&gt; values */
+font-family: "font family";
+font-family: 'another font family';
+
+/* &lt;IDENT&gt; value */
+font-family: examplefont;
+</pre> <h3 id="Values">Values</h3> <dl> <dt><code>&lt;family-name&gt;</code></dt> <dd>Specifies the name of the font family.</dd> </dl> <h3 id="Formal_syntax">Formal syntax</h3> <pre class="syntaxbox"><a href="#family-name">&lt;family-name&gt;</a><p>where <br><span id="family-name">&lt;family-name&gt;</span> = <a title="" href="../string">&lt;string&gt;</a> | &lt;custom-ident&gt;<a title="Plus: the entity may occur one or several times" href="../value_definition_syntax#Plus_()">+</a></p></pre> <h2 id="Examples">Examples</h2> <pre data-language="css">@font-face {
+  font-family: examplefont;
+  src: url('examplefont.ttf');
+}
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a hreflang="en" class="external" lang="en" href="https://drafts.csswg.org/css-fonts-3/#font-family-desc">CSS Fonts Module Level 3<br><small lang="en-US">The definition of 'font-family' in that specification.</small></a></td> <td><span class="spec-CR">Candidate Recommendation</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>4</td> <td>12.0</td> <td>
+<a title="Released on 2009-06-30." href="https://developer.mozilla.org/en-US/Firefox/Releases/3.5">3.5</a> (1.9.1)</td> <td>6.0</td> <td>9.0</td> <td>3.1</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mini</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>2.2</td> <td>1.0 (1.9.1)</td> <td>10.0</td> <td><span style="color: #f00;">No support</span></td> <td>12.0</td> <td>3.1</td> </tr> </tbody> </table> </div><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-family$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-family" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-family</a>
+  </p>
+</div>

@@ -1,0 +1,63 @@
+<h1>WebGLBuffer</h1> <p>The <strong>WebGLBuffer</strong> interface is part of the <a href="webgl_api">WebGL API</a> and represents an opaque buffer object storing data such as vertices or colors.</p> <h2 id="Description">Description</h2> <p>The <code>WebGLBuffer</code> object does not define any methods or properties of its own and its content is not directly accessible. When working with <code>WebGLBuffer</code> objects, the following methods of the <a href="webglrenderingcontext" title="The WebGLRenderingContext interface provides the OpenGL ES 2.0 rendering context for the drawing surface of an HTML &lt;canvas&gt; element."><code>WebGLRenderingContext</code></a> are useful:</p> <ul> <li><a href="webglrenderingcontext/bindbuffer" title="The WebGLRenderingContext.bindBuffer() method of the WebGL API binds a given WebGLBuffer to a target."><code>WebGLRenderingContext.bindBuffer()</code></a></li> <li><a href="webglrenderingcontext/createbuffer" title="The WebGLRenderingContext.createBuffer() method of the WebGL API creates and initializes a WebGLBuffer storing data such as vertices or colors."><code>WebGLRenderingContext.createBuffer()</code></a></li> <li><a href="webglrenderingcontext/deletebuffer" title="The WebGLRenderingContext.deleteBuffer() method of the WebGL API deletes a given WebGLBuffer. This method has no effect if the buffer has already been deleted."><code>WebGLRenderingContext.deleteBuffer()</code></a></li> <li><a href="webglrenderingcontext/isbuffer" title="The WebGLRenderingContext.isBuffer() method of the WebGL API returns true if the passed WebGLBuffer is valid and false otherwise."><code>WebGLRenderingContext.isBuffer()</code></a></li> </ul> <h2 id="Examples">Examples</h2> <h3 id="Creating_a_buffer">Creating a buffer</h3> <pre data-language="js">var canvas = document.getElementById('canvas');
+var gl = canvas.getContext('webgl');
+var buffer = gl.createBuffer();
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.4" class="external" lang="en" hreflang="en">WebGL 1.0<br><small lang="en-US">The definition of 'WebGLBuffer' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody>
+<tr>
+<td>Basic Support</td>
+<td>9</td>
+<td>12</td>
+<td>4.0</td>
+<td>11</td>
+<td>12</td>
+<td>5.1</td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+<tr>
+<td>Available in workers</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td>
+<span style="color: #f00;">No support</span><a href="#note-1"><strong><sup>1</sup></strong></a>
+</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+</tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody>
+<tr>
+<td>Basic Support</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>25</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>11</td>
+<td>12</td>
+<td>8.1</td>
+</tr>
+<tr>
+<td>Available in workers</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #f00;">No support</span></td>
+</tr>
+</tbody>
+</table></div><p id="note-1">1. This feature is experimentally implemented since Firefox 44; to activate it, in about:config, set gfx.offscreencanvas.enabled to true</p> <h2 id="See_also">See also</h2> <ul> <li><a href="webglrenderingcontext/bindbuffer" title="The WebGLRenderingContext.bindBuffer() method of the WebGL API binds a given WebGLBuffer to a target."><code>WebGLRenderingContext.bindBuffer()</code></a></li> <li><a href="webglrenderingcontext/createbuffer" title="The WebGLRenderingContext.createBuffer() method of the WebGL API creates and initializes a WebGLBuffer storing data such as vertices or colors."><code>WebGLRenderingContext.createBuffer()</code></a></li> <li><a href="webglrenderingcontext/deletebuffer" title="The WebGLRenderingContext.deleteBuffer() method of the WebGL API deletes a given WebGLBuffer. This method has no effect if the buffer has already been deleted."><code>WebGLRenderingContext.deleteBuffer()</code></a></li> <li><a href="webglrenderingcontext/isbuffer" title="The WebGLRenderingContext.isBuffer() method of the WebGL API returns true if the passed WebGLBuffer is valid and false otherwise."><code>WebGLRenderingContext.isBuffer()</code></a></li> <li>Other buffers: <a href="webglframebuffer" title="The WebGLFramebuffer interface is part of the WebGL API and represents a collection of buffers that serve as a rendering destination."><code>WebGLFramebuffer</code></a>, <a href="webglrenderbuffer" title="The WebGLRenderbuffer interface is part of the WebGL API and represents a buffer that can contain an image, or can be source or target of an rendering operation."><code>WebGLRenderbuffer</code></a>
+</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLBuffer$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLBuffer" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/WebGLBuffer</a>
+  </p>
+</div>

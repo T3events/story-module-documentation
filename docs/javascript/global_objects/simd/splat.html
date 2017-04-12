@@ -1,0 +1,46 @@
+<h1>SIMD.splat</h1><div> <div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div>
+</div> <p>The static <strong><code>SIMD.%type%.splat()</code></strong> method creates a new SIMD data type with all lanes set to a given value.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">SIMD.Float32x4.splat(s)
+SIMD.Float64x2.splat(s)
+
+SIMD.Int8x16.splat(s)
+SIMD.Int16x8.splat(s)
+SIMD.Int32x4.splat(s)
+
+SIMD.Uint8x16.splat(s)
+SIMD.Uint16x8.splat(s)
+SIMD.Uint32x4.splat(s)
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>s<code> <span class="inlineIndicator optional optionalInline">Optional</span></code>
+</dt> <dd>The value to set all lanes to. This is an integer for int types and a double for float types.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>A new SIMD data type with all lanes set to a given value.</p> <h2 id="Description">Description</h2> <p>When constructing SIMD data types, multiple arguments for the lane values are expected. The splat function sets a single value for all lanes, allowing you to quickly assemble a new SIMD data type.</p> <p>If you don't specify a value <code>s</code>, the lanes of int SIMD types will be set to <code>0</code>, and for float SIMD types the lanes will be set to <a title="The global NaN property is a value representing Not-A-Number." href="../nan"><code>NaN</code></a>.</p> <h2 id="Examples">Examples</h2> <pre data-language="js">SIMD.Float32x4.splat(3);
+// Float32x4[3,3,3,3]
+
+SIMD.Float64x2.splat(3);
+// Float64x2[3,3]
+
+SIMD.Int8x16.splat(3);
+// Int8x16[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
+
+SIMD.Int16x8.splat(3);
+// Int16x8[3,3,3,3,3,3,3,3]
+
+SIMD.Int32x4.splat(3);
+// Int32x4[3,3,3,3]
+
+SIMD.Uint8x16.splat(3); 
+// Uint8x16[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3] 
+
+SIMD.Uint16x8.splat(3); 
+// Uint16x8[3,3,3,3,3,3,3,3] 
+
+SIMD.Uint32x4.splat(3); 
+// Uint32x4[3,3,3,3]
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://tc39.github.io/ecmascript_simd/#simd-splat">SIMD<br><small lang="en-US">The definition of 'SIMDConstructor.splat' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><em><a href="http://nightly.mozilla.org/">Nightly build</a></em></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><em><a href="http://nightly.mozilla.org/">Nightly build</a></em></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a title='SIMD (pronounced "sim-dee") is short for Single Instruction/Multiple Data which is one classification of computer architectures. SIMD operations perform the same computation on multiple data points resulting in data level parallelism and thus performance gains, for example for 3D graphics and video processing, physics simulations or cryptography, and other domains.' href="../simd"><code>SIMD</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/splat$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/splat" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SIMD/splat</a>
+  </p>
+</div>

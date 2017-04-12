@@ -1,0 +1,20 @@
+<h1>CSSRule.cssText</h1><p>Not to be confused with element-style <a href="../cssstyledeclaration/csstext" title="cssText returns or sets the text of the element's inline style declaration only. To be able to set a stylesheet rule dynamically, see Using dynamic styling information."><code>CSSStyleDeclaration.cssText</code></a>.<br> </p>   <p><strong>cssText</strong> returns the actual text of a <a href="../cssstylesheet" title="The CSSStyleSheet interface represents a single CSS style sheet. It inherits properties and methods from its parent, StyleSheet."><code>CSSStyleSheet</code></a> style-rule.</p> <p>Note: Can no longer be set directly, as <a href="https://www.w3.org/TR/cssom-1/#changes-from-5-december-2013">now specified</a> to be <em>functionally</em> modify-only -- and *<strong>silently</strong>* so -- meaning that attempting to set it does absolutely *<strong>nothing*</strong> -- not even warn or error. Further, it has no settable sub-properties. Therefore, to modify, use the stylesheet's <a href="../cssrulelist" title="A CSSRuleList is an (indirect-modify only) array-like object containing an ordered collection of CSSRule objects."><code>cssRules</code></a>[<em>index</em>] properties <a href="../cssstylerule/selectortext" title="The CSSRule.selectorText property gets the textual representation of the selector for the rule set. This is implemented in a readonly manner; to set stylesheet rules dynamically, see Using dynamic styling information."><code>.selectorText</code></a> and <a href="../cssstylerule/style" title="The CSSRule.style property is the CSSStyleDeclaration interface for the declaration block of the CSSRule."><code>.style</code></a> (or its sub-properties). See <a href="https://developer.mozilla.org/en-US/docs/DOM/Using_dynamic_styling_information" title="DOM/Using_dynamic_styling_information">Using dynamic styling information</a> for details.</p> <h2 name="Syntax" id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>string</em> = cssRule.cssText 
+</pre> <h2 name="Example" id="Example">Example</h2> <pre data-language="html">&lt;style&gt;
+body { background-color: darkblue; }
+&lt;/style&gt;
+&lt;script&gt;
+  var stylesheet = document.styleSheets[0];
+  alert(stylesheet.cssRules[0].cssText); // body { background-color: darkblue; }
+&lt;/script&gt;
+
+</pre> <h2 name="Specification" id="Specification">Specification</h2> <ul> <li><a href="http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSSRule">DOM Level 2 Style CSS - Interface CSSStyleRule (introduced in DOM Level 2)</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSRule/cssText$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSRule/cssText" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/CSSRule/cssText</a>
+  </p>
+</div>

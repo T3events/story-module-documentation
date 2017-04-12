@@ -1,0 +1,33 @@
+<h1>document.elementsFromPoint</h1><div><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div></div> <p>The <code><strong>elementsFromPoint()</strong></code> method of the <a title="The Document interface represents any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree. The DOM tree includes elements such as &lt;body&gt; and &lt;table&gt;, among many others. It provides functionality which is global to the document, such as obtaining the page's URL and creating new elements in the document." href="../document"><code>Document</code></a> interface returns an array of all elements at the specified coordinates.</p> <h2 id="Syntax">Syntax</h2> <pre data-language="js">var<em> elements</em> = <em>document</em>.elementsFromPoint(<em>x</em>, <em>y</em>);</pre> <h3 id="Returns">Returns</h3> <p>An array of <a title="The Element interface represents an object of a Document. This interface describes methods and properties common to all kinds of elements. Specific behaviors are described in interfaces which inherit from Element but add additional functionality." href="../element"><code>Element</code></a> objects under the given point.</p> <h3 id="Parameters">Parameters</h3> <dl> <dt>x</dt> <dd>A horizontal position within the current viewport.</dd> <dt>y</dt> <dd>A vertical position within the current viewport.</dd> </dl> <h2 id="Example" name="Example">Example</h2> <h3 id="HTML_Content">HTML Content</h3> <pre data-language="html">&lt;div&gt;
+  &lt;p&gt;Some text&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Elements at point 30, 20:&lt;/p&gt;
+&lt;div id="output"&gt;&lt;/div&gt;
+</pre> <h3 id="JavaScript_Content">JavaScript Content</h3> <pre data-language="js">var output = document.getElementById("output");
+if (document.elementsFromPoint) {
+  var elements = document.elementsFromPoint(30, 20);
+  for(var i = 0; i &lt; elements.length; i++) {
+    output.textContent += elements[i].localName;
+    if (i &lt; elements.length - 1) {
+      output.textContent += " &lt; ";
+    }
+  }
+} else {
+  output.innerHTML = "&lt;span style=\"color: red;\"&gt;" +
+     "Browser does not support &lt;code&gt;document.elementsFromPoint()&lt;/code&gt;" +
+     "&lt;/span&gt;";
+}</pre> <p><iframe width="420" frameborder="0" class="live-sample-frame sample-code-frame" src="https://mdn.mozillademos.org/en-US/docs/Web/API/Document/elementsFromPoint%24samples/Example?revision=1047510" height="120" id="frame_Example"></iframe></p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://drafts.csswg.org/cssom-view/#dom-document-elementsfrompoint" class="external">CSS Object Model (CSSOM) View Module<br><small lang="en-US">The definition of 'elementsFromPoint' in that specification.</small></a></td> <td><span class="spec-WD">Working Draft</span></td> <td>Initial definition.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td> 43.0</td> <td>
+<a title="Released on 2016-04-26." href="https://developer.mozilla.org/en-US/Firefox/Releases/46">46.0</a> (46.0)<sup>[1]</sup>
+</td> <td>10.0 <span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with 'ms' as this browser considers it experimental" href="https://developer.mozilla.org/en-US/docs/Web/Guide/Prefixes">ms</a></span>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>43.0</td> <td>46.0 (46.0)<sup>[1]</sup>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: #f00;">No support</span></td> <td>43.0</td> </tr> </tbody> </table> </div> <p>[1] See <a title="FIXED: Support elementsFromPoint" href="https://bugzilla.mozilla.org/show_bug.cgi?id=1164427">bug 1164427</a>.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/elementsFromPoint$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/document/elementsFromPoint" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/document/elementsFromPoint</a>
+  </p>
+</div>

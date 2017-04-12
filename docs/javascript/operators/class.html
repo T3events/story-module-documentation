@@ -1,0 +1,44 @@
+<h1>class</h1> <p>The <strong>class expression</strong> is one way to define a class in ECMAScript 2015. Similar to <a href="function">function expressions</a>, class expressions can be named or unnamed. If named, the name of the class is local to the class body only. JavaScript classes are using prototype-based inheritance.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">var MyClass = class <em>[className]</em> [extends] {
+  // class body
+};</pre> <h2 id="Description">Description</h2> <p>A class expression has a similar syntax to a <a href="../statements/class">class statement (declaration)</a>. However, with class expressions, you are able to omit the class name ("binding identifier"), which you can't with class statements. Additionally, class expressions allow you to redefine/re-declare classes and <strong>don't throw</strong> any type errors like <a href="../statements/class">class declaration</a>. The constructor property is optional. And, <em>typeof </em>the classes generated using this keyword will always be "function".</p> <p>Just like with class statements, the class body of class expressions is executed in <a href="../strict_mode">strict mode</a>.</p> <pre data-language="js">'use strict';
+var Foo = class {}; // constructor property is optional
+var Foo = class {}; // Re-declaration is allowed
+
+typeof Foo; //returns "function"
+typeof class {}; //returns "function"
+
+Foo instanceof Object; // true
+Foo instanceof Function; // true
+class Foo {}; // Throws TypeError, doesn't allow re-declaration
+</pre> <h2 id="Examples">Examples</h2> <h3 id="A_simple_class_expression">A simple class expression</h3> <p>This is just a simple anonymous class expression which you can refer to using the variable "Foo".</p> <pre data-language="js">var Foo = class {
+  constructor() {}
+  bar() {
+    return 'Hello World!';
+  }
+};
+
+var instance = new Foo();
+instance.bar(); // "Hello World!"
+Foo.name; // "Foo"
+</pre> <h3 id="Named_class_expressions">Named class expressions</h3> <p>If you want to refer to the current class inside the class body, you can create a named class expression. This name is only visible in the scope of the class expression itself.</p> <pre data-language="js">var Foo = class NamedFoo {
+  constructor() {}
+  whoIsThere() {
+    return NamedFoo.name;
+  }
+}
+var bar = new Foo();
+bar.whoIsThere(); // "NamedFoo"
+NamedFoo.name; // ReferenceError: NamedFoo is not defined
+Foo.name; // "NamedFoo"
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions" class="external" lang="en" hreflang="en">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Class definitions' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a href="https://tc39.github.io/ecma262/#sec-class-definitions" class="external" lang="en" hreflang="en">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Class definitions' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>42.0</td> <td>
+<a href="https://developer.mozilla.org/en-US/Firefox/Releases/45" title="Released on 2016-03-08.">45</a> (45)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td>42.0</td> <td>45.0 (45)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>42.0</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a href="function"><code>function</code> expression</a></li> <li><a href="../statements/class"><code>class</code> statement</a></li> <li><a href="../classes">Classes</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/class$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/class" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/class</a>
+  </p>
+</div>

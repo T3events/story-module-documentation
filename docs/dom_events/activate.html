@@ -1,0 +1,41 @@
+<h1>activate</h1><p>Occurs when an element is activated, for instance, through a mouse click or a keypress.</p> <h2 id="General_info">General info</h2> <dl class="eventinfo"> <dt> Specification <a href="https://www.w3.org/TR/SVGTiny12/interact.html#ActivateEvent">DOM L3</a>
+</dt> <dt> Interface <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent" title="The MouseEvent interface represents events that occur due to the user interacting with a pointing device (such as a mouse). Common events using this interface include click, dblclick, mouseup, mousedown."><code>MouseEvent</code></a>
+</dt> <dt> Bubbles Yes </dt> <dt> Cancelable Yes</dt> <dt> Target Element</dt> <dt> Default Action Varies</dt> </dl> <h2 id="Properties">Properties</h2>  <h2 id="Example">Example</h2> <pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny"
+     xmlns:ev="http://www.w3.org/2001/xml-events"
+     width="6cm" height="5cm" viewBox="0 0 600 500"&gt;
+
+  &lt;desc&gt;Example: invoke an ECMAScript function from a DOMActivate event&lt;/desc&gt;
+
+  &lt;!-- ECMAScript to change the radius --&gt;
+  &lt;script type="application/ecmascript"&gt;&lt;![CDATA[
+    function change(evt) {
+      var circle = evt.target;
+      var currentRadius = circle.getFloatTrait("r");
+      if (currentRadius == 100)
+        circle.setFloatTrait("r", currentRadius * 2);
+      else
+        circle.setFloatTrait("r", currentRadius * 0.5);
+    }
+  ]]&gt;&lt;/script&gt;
+
+  &lt;!-- Act on each DOMActivate event --&gt;
+  &lt;circle cx="300" cy="225" r="100" fill="red"&gt;
+    &lt;handler type="application/ecmascript" ev:event="DOMActivate"&gt; change(evt); &lt;/handler&gt;
+  &lt;/circle&gt;
+
+  &lt;text x="300" y="480" font-family="Verdana" font-size="35" text-anchor="middle"&gt;
+    Activate the circle to change its size
+  &lt;/text&gt;
+&lt;/svg&gt;
+</pre> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Events/activate$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Events/activate" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/Events/activate</a>
+  </p>
+</div>

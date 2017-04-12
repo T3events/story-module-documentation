@@ -1,0 +1,38 @@
+<h1>WebGLRenderingContext.getError</h1> <p>The <strong><code>WebGLRenderingContext.getError()</code></strong> method of the <a href="../webgl_api">WebGL API</a> returns error information.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">GLenum <var>gl</var>.getError();
+</pre> <h3 id="Parameters">Parameters</h3> <p>None.</p> <h3 id="Return_value">Return value</h3> <table class="standard-table"> <thead> <tr> <th scope="col">Constant</th> <th scope="col">Description</th> </tr> </thead> <tbody> <tr> <td><code>gl.NO_ERROR</code></td> <td>No error has been recorded. The value of this constant is 0.</td> </tr> <tr> <td><code>gl.INVALID_ENUM</code></td> <td>An unacceptable value has been specified for an enumerated argument. The command is ignored and the error flag is set.</td> </tr> <tr> <td><code>gl.INVALID_VALUE</code></td> <td>A numeric argument is out of range. The command is ignored and the error flag is set.</td> </tr> <tr> <td><code>gl.INVALID_OPERATION</code></td> <td>The specified command is not allowed for the current state. The command is ignored and the error flag is set.</td> </tr> <tr> <td><code>gl.INVALID_FRAMEBUFFER_OPERATION</code></td> <td>The currently bound framebuffer is not framebuffer complete when trying to render to or to read from it.</td> </tr> <tr> <td><code>gl.OUT_OF_MEMORY</code></td> <td>Not enough memory is left to execute the command.</td> </tr> <tr> <td><code>gl.CONTEXT_LOST_WEBGL</code></td> <td>If the WebGL context is lost, this error is returned on the first call to <code>getError</code>. Afterwards and until the context has been restored, it returns <code>gl.NO_ERROR</code>.</td> </tr> </tbody> </table> <h2 id="Examples">Examples</h2> <pre data-language="js">gl.getError(); // gl.NO_ERROR (0)
+
+gl.enable(gl.FOOBAR);
+gl.getError(); // gl.INVALID_ENUM;
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3" class="external">WebGL 1.0<br><small lang="en-US">The definition of 'getError' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Initial definition.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://www.khronos.org/opengles/sdk/docs/man/xhtml/glGetError.xml" class="external">OpenGL ES 2.0<br><small lang="en-US">The definition of 'glGetError' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Man page of the OpenGL API.</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td>9</td>
+<td>12</td>
+<td>4.0</td>
+<td>11</td>
+<td>12</td>
+<td>5.1</td>
+<td><span style="color: #f00;">No support</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>25</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>4.0</td>
+<td>11</td>
+<td>12</td>
+<td>8.1</td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The WebGLRenderingContext interface provides the OpenGL ES 2.0 rendering context for the drawing surface of an HTML &lt;canvas&gt; element." href="../webglrenderingcontext"><code>WebGLRenderingContext</code></a></li> <li><a title="The WebContextEvent interface is part of the WebGL API and is an interface for an event that is generated in response to a status change to the WebGL rendering context." href="../webglcontextevent"><code>WebGLContextEvent</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getError$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getError" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/getError</a>
+  </p>
+</div>

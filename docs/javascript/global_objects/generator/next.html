@@ -1,0 +1,39 @@
+<h1>generator.next</h1> <p>The <code><strong>next</strong></code><strong><code>()</code></strong> method returns an object with two properties <code>done</code> and <code>value</code>. You can also provide a parameter to the <code>next</code> method to send a value to the generator.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>gen</var>.next(value)</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt><code>value</code></dt> <dd>The value to send to the generator.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>An <code><a href="../object">Object</a></code> with two properties:</p> <ul> <li>
+<code>done</code> (boolean) <ul> <li>Has the value <code>true</code> if the iterator is past the end of the iterated sequence. In this case <code>value</code> optionally specifies the <em>return value</em> of the iterator.</li> <li>Has the value <code>false</code> if the iterator was able to produce the next value in the sequence. This is equivalent of not specifying the <code>done</code> property altogether.</li> </ul> </li> <li>
+<code>value</code> - any JavaScript value returned by the iterator. Can be omitted when <code>done</code> is <code>true</code>.</li> </ul> <h2 id="Examples">Examples</h2> <h3 id="Using_next()">Using <code>next()</code>
+</h3> <p>The following example shows a simple generator and the object that the <code>next</code> method returns:</p> <pre data-language="js">function* gen() { 
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+var g = gen(); // "Generator { }"
+g.next();      // "Object { value: 1, done: false }"
+g.next();      // "Object { value: 2, done: false }"
+g.next();      // "Object { value: 3, done: false }"
+g.next();      // "Object { value: undefined, done: true }"
+</pre> <h3 id="Sending_values_to_the_generator">Sending values to the generator</h3> <p>In this example, <code>next</code> is called with a value. Note that the first call did not log anything, because the generator was not yielding anything initially.</p> <pre data-language="js">function* gen() {
+  while(true) {
+    var value = yield null;
+    console.log(value);
+  }
+}
+
+var g = gen();
+g.next(1); 
+// "{ value: null, done: false }"
+g.next(2); 
+// "{ value: null, done: false }"
+// 2
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-generator.prototype.next">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Generator.prototype.next' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a hreflang="en" class="external" lang="en" href="https://tc39.github.io/ecma262/#sec-generator.prototype.next">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Generator.prototype.next' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>13</td> <td>
+<a title="Released on 2013-12-10." href="https://developer.mozilla.org/en-US/Firefox/Releases/26">26</a> (26)</td> <td><span style="color: #f00;">No support</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>10</td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>5.1</td> <td><span title="Please update this with the earliest version of support." style="color: #888;">(Yes)</span></td> <td>26.0 (26)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>10</td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><code><a href="../../statements/function*">function*</a></code></li> <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators">Iterators and generators</a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator/next$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator/next" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator/next</a>
+  </p>
+</div>

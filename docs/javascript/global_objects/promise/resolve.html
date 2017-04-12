@@ -1,0 +1,90 @@
+<h1>Promise.resolve</h1> <p>The <code><strong>Promise.resolve(value)</strong></code> method returns a <a title="The Promise object is used for asynchronous computations. A Promise represents a value which may be available now, or in the future, or never." href="../promise"><code>Promise</code></a> object that is resolved with the given value. If the value is a thenable (i.e. has a <a title="The then() method returns a Promise. It takes up to two arguments: callback functions for the success and failure cases of the Promise." href="then"><code>"then" method</code></a>), the returned promise will "follow" that thenable, adopting its eventual state; otherwise the returned promise will be fulfilled with the value.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><var>Promise.resolve(value)</var>;
+Promise.resolve(promise);
+Promise.resolve(thenable);
+</pre> <h3 id="Parameters">Parameters</h3> <dl> <dt>value</dt> <dd>Argument to be resolved by this <code>Promise</code>. Can also be a <code>Promise</code> or a thenable to resolve.</dd> </dl> <h3 id="Return_value">Return value</h3> <p>A <a title="The Promise object is used for asynchronous computations. A Promise represents a value which may be available now, or in the future, or never." href="../promise"><code>Promise</code></a> that is resolved with the given value.</p> <h2 id="Description">Description</h2> <p>The static <code>Promise.resolve</code> function returns a <code>Promise</code> that is resolved.</p> <h2 id="Examples">Examples</h2> <h3 id="Using_the_static_Promise.resolve_method">Using the static <code>Promise.resolve</code> method</h3> <pre data-language="js">Promise.resolve('Success').then(function(value) {
+  console.log(value); // "Success"
+}, function(value) {
+  // not called
+});
+</pre> <h3 id="Resolving_an_array">Resolving an array</h3> <pre data-language="js">var p = Promise.resolve([1,2,3]);
+p.then(function(v) {
+  console.log(v[0]); // 1
+});
+</pre> <h3 id="Resolving_another_Promise">Resolving another <code>Promise</code>
+</h3> <pre data-language="js">var original = Promise.resolve(true);
+var cast = Promise.resolve(original);
+cast.then(function(v) {
+  console.log(v); // true
+});
+</pre> <h3 id="Resolving_thenables_and_throwing_Errors">Resolving thenables and throwing Errors</h3> <pre data-language="js">// Resolving a thenable object
+var p1 = Promise.resolve({ 
+  then: function(onFulfill, onReject) { onFulfill('fulfilled!'); }
+});
+console.log(p1 instanceof Promise) // true, object casted to a Promise
+
+p1.then(function(v) {
+    console.log(v); // "fulfilled!"
+  }, function(e) {
+    // not called
+});
+
+// Thenable throws before callback
+// Promise rejects
+var thenable = { then: function(resolve) {
+  throw new TypeError('Throwing');
+  resolve('Resolving');
+}};
+
+var p2 = Promise.resolve(thenable);
+p2.then(function(v) {
+  // not called
+}, function(e) {
+  console.log(e); // TypeError: Throwing
+});
+
+// Thenable throws after callback
+// Promise resolves
+var thenable = { then: function(resolve) {
+  resolve('Resolving');
+  throw new TypeError('Throwing');
+}};
+
+var p3 = Promise.resolve(thenable);
+p3.then(function(v) {
+  console.log(v); // "Resolving"
+}, function(e) {
+  // not called
+});
+</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="http://www.ecma-international.org/ecma-262/6.0/#sec-promise.resolve" class="external">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'Promise.resolve' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition in an ECMA standard.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="https://tc39.github.io/ecma262/#sec-promise.resolve" class="external">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'Promise.resolve' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td>32.0</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>29.0</td>
+<td><span style="color: #f00;">No support</span></td>
+<td>19</td>
+<td>7.1</td>
+<td><span style="color: #f00;">No support</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Basic Support</td>
+<td>4.4.4</td>
+<td>32.0</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>29</td>
+<td><span style="color: #f00;">No support</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td>8.0</td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The Promise object is used for asynchronous computations. A Promise represents a value which may be available now, or in the future, or never." href="../promise"><code>Promise</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve</a>
+  </p>
+</div>

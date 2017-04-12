@@ -1,0 +1,29 @@
+<h1>Errors: Missing bracket after list</h1> <h2 id="Message">Message</h2> <pre class="syntaxbox">SyntaxError: missing ] after element list
+</pre> <h2 id="Error_type">Error type</h2> <p><a title="The SyntaxError object represents an error when trying to interpret syntactically invalid code." href="../global_objects/syntaxerror"><code>SyntaxError</code></a>.</p> <h2 id="What_went_wrong">What went wrong?</h2> <p>There is an error with the array initializer syntax somewhere. Likely there is a closing bracket ("<code>]</code>") or a comma ("<code>,</code>") missing.</p> <h2 id="Examples">Examples</h2> <h3 id="Incomplete_array_initializer">Incomplete array initializer</h3> <pre data-language="js">var list = [1, 2,
+
+var instruments = [
+  'Ukulele',
+  'Guitar',
+  'Piano'
+};
+
+var data = [{foo: 'bar'} {bar: 'foo'}];
+</pre> <p>Correct would be:</p> <pre data-language="js">var list = [1, 2];
+
+var instruments = [
+ 'Ukulele',
+ 'Guitar',
+ 'Piano'
+]; 
+
+var data = [{foo: 'bar'}, {bar: 'foo'}];</pre> <h2 id="See_also">See also</h2> <ul> <li><a title="The JavaScript Array object is a global object that is used in the construction of arrays; which are high-level, list-like objects." href="../global_objects/array"><code>Array</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_bracket_after_list$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_bracket_after_list" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Missing_bracket_after_list</a>
+  </p>
+</div>

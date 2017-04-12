@@ -1,0 +1,43 @@
+<h1>-moz-window-shadow</h1><div><div class="overheadIndicator nonStandard nonStandardHeader"> <p><strong> Non-standard</strong><br> This feature is non-standard and is not on a standards track. Do not use it on production sites facing the Web: it will not work for every user. There may also be large incompatibilities between implementations and the behavior may change in the future.</p> </div></div>  <p>The <code>-moz-window-shadow</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> property specifies whether a window will have a shadow. It only works on Mac OS X.</p> <div class="note"> <p>This property is not standard and from Firefox 44 onwards cannot be used on Web sites anymore.</p> </div> <table class="properties"><tbody>
+<tr>
+<th scope="row"><a href="initial_value">Initial value</a></th>
+<td><code>default</code></td>
+</tr>
+<tr>
+<th scope="row">Applies to</th>
+<td>all elements that create native windows, e.g. &lt;window&gt;, &lt;panel&gt;</td>
+</tr>
+<tr>
+<th scope="row"><a href="inheritance">Inherited</a></th>
+<td>no</td>
+</tr>
+<tr>
+<th scope="row">Media</th>
+<td>visual</td>
+</tr>
+<tr>
+<th scope="row"><a href="computed_value">Computed value</a></th>
+<td>as specified</td>
+</tr>
+<tr>
+<th scope="row">Animatable</th>
+<td>no</td>
+</tr>
+<tr>
+<th scope="row">Canonical order</th>
+<td>the unique non-ambiguous order defined by the formal grammar</td>
+</tr>
+</tbody></table> <p>Firefox 3 added support for transparent windows on Mac OS X. However, for these windows shadows were turned off and there was no way of turning them on.</p> <p>In Firefox 3.5 we changed the default; all windows now have a shadow. We introduced the <code>-moz-window-shadow</code> CSS property to provide a way to turn off unwanted shadows.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">default | menu | tooltip | sheet | none</pre> <h3 id="Values">Values</h3> <dl> <dt>default</dt> <dd>The window will have a shadow with the default window shadow style.</dd> <dt>menu </dt> <dd>The window will have the shadow style that's appropriate for menus.</dd> <dt>tooltip </dt> <dd>The window will have the shadow style that's appropriate for tooltips.</dd> <dt>sheet </dt> <dd>The window will have the shadow style that's appropriate for sheet windows.</dd> <dt>none</dt> <dd>The window won't have a shadow.</dd> </dl> <h2 id="Examples">Examples</h2> <pre data-language="css">.KUI-panel {
+  -moz-window-shadow: none;
+}
+</pre><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-window-shadow$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-window-shadow" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-window-shadow</a>
+  </p>
+</div>

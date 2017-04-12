@@ -1,0 +1,24 @@
+<h1>NotificationEvent.action</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div> <p>Returns the string ID of the notification button the user clicked. This value returns <code>undefined</code> if the user clicked the notification somewhere other than an action button, or the notification does not have a button.</p> <h2 id="Returns">Returns</h2> <p>A <a href="../domstring" title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String."><code>DOMString</code></a> object.</p> <h2 id="Example">Example</h2> <pre id="example-50e7c86c" data-language="js">self.registration.showNotification("New articles available", {
+  actions: [{action: "get", title: "Get now."}]
+});
+
+self.addEventListener('notificationclick', function(event) {
+  event.notification.close();
+  if (event.action === 'get') {
+    synchronizeReader();
+  } else {
+    clients.openWindow("/reader");
+  }
+}, false);</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col"><font face="Open Sans, sans-serif">Specification</font></th> <th scope="col"><font face="Open Sans, sans-serif">Status</font></th> <th scope="col"><font face="Open Sans, sans-serif">Comment</font></th> </tr> <tr> <td><a href="https://notifications.spec.whatwg.org/#dom-notification-actions" class="external" lang="en" hreflang="en">Notifications API<br><small lang="en-US">The definition of 'action' in that specification.</small></a></td> <td><span class="spec-REC">Recommendation</span></td> <td>Living standard.</td> </tr> </tbody> </table> <h2 id="Browser_Compatibility">Browser Compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td>48</td> <td>
+<span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span><sup>[1]</sup>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>Firefox OS</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>48</td> </tr> </tbody> </table> </div> <p>[1] Service workers (and <a href="../push_api">Push</a>) have been disabled in the <a href="https://www.mozilla.org/en-US/firefox/organizations/">Firefox 45 Extended Support Release</a> (ESR.)</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent/action$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent/action" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/NotificationEvent/action</a>
+  </p>
+</div>

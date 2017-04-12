@@ -1,0 +1,30 @@
+<h1>repeatdur</h1> <p>This attribute specifies the total duration for repeat.</p> <h2 id="Usage_context">Usage context</h2> <table class="standard-table"> <tbody> <tr> <th scope="row">Categories</th> <td>Animation timing attribute</td> </tr> <tr> <th scope="row">Value</th> <td>
+<a title="https://developer.mozilla.org/en/SVG/Content_type#Clock-value" href="../content_type#Clock-value">&lt;clock-value&gt;</a> | "indefinite"</td> </tr> <tr> <th scope="row">Animatable</th> <td>No</td> </tr> <tr> <th scope="row">Normative document</th> <td><a title="http://www.w3.org/TR/SVG/animate.html#RepeatDurAttribute" class="external" href="http://www.w3.org/TR/SVG/animate.html#RepeatDurAttribute">SVG 1.1 (2nd Edition)</a></td> </tr> </tbody> </table> <dl>
+<dt> &lt;clock-value&gt;</dt> <dd> <p>Clock values have the same syntax as in <a title="http://www.w3.org/TR/2001/REC-smil-animation-20010904/" href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/">SMIL Animation</a> specification. The grammar for clock values is repeated here:</p> <pre>Clock-val         ::= Full-clock-val | Partial-clock-val 
+                      | Timecount-val
+Full-clock-val    ::= Hours ":" Minutes ":" Seconds ("." Fraction)?
+Partial-clock-val ::= Minutes ":" Seconds ("." Fraction)?
+Timecount-val     ::= Timecount ("." Fraction)? (Metric)?
+Metric            ::= "h" | "min" | "s" | "ms"
+Hours             ::= DIGIT+; any positive number
+Minutes           ::= 2DIGIT; range from 00 to 59
+Seconds           ::= 2DIGIT; range from 00 to 59
+Fraction          ::= DIGIT+
+Timecount         ::= DIGIT+
+2DIGIT            ::= DIGIT DIGIT
+DIGIT             ::= [0-9]
+</pre> <p>For <code>Timecount</code> values, the default metric suffix is "s" (for seconds). No embedded white space is allowed in clock values, although leading and trailing white space characters will be ignored.</p> <p>The following are examples of legal clock values:</p> <ul>
+<li>Full clock values:<br><code>02:30:03 </code> = 2 hours, 30 minutes and 3 seconds<br><code>50:00:10.25</code> = 50 hours, 10 seconds and 250 milliseconds</li> <li>Partial clock value:<br><code>02:33 </code> = 2 minutes and 33 seconds<br><code>00:10.5</code> = 10.5 seconds = 10 seconds and 500 milliseconds</li> <li>Timecount values:<br><code>3.2h </code> = 3.2 hours = 3 hours and 12 minutes<br><code>45min </code> = 45 minutes<br><code>30s </code> = 30 seconds<br><code>5ms </code> = 5 milliseconds<br><code>12.467 </code> = 12 seconds and 467 milliseconds</li> </ul>
+<p>Fractional values are just (base 10) floating point definitions of seconds. Thus:</p> <p><code>00.5s = 500 milliseconds<br>
+   00:00.005 = 5 milliseconds</code></p> </dd> </dl> <h2 id="Example">Example</h2> <h2 id="Elements">Elements</h2> <p>The following elements can use the <code>repeatDur</code> attribute</p> <ul> <li>
+<a title="en/SVG/Element#Animation" href="../element#Animation">Animation elements</a> »</li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/repeatDur$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/repeatDur" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/repeatDur</a>
+  </p>
+</div>

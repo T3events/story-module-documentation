@@ -1,0 +1,23 @@
+<h1>NetworkInformation.onchange</h1><div class="notice experimental"> <p> <strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a href="#Browser_compatibility">compatibility table</a> for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.</p> </div> <p>The <strong><code>NetworkInformation.onchange</code></strong> event handler contains the code that is fired when connection information changes, and the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Events/change" title="/en-US/docs/Web/Events/change">change</a></code> is received by the <a href="../networkinformation" title="Editorial review completed."><code>NetworkInformation</code></a> object.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>netInfo</em>.onchange = function() { ... }
+</pre> <h2 id="Examples">Examples</h2> <pre data-language="js">// Get the connection type. 
+var type = navigator.connection.type; 
+
+function changeHandler(e) { 
+   // Handle change of connection type here. 
+} 
+
+// Register for event changes: 
+navigator.connection.onchange = changeHandler; 
+
+// Another way: navigator.connection.addEventListener('change', changeHandler);</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <thead> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a href="https://w3c.github.io/netinfo/" class="external" lang="en" title="The 'Network Information API' specification" hreflang="en">Network Information API</a></td> <td><span class="spec-ED">Editor's Draft</span></td> <td>Initial definition</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>47</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Android Webview</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> <th>Chrome for Android</th> </tr> <tr> <td>Basic support</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td>
+<span style="color: #f00;">No support</span> [1]</td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> <td><span style="color: #f00;">No support</span></td> </tr> </tbody> </table> </div> <p>[1] On Firefox, the <code>typechange</code> event is sent a the event handler is <code>ontypechange</code>.</p><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/onchange$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/onchange" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation/onchange</a>
+  </p>
+</div>

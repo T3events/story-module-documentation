@@ -1,0 +1,38 @@
+<h1>Content-Encoding</h1> <p>The <code>Content-Encoding</code> entity header is used to compress the media-type. When present, its value indicates what additional content encoding has been applied to the entity-body. It lets the client know, how to decode in order to obtain the media-type referenced by the <code>Content-Type</code> header.</p> <p>It is recommended to compress data as much as possible and therefore to use this field, but some type of ressources, like jpeg images, are already compressed and sometimes using an additional compression doesn't bring anything and can even make the payload longer.</p> <table class="properties"> <tbody> <tr> <th scope="row">Header type</th> <td><a title="Entity header: An entity header is an HTTP header describing the content of the body of the message. Entity headers are used in both, HTTP requests and responses. Headers like Content-Length, Content-Language, Content-Encoding are entity headers." class="glossaryLink" href="https://developer.mozilla.org/en-US/docs/Glossary/Entity_header">Entity header</a></td> </tr> <tr> <th scope="row"><a title="Forbidden header name: A forbidden header name is an HTTP header name that cannot be modified programmatically." class="glossaryLink" href="https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name">Forbidden header name</a></th> <td>no</td> </tr> </tbody> </table> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox">Content-Encoding: gzip
+Content-Encoding: compress
+Content-Encoding: deflate
+Content-Encoding: identity
+Content-Encoding: br
+</pre> <h2 id="Directives">Directives</h2> <dl> <dt><code>gzip</code></dt> <dd>A format using the <a class="external" href="http://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77">Lempel-Ziv coding</a> (LZ77), with a 32-bit CRC. This is originally the format of the UNIX <em>gzip</em> program. The HTTP/1.1 standard also recommends that the servers supporting this content-encoding should recognize <code>x-gzip</code> as an alias, for compatibility purposes.</dd> <dt><code>compress</code></dt> <dd>A format using the <a class="external" href="http://en.wikipedia.org/wiki/LZW">Lempel-Ziv-Welch</a> (LZW) algorithm. The value name was taken from the UNIX <em>compress</em> program, which implemented this algorithm.<br> Like the compress program, which has disappeared from most UNIX distributions, this content-encoding is used by almost no browsers today, partly because of a patent issue (which expired in 2003).</dd> <dt><code>deflate</code></dt> <dd>Using the <a class="external" href="http://en.wikipedia.org/wiki/Zlib">zlib</a> structure (defined in <a class="external" href="http://tools.ietf.org/html/rfc1950">RFC 1950</a>), with the <a class="external" href="http://en.wikipedia.org/wiki/DEFLATE"><em>deflate</em></a> compression algorithm (defined in <a class="external" href="http://tools.ietf.org/html/rfc1952">RFC 1951</a>).</dd> <dt><code>identity</code></dt> <dd>Indicates the identity function (i.e. no compression, nor modification). This token, except if explicitly specified, is always deemed acceptable.</dd> <dt><code>br</code></dt> <dd>A format using the <a href="https://en.wikipedia.org/wiki/Brotli">Brotli</a> algorithm.</dd> </dl> <h2 id="Examples">Examples</h2> <h3 id="Compressing_with_gzip">Compressing with gzip</h3> <p>On the client side, you can advertise a list of compression schemes that will be send along in an HTTP request. The <a title="The Accept-Encoding request HTTP header advertises which content encoding, usually a compression algorithm, the client is able to understand. Using content negotiation, the server selects one of the proposals, uses it and informs the client of its choice with the Content-Encoding response header." href="accept-encoding"><code>Accept-Encoding</code></a> header is used for negotiating content encoding.</p> <pre>Accept-Encoding: gzip, deflate</pre> <p>The server responds with the scheme used, indicated by the <code>Content-Encoding</code> response header.</p> <pre>Content-Encoding: gzip</pre> <p>Note that the server is not obligated to use any compression method. Compression highly depends on server settings and used server modules.</p> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Title</th> </tr> <tr> <td><a href="http://tools.ietf.org/html/7231#section-3.1.2.2">RFC 7231, section 3.1.2.2: Content-Encoding</a></td> <td>Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</td> </tr> <tr> <td><a href="http://www.ietf.org/id/draft-alakuijala-brotli">http://www.ietf.org/id/draft-alakuijala-brotli</a></td> <td>Brotli Compressed Data Format</td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Chrome</th> <th>Edge</th> <th>Firefox</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> <th>Servo</th> </tr> </thead>
+<tbody><tr>
+<td>Content-Encoding</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+</tr></tbody>
+</table></div><div id="compat-mobile"><table class="compat-table"> <thead> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Edge Mobile</th> <th>Firefox for Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> </thead>
+<tbody><tr>
+<td>Content-Encoding</td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+<td><span style="color: #888;">(Yes)</span></td>
+</tr></tbody>
+</table></div> <h2 id="See_also">See also</h2> <ul> <li><a title="The Accept-Encoding request HTTP header advertises which content encoding, usually a compression algorithm, the client is able to understand. Using content negotiation, the server selects one of the proposals, uses it and informs the client of its choice with the Content-Encoding response header." href="accept-encoding"><code>Accept-Encoding</code></a></li> <li><a title="The Transfer-Encoding header specifies the form of encoding used to safely transfer the entity to the user." href="transfer-encoding"><code>Transfer-Encoding</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding</a>
+  </p>
+</div>

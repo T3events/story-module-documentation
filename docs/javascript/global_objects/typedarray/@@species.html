@@ -1,0 +1,31 @@
+<h1>TypedArray.@@species</h1> <p>The <code><strong>TypedArray[@@species]</strong></code> accessor property returns the constructor of a <a href="../typedarray#TypedArray_objects">typed array</a>.</p> <h2 id="Syntax">Syntax</h2> <pre class="syntaxbox"><em>TypedArray</em>[Symbol.species]
+
+where <em>TypedArray</em> is one of:
+
+Int8Array
+Uint8Array
+Uint8ClampedArray
+Int16Array
+Uint16Array
+Int32Array
+Uint32Array
+Float32Array
+Float64Array
+</pre> <h2 id="Description">Description</h2> <p>The <code>species</code> accessor property returns the default constructor for <a href="../typedarray#TypedArray_objects">typed array</a> objects. Subclass constructors may over-ride it to change the constructor assignment.</p> <h2 id="Examples">Examples</h2> <p>The <code>species</code> property returns the default constructor function, which is one of the typed array constructors for a given <a href="../typedarray#TypedArray_objects">typed array</a> object:</p> <pre data-language="js">Int8Array[Symbol.species];    // function Int8Array()
+Uint8Array[Symbol.species];   // function Uint8Array()
+Float32Array[Symbol.species]; // function Float32Array()
+</pre> <p>In a derived collection object (e.g. your custom typed array <code>MyTypedArray</code>), the <code>MyTypedArray</code> species is the <code>MyTypedArray</code> constructor. However, you might want to overwrite this, in order to return a parent <a href="../typedarray#TypedArray_objects">typed array</a> object in your derived class methods:</p> <pre data-language="js">class MyTypedArray extends Uint8Array {
+  // Overwrite MyTypedArray species to the parent Uint8Array constructor
+  static get [Symbol.species]() { return Uint8Array; }
+}</pre> <h2 id="Specifications">Specifications</h2> <table class="standard-table"> <tbody> <tr> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> <tr> <td><a lang="en" hreflang="en" href="#" class="external">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'get %TypedArray% [ @@species ]' in that specification.</small></a></td> <td><span class="spec-Standard">Standard</span></td> <td>Initial definition.</td> </tr> <tr> <td><a lang="en" hreflang="en" href="#" class="external">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'get %TypedArray% [ @@species ]' in that specification.</small></a></td> <td><span class="spec-Draft">Draft</span></td> <td> </td> </tr> </tbody> </table> <h2 id="Browser_compatibility">Browser compatibility</h2>  <div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>
+<a title="Released on 2016-08-02." href="https://developer.mozilla.org/en-US/Firefox/Releases/48">48</a> (48)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Chrome for Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>48.0 (48)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table> </div> <h2 id="See_also">See also</h2> <ul> <li><a title="A TypedArray object describes an array-like view of an underlying binary data buffer. There is no global property named TypedArray, nor is there a directly visible TypedArray constructor.  Instead, there are a number of different global properties, whose values are typed array constructors for specific element types, listed below. On the following pages you will find common properties and methods that can be used with any typed array containing elements of any type." href="../typedarray"><code>TypedArray</code></a></li> <li><a title="The Symbol.species well-known symbol specifies a function valued property that is the constructor function that is used to create derived objects." href="../symbol/species"><code>Symbol.species</code></a></li> </ul><div class="_attribution">
+  <p class="_attribution-p">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/@@species$edit" class="_attribution-link">Edit this page on MDN</a>
+  </p>
+</div>
+<div class="_attribution">
+  <p class="_attribution-p">
+    &copy; 2005&ndash;2017 Mozilla Developer Network and individual contributors.<br>Licensed under the Creative Commons Attribution-ShareAlike License v2.5 or later.<br>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/@@species" class="_attribution-link">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/@@species</a>
+  </p>
+</div>
